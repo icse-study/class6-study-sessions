@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Class 6 Study Sessions</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #F0F4FF; min-height: 100vh; color: #1a1a2e; }
+  header { background: linear-gradient(135deg, #4F46E5, #7C3AED); padding: 1.75rem 1.25rem 1.5rem; text-align: center; }
+  .header-logo { font-size: 44px; margin-bottom: 8px; }
+  header h1 { color: #fff; font-size: 24px; font-weight: 700; }
+  header p { color: rgba(255,255,255,0.8); font-size: 14px; margin-top: 4px; }
+  .stats-row { display: flex; gap: 10px; padding: 1rem 1rem 0; }
+  .stat-chip { flex: 1; background: #fff; border-radius: 14px; padding: 12px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+  .stat-chip .val { font-size: 22px; font-weight: 800; color: #4F46E5; }
+  .stat-chip .lbl { font-size: 11px; color: #9CA3AF; margin-top: 2px; }
+  .today-banner { background: #fff; margin: 1rem; border-radius: 18px; padding: 1.25rem; border-left: 5px solid #4F46E5; box-shadow: 0 2px 8px rgba(0,0,0,0.08); display: none; }
+  .today-banner .eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #4F46E5; margin-bottom: 4px; }
+  .today-banner .day { font-size: 20px; font-weight: 700; color: #111827; }
+  .today-banner .subs { font-size: 13px; color: #6B7280; margin-top: 4px; line-height: 1.6; }
+  .today-banner a { display: inline-block; margin-top: 14px; background: linear-gradient(135deg, #4F46E5, #7C3AED); color: #fff; padding: 12px 24px; border-radius: 12px; text-decoration: none; font-size: 15px; font-weight: 600; }
+  .section-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #9CA3AF; padding: 0 1rem; margin: 1.25rem 0 0.6rem; }
+  .week-grid { display: flex; flex-direction: column; gap: 10px; padding: 0 1rem 2rem; }
+  .day-card { background: #fff; border-radius: 18px; padding: 1.1rem 1.25rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); text-decoration: none; color: inherit; display: block; border: 2px solid transparent; transition: border-color 0.15s; }
+  .day-card.today { border-color: #4F46E5; }
+  .day-card.past { opacity: 0.55; }
+  .day-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+  .day-name { font-size: 16px; font-weight: 700; color: #111827; }
+  .day-time { font-size: 12px; color: #9CA3AF; }
+  .badge { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 99px; }
+  .badge-today { background: #EEF2FF; color: #4F46E5; }
+  .badge-past { background: #ECFDF5; color: #065F46; }
+  .badge-upcoming { background: #F3F4F6; color: #9CA3AF; }
+  .subject-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .pill { font-size: 12px; padding: 4px 10px; border-radius: 99px; background: #F3F4F6; color: #374151; }
+  .year-progress { padding: 1rem; }
+  .year-bar-label { display: flex; justify-content: space-between; font-size: 13px; color: #6B7280; margin-bottom: 6px; }
+  .year-track { height: 10px; background: #E5E7EB; border-radius: 99px; overflow: hidden; }
+  .year-fill { height: 100%; background: linear-gradient(90deg, #4F46E5, #7C3AED); border-radius: 99px; }
+  footer { text-align: center; padding: 1rem; font-size: 12px; color: #9CA3AF; }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-logo">📚</div>
+  <h1>Class 6 Study Sessions</h1>
+  <p id="hdr-date">Loading…</p>
+</header>
+<div class="stats-row">
+  <div class="stat-chip"><div class="val" id="stat-week">—</div><div class="lbl">Week of year</div></div>
+  <div class="stat-chip"><div class="val" id="stat-days">—</div><div class="lbl">Days studied</div></div>
+  <div class="stat-chip"><div class="val" id="stat-left">—</div><div class="lbl">Days to go</div></div>
+</div>
+<div class="year-progress">
+  <div class="year-bar-label"><span>Year progress</span><span id="year-pct">0%</span></div>
+  <div class="year-track"><div class="year-fill" id="year-fill" style="width:0%"></div></div>
+</div>
+<div class="today-banner" id="today-banner">
+  <div class="eyebrow">Today's session</div>
+  <div class="day" id="banner-day"></div>
+  <div class="subs" id="banner-subs"></div>
+  <a id="banner-link" href="#">Start today's session →</a>
+</div>
+<div class="section-label">This week</div>
+<div class="week-grid" id="week-grid"></div>
+<footer>Class 6 · Academic Year 2025–26</footer>
+<script>
+var schedule=[
+  {day:"Monday",file:"sessions/monday.html",time:"6:00 – 7:50 PM",subjects:["➗ Maths Quick Practice","🗣️ Kannada Literature","📖 English Literature"]},
+  {day:"Tuesday",file:"sessions/tuesday.html",time:"6:00 – 7:50 PM",subjects:["➗ Maths Quick Practice","⚡ Physics","💻 Computer Science / Python"]},
+  {day:"Wednesday",file:"sessions/wednesday.html",time:"6:00 – 7:50 PM",subjects:["🌍 Map Revision","🌍 Geography","✍️ English Grammar & Writing"]},
+  {day:"Thursday",file:"sessions/thursday.html",time:"6:00 – 7:50 PM",subjects:["➗ Maths Formula Recall","⚗️ Chemistry","🇫🇷 French"]},
+  {day:"Friday",file:"sessions/friday.html",time:"6:00 – 7:50 PM",subjects:["🧬 Science Diagram Recall","🗣️ Kannada Grammar & Writing","🧬 Biology"]},
+  {day:"Saturday",file:"sessions/saturday.html",time:"10:00 AM – 4:10 PM",subjects:["➗ Maths Problem Solving","🏛️ History & Civics","⚡ Physics Quiz","⚗️ Chemistry Quiz","🧬 Biology Quiz"]},
+  {day:"Sunday",file:"sessions/sunday.html",time:"10:00 AM – 4:00 PM",subjects:["🗣️ Kannada","🇫🇷 French","🌍 Geography + History & Civics","🧠 Mixed Quiz Day"]}
+];
+var dayNames=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+var today=new Date(), todayName=dayNames[today.getDay()];
+var startOfYear=new Date(today.getFullYear(),0,1);
+var dayOfYear=Math.floor((today-startOfYear)/86400000)+1;
+var daysInYear=(today.getFullYear()%4===0)?366:365;
+var weekNum=Math.ceil(dayOfYear/7), pct=Math.round((dayOfYear/daysInYear)*100);
+document.getElementById('hdr-date').textContent=today.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+document.getElementById('stat-week').textContent='W'+weekNum;
+document.getElementById('stat-days').textContent=dayOfYear;
+document.getElementById('stat-left').textContent=daysInYear-dayOfYear;
+document.getElementById('year-pct').textContent=pct+'%';
+document.getElementById('year-fill').style.width=pct+'%';
+var banner=document.getElementById('today-banner'), grid=document.getElementById('week-grid');
+schedule.forEach(function(s){
+  var dayIndex=dayNames.indexOf(s.day), todayIndex=today.getDay();
+  var isToday=s.day===todayName, isPast=dayIndex<todayIndex;
+  if(isToday){
+    banner.style.display='block';
+    document.getElementById('banner-day').textContent=s.day;
+    document.getElementById('banner-subs').textContent=s.subjects.join(' · ');
+    document.getElementById('banner-link').href=s.file;
+  }
+  var badge=isToday?'<span class="badge badge-today">Today</span>':isPast?'<span class="badge badge-past">✓ Done</span>':'<span class="badge badge-upcoming">Upcoming</span>';
+  var pills=s.subjects.map(function(sub){return '<span class="pill">'+sub+'</span>';}).join('');
+  var card=document.createElement('a');
+  card.href=s.file;
+  card.className='day-card'+(isToday?' today':isPast?' past':'');
+  card.innerHTML='<div class="day-row"><span class="day-name">'+s.day+'</span>'+badge+'</div><div class="day-time">'+s.time+'</div><div class="subject-pills">'+pills+'</div>';
+  grid.appendChild(card);
+});
+</script>
+</body>
+</html>
