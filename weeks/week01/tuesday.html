@@ -1,1 +1,208 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"><title>Week 1 · Tuesday · Class 6</title><style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0F4FF;min-height:100vh}header{background:linear-gradient(135deg,#4F46E5,#7C3AED);padding:1.25rem 1.5rem}header h1{color:#fff;font-size:17px;font-weight:600}header p{color:rgba(255,255,255,0.75);font-size:13px;margin-top:2px}.back{display:inline-flex;align-items:center;gap:6px;color:#6B7280;font-size:13px;text-decoration:none;padding:0.75rem 1rem}.card{background:#fff;border-radius:18px;margin:0 1rem;padding:2rem 1.25rem;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.07)}.icon{font-size:48px;margin-bottom:12px}.title{font-size:20px;font-weight:700;color:#111827;margin-bottom:8px}.sub{font-size:14px;color:#6B7280;line-height:1.6}.pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:1.25rem}.pill{font-size:12px;padding:5px 12px;border-radius:99px;background:#EEF2FF;color:#4F46E5;font-weight:500}.wb{display:inline-block;background:#F3F4F6;color:#6B7280;font-size:12px;font-weight:600;padding:4px 12px;border-radius:99px;margin-bottom:1rem}</style></head><body><a class="back" href="index.html">← Week 1</a><header><h1>Tuesday · Week 1</h1><p>15 Jun – 21 Jun 2026 · 6:00 – 7:50 PM</p></header><div style="padding:1rem 0 0"><div class="card"><div class="icon">🔒</div><div class="wb">Week 1 of 41</div><div class="title">Session not yet available</div><div class="sub">This session will be published at the start of week 1.<br>Check back on Monday, 15 June 2026.</div><div class="pills"><span class="pill">➗ Maths Quick Practice</span><span class="pill">⚡ Physics</span><span class="pill">💻 Computer Science / Python</span></div></div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>Week 1 · Tuesday · Class 6 ICSE</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0F4FF;min-height:100vh;color:#1a1a2e}
+header{background:linear-gradient(135deg,#4F46E5,#7C3AED);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:12px}
+.logo{font-size:26px}
+header h1{color:#fff;font-size:17px;font-weight:600}
+header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6B7280;font-size:13px;text-decoration:none;padding:0.75rem 1rem}
+.tabs{display:flex;background:#fff;border-bottom:1px solid #E5E7EB;position:sticky;top:0;z-index:10;box-shadow:0 1px 4px rgba(0,0,0,0.06);overflow-x:auto}
+.tab{flex-shrink:0;padding:13px 14px;border:none;background:transparent;font-size:13px;font-weight:500;color:#9CA3AF;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
+.tab.active{color:#4F46E5;border-bottom-color:#4F46E5}
+.sec{display:none;padding:1rem 1rem 3rem;max-width:600px;margin:0 auto}
+.sec.active{display:block}
+.did-you-know{background:linear-gradient(135deg,#EEF2FF,#F5F3FF);border:1px solid #C7D2FE;border-radius:18px;padding:1.25rem;margin-bottom:1rem}
+.dyk-eye{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:#6366F1;margin-bottom:6px}
+.dyk-title{font-size:16px;font-weight:700;color:#3730A3;margin-bottom:8px}
+.dyk-body{font-size:14px;color:#374151;line-height:1.7}
+.formula{background:#fff;border:2px solid #6366F1;border-radius:12px;padding:12px 16px;margin:10px 0;text-align:center;font-size:16px;font-weight:700;color:#4338CA}
+.q-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9CA3AF;margin:1.25rem 0 0.6rem}
+.score-row{display:flex;gap:10px;margin-bottom:1rem}
+.sc{flex:1;background:#fff;border-radius:12px;padding:10px 14px;box-shadow:0 1px 3px rgba(0,0,0,0.07)}
+.sc label{display:block;font-size:11px;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:2px}
+.sc span{font-size:20px;font-weight:700;color:#4F46E5}
+.prog-row{display:flex;align-items:center;gap:10px;margin-bottom:1rem}
+.prog-track{flex:1;height:7px;background:#E5E7EB;border-radius:99px;overflow:hidden}
+.prog-fill{height:100%;background:linear-gradient(90deg,#4F46E5,#7C3AED);border-radius:99px;transition:width 0.4s}
+.prog-pct{font-size:12px;color:#9CA3AF;white-space:nowrap}
+.card{background:#fff;border-radius:18px;padding:1.25rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:1rem}
+.topic-pill{display:inline-block;background:#EEF2FF;color:#4F46E5;font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;margin-bottom:8px}
+.q-text{font-size:16px;font-weight:500;line-height:1.5;color:#111827;margin-bottom:1.1rem}
+.opts{display:flex;flex-direction:column;gap:9px}
+.opt{width:100%;padding:13px 15px;border-radius:12px;border:2px solid #E5E7EB;background:#FAFAFA;font-size:15px;text-align:left;cursor:pointer;color:#1F2937;transition:all 0.15s;-webkit-tap-highlight-color:transparent}
+.opt:active{transform:scale(0.98)}
+.opt.correct{background:#ECFDF5;border-color:#10B981;color:#065F46}
+.opt.wrong{background:#FEF2F2;border-color:#EF4444;color:#7F1D1D}
+.fb{margin-top:12px;padding:11px 14px;border-radius:12px;font-size:14px;line-height:1.5;display:none}
+.fb.show{display:block}
+.fb.ok{background:#ECFDF5;color:#065F46}
+.fb.err{background:#FEF2F2;color:#7F1D1D}
+.nxt{display:none;width:100%;margin-top:12px;padding:14px;border-radius:14px;border:none;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-size:15px;font-weight:600;cursor:pointer}
+.nxt.show{display:block}
+.done-card{text-align:center;padding:2rem 1.25rem}
+.done-icon{font-size:52px;margin-bottom:10px}
+.done-title{font-size:20px;font-weight:700;color:#111827;margin-bottom:6px}
+.done-score{font-size:34px;font-weight:800;color:#4F46E5;margin:14px 0}
+.done-sub{font-size:14px;color:#6B7280;line-height:1.6}
+.retry{display:inline-block;margin-top:14px;padding:13px 26px;border-radius:14px;border:2px solid #4F46E5;background:transparent;color:#4F46E5;font-size:14px;font-weight:600;cursor:pointer}
+.intro-card{background:#fff;border-radius:18px;padding:1.25rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:1rem}
+.intro-card h3{font-size:15px;font-weight:700;color:#111827;margin-bottom:8px}
+.intro-card p,.intro-card li{font-size:14px;color:#374151;line-height:1.7}
+.intro-card ul{margin:8px 0 0 16px}
+.week-badge{display:inline-block;background:#F0FDF4;color:#15803D;font-size:12px;font-weight:600;padding:4px 12px;border-radius:99px;margin-bottom:1rem}
+</style>
+</head>
+<body>
+<a class="back" href="index.html">← Week 1</a>
+<header>
+  <div class="logo">📅</div>
+  <div><h1>Tuesday · Week 1</h1><p>15 Jun – 21 Jun 2026 &nbsp;·&nbsp; Class 6 ICSE</p></div>
+</header>
+<div class="tabs"><button class="tab active" id="tab-m" onclick="switchTab('m',['m','p','c'])">➗ Maths</button><button class="tab" id="tab-p" onclick="switchTab('p',['m','p','c'])">⚡ Physics</button><button class="tab" id="tab-c" onclick="switchTab('c',['m','p','c'])">💻 CS / Python</button></div>
+<div id="sec-m" class="sec active"><div class="did-you-know">
+  <div class="dyk-eye">✨ Did you know?</div>
+  <div class="dyk-title">🔢 The Indian Number System</div>
+  <div class="dyk-body">India uses a unique system — lakhs and crores instead of millions and billions. 1 lakh = 1,00,000 and 1 crore = 1,00,00,000!</div>
+</div><div class="formula">1 Crore = 100 Lakhs = 10,000,000</div><div class="q-label">Warm-up questions</div>
+<div class="score-row">
+  <div class="sc"><label>Question</label><span id="m-qnum">1 / 4</span></div>
+  <div class="sc"><label>Score</label><span id="m-score">0</span></div>
+</div>
+<div class="prog-row">
+  <div class="prog-track"><div class="prog-fill" id="m-prog" style="width:0%"></div></div>
+  <div class="prog-pct" id="m-pct">0%</div>
+</div>
+<div id="m-card" class="card">
+  <div class="topic-pill" id="m-topic"></div>
+  <div class="q-text" id="m-q"></div>
+  <div class="opts" id="m-opts"></div>
+  <div class="fb" id="m-fb"></div>
+  <button class="nxt" id="m-nxt">Next →</button>
+</div>
+<div id="m-done" style="display:none" class="card done-card">
+  <div class="done-icon" id="m-ficon">🎉</div>
+  <div class="done-title">Done!</div>
+  <div class="done-score" id="m-fscore"></div>
+  <div class="done-sub" id="m-fmsg"></div>
+  <button class="retry" id="m-retry">Try again ↺</button>
+</div></div><div id="sec-p" class="sec"><div class="did-you-know">
+  <div class="dyk-eye">✨ Did you know?</div>
+  <div class="dyk-title">⚡ Physics explains everything!</div>
+  <div class="dyk-body">Ever wondered why the sky is blue, how planes fly, or why a ball falls when you drop it? That's all Physics!</div>
+</div><div class="intro-card"><h3>Physics topics this year</h3><ul><li>Motion — speed, distance & time</li><li>Forces — gravity, friction, magnetism</li><li>Light & sound</li><li>Electricity & energy</li><li>Simple machines</li></ul></div><div class="q-label">Intro questions</div>
+<div class="score-row">
+  <div class="sc"><label>Question</label><span id="p-qnum">1 / 4</span></div>
+  <div class="sc"><label>Score</label><span id="p-score">0</span></div>
+</div>
+<div class="prog-row">
+  <div class="prog-track"><div class="prog-fill" id="p-prog" style="width:0%"></div></div>
+  <div class="prog-pct" id="p-pct">0%</div>
+</div>
+<div id="p-card" class="card">
+  <div class="topic-pill" id="p-topic"></div>
+  <div class="q-text" id="p-q"></div>
+  <div class="opts" id="p-opts"></div>
+  <div class="fb" id="p-fb"></div>
+  <button class="nxt" id="p-nxt">Next →</button>
+</div>
+<div id="p-done" style="display:none" class="card done-card">
+  <div class="done-icon" id="p-ficon">🎉</div>
+  <div class="done-title">Done!</div>
+  <div class="done-score" id="p-fscore"></div>
+  <div class="done-sub" id="p-fmsg"></div>
+  <button class="retry" id="p-retry">Try again ↺</button>
+</div></div><div id="sec-c" class="sec"><div class="did-you-know">
+  <div class="dyk-eye">✨ Did you know?</div>
+  <div class="dyk-title">💻 Python was named after a comedy show!</div>
+  <div class="dyk-body">Guido van Rossum named Python after Monty Python's Flying Circus — not the snake! It's one of the world's most popular programming languages.</div>
+</div><div class="intro-card"><h3>Your first Python program</h3><p>Type this in Python and press Run:</p><div style="background:#1e1e2e;border-radius:10px;padding:14px;font-family:monospace;font-size:14px;color:#cdd6f4;margin:10px 0">print("Hello, World!")<br>print("My name is Ustad")<br>print(2026)</div><p>Python reads top to bottom and runs each line one at a time.</p></div><div class="q-label">Intro questions</div>
+<div class="score-row">
+  <div class="sc"><label>Question</label><span id="c-qnum">1 / 4</span></div>
+  <div class="sc"><label>Score</label><span id="c-score">0</span></div>
+</div>
+<div class="prog-row">
+  <div class="prog-track"><div class="prog-fill" id="c-prog" style="width:0%"></div></div>
+  <div class="prog-pct" id="c-pct">0%</div>
+</div>
+<div id="c-card" class="card">
+  <div class="topic-pill" id="c-topic"></div>
+  <div class="q-text" id="c-q"></div>
+  <div class="opts" id="c-opts"></div>
+  <div class="fb" id="c-fb"></div>
+  <button class="nxt" id="c-nxt">Next →</button>
+</div>
+<div id="c-done" style="display:none" class="card done-card">
+  <div class="done-icon" id="c-ficon">🎉</div>
+  <div class="done-title">Done!</div>
+  <div class="done-score" id="c-fscore"></div>
+  <div class="done-sub" id="c-fmsg"></div>
+  <button class="retry" id="c-retry">Try again ↺</button>
+</div></div>
+<script>
+function quiz(id, qs) {
+  var i=0, sc=0, ans=false;
+  function el(x){return document.getElementById(id+'-'+x);}
+  function render(){
+    if(i>=qs.length){finish();return;}
+    var q=qs[i]; ans=false;
+    el('topic').textContent=q.t||'';
+    el('q').textContent=q.q;
+    el('qnum').textContent=(i+1)+' / '+qs.length;
+    el('score').textContent=sc;
+    el('prog').style.width=Math.round((i/qs.length)*100)+'%';
+    el('pct').textContent=Math.round((i/qs.length)*100)+'%';
+    var fb=el('fb'); fb.className='fb'; fb.textContent='';
+    el('nxt').className='nxt';
+    var og=el('opts'); og.innerHTML='';
+    q.o.forEach(function(o,j){
+      var b=document.createElement('button');
+      b.className='opt'; b.textContent=o;
+      b.onclick=function(){pick(j);};
+      og.appendChild(b);
+    });
+  }
+  function pick(j){
+    if(ans)return; ans=true;
+    var q=qs[i], fb=el('fb');
+    document.querySelectorAll('#'+id+'-opts .opt').forEach(function(b,k){
+      if(k===q.a)b.classList.add('correct');
+      else if(k===j&&j!==q.a)b.classList.add('wrong');
+    });
+    if(j===q.a){sc++;fb.textContent='✅ '+q.e;fb.className='fb ok show';}
+    else{fb.textContent='❌ '+q.e;fb.className='fb err show';}
+    el('nxt').className='nxt show';
+  }
+  function finish(){
+    document.getElementById(id+'-card').style.display='none';
+    document.getElementById(id+'-done').style.display='block';
+    el('prog').style.width='100%'; el('pct').textContent='100%';
+    el('fscore').textContent=sc+' / '+qs.length;
+    var r=sc===qs.length?['🌟','Perfect! Amazing start!']:sc>=Math.ceil(qs.length*0.6)?['🎉','Great job!']:['💪','Good try — review and retry!'];
+    el('ficon').textContent=r[0]; el('fmsg').textContent=r[1];
+  }
+  el('nxt').onclick=function(){i++;render();};
+  el('retry').onclick=function(){
+    i=0;sc=0;ans=false;
+    document.getElementById(id+'-card').style.display='block';
+    document.getElementById(id+'-done').style.display='none';
+    render();
+  };
+  render();
+}
+function switchTab(t,all){
+  all.forEach(function(x){
+    document.getElementById('tab-'+x).classList.toggle('active',x===t);
+    document.getElementById('sec-'+x).classList.toggle('active',x===t);
+  });
+}
+quiz('m',[{"t": "Numbers", "q": "How many zeros are in one lakh (1,00,000)?", "o": ["4", "5", "6", "3"], "a": 1, "e": "1,00,000 has 5 zeros. In the Indian system: 1 lakh = 100 thousands."}, {"t": "Place Value", "q": "The digit 7 in 7,342 is in which place?", "o": ["Ones", "Hundreds", "Thousands", "Ten-thousands"], "a": 2, "e": "7,342 \u2192 7 is in the thousands place (7 \u00d7 1000 = 7000)."}, {"t": "Odd & Even", "q": "What is the sum of the first 3 even numbers (2, 4, 6)?", "o": ["10", "11", "12", "14"], "a": 2, "e": "2 + 4 + 6 = 12."}, {"t": "Estimation", "q": "Which is the best estimate for 497 + 312?", "o": ["700", "750", "800", "900"], "a": 2, "e": "Round 497 \u2248 500 and 312 \u2248 300 \u2192 500 + 300 = 800. Estimation is a handy skill!"}]);
+quiz('p',[{"t": "What is Physics?", "q": "Physics is the study of?", "o": ["Living things", "Matter, energy and forces", "Chemicals and reactions", "The Earth's surface"], "a": 1, "e": "Physics studies matter, energy, forces and how the universe works \u2014 from atoms to galaxies!"}, {"t": "Units", "q": "Which unit do we use to measure length?", "o": ["Kilogram", "Litre", "Metre", "Second"], "a": 2, "e": "The metre (m) is the SI unit of length. We also use cm, km, and mm."}, {"t": "Forces", "q": "Which force pulls objects toward the Earth?", "o": ["Friction", "Magnetism", "Gravity", "Tension"], "a": 2, "e": "Gravity is the force that pulls everything toward the Earth. It's why we don't float away!"}, {"t": "Motion", "q": "A car at rest starts moving. What acted on it?", "o": ["Nothing", "A force", "Gravity only", "Air"], "a": 1, "e": "A force is needed to change an object from rest to motion. This is Newton's First Law!"}]);
+quiz('c',[{"t": "What is CS?", "q": "What does CPU stand for?", "o": ["Central Power Unit", "Computer Processing Universe", "Central Processing Unit", "Core Program Unit"], "a": 2, "e": "CPU = Central Processing Unit \u2014 the brain of the computer that processes all instructions."}, {"t": "Python", "q": "Which symbol is used to print output in Python?", "o": ["echo", "console.log", "printf", "print"], "a": 3, "e": "In Python, print() displays output. Example: print('Hello World')"}, {"t": "Python", "q": "What will print('5 + 3') display?", "o": ["8", "5 + 3", "53", "Error"], "a": 1, "e": "Quotes make it a string, not a calculation. print('5 + 3') shows the text: 5 + 3"}, {"t": "Python", "q": "What is the correct way to add 5 and 3 in Python?", "o": ["print('5+3')", "print(5+3)", "print[5+3]", "Print(5+3)"], "a": 1, "e": "print(5+3) \u2014 without quotes \u2014 calculates and prints 8. Python is case-sensitive, so print not Print!"}]);</script>
+</body>
+</html>
