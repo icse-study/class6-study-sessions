@@ -14,20 +14,28 @@ header h1{color:#fff;font-size:18px;font-weight:700}
 .card{background:#fff;border-radius:18px;padding:1.5rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:1rem}
 .card h2{font-size:16px;font-weight:700;color:#111827;margin-bottom:6px}
 .card p{font-size:14px;color:#6B7280;line-height:1.6;margin-bottom:1rem}
-.card label{display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9CA3AF;margin-bottom:6px}
-.card input{width:100%;padding:12px 14px;border-radius:12px;border:2px solid #E5E7EB;background:#FAFAFA;font-size:14px;font-family:monospace;color:#111827;outline:none}
-.card input:focus{border-color:#6366F1}
-.btn{width:100%;margin-top:12px;padding:14px;border-radius:14px;border:none;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-size:15px;font-weight:600;cursor:pointer}
-.btn-outline{background:transparent;border:2px solid #4F46E5;color:#4F46E5;margin-top:8px}
-.status{margin-top:10px;padding:10px 14px;border-radius:10px;font-size:14px;display:none}
+label{display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9CA3AF;margin-bottom:6px}
+input[type=password],input[type=text]{width:100%;padding:12px 14px;border-radius:12px;border:2px solid #E5E7EB;background:#FAFAFA;font-size:13px;font-family:monospace;color:#111827;outline:none}
+input:focus{border-color:#6366F1}
+.show-toggle{font-size:12px;color:#6366F1;cursor:pointer;margin-top:4px;display:inline-block}
+.btn{width:100%;margin-top:10px;padding:14px;border-radius:14px;border:none;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-size:15px;font-weight:600;cursor:pointer}
+.btn-outline{background:transparent;border:2px solid #4F46E5;color:#4F46E5}
+.btn-danger{border-color:#EF4444;color:#EF4444}
+.status{margin-top:10px;padding:10px 14px;border-radius:10px;font-size:14px;display:none;line-height:1.5}
 .status.ok{background:#ECFDF5;color:#065F46;display:block}
 .status.err{background:#FEF2F2;color:#991B1B;display:block}
-.info-card{background:#EEF2FF;border:1px solid #C7D2FE;border-radius:14px;padding:1rem 1.25rem;margin-bottom:1rem}
-.info-card h3{font-size:14px;font-weight:700;color:#3730A3;margin-bottom:6px}
-.info-card ol{font-size:13px;color:#374151;line-height:1.8;padding-left:16px}
-.token-status{display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;font-size:13px;font-weight:500;margin-bottom:1rem}
-.ts-set{background:#ECFDF5;color:#065F46}
-.ts-none{background:#FEF2F2;color:#991B1B}
+.token-banner{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;font-size:13px;font-weight:500;margin-bottom:1rem}
+.tb-set{background:#ECFDF5;color:#065F46;border:1px solid #A7F3D0}
+.tb-none{background:#FEF2F2;color:#991B1B;border:1px solid #FECACA}
+.info{background:#EEF2FF;border:1px solid #C7D2FE;border-radius:14px;padding:1rem 1.25rem;margin-bottom:1rem}
+.info h3{font-size:14px;font-weight:700;color:#3730A3;margin-bottom:8px}
+.info p{font-size:13px;color:#374151;line-height:1.7;margin-bottom:0}
+.info ul{font-size:13px;color:#374151;line-height:1.8;padding-left:16px}
+.divider{height:1px;background:#F3F4F6;margin:1rem 0}
+.stat-row{display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid #F3F4F6}
+.stat-row:last-child{border:none}
+.stat-label{color:#9CA3AF}
+.stat-val{color:#111827;font-weight:500}
 </style>
 </head>
 <body>
@@ -36,139 +44,199 @@ header h1{color:#fff;font-size:18px;font-weight:700}
   <a class="back" href="index.html">← Home</a>
 </header>
 <div class="wrap">
-  <div id="token-status" class="token-status ts-none">❌ No sync token set — progress won't save to cloud</div>
 
-  <div class="info-card">
-    <h3>📋 How to get your token</h3>
-    <ol>
-      <li>Go to <strong>github.com/settings/tokens</strong></li>
-      <li>Click <strong>Generate new token (classic)</strong></li>
-      <li>Name it <strong>icse-study-sync</strong></li>
-      <li>Tick the <strong>repo</strong> checkbox</li>
-      <li>Click <strong>Generate token</strong></li>
-      <li>Paste the token below and tap Save</li>
-    </ol>
+  <div id="token-banner" class="token-banner tb-none">
+    ❌ No sync token — progress saves locally only
   </div>
 
   <div class="card">
-    <h2>☁️ GitHub Sync Token</h2>
-    <p>Your token is stored only on this device — it is never sent anywhere except GitHub when you tap "Save progress".</p>
-    <label>Personal Access Token</label>
-    <input type="password" id="token-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    <h2>☁️ Sync token</h2>
+    <p>Enter your GitHub fine-grained token. It is stored only on this device and never shared.</p>
+    <label>Token</label>
+    <input type="password" id="token-input" placeholder="github_pat_…" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    <span class="show-toggle" onclick="toggleShow()">Show / hide</span>
     <button class="btn" onclick="saveToken()">Save token</button>
-    <button class="btn btn-outline" onclick="testToken()">Test connection</button>
-    <button class="btn btn-outline" style="border-color:#EF4444;color:#EF4444;margin-top:8px" onclick="clearToken()">Remove token</button>
-    <div id="status" class="status"></div>
+    <button class="btn btn-outline" style="margin-top:8px" onclick="testToken()">Test connection</button>
+    <button class="btn btn-outline btn-danger" style="margin-top:8px" onclick="clearToken()">Remove token</button>
+    <div id="token-status" class="status"></div>
   </div>
 
   <div class="card">
-    <h2>🔄 Manual sync</h2>
-    <p>Pull the latest scores from the cloud to this device, or push this device's scores up.</p>
+    <h2>🔄 Sync now</h2>
+    <p>Merge this device's scores with the cloud. Best score per subject is always kept.</p>
     <button class="btn" onclick="doSync()">Sync now</button>
     <div id="sync-status" class="status"></div>
+    <div class="divider"></div>
+    <div id="cloud-info">
+      <div class="stat-row"><span class="stat-label">Last cloud save</span><span class="stat-val" id="ci-date">—</span></div>
+      <div class="stat-row"><span class="stat-label">Saved from</span><span class="stat-val" id="ci-device">—</span></div>
+      <div class="stat-row"><span class="stat-label">Scores in cloud</span><span class="stat-val" id="ci-count">—</span></div>
+    </div>
   </div>
-</div>
 
+  <div class="info">
+    <h3>ℹ️ About this token</h3>
+    <ul>
+      <li>Fine-grained token — <strong>Contents: Read &amp; Write</strong> only</li>
+      <li>Scoped to <strong>icse-study/class6-study-sessions</strong> only</li>
+      <li>Cannot access any other repo or account setting</li>
+      <li>Enter the same token on every device you want to sync</li>
+    </ul>
+  </div>
+
+</div>
 <script>
 var GH_REPO = 'icse-study/class6-study-sessions';
 var GH_FILE = 'progress.json';
 var GH_API  = 'https://api.github.com/repos/' + GH_REPO + '/contents/' + GH_FILE;
 
-function getToken(){ return localStorage.getItem('icse_gh_token')||''; }
+function getToken(){ return localStorage.getItem('icse_gh_token') || ''; }
 
-function updateStatus(){
-  var t=getToken(), el=document.getElementById('token-status');
-  if(t){ el.textContent='✅ Token set — sync is active'; el.className='token-status ts-set'; }
-  else { el.textContent='❌ No sync token set — progress won\'t save to cloud'; el.className='token-status ts-none'; }
-  document.getElementById('token-input').value = t ? '••••••••••••••••••••' : '';
+function toggleShow(){
+  var inp = document.getElementById('token-input');
+  inp.type = inp.type === 'password' ? 'text' : 'password';
+}
+
+function updateBanner(){
+  var t = getToken(), el = document.getElementById('token-banner');
+  if(t){
+    el.textContent = '✅ Sync token set — progress will save to cloud';
+    el.className = 'token-banner tb-set';
+    document.getElementById('token-input').value = t.slice(0,12) + '••••••••••••••••••••';
+  } else {
+    el.textContent = '❌ No sync token — progress saves locally only';
+    el.className = 'token-banner tb-none';
+    document.getElementById('token-input').value = '';
+  }
+}
+
+function showStatus(id, msg, cls){
+  var el = document.getElementById(id);
+  el.textContent = msg; el.className = 'status ' + cls;
 }
 
 function saveToken(){
-  var v=document.getElementById('token-input').value.trim();
-  if(!v||v.indexOf('•')>-1){ showStatus('status','Please enter a valid token','err'); return; }
-  localStorage.setItem('icse_gh_token',v);
-  showStatus('status','Token saved on this device ✓','ok');
-  updateStatus();
+  var v = document.getElementById('token-input').value.trim();
+  if(!v || v.indexOf('•') > -1){ showStatus('token-status','Please paste a valid token','err'); return; }
+  localStorage.setItem('icse_gh_token', v);
+  showStatus('token-status','✅ Token saved on this device','ok');
+  updateBanner();
 }
 
 function clearToken(){
   localStorage.removeItem('icse_gh_token');
-  showStatus('status','Token removed','ok');
-  updateStatus();
+  showStatus('token-status','Token removed from this device','ok');
+  updateBanner();
 }
 
 function testToken(){
-  var t=getToken();
-  if(!t){ showStatus('status','No token set yet','err'); return; }
-  showStatus('status','Testing…','ok');
-  var xhr=new XMLHttpRequest();
-  xhr.open('GET','https://api.github.com/repos/'+GH_REPO,true);
-  xhr.setRequestHeader('Authorization','token '+t);
-  xhr.setRequestHeader('Accept','application/vnd.github+json');
-  xhr.onload=function(){
-    if(xhr.status===200){ showStatus('status','✅ Connected to icse-study/class6-study-sessions','ok'); }
-    else{ showStatus('status','❌ Connection failed ('+xhr.status+') — check your token','err'); }
+  var t = getToken();
+  if(!t){ showStatus('token-status','No token set yet','err'); return; }
+  showStatus('token-status','Testing…','ok');
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', GH_API, true);
+  xhr.setRequestHeader('Authorization', 'token ' + t);
+  xhr.setRequestHeader('Accept', 'application/vnd.github+json');
+  xhr.onload = function(){
+    if(xhr.status === 200){
+      showStatus('token-status','✅ Connected — token works correctly','ok');
+      loadCloudInfo(JSON.parse(xhr.responseText));
+    } else {
+      showStatus('token-status','❌ Failed (' + xhr.status + ') — check the token and try again','err');
+    }
   };
-  xhr.onerror=function(){ showStatus('status','❌ Network error','err'); };
+  xhr.onerror = function(){ showStatus('token-status','❌ Network error','err'); };
   xhr.send();
 }
 
+function loadCloudInfo(resp){
+  try{
+    var data = JSON.parse(atob(resp.content.replace(/\n/g,'')));
+    document.getElementById('ci-date').textContent   = data.lastSaved ? data.lastSaved.slice(0,16).replace('T',' ') : 'Never';
+    document.getElementById('ci-device').textContent = data.device || '—';
+    document.getElementById('ci-count').textContent  = Object.keys(data.scores||{}).length + ' entries';
+  } catch(e){}
+}
+
 function getAllLocalScores(){
-  var s={};
-  for(var i=0;i<localStorage.length;i++){
-    var k=localStorage.key(i);
-    if(k&&k.indexOf('icse_w')===0){ try{s[k]=JSON.parse(localStorage.getItem(k));}catch(e){} }
+  var s = {};
+  for(var i = 0; i < localStorage.length; i++){
+    var k = localStorage.key(i);
+    if(k && k.indexOf('icse_w') === 0){
+      try{ s[k] = JSON.parse(localStorage.getItem(k)); }catch(e){}
+    }
   }
   return s;
 }
 
 function doSync(){
-  var t=getToken();
-  if(!t){ showStatus('sync-status','No token set','err'); return; }
-  showStatus('sync-status','Syncing…','ok');
-  var xhr=new XMLHttpRequest();
-  xhr.open('GET',GH_API,true);
-  xhr.setRequestHeader('Authorization','token '+t);
-  xhr.setRequestHeader('Accept','application/vnd.github+json');
-  xhr.onload=function(){
-    if(xhr.status!==200){ showStatus('sync-status','Failed to read from GitHub ('+xhr.status+')','err'); return; }
-    var resp=JSON.parse(xhr.responseText), sha=resp.sha, remote={};
-    try{ remote=JSON.parse(atob(resp.content.replace(/\n/g,''))).scores||{}; }catch(e){}
-    var local=getAllLocalScores(), merged={};
-    // merge
-    var all=Object.assign({},remote);
+  var t = getToken();
+  if(!t){ showStatus('sync-status','No token set — add your token above first','err'); return; }
+  showStatus('sync-status','Reading from cloud…','ok');
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', GH_API, true);
+  xhr.setRequestHeader('Authorization', 'token ' + t);
+  xhr.setRequestHeader('Accept', 'application/vnd.github+json');
+  xhr.onload = function(){
+    if(xhr.status !== 200){ showStatus('sync-status','❌ Could not read from GitHub (' + xhr.status + ')','err'); return; }
+    var resp = JSON.parse(xhr.responseText), sha = resp.sha, remote = {};
+    try{ remote = JSON.parse(atob(resp.content.replace(/\n/g,''))).scores || {}; }catch(e){}
+    var local = getAllLocalScores(), merged = JSON.parse(JSON.stringify(remote));
     Object.keys(local).forEach(function(k){
-      var l=local[k],r=all[k];
-      if(!r){all[k]=l;return;}
-      all[k]={attempts:(l.attempts||0)+(r.attempts||0),bestScore:Math.max(l.bestScore||0,r.bestScore||0),
-               totalQ:l.totalQ||r.totalQ,lastDate:l.lastDate>r.lastDate?l.lastDate:r.lastDate,label:l.label||r.label};
+      var l = local[k], r = merged[k];
+      if(!r){ merged[k] = l; return; }
+      merged[k] = {
+        attempts:  (l.attempts||0) + (r.attempts||0),
+        bestScore: Math.max(l.bestScore||0, r.bestScore||0),
+        totalQ:    l.totalQ || r.totalQ,
+        lastDate:  l.lastDate > r.lastDate ? l.lastDate : r.lastDate,
+        label:     l.label || r.label
+      };
     });
-    // apply to local
-    Object.keys(all).forEach(function(k){ localStorage.setItem(k,JSON.stringify(all[k])); });
-    // push to github
-    var payload=JSON.stringify({version:1,lastSaved:new Date().toISOString(),device:navigator.userAgent.indexOf('iPad')>-1?'iPad':'Desktop',scores:all},null,2);
-    var put=new XMLHttpRequest();
-    put.open('PUT',GH_API,true);
-    put.setRequestHeader('Authorization','token '+t);
-    put.setRequestHeader('Content-Type','application/json');
-    put.setRequestHeader('Accept','application/vnd.github+json');
-    put.onload=function(){
-      if(put.status===200||put.status===201){ showStatus('sync-status','✅ Synced successfully — '+Object.keys(all).length+' scores saved','ok'); }
-      else{ showStatus('sync-status','❌ Push failed ('+put.status+')','err'); }
+    Object.keys(merged).forEach(function(k){ localStorage.setItem(k, JSON.stringify(merged[k])); });
+    showStatus('sync-status','Saving to cloud…','ok');
+    var payload = JSON.stringify({
+      version: 1, lastSaved: new Date().toISOString(),
+      device: navigator.userAgent.indexOf('iPad') > -1 ? 'iPad' : 'Desktop',
+      scores: merged
+    }, null, 2);
+    var put = new XMLHttpRequest();
+    put.open('PUT', GH_API, true);
+    put.setRequestHeader('Authorization', 'token ' + t);
+    put.setRequestHeader('Content-Type', 'application/json');
+    put.setRequestHeader('Accept', 'application/vnd.github+json');
+    put.onload = function(){
+      if(put.status === 200 || put.status === 201){
+        var n = Object.keys(merged).length;
+        showStatus('sync-status','✅ Synced — ' + n + ' score' + (n===1?'':'s') + ' saved to cloud','ok');
+        loadCloudInfo({content: btoa(unescape(encodeURIComponent(JSON.stringify({
+          lastSaved: new Date().toISOString(), device: navigator.userAgent.indexOf('iPad')>-1?'iPad':'Desktop', scores: merged
+        }))))});
+      } else {
+        showStatus('sync-status','❌ Push failed (' + put.status + ')','err');
+      }
     };
-    put.onerror=function(){ showStatus('sync-status','❌ Network error','err'); };
-    put.send(JSON.stringify({message:'Manual sync '+new Date().toISOString().slice(0,10),content:btoa(unescape(encodeURIComponent(payload))),sha:sha}));
+    put.onerror = function(){ showStatus('sync-status','❌ Network error','err'); };
+    put.send(JSON.stringify({
+      message: 'Sync ' + new Date().toISOString().slice(0,10),
+      content: btoa(unescape(encodeURIComponent(payload))),
+      sha: sha
+    }));
   };
-  xhr.onerror=function(){ showStatus('sync-status','❌ Network error','err'); };
+  xhr.onerror = function(){ showStatus('sync-status','❌ Network error','err'); };
   xhr.send();
 }
 
-function showStatus(id,msg,cls){
-  var el=document.getElementById(id);
-  el.textContent=msg; el.className='status '+cls;
+// Load cloud info on open if token exists
+updateBanner();
+if(getToken()){
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', GH_API, true);
+  xhr.setRequestHeader('Authorization', 'token ' + getToken());
+  xhr.setRequestHeader('Accept', 'application/vnd.github+json');
+  xhr.onload = function(){ if(xhr.status===200) loadCloudInfo(JSON.parse(xhr.responseText)); };
+  xhr.send();
 }
-
-updateStatus();
 </script>
 </body>
 </html>
