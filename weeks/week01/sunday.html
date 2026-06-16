@@ -64,13 +64,13 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   <div class="logo">📅</div>
   <div><h1>Sunday · Week 1</h1><p>15 Jun – 21 Jun 2026 &nbsp;·&nbsp; Class 6 ICSE</p></div>
 </header>
-<div class="tabs"><button class="tab active" id="tab-k" onclick="switchTab('k',['k','f','gh','mx'])">🗣️ Kannada</button><button class="tab" id="tab-f" onclick="switchTab('f',['k','f','gh','mx'])">🇫🇷 French</button><button class="tab" id="tab-gh" onclick="switchTab('gh',['k','f','gh','mx'])">🌍🏛️ Geo + History</button><button class="tab" id="tab-mx" onclick="switchTab('mx',['k','f','gh','mx'])">🧠 Mixed Quiz</button></div>
-<div id="session-status" style="margin:0.75rem 1rem 0;padding:0.75rem 1rem;background:#fff;border-radius:14px;box-shadow:0 1px 4px rgba(0,0,0,0.06)">
+<div class="tabs"><button class="tab active" id="tab-k" onclick="switchTab('k')">🗣️ Kannada</button><button class="tab" id="tab-f" onclick="switchTab('f')">🇫🇷 French</button><button class="tab" id="tab-gh" onclick="switchTab('gh')">🌍🏛️ Geo + History</button><button class="tab" id="tab-mx" onclick="switchTab('mx')">🧠 Mixed Quiz</button></div>
+<div class="progress-bar" style="margin:0.75rem 1rem 0;padding:0.75rem 1rem;background:#fff;border-radius:14px;box-shadow:0 1px 4px rgba(0,0,0,0.06)">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
     <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9CA3AF">Session progress</span>
-    <span id="day-status-badge" style="font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;background:#F3F4F6;color:#9CA3AF">Not started</span>
+    <span id="status-badge" style="font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;background:#F3F4F6;color:#9CA3AF">Not started</span>
   </div>
-  <div id="subject-scores" style="display:flex;flex-wrap:wrap;gap:6px"></div>
+  <div id="subject-pills" style="display:flex;flex-wrap:wrap;gap:6px"></div>
 </div>
 <div id="sec-k" class="sec active"><div class="did-you-know">
   <div class="dyk-eye">✨ Did you know?</div>
@@ -179,79 +179,75 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 </div></div>
 <script>
 
-var THRESHOLD = 0.6;
-function lsKey(week,ds,tid){return 'icse_w'+String(week).padStart(2,'0')+'_'+ds+'_'+tid;}
-function saveScore(week,ds,tid,score,total,label){
-  var key=lsKey(week,ds,tid),existing={};
-  try{existing=JSON.parse(localStorage.getItem(key)||'{}');}catch(e){}
-  var data={attempts:(existing.attempts||0)+1,bestScore:Math.max(existing.bestScore||0,score),
-            totalQ:total,lastDate:new Date().toISOString().slice(0,10),label:label};
-  localStorage.setItem(key,JSON.stringify(data));
+// ── Storage ───────────────────────────────────────────────────────────────────
+var SUBJECTS = [{"id": "k", "label": "Kannada", "total": 3}, {"id": "f", "label": "French", "total": 3}, {"id": "gh", "label": "Geo+History", "total": 3}, {"id": "mx", "label": "Mixed Quiz", "total": 5}];
+
+function saveScore(id, score, total, label){
+  var key='icse_w01_sun_'+id, ex={};
+  try{ex=JSON.parse(localStorage.getItem(key)||'{}');}catch(e){}
+  localStorage.setItem(key, JSON.stringify({
+    attempts:(ex.attempts||0)+1, bestScore:Math.max(ex.bestScore||0,score),
+    totalQ:total, lastDate:new Date().toISOString().slice(0,10), label:label
+  }));
 }
-function getScore(week,ds,tid){
-  try{return JSON.parse(localStorage.getItem(lsKey(week,ds,tid))||'null');}catch(e){return null;}
+
+function getScore(id){
+  try{return JSON.parse(localStorage.getItem('icse_w01_sun_'+id)||'null');}catch(e){return null;}
 }
-function isDayDone(week,ds,subjects){
-  return subjects.every(function(s){
-    var d=getScore(week,ds,s.id);
-    return d&&d.totalQ>0&&(d.bestScore/d.totalQ)>=THRESHOLD;
-  });
-}
-function updateDayStatus(week,ds,subs){
-  var badge=document.getElementById('day-status-badge');
-  var scoresDiv=document.getElementById('subject-scores');
-  if(!badge||!scoresDiv)return;
-  scoresDiv.innerHTML='';
-  var allDone=true,anyAttempted=false;
-  subs.forEach(function(s){
-    var d=getScore(week,ds,s.id);
+
+function refreshProgress(){
+  var badge=document.getElementById('status-badge');
+  var pills=document.getElementById('subject-pills');
+  if(!badge||!pills)return;
+  pills.innerHTML='';
+  var done=0,attempted=0;
+  SUBJECTS.forEach(function(s){
+    var d=getScore(s.id);
     var pill=document.createElement('span');
-    pill.style.cssText='font-size:12px;padding:4px 10px;border-radius:99px;font-weight:500';
+    pill.style.cssText='font-size:12px;padding:4px 10px;border-radius:99px;font-weight:500;display:inline-block';
     if(!d){
       pill.textContent=s.label+': —';
       pill.style.background='#F3F4F6';pill.style.color='#9CA3AF';
-      allDone=false;
     }else{
-      anyAttempted=true;
+      attempted++;
       var pct=Math.round((d.bestScore/d.totalQ)*100),ok=pct>=60;
-      if(!ok)allDone=false;
+      if(ok)done++;
       pill.textContent=s.label+': '+d.bestScore+'/'+d.totalQ+' ('+pct+'%)'+(ok?' ✓':'');
       pill.style.background=ok?'#ECFDF5':'#FEF2F2';
       pill.style.color=ok?'#065F46':'#991B1B';
     }
-    scoresDiv.appendChild(pill);
+    pills.appendChild(pill);
   });
-  if(!anyAttempted){badge.textContent='Not started';badge.style.background='#F3F4F6';badge.style.color='#9CA3AF';}
-  else if(allDone){badge.textContent='✅ Done';badge.style.background='#ECFDF5';badge.style.color='#065F46';}
+  if(attempted===0){badge.textContent='Not started';badge.style.background='#F3F4F6';badge.style.color='#9CA3AF';}
+  else if(done===SUBJECTS.length){badge.textContent='✅ Done';badge.style.background='#ECFDF5';badge.style.color='#065F46';}
   else{badge.textContent='🟡 In progress';badge.style.background='#FFFBEB';badge.style.color='#92400E';}
 }
 
-var _WEEK=1, _DS='sun', _SUBS=[{"id": "k", "label": "Kannada", "total": 3}, {"id": "f", "label": "French", "total": 3}, {"id": "gh", "label": "Geo+History", "total": 3}, {"id": "mx", "label": "Mixed Quiz", "total": 5}];
-function quiz(id,qs,label){
-  var i=0,sc=0,ans=false;
+function quiz(id, qs) {
+  var i=0, sc=0, ans=false;
   function el(x){return document.getElementById(id+'-'+x);}
   function render(){
     if(i>=qs.length){finish();return;}
-    var q=qs[i];ans=false;
+    var q=qs[i]; ans=false;
     el('topic').textContent=q.t||'';
     el('q').textContent=q.q;
     el('qnum').textContent=(i+1)+' / '+qs.length;
     el('score').textContent=sc;
     el('prog').style.width=Math.round((i/qs.length)*100)+'%';
     el('pct').textContent=Math.round((i/qs.length)*100)+'%';
-    var fb=el('fb');fb.className='fb';fb.textContent='';
+    var fb=el('fb'); fb.className='fb'; fb.textContent='';
     el('nxt').className='nxt';
-    var og=el('opts');og.innerHTML='';
+    var og=el('opts'); og.innerHTML='';
     q.o.forEach(function(o,j){
       var b=document.createElement('button');
-      b.className='opt';b.textContent=o;
+      b.className='opt'; b.textContent=o;
       b.onclick=function(){pick(j);};
       og.appendChild(b);
     });
   }
   function pick(j){
-    if(ans)return;ans=true;
-    var q=qs[i],fb=el('fb');
+    if(ans)return; ans=true;
+    var q=qs[i], fb=el('fb');
     document.querySelectorAll('#'+id+'-opts .opt').forEach(function(b,k){
       if(k===q.a)b.classList.add('correct');
       else if(k===j&&j!==q.a)b.classList.add('wrong');
@@ -261,15 +257,12 @@ function quiz(id,qs,label){
     el('nxt').className='nxt show';
   }
   function finish(){
-    saveScore(_WEEK,_DS,id,sc,qs.length,label);
     document.getElementById(id+'-card').style.display='none';
     document.getElementById(id+'-done').style.display='block';
-    el('prog').style.width='100%';el('pct').textContent='100%';
+    el('prog').style.width='100%'; el('pct').textContent='100%';
     el('fscore').textContent=sc+' / '+qs.length;
-    var pct=Math.round((sc/qs.length)*100);
-    var r=sc===qs.length?['🌟','Perfect!']:pct>=60?['🎉','Well done! 60%+ achieved ✓']:['💪','Need 60%+ to mark as Done — try again!'];
-    el('ficon').textContent=r[0];el('fmsg').textContent=r[1];
-    updateDayStatus(_WEEK,_DS,_SUBS);
+    var r=sc===qs.length?['🌟','Perfect! Amazing start!']:sc>=Math.ceil(qs.length*0.6)?['🎉','Great job!']:['💪','Good try — review and retry!'];
+    el('ficon').textContent=r[0]; el('fmsg').textContent=r[1];
   }
   el('nxt').onclick=function(){i++;render();};
   el('retry').onclick=function(){
@@ -280,13 +273,16 @@ function quiz(id,qs,label){
   };
   render();
 }
-function switchTab(t,all){
+function switchTab(t){
+  var all=["k", "f", "gh", "mx"];
   all.forEach(function(x){
     document.getElementById('tab-'+x).classList.toggle('active',x===t);
     document.getElementById('sec-'+x).classList.toggle('active',x===t);
   });
 }
-updateDayStatus(_WEEK,_DS,_SUBS);
-</script>
+quiz('k',[{"t": "Vocabulary", "q": "'\u0ca8\u0cc0\u0cb0\u0cc1' (N\u012bru) means?", "o": ["Fire", "Air", "Water", "Earth"], "a": 2, "e": "\u0ca8\u0cc0\u0cb0\u0cc1 = Water. Essential for life \u2014 and a great first Kannada word to know!"}, {"t": "Vocabulary", "q": "'\u0c85\u0cae\u0ccd\u0cae' (Amma) means?", "o": ["Father", "Sister", "Mother", "Friend"], "a": 2, "e": "\u0c85\u0cae\u0ccd\u0cae = Mother. '\u0c85\u0caa\u0ccd\u0caa' (Appa) = Father."}, {"t": "Vocabulary", "q": "'\u0cae\u0ca8\u0cc6' (Mane) means?", "o": ["School", "Market", "House", "Garden"], "a": 2, "e": "\u0cae\u0ca8\u0cc6 = House / Home. You can say '\u0ca8\u0cae\u0ccd\u0cae \u0cae\u0ca8\u0cc6' = 'Our home'."}]);
+quiz('f',[{"t": "French", "q": "How do you say 'Good evening' in French?", "o": ["Bonjour", "Merci", "Bonsoir", "Au revoir"], "a": 2, "e": "Bonsoir = Good evening. Use it after 6 PM. Bonjour is for daytime greetings."}, {"t": "French", "q": "'Merci beaucoup' means?", "o": ["Good morning", "Thank you very much", "Please help me", "See you later"], "a": 1, "e": "Merci = Thank you, beaucoup = very much. So Merci beaucoup = Thank you very much!"}, {"t": "French", "q": "How do you say 3 in French?", "o": ["Un", "Deux", "Trois", "Quatre"], "a": 2, "e": "Trois = 3. The number sequence: Un(1), Deux(2), Trois(3), Quatre(4), Cinq(5)."}]);
+quiz('gh',[{"t": "Geography", "q": "The Tropic of Cancer passes through which Indian city?", "o": ["Mumbai", "Bengaluru", "Bhopal", "Chennai"], "a": 2, "e": "The Tropic of Cancer (23.5\u00b0N) passes through Bhopal, Madhya Pradesh, among other Indian cities."}, {"t": "History", "q": "Which ancient text is considered one of the world's earliest books on statecraft?", "o": ["Ramayana", "Arthashastra", "Mahabharata", "Rigveda"], "a": 1, "e": "The Arthashastra, written by Kautilya (Chanakya) around 300 BCE, is one of the world's earliest works on economics, politics and statecraft."}, {"t": "Geography", "q": "Which is the longest river in India?", "o": ["Yamuna", "Brahmaputra", "Ganga", "Godavari"], "a": 2, "e": "The Ganga (2,525 km) is the longest river in India. It is also considered sacred in Hinduism."}]);
+quiz('mx',[{"t": "Maths", "q": "What is 15% of 200?", "o": ["25", "30", "35", "40"], "a": 1, "e": "15% of 200 = (15/100) \u00d7 200 = 30."}, {"t": "Physics", "q": "The SI unit of time is?", "o": ["Minute", "Hour", "Second", "Millisecond"], "a": 2, "e": "The second (s) is the SI (International System) base unit of time."}, {"t": "English", "q": "'Quickly' is which part of speech?", "o": ["Noun", "Verb", "Adjective", "Adverb"], "a": 3, "e": "'Quickly' is an adverb \u2014 it describes how an action is done. Adverbs often end in -ly."}, {"t": "Chemistry", "q": "Water boils at how many degrees Celsius?", "o": ["90\u00b0C", "95\u00b0C", "100\u00b0C", "110\u00b0C"], "a": 2, "e": "Water boils at 100\u00b0C at sea level (standard atmospheric pressure)."}, {"t": "Biology", "q": "Photosynthesis requires which gas from the air?", "o": ["Oxygen", "Carbon dioxide", "Nitrogen", "Argon"], "a": 1, "e": "Plants take in CO\u2082 during photosynthesis and release O\u2082 \u2014 the opposite of what animals do during respiration!"}]);</script>
 </body>
 </html>

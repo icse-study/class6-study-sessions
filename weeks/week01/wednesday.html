@@ -64,13 +64,13 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   <div class="logo">📅</div>
   <div><h1>Wednesday · Week 1</h1><p>15 Jun – 21 Jun 2026 &nbsp;·&nbsp; Class 6 ICSE</p></div>
 </header>
-<div class="tabs"><button class="tab active" id="tab-g" onclick="switchTab('g',['g','e'])">🌍 Geography</button><button class="tab" id="tab-e" onclick="switchTab('e',['g','e'])">✍️ English Grammar</button></div>
-<div id="session-status" style="margin:0.75rem 1rem 0;padding:0.75rem 1rem;background:#fff;border-radius:14px;box-shadow:0 1px 4px rgba(0,0,0,0.06)">
+<div class="tabs"><button class="tab active" id="tab-g" onclick="switchTab('g')">🌍 Geography</button><button class="tab" id="tab-e" onclick="switchTab('e')">✍️ English Grammar</button></div>
+<div class="progress-bar" style="margin:0.75rem 1rem 0;padding:0.75rem 1rem;background:#fff;border-radius:14px;box-shadow:0 1px 4px rgba(0,0,0,0.06)">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
     <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9CA3AF">Session progress</span>
-    <span id="day-status-badge" style="font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;background:#F3F4F6;color:#9CA3AF">Not started</span>
+    <span id="status-badge" style="font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;background:#F3F4F6;color:#9CA3AF">Not started</span>
   </div>
-  <div id="subject-scores" style="display:flex;flex-wrap:wrap;gap:6px"></div>
+  <div id="subject-pills" style="display:flex;flex-wrap:wrap;gap:6px"></div>
 </div>
 <div id="sec-g" class="sec active"><div class="did-you-know">
   <div class="dyk-eye">✨ Did you know?</div>
@@ -127,79 +127,75 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 </div></div>
 <script>
 
-var THRESHOLD = 0.6;
-function lsKey(week,ds,tid){return 'icse_w'+String(week).padStart(2,'0')+'_'+ds+'_'+tid;}
-function saveScore(week,ds,tid,score,total,label){
-  var key=lsKey(week,ds,tid),existing={};
-  try{existing=JSON.parse(localStorage.getItem(key)||'{}');}catch(e){}
-  var data={attempts:(existing.attempts||0)+1,bestScore:Math.max(existing.bestScore||0,score),
-            totalQ:total,lastDate:new Date().toISOString().slice(0,10),label:label};
-  localStorage.setItem(key,JSON.stringify(data));
+// ── Storage ───────────────────────────────────────────────────────────────────
+var SUBJECTS = [{"id": "g", "label": "Geography", "total": 5}, {"id": "e", "label": "English Grammar", "total": 4}];
+
+function saveScore(id, score, total, label){
+  var key='icse_w01_wed_'+id, ex={};
+  try{ex=JSON.parse(localStorage.getItem(key)||'{}');}catch(e){}
+  localStorage.setItem(key, JSON.stringify({
+    attempts:(ex.attempts||0)+1, bestScore:Math.max(ex.bestScore||0,score),
+    totalQ:total, lastDate:new Date().toISOString().slice(0,10), label:label
+  }));
 }
-function getScore(week,ds,tid){
-  try{return JSON.parse(localStorage.getItem(lsKey(week,ds,tid))||'null');}catch(e){return null;}
+
+function getScore(id){
+  try{return JSON.parse(localStorage.getItem('icse_w01_wed_'+id)||'null');}catch(e){return null;}
 }
-function isDayDone(week,ds,subjects){
-  return subjects.every(function(s){
-    var d=getScore(week,ds,s.id);
-    return d&&d.totalQ>0&&(d.bestScore/d.totalQ)>=THRESHOLD;
-  });
-}
-function updateDayStatus(week,ds,subs){
-  var badge=document.getElementById('day-status-badge');
-  var scoresDiv=document.getElementById('subject-scores');
-  if(!badge||!scoresDiv)return;
-  scoresDiv.innerHTML='';
-  var allDone=true,anyAttempted=false;
-  subs.forEach(function(s){
-    var d=getScore(week,ds,s.id);
+
+function refreshProgress(){
+  var badge=document.getElementById('status-badge');
+  var pills=document.getElementById('subject-pills');
+  if(!badge||!pills)return;
+  pills.innerHTML='';
+  var done=0,attempted=0;
+  SUBJECTS.forEach(function(s){
+    var d=getScore(s.id);
     var pill=document.createElement('span');
-    pill.style.cssText='font-size:12px;padding:4px 10px;border-radius:99px;font-weight:500';
+    pill.style.cssText='font-size:12px;padding:4px 10px;border-radius:99px;font-weight:500;display:inline-block';
     if(!d){
       pill.textContent=s.label+': —';
       pill.style.background='#F3F4F6';pill.style.color='#9CA3AF';
-      allDone=false;
     }else{
-      anyAttempted=true;
+      attempted++;
       var pct=Math.round((d.bestScore/d.totalQ)*100),ok=pct>=60;
-      if(!ok)allDone=false;
+      if(ok)done++;
       pill.textContent=s.label+': '+d.bestScore+'/'+d.totalQ+' ('+pct+'%)'+(ok?' ✓':'');
       pill.style.background=ok?'#ECFDF5':'#FEF2F2';
       pill.style.color=ok?'#065F46':'#991B1B';
     }
-    scoresDiv.appendChild(pill);
+    pills.appendChild(pill);
   });
-  if(!anyAttempted){badge.textContent='Not started';badge.style.background='#F3F4F6';badge.style.color='#9CA3AF';}
-  else if(allDone){badge.textContent='✅ Done';badge.style.background='#ECFDF5';badge.style.color='#065F46';}
+  if(attempted===0){badge.textContent='Not started';badge.style.background='#F3F4F6';badge.style.color='#9CA3AF';}
+  else if(done===SUBJECTS.length){badge.textContent='✅ Done';badge.style.background='#ECFDF5';badge.style.color='#065F46';}
   else{badge.textContent='🟡 In progress';badge.style.background='#FFFBEB';badge.style.color='#92400E';}
 }
 
-var _WEEK=1, _DS='wed', _SUBS=[{"id": "g", "label": "Geography", "total": 5}, {"id": "e", "label": "English Grammar", "total": 4}];
-function quiz(id,qs,label){
-  var i=0,sc=0,ans=false;
+function quiz(id, qs) {
+  var i=0, sc=0, ans=false;
   function el(x){return document.getElementById(id+'-'+x);}
   function render(){
     if(i>=qs.length){finish();return;}
-    var q=qs[i];ans=false;
+    var q=qs[i]; ans=false;
     el('topic').textContent=q.t||'';
     el('q').textContent=q.q;
     el('qnum').textContent=(i+1)+' / '+qs.length;
     el('score').textContent=sc;
     el('prog').style.width=Math.round((i/qs.length)*100)+'%';
     el('pct').textContent=Math.round((i/qs.length)*100)+'%';
-    var fb=el('fb');fb.className='fb';fb.textContent='';
+    var fb=el('fb'); fb.className='fb'; fb.textContent='';
     el('nxt').className='nxt';
-    var og=el('opts');og.innerHTML='';
+    var og=el('opts'); og.innerHTML='';
     q.o.forEach(function(o,j){
       var b=document.createElement('button');
-      b.className='opt';b.textContent=o;
+      b.className='opt'; b.textContent=o;
       b.onclick=function(){pick(j);};
       og.appendChild(b);
     });
   }
   function pick(j){
-    if(ans)return;ans=true;
-    var q=qs[i],fb=el('fb');
+    if(ans)return; ans=true;
+    var q=qs[i], fb=el('fb');
     document.querySelectorAll('#'+id+'-opts .opt').forEach(function(b,k){
       if(k===q.a)b.classList.add('correct');
       else if(k===j&&j!==q.a)b.classList.add('wrong');
@@ -209,15 +205,12 @@ function quiz(id,qs,label){
     el('nxt').className='nxt show';
   }
   function finish(){
-    saveScore(_WEEK,_DS,id,sc,qs.length,label);
     document.getElementById(id+'-card').style.display='none';
     document.getElementById(id+'-done').style.display='block';
-    el('prog').style.width='100%';el('pct').textContent='100%';
+    el('prog').style.width='100%'; el('pct').textContent='100%';
     el('fscore').textContent=sc+' / '+qs.length;
-    var pct=Math.round((sc/qs.length)*100);
-    var r=sc===qs.length?['🌟','Perfect!']:pct>=60?['🎉','Well done! 60%+ achieved ✓']:['💪','Need 60%+ to mark as Done — try again!'];
-    el('ficon').textContent=r[0];el('fmsg').textContent=r[1];
-    updateDayStatus(_WEEK,_DS,_SUBS);
+    var r=sc===qs.length?['🌟','Perfect! Amazing start!']:sc>=Math.ceil(qs.length*0.6)?['🎉','Great job!']:['💪','Good try — review and retry!'];
+    el('ficon').textContent=r[0]; el('fmsg').textContent=r[1];
   }
   el('nxt').onclick=function(){i++;render();};
   el('retry').onclick=function(){
@@ -228,13 +221,14 @@ function quiz(id,qs,label){
   };
   render();
 }
-function switchTab(t,all){
+function switchTab(t){
+  var all=["g", "e"];
   all.forEach(function(x){
     document.getElementById('tab-'+x).classList.toggle('active',x===t);
     document.getElementById('sec-'+x).classList.toggle('active',x===t);
   });
 }
-updateDayStatus(_WEEK,_DS,_SUBS);
-</script>
+quiz('g',[{"t": "The Earth", "q": "The Earth is shaped like?", "o": ["A perfect sphere", "A flat disc", "An oblate spheroid", "A cube"], "a": 2, "e": "The Earth is an oblate spheroid \u2014 slightly flattened at the poles and bulging at the equator."}, {"t": "Maps", "q": "What does a compass show?", "o": ["Distance", "Direction", "Height", "Temperature"], "a": 1, "e": "A compass shows direction \u2014 North, South, East, and West (NEWS!)."}, {"t": "Continents", "q": "How many continents are there on Earth?", "o": ["5", "6", "7", "8"], "a": 2, "e": "There are 7 continents: Asia, Africa, North America, South America, Europe, Australia, Antarctica."}, {"t": "India", "q": "India is located in which continent?", "o": ["Africa", "Europe", "Asia", "Australia"], "a": 2, "e": "India is in Asia \u2014 the largest continent. It occupies most of South Asia."}, {"t": "Oceans", "q": "Which is the largest ocean?", "o": ["Atlantic", "Indian", "Arctic", "Pacific"], "a": 3, "e": "The Pacific Ocean is the largest and deepest ocean, covering about one-third of Earth's surface!"}]);
+quiz('e',[{"t": "Nouns", "q": "Which is a proper noun?", "o": ["city", "river", "Bengaluru", "mountain"], "a": 2, "e": "Bengaluru is a proper noun \u2014 it names a specific city. Proper nouns always start with a capital letter."}, {"t": "Adjectives", "q": "Which word is an adjective in: 'The tall boy ran.'?", "o": ["The", "tall", "boy", "ran"], "a": 1, "e": "'tall' is an adjective \u2014 it describes the boy. Adjectives describe nouns."}, {"t": "Pronouns", "q": "Which is a pronoun?", "o": ["book", "run", "she", "quickly"], "a": 2, "e": "'she' is a pronoun \u2014 it replaces a noun (a person's name). Other pronouns: he, they, it, we."}, {"t": "Sentences", "q": "A sentence must always have?", "o": ["Only a noun", "Only a verb", "A subject and a verb", "An adjective"], "a": 2, "e": "Every complete sentence needs a subject (who/what) and a verb (action/state). Example: 'Birds fly.'"}]);</script>
 </body>
 </html>

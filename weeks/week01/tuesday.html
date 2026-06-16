@@ -15,17 +15,13 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 .tabs{display:flex;background:#fff;border-bottom:1px solid #E5E7EB;position:sticky;top:0;z-index:10;box-shadow:0 1px 4px rgba(0,0,0,0.06);overflow-x:auto}
 .tab{flex-shrink:0;padding:13px 14px;border:none;background:transparent;font-size:13px;font-weight:500;color:#9CA3AF;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
 .tab.active{color:#4F46E5;border-bottom-color:#4F46E5}
-.sec{display:none;padding:1rem 1rem 3rem;max-width:680px;margin:0 auto}
+.sec{display:none;padding:1rem 1rem 3rem;max-width:600px;margin:0 auto}
 .sec.active{display:block}
-.dyk{background:linear-gradient(135deg,#EEF2FF,#F5F3FF);border:1px solid #C7D2FE;border-radius:18px;padding:1.25rem;margin-bottom:1rem}
+.did-you-know{background:linear-gradient(135deg,#EEF2FF,#F5F3FF);border:1px solid #C7D2FE;border-radius:18px;padding:1.25rem;margin-bottom:1rem}
 .dyk-eye{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:#6366F1;margin-bottom:6px}
 .dyk-title{font-size:16px;font-weight:700;color:#3730A3;margin-bottom:8px}
 .dyk-body{font-size:14px;color:#374151;line-height:1.7}
 .formula{background:#fff;border:2px solid #6366F1;border-radius:12px;padding:12px 16px;margin:10px 0;text-align:center;font-size:16px;font-weight:700;color:#4338CA}
-.intro-card{background:#fff;border-radius:18px;padding:1.25rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:1rem}
-.intro-card h3{font-size:15px;font-weight:700;color:#111827;margin-bottom:8px}
-.intro-card p,.intro-card li{font-size:14px;color:#374151;line-height:1.7}
-.intro-card ul{margin:8px 0 0 16px}
 .q-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9CA3AF;margin:1.25rem 0 0.6rem}
 .score-row{display:flex;gap:10px;margin-bottom:1rem}
 .sc{flex:1;background:#fff;border-radius:12px;padding:10px 14px;box-shadow:0 1px 3px rgba(0,0,0,0.07)}
@@ -55,318 +51,158 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 .done-score{font-size:34px;font-weight:800;color:#4F46E5;margin:14px 0}
 .done-sub{font-size:14px;color:#6B7280;line-height:1.6}
 .retry{display:inline-block;margin-top:14px;padding:13px 26px;border-radius:14px;border:2px solid #4F46E5;background:transparent;color:#4F46E5;font-size:14px;font-weight:600;cursor:pointer}
-.progress-bar{margin:0.75rem 1rem 0;padding:0.75rem 1rem;background:#fff;border-radius:14px;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
-.progress-bar-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
-.progress-bar-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9CA3AF}
-.status-badge{font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;background:#F3F4F6;color:#9CA3AF}
-.subject-pills{display:flex;flex-wrap:wrap;gap:6px}
+.intro-card{background:#fff;border-radius:18px;padding:1.25rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:1rem}
+.intro-card h3{font-size:15px;font-weight:700;color:#111827;margin-bottom:8px}
+.intro-card p,.intro-card li{font-size:14px;color:#374151;line-height:1.7}
+.intro-card ul{margin:8px 0 0 16px}
+.week-badge{display:inline-block;background:#F0FDF4;color:#15803D;font-size:12px;font-weight:600;padding:4px 12px;border-radius:99px;margin-bottom:1rem}
 </style>
 </head>
 <body>
 <a class="back" href="index.html">← Week 1</a>
 <header>
   <div class="logo">📅</div>
-  <div><h1>Tuesday · Week 1</h1><p>15 Jun – 21 Jun 2026 · Class 6 ICSE</p></div>
+  <div><h1>Tuesday · Week 1</h1><p>15 Jun – 21 Jun 2026 &nbsp;·&nbsp; Class 6 ICSE</p></div>
 </header>
-<div class="tabs">
-  <button class="tab active" id="tab-m" onclick="switchTab('m')">➗ Maths</button>
-  <button class="tab" id="tab-p" onclick="switchTab('p')">⚡ Physics</button>
-  <button class="tab" id="tab-c" onclick="switchTab('c')">💻 CS / Python</button>
+<div class="tabs"><button class="tab active" id="tab-m" onclick="switchTab('m',['m','p','c'])">➗ Maths</button><button class="tab" id="tab-p" onclick="switchTab('p',['m','p','c'])">⚡ Physics</button><button class="tab" id="tab-c" onclick="switchTab('c',['m','p','c'])">💻 CS / Python</button></div>
+<div id="sec-m" class="sec active"><div class="did-you-know">
+  <div class="dyk-eye">✨ Did you know?</div>
+  <div class="dyk-title">🔢 The Indian Number System</div>
+  <div class="dyk-body">India uses a unique system — lakhs and crores instead of millions and billions. 1 lakh = 1,00,000 and 1 crore = 1,00,00,000!</div>
+</div><div class="formula">1 Crore = 100 Lakhs = 10,000,000</div><div class="q-label">Warm-up questions</div>
+<div class="score-row">
+  <div class="sc"><label>Question</label><span id="m-qnum">1 / 4</span></div>
+  <div class="sc"><label>Score</label><span id="m-score">0</span></div>
 </div>
-<div class="progress-bar">
-  <div class="progress-bar-top">
-    <span class="progress-bar-label">Session progress</span>
-    <span class="status-badge" id="status-badge">Not started</span>
-  </div>
-  <div class="subject-pills" id="subject-pills"></div>
+<div class="prog-row">
+  <div class="prog-track"><div class="prog-fill" id="m-prog" style="width:0%"></div></div>
+  <div class="prog-pct" id="m-pct">0%</div>
 </div>
-
-<!-- MATHS TAB -->
-<div id="sec-m" class="sec active">
-  <div class="dyk">
-    <div class="dyk-eye">✨ Did you know?</div>
-    <div class="dyk-title">🔢 The Indian Number System</div>
-    <div class="dyk-body">India uses a unique system — lakhs and crores instead of millions and billions. 1 lakh = 1,00,000 and 1 crore = 1,00,00,000!</div>
-  </div>
-  <div class="formula">1 Crore = 100 Lakhs = 10,000,000</div>
-  <div class="q-label">Warm-up questions</div>
-  <div class="score-row">
-    <div class="sc"><label>Question</label><span id="m-qnum">1 / 4</span></div>
-    <div class="sc"><label>Score</label><span id="m-score">0</span></div>
-  </div>
-  <div class="prog-row">
-    <div class="prog-track"><div class="prog-fill" id="m-prog" style="width:0%"></div></div>
-    <div class="prog-pct" id="m-pct">0%</div>
-  </div>
-  <div id="m-card" class="card">
-    <div class="topic-pill" id="m-topic"></div>
-    <div class="q-text" id="m-q"></div>
-    <div class="opts" id="m-opts"></div>
-    <div class="fb" id="m-fb"></div>
-    <button class="nxt" id="m-nxt">Next →</button>
-  </div>
-  <div id="m-done" style="display:none" class="card done-card">
-    <div class="done-icon" id="m-ficon">🎉</div>
-    <div class="done-title">Done!</div>
-    <div class="done-score" id="m-fscore"></div>
-    <div class="done-sub" id="m-fmsg"></div>
-    <button class="retry" id="m-retry">Try again ↺</button>
-  </div>
+<div id="m-card" class="card">
+  <div class="topic-pill" id="m-topic"></div>
+  <div class="q-text" id="m-q"></div>
+  <div class="opts" id="m-opts"></div>
+  <div class="fb" id="m-fb"></div>
+  <button class="nxt" id="m-nxt">Next →</button>
 </div>
-
-<!-- PHYSICS TAB -->
-<div id="sec-p" class="sec">
-  <div class="dyk">
-    <div class="dyk-eye">✨ Did you know?</div>
-    <div class="dyk-title">⚡ Physics explains everything!</div>
-    <div class="dyk-body">Ever wondered why the sky is blue, how planes fly, or why a ball falls when you drop it? That's all Physics!</div>
-  </div>
-  <div class="intro-card">
-    <h3>Physics topics this year</h3>
-    <ul>
-      <li>Motion — speed, distance &amp; time</li>
-      <li>Forces — gravity, friction, magnetism</li>
-      <li>Light &amp; sound</li>
-      <li>Electricity &amp; energy</li>
-      <li>Simple machines</li>
-    </ul>
-  </div>
-  <div class="q-label">Intro questions</div>
-  <div class="score-row">
-    <div class="sc"><label>Question</label><span id="p-qnum">1 / 4</span></div>
-    <div class="sc"><label>Score</label><span id="p-score">0</span></div>
-  </div>
-  <div class="prog-row">
-    <div class="prog-track"><div class="prog-fill" id="p-prog" style="width:0%"></div></div>
-    <div class="prog-pct" id="p-pct">0%</div>
-  </div>
-  <div id="p-card" class="card">
-    <div class="topic-pill" id="p-topic"></div>
-    <div class="q-text" id="p-q"></div>
-    <div class="opts" id="p-opts"></div>
-    <div class="fb" id="p-fb"></div>
-    <button class="nxt" id="p-nxt">Next →</button>
-  </div>
-  <div id="p-done" style="display:none" class="card done-card">
-    <div class="done-icon" id="p-ficon">🎉</div>
-    <div class="done-title">Done!</div>
-    <div class="done-score" id="p-fscore"></div>
-    <div class="done-sub" id="p-fmsg"></div>
-    <button class="retry" id="p-retry">Try again ↺</button>
-  </div>
+<div id="m-done" style="display:none" class="card done-card">
+  <div class="done-icon" id="m-ficon">🎉</div>
+  <div class="done-title">Done!</div>
+  <div class="done-score" id="m-fscore"></div>
+  <div class="done-sub" id="m-fmsg"></div>
+  <button class="retry" id="m-retry">Try again ↺</button>
+</div></div><div id="sec-p" class="sec"><div class="did-you-know">
+  <div class="dyk-eye">✨ Did you know?</div>
+  <div class="dyk-title">⚡ Physics explains everything!</div>
+  <div class="dyk-body">Ever wondered why the sky is blue, how planes fly, or why a ball falls when you drop it? That's all Physics!</div>
+</div><div class="intro-card"><h3>Physics topics this year</h3><ul><li>Motion — speed, distance & time</li><li>Forces — gravity, friction, magnetism</li><li>Light & sound</li><li>Electricity & energy</li><li>Simple machines</li></ul></div><div class="q-label">Intro questions</div>
+<div class="score-row">
+  <div class="sc"><label>Question</label><span id="p-qnum">1 / 4</span></div>
+  <div class="sc"><label>Score</label><span id="p-score">0</span></div>
 </div>
-
-<!-- CS/PYTHON TAB -->
-<div id="sec-c" class="sec">
-  <div class="dyk">
-    <div class="dyk-eye">✨ Did you know?</div>
-    <div class="dyk-title">💻 Python was named after a comedy show!</div>
-    <div class="dyk-body">Guido van Rossum named Python after Monty Python's Flying Circus — not the snake! It's one of the world's most popular programming languages.</div>
-  </div>
-  <div class="intro-card">
-    <h3>Your first Python program</h3>
-    <p>Type this in Python and press Run:</p>
-    <div style="background:#1e1e2e;border-radius:10px;padding:14px;font-family:monospace;font-size:14px;color:#cdd6f4;margin:10px 0">
-      print("Hello, World!")<br>print("My name is Ustad")<br>print(2026)
-    </div>
-    <p>Python reads top to bottom and runs each line one at a time.</p>
-  </div>
-  <div class="q-label">Intro questions</div>
-  <div class="score-row">
-    <div class="sc"><label>Question</label><span id="c-qnum">1 / 4</span></div>
-    <div class="sc"><label>Score</label><span id="c-score">0</span></div>
-  </div>
-  <div class="prog-row">
-    <div class="prog-track"><div class="prog-fill" id="c-prog" style="width:0%"></div></div>
-    <div class="prog-pct" id="c-pct">0%</div>
-  </div>
-  <div id="c-card" class="card">
-    <div class="topic-pill" id="c-topic"></div>
-    <div class="q-text" id="c-q"></div>
-    <div class="opts" id="c-opts"></div>
-    <div class="fb" id="c-fb"></div>
-    <button class="nxt" id="c-nxt">Next →</button>
-  </div>
-  <div id="c-done" style="display:none" class="card done-card">
-    <div class="done-icon" id="c-ficon">🎉</div>
-    <div class="done-title">Done!</div>
-    <div class="done-score" id="c-fscore"></div>
-    <div class="done-sub" id="c-fmsg"></div>
-    <button class="retry" id="c-retry">Try again ↺</button>
-  </div>
+<div class="prog-row">
+  <div class="prog-track"><div class="prog-fill" id="p-prog" style="width:0%"></div></div>
+  <div class="prog-pct" id="p-pct">0%</div>
 </div>
-
+<div id="p-card" class="card">
+  <div class="topic-pill" id="p-topic"></div>
+  <div class="q-text" id="p-q"></div>
+  <div class="opts" id="p-opts"></div>
+  <div class="fb" id="p-fb"></div>
+  <button class="nxt" id="p-nxt">Next →</button>
+</div>
+<div id="p-done" style="display:none" class="card done-card">
+  <div class="done-icon" id="p-ficon">🎉</div>
+  <div class="done-title">Done!</div>
+  <div class="done-score" id="p-fscore"></div>
+  <div class="done-sub" id="p-fmsg"></div>
+  <button class="retry" id="p-retry">Try again ↺</button>
+</div></div><div id="sec-c" class="sec"><div class="did-you-know">
+  <div class="dyk-eye">✨ Did you know?</div>
+  <div class="dyk-title">💻 Python was named after a comedy show!</div>
+  <div class="dyk-body">Guido van Rossum named Python after Monty Python's Flying Circus — not the snake! It's one of the world's most popular programming languages.</div>
+</div><div class="intro-card"><h3>Your first Python program</h3><p>Type this in Python and press Run:</p><div style="background:#1e1e2e;border-radius:10px;padding:14px;font-family:monospace;font-size:14px;color:#cdd6f4;margin:10px 0">print("Hello, World!")<br>print("My name is Ustad")<br>print(2026)</div><p>Python reads top to bottom and runs each line one at a time.</p></div><div class="q-label">Intro questions</div>
+<div class="score-row">
+  <div class="sc"><label>Question</label><span id="c-qnum">1 / 4</span></div>
+  <div class="sc"><label>Score</label><span id="c-score">0</span></div>
+</div>
+<div class="prog-row">
+  <div class="prog-track"><div class="prog-fill" id="c-prog" style="width:0%"></div></div>
+  <div class="prog-pct" id="c-pct">0%</div>
+</div>
+<div id="c-card" class="card">
+  <div class="topic-pill" id="c-topic"></div>
+  <div class="q-text" id="c-q"></div>
+  <div class="opts" id="c-opts"></div>
+  <div class="fb" id="c-fb"></div>
+  <button class="nxt" id="c-nxt">Next →</button>
+</div>
+<div id="c-done" style="display:none" class="card done-card">
+  <div class="done-icon" id="c-ficon">🎉</div>
+  <div class="done-title">Done!</div>
+  <div class="done-score" id="c-fscore"></div>
+  <div class="done-sub" id="c-fmsg"></div>
+  <button class="retry" id="c-retry">Try again ↺</button>
+</div></div>
 <script>
-// ── Storage ───────────────────────────────────────────────────────────────────
-var WEEK = 1, DAY = 'tue', PASS = 0.6;
-var SUBJECTS = [
-  {id:'m', label:'Maths',      total:4},
-  {id:'p', label:'Physics',    total:4},
-  {id:'c', label:'CS/Python',  total:4}
-];
-
-function lsKey(id){ return 'icse_w01_tue_' + id; }
-
-function saveScore(id, score, total, label){
-  var key = lsKey(id), ex = {};
-  try{ ex = JSON.parse(localStorage.getItem(key)||'{}'); }catch(e){}
-  localStorage.setItem(key, JSON.stringify({
-    attempts:  (ex.attempts||0) + 1,
-    bestScore: Math.max(ex.bestScore||0, score),
-    totalQ:    total,
-    lastDate:  new Date().toISOString().slice(0,10),
-    label:     label
-  }));
-}
-
-function getScore(id){
-  try{ return JSON.parse(localStorage.getItem(lsKey(id))||'null'); }catch(e){ return null; }
-}
-
-// ── Session progress bar ───────────────────────────────────────────────────────
-function refreshProgress(){
-  var badge = document.getElementById('status-badge');
-  var pills = document.getElementById('subject-pills');
-  pills.innerHTML = '';
-  var done = 0, attempted = 0;
-  SUBJECTS.forEach(function(s){
-    var d = getScore(s.id);
-    var pill = document.createElement('span');
-    pill.style.cssText = 'font-size:12px;padding:4px 10px;border-radius:99px;font-weight:500;display:inline-block';
-    if(!d){
-      pill.textContent = s.label + ': —';
-      pill.style.background = '#F3F4F6'; pill.style.color = '#9CA3AF';
-    } else {
-      attempted++;
-      var pct = Math.round((d.bestScore / d.totalQ) * 100);
-      var ok  = pct >= 60;
-      if(ok) done++;
-      pill.textContent = s.label + ': ' + d.bestScore + '/' + d.totalQ + ' (' + pct + '%)' + (ok ? ' ✓' : '');
-      pill.style.background = ok ? '#ECFDF5' : '#FEF2F2';
-      pill.style.color      = ok ? '#065F46' : '#991B1B';
-    }
-    pills.appendChild(pill);
-  });
-  if(attempted === 0){
-    badge.textContent = 'Not started';
-    badge.style.background = '#F3F4F6'; badge.style.color = '#9CA3AF';
-  } else if(done === SUBJECTS.length){
-    badge.textContent = '✅ Done';
-    badge.style.background = '#ECFDF5'; badge.style.color = '#065F46';
-  } else {
-    badge.textContent = '🟡 In progress';
-    badge.style.background = '#FFFBEB'; badge.style.color = '#92400E';
-  }
-}
-
-// ── Tab switcher ──────────────────────────────────────────────────────────────
-function switchTab(t){
-  ['m','p','c'].forEach(function(x){
-    document.getElementById('tab-'+x).classList.toggle('active', x===t);
-    document.getElementById('sec-'+x).classList.toggle('active', x===t);
-  });
-}
-
-// ── Quiz engine ───────────────────────────────────────────────────────────────
-function quiz(id, qs, label){
-  var i=0, sc=0, answered=false;
-  function el(x){ return document.getElementById(id+'-'+x); }
-
+function quiz(id, qs) {
+  var i=0, sc=0, ans=false;
+  function el(x){return document.getElementById(id+'-'+x);}
   function render(){
-    if(i >= qs.length){ finish(); return; }
-    var q = qs[i];
-    answered = false;
-    el('topic').textContent = q.t || '';
-    el('q').textContent     = q.q;
-    el('qnum').textContent  = (i+1) + ' / ' + qs.length;
-    el('score').textContent = sc;
-    el('prog').style.width  = Math.round((i/qs.length)*100) + '%';
-    el('pct').textContent   = Math.round((i/qs.length)*100) + '%';
-    var fb = el('fb'); fb.className = 'fb'; fb.textContent = '';
-    el('nxt').className = 'nxt';
-    var og = el('opts'); og.innerHTML = '';
-    q.o.forEach(function(opt, j){
-      var b = document.createElement('button');
-      b.className = 'opt';
-      b.textContent = opt;
-      b.onclick = function(){ pick(j); };
+    if(i>=qs.length){finish();return;}
+    var q=qs[i]; ans=false;
+    el('topic').textContent=q.t||'';
+    el('q').textContent=q.q;
+    el('qnum').textContent=(i+1)+' / '+qs.length;
+    el('score').textContent=sc;
+    el('prog').style.width=Math.round((i/qs.length)*100)+'%';
+    el('pct').textContent=Math.round((i/qs.length)*100)+'%';
+    var fb=el('fb'); fb.className='fb'; fb.textContent='';
+    el('nxt').className='nxt';
+    var og=el('opts'); og.innerHTML='';
+    q.o.forEach(function(o,j){
+      var b=document.createElement('button');
+      b.className='opt'; b.textContent=o;
+      b.onclick=function(){pick(j);};
       og.appendChild(b);
     });
   }
-
   function pick(j){
-    if(answered) return;
-    answered = true;
-    var q = qs[i], fb = el('fb');
+    if(ans)return; ans=true;
+    var q=qs[i], fb=el('fb');
     document.querySelectorAll('#'+id+'-opts .opt').forEach(function(b,k){
-      if(k === q.a)             b.classList.add('correct');
-      else if(k === j && j !== q.a) b.classList.add('wrong');
+      if(k===q.a)b.classList.add('correct');
+      else if(k===j&&j!==q.a)b.classList.add('wrong');
     });
-    if(j === q.a){
-      sc++;
-      fb.textContent = '✅ ' + q.e;
-      fb.className   = 'fb ok show';
-    } else {
-      fb.textContent = '❌ ' + q.e;
-      fb.className   = 'fb err show';
-    }
-    el('nxt').className = 'nxt show';
+    if(j===q.a){sc++;fb.textContent='✅ '+q.e;fb.className='fb ok show';}
+    else{fb.textContent='❌ '+q.e;fb.className='fb err show';}
+    el('nxt').className='nxt show';
   }
-
   function finish(){
-    saveScore(id, sc, qs.length, label);
-    document.getElementById(id+'-card').style.display = 'none';
-    document.getElementById(id+'-done').style.display = 'block';
-    el('prog').style.width = '100%';
-    el('pct').textContent  = '100%';
-    el('fscore').textContent = sc + ' / ' + qs.length;
-    var pct = Math.round((sc/qs.length)*100);
-    var r = sc === qs.length ? ['🌟','Perfect score!']
-          : pct >= 60        ? ['🎉','Well done! 60%+ achieved ✓']
-          :                    ['💪','Need 60%+ to mark as Done — try again!'];
-    el('ficon').textContent = r[0];
-    el('fmsg').textContent  = r[1];
-    refreshProgress();
+    document.getElementById(id+'-card').style.display='none';
+    document.getElementById(id+'-done').style.display='block';
+    el('prog').style.width='100%'; el('pct').textContent='100%';
+    el('fscore').textContent=sc+' / '+qs.length;
+    var r=sc===qs.length?['🌟','Perfect! Amazing start!']:sc>=Math.ceil(qs.length*0.6)?['🎉','Great job!']:['💪','Good try — review and retry!'];
+    el('ficon').textContent=r[0]; el('fmsg').textContent=r[1];
   }
-
-  el('nxt').onclick   = function(){ i++; render(); };
-  el('retry').onclick = function(){
-    i=0; sc=0; answered=false;
-    document.getElementById(id+'-card').style.display = 'block';
-    document.getElementById(id+'-done').style.display = 'none';
+  el('nxt').onclick=function(){i++;render();};
+  el('retry').onclick=function(){
+    i=0;sc=0;ans=false;
+    document.getElementById(id+'-card').style.display='block';
+    document.getElementById(id+'-done').style.display='none';
     render();
   };
-
   render();
 }
-
-// ── Question data ─────────────────────────────────────────────────────────────
-var mathsQs = [
-  {t:'Numbers',    q:'How many zeros are in one lakh (1,00,000)?',              o:['4','5','6','3'],                                                          a:1, e:'1,00,000 has 5 zeros. In the Indian system: 1 lakh = 100 thousands.'},
-  {t:'Place Value',q:'The digit 7 in 7,342 is in which place?',                 o:['Ones','Hundreds','Thousands','Ten-thousands'],                             a:2, e:'7,342 → 7 is in the thousands place (7 × 1000 = 7000).'},
-  {t:'Odd & Even', q:'What is the sum of the first 3 even numbers (2, 4, 6)?',  o:['10','11','12','14'],                                                       a:2, e:'2 + 4 + 6 = 12.'},
-  {t:'Estimation', q:'Which is the best estimate for 497 + 312?',               o:['700','750','800','900'],                                                   a:2, e:'Round 497 ≈ 500 and 312 ≈ 300 → 500 + 300 = 800.'}
-];
-
-var physicsQs = [
-  {t:'What is Physics?', q:'Physics is the study of?',                          o:['Living things','Matter, energy and forces','Chemicals and reactions','The Earth\'s surface'], a:1, e:'Physics studies matter, energy, forces and how the universe works!'},
-  {t:'Units',            q:'Which unit do we use to measure length?',            o:['Kilogram','Litre','Metre','Second'],                                       a:2, e:'The metre (m) is the SI unit of length.'},
-  {t:'Forces',           q:'Which force pulls objects toward the Earth?',        o:['Friction','Magnetism','Gravity','Tension'],                                a:2, e:'Gravity pulls everything toward the Earth — that\'s why we don\'t float!'},
-  {t:'Motion',           q:'A car at rest starts moving. What acted on it?',     o:['Nothing','A force','Gravity only','Air'],                                  a:1, e:'A force is needed to change an object from rest to motion — Newton\'s First Law!'}
-];
-
-var csQs = [
-  {t:'What is CS?', q:'What does CPU stand for?',                               o:['Central Power Unit','Computer Processing Universe','Central Processing Unit','Core Program Unit'], a:2, e:'CPU = Central Processing Unit — the brain of the computer.'},
-  {t:'Python',      q:'Which keyword is used to show output in Python?',         o:['echo','console.log','printf','print'],                                     a:3, e:'In Python, print() displays output. Example: print("Hello World")'},
-  {t:'Python',      q:'What will print("5 + 3") display?',                      o:['8','5 + 3','53','Error'],                                                  a:1, e:'Quotes make it a string — print("5 + 3") shows the text: 5 + 3'},
-  {t:'Python',      q:'What is the correct way to add 5 and 3 in Python?',      o:['print("5+3")','print(5+3)','print[5+3]','Print(5+3)'],                    a:1, e:'print(5+3) without quotes calculates and prints 8. Python is case-sensitive!'}
-];
-
-// ── Start everything ──────────────────────────────────────────────────────────
-quiz('m', mathsQs,  'Maths');
-quiz('p', physicsQs,'Physics');
-quiz('c', csQs,     'CS/Python');
-refreshProgress();
-</script>
+function switchTab(t,all){
+  all.forEach(function(x){
+    document.getElementById('tab-'+x).classList.toggle('active',x===t);
+    document.getElementById('sec-'+x).classList.toggle('active',x===t);
+  });
+}
+quiz('m',[{"t": "Numbers", "q": "How many zeros are in one lakh (1,00,000)?", "o": ["4", "5", "6", "3"], "a": 1, "e": "1,00,000 has 5 zeros. In the Indian system: 1 lakh = 100 thousands."}, {"t": "Place Value", "q": "The digit 7 in 7,342 is in which place?", "o": ["Ones", "Hundreds", "Thousands", "Ten-thousands"], "a": 2, "e": "7,342 \u2192 7 is in the thousands place (7 \u00d7 1000 = 7000)."}, {"t": "Odd & Even", "q": "What is the sum of the first 3 even numbers (2, 4, 6)?", "o": ["10", "11", "12", "14"], "a": 2, "e": "2 + 4 + 6 = 12."}, {"t": "Estimation", "q": "Which is the best estimate for 497 + 312?", "o": ["700", "750", "800", "900"], "a": 2, "e": "Round 497 \u2248 500 and 312 \u2248 300 \u2192 500 + 300 = 800. Estimation is a handy skill!"}]);
+quiz('p',[{"t": "What is Physics?", "q": "Physics is the study of?", "o": ["Living things", "Matter, energy and forces", "Chemicals and reactions", "The Earth's surface"], "a": 1, "e": "Physics studies matter, energy, forces and how the universe works \u2014 from atoms to galaxies!"}, {"t": "Units", "q": "Which unit do we use to measure length?", "o": ["Kilogram", "Litre", "Metre", "Second"], "a": 2, "e": "The metre (m) is the SI unit of length. We also use cm, km, and mm."}, {"t": "Forces", "q": "Which force pulls objects toward the Earth?", "o": ["Friction", "Magnetism", "Gravity", "Tension"], "a": 2, "e": "Gravity is the force that pulls everything toward the Earth. It's why we don't float away!"}, {"t": "Motion", "q": "A car at rest starts moving. What acted on it?", "o": ["Nothing", "A force", "Gravity only", "Air"], "a": 1, "e": "A force is needed to change an object from rest to motion. This is Newton's First Law!"}]);
+quiz('c',[{"t": "What is CS?", "q": "What does CPU stand for?", "o": ["Central Power Unit", "Computer Processing Universe", "Central Processing Unit", "Core Program Unit"], "a": 2, "e": "CPU = Central Processing Unit \u2014 the brain of the computer that processes all instructions."}, {"t": "Python", "q": "Which symbol is used to print output in Python?", "o": ["echo", "console.log", "printf", "print"], "a": 3, "e": "In Python, print() displays output. Example: print('Hello World')"}, {"t": "Python", "q": "What will print('5 + 3') display?", "o": ["8", "5 + 3", "53", "Error"], "a": 1, "e": "Quotes make it a string, not a calculation. print('5 + 3') shows the text: 5 + 3"}, {"t": "Python", "q": "What is the correct way to add 5 and 3 in Python?", "o": ["print('5+3')", "print(5+3)", "print[5+3]", "Print(5+3)"], "a": 1, "e": "print(5+3) \u2014 without quotes \u2014 calculates and prints 8. Python is case-sensitive, so print not Print!"}]);</script>
 </body>
 </html>
