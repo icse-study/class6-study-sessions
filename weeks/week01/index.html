@@ -1,1 +1,134 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"><title>Week 1 · Class 6 ICSE</title><style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0F4FF;min-height:100vh}header{background:linear-gradient(135deg,#4F46E5,#7C3AED);padding:1.25rem 1.5rem}header h1{color:#fff;font-size:18px;font-weight:700}header p{color:rgba(255,255,255,0.75);font-size:13px;margin-top:3px}.back{display:inline-flex;align-items:center;gap:6px;color:#6B7280;font-size:13px;text-decoration:none;padding:0.75rem 1rem}.grid{display:flex;flex-direction:column;gap:8px;padding:0.5rem 1rem 2rem}.dc{background:#fff;border-radius:16px;padding:1rem 1.25rem;box-shadow:0 1px 4px rgba(0,0,0,0.06);text-decoration:none;color:inherit;display:block;border:2px solid transparent}.dc.today{border-color:#4F46E5}.dc-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}.dc-day{font-size:16px;font-weight:700;color:#111827}.dc-time{font-size:12px;color:#9CA3AF}.dc-subs{font-size:13px;color:#6B7280;line-height:1.5}.badge{font-size:11px;font-weight:600;padding:2px 9px;border-radius:99px;margin-left:8px;background:#EEF2FF;color:#4F46E5}</style></head><body><a class="back" href="../../index.html">← All weeks</a><header><h1>Week 1 of 41</h1><p>15 Jun – 21 Jun 2026</p></header><div class="grid"><a class="dc" href="monday.html"><div class="dc-row"><span class="dc-day">Monday</span><span class="dc-time">6:00 – 7:50 PM</span></div><div class="dc-subs">➗ Maths Quick Practice · 🗣️ Kannada Literature · 📖 English Literature</div></a><a class="dc" href="tuesday.html"><div class="dc-row"><span class="dc-day">Tuesday</span><span class="dc-time">6:00 – 7:50 PM</span></div><div class="dc-subs">➗ Maths Quick Practice · ⚡ Physics · 💻 Computer Science / Python</div></a><a class="dc" href="wednesday.html"><div class="dc-row"><span class="dc-day">Wednesday</span><span class="dc-time">6:00 – 7:50 PM</span></div><div class="dc-subs">🌍 Map Revision · 🌍 Geography · ✍️ English Grammar & Writing</div></a><a class="dc" href="thursday.html"><div class="dc-row"><span class="dc-day">Thursday</span><span class="dc-time">6:00 – 7:50 PM</span></div><div class="dc-subs">➗ Maths Formula Recall · ⚗️ Chemistry · 🇫🇷 French</div></a><a class="dc" href="friday.html"><div class="dc-row"><span class="dc-day">Friday</span><span class="dc-time">6:00 – 7:50 PM</span></div><div class="dc-subs">🧬 Science Diagram Recall · 🗣️ Kannada Grammar & Writing · 🧬 Biology</div></a><a class="dc" href="saturday.html"><div class="dc-row"><span class="dc-day">Saturday</span><span class="dc-time">10:00 AM – 4:10 PM</span></div><div class="dc-subs">➗ Maths Problem Solving · 🏛️ History & Civics · ⚡ Physics Quiz · ⚗️ Chemistry Quiz · 🧬 Biology Quiz</div></a><a class="dc" href="sunday.html"><div class="dc-row"><span class="dc-day">Sunday</span><span class="dc-time">10:00 AM – 4:00 PM</span></div><div class="dc-subs">🗣️ Kannada · 🇫🇷 French · 🌍 Geography + History & Civics · 🧠 Mixed Quiz Day</div></a></div><script>var D=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];var t=D[new Date().getDay()];document.querySelectorAll('.dc').forEach(function(c){var d=c.querySelector('.dc-day').textContent.trim();if(d===t){c.classList.add('today');c.querySelector('.dc-day').innerHTML+='<span class="badge">Today</span>';}});</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>Week 1 · Class 6 ICSE</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0F4FF;min-height:100vh}
+header{background:linear-gradient(135deg,#4F46E5,#7C3AED);padding:1.25rem 1.5rem}
+header h1{color:#fff;font-size:18px;font-weight:700}
+header p{color:rgba(255,255,255,0.75);font-size:13px;margin-top:3px}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6B7280;font-size:13px;text-decoration:none;padding:0.75rem 1rem}
+.week-summary{display:flex;gap:10px;padding:0.75rem 1rem 0}
+.ws{flex:1;background:#fff;border-radius:12px;padding:10px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.ws .v{font-size:18px;font-weight:800;color:#4F46E5}
+.ws .l{font-size:11px;color:#9CA3AF;margin-top:1px}
+.grid{display:flex;flex-direction:column;gap:8px;padding:0.75rem 1rem 2rem}
+.dc{background:#fff;border-radius:16px;padding:1rem 1.25rem;box-shadow:0 1px 4px rgba(0,0,0,0.06);text-decoration:none;color:inherit;display:block;border:2px solid transparent;transition:border-color 0.15s}
+.dc.today{border-color:#4F46E5}
+.dc.done{border-color:#10B981}
+.dc.partial{border-color:#F59E0B}
+.dc-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.dc-day{font-size:16px;font-weight:700;color:#111827}
+.dc-time{font-size:12px;color:#9CA3AF}
+.dc-subs{font-size:13px;color:#6B7280;line-height:1.5;margin-bottom:6px}
+.dc-scores{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.score-pill{font-size:11px;padding:3px 8px;border-radius:99px;font-weight:500}
+.sp-done{background:#ECFDF5;color:#065F46}
+.sp-partial{background:#FEF3C7;color:#92400E}
+.sp-none{background:#F3F4F6;color:#9CA3AF}
+.status-badge{font-size:11px;font-weight:600;padding:3px 10px;border-radius:99px}
+.sb-done{background:#ECFDF5;color:#065F46}
+.sb-partial{background:#FFFBEB;color:#92400E}
+.sb-pending{background:#F3F4F6;color:#9CA3AF}
+.sb-today{background:#EEF2FF;color:#4F46E5}
+</style>
+</head>
+<body>
+<a class="back" href="../../index.html">← All weeks</a>
+<header>
+  <h1>Week 1 of 41</h1>
+  <p>15 Jun – 21 Jun 2026</p>
+</header>
+<div class="week-summary">
+  <div class="ws"><div class="v" id="ws-done">—</div><div class="l">Days done</div></div>
+  <div class="ws"><div class="v" id="ws-partial">—</div><div class="l">In progress</div></div>
+  <div class="ws"><div class="v" id="ws-pending">—</div><div class="l">Pending</div></div>
+</div>
+<div class="grid" id="day-grid"></div>
+<script>
+
+var THRESHOLD = 0.6;
+
+function lsKey(week, dayShort, tabId) {
+  return 'icse_w' + String(week).padStart(2,'0') + '_' + dayShort + '_' + tabId;
+}
+
+function saveScore(week, dayShort, tabId, score, total, label) {
+  var key = lsKey(week, dayShort, tabId);
+  var existing = {};
+  try { existing = JSON.parse(localStorage.getItem(key) || '{}'); } catch(e) {}
+  var attempts = (existing.attempts || 0) + 1;
+  var best = Math.max(existing.bestScore || 0, score);
+  var data = {attempts: attempts, bestScore: best, totalQ: total,
+              lastDate: new Date().toISOString().slice(0,10), label: label};
+  localStorage.setItem(key, JSON.stringify(data));
+}
+
+function getScore(week, dayShort, tabId) {
+  try { return JSON.parse(localStorage.getItem(lsKey(week, dayShort, tabId)) || 'null'); }
+  catch(e) { return null; }
+}
+
+function isDayDone(week, dayShort, subjects) {
+  // subjects = [{id, total}]
+  return subjects.every(function(s) {
+    var d = getScore(week, dayShort, s.id);
+    return d && d.totalQ > 0 && (d.bestScore / d.totalQ) >= THRESHOLD;
+  });
+}
+
+function dayStatus(week, dayShort, subjects) {
+  // returns: 'done' | 'partial' | 'pending'
+  var attempted = subjects.filter(function(s) { return getScore(week, dayShort, s.id); });
+  if (attempted.length === 0) return 'pending';
+  var done = isDayDone(week, dayShort, subjects);
+  return done ? 'done' : 'partial';
+}
+
+var WN = 1;
+var DAYS = [{"slug": "monday", "short": "mon", "label": "Monday", "time": "6:00 \u2013 7:50 PM", "subjects": [{"id": "m", "label": "Maths", "total": 5}, {"id": "k", "label": "Kannada", "total": 4}, {"id": "e", "label": "English", "total": 4}]}, {"slug": "tuesday", "short": "tue", "label": "Tuesday", "time": "6:00 \u2013 7:50 PM", "subjects": [{"id": "m", "label": "Maths", "total": 4}, {"id": "p", "label": "Physics", "total": 4}, {"id": "c", "label": "CS/Python", "total": 4}]}, {"slug": "wednesday", "short": "wed", "label": "Wednesday", "time": "6:00 \u2013 7:50 PM", "subjects": [{"id": "g", "label": "Geography", "total": 5}, {"id": "e", "label": "English Grammar", "total": 4}]}, {"slug": "thursday", "short": "thu", "label": "Thursday", "time": "6:00 \u2013 7:50 PM", "subjects": [{"id": "m", "label": "Maths", "total": 4}, {"id": "ch", "label": "Chemistry", "total": 4}, {"id": "f", "label": "French", "total": 4}]}, {"slug": "friday", "short": "fri", "label": "Friday", "time": "6:00 \u2013 7:50 PM", "subjects": [{"id": "s", "label": "Science Diagrams", "total": 3}, {"id": "k", "label": "Kannada Grammar", "total": 3}, {"id": "b", "label": "Biology", "total": 4}]}, {"slug": "saturday", "short": "sat", "label": "Saturday", "time": "10:00 AM \u2013 4:10 PM", "subjects": [{"id": "m", "label": "Maths", "total": 5}, {"id": "h", "label": "History & Civics", "total": 4}, {"id": "pq", "label": "Science Quiz", "total": 5}]}, {"slug": "sunday", "short": "sun", "label": "Sunday", "time": "10:00 AM \u2013 4:00 PM", "subjects": [{"id": "k", "label": "Kannada", "total": 3}, {"id": "f", "label": "French", "total": 3}, {"id": "gh", "label": "Geo+History", "total": 3}, {"id": "mx", "label": "Mixed Quiz", "total": 5}]}];
+var DN = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+var todayName = DN[new Date().getDay()];
+var done=0, partial=0, pending=0;
+
+DAYS.forEach(function(d) {
+  var status = dayStatus(WN, d.short, d.subjects);
+  if(status==='done') done++;
+  else if(status==='partial') partial++;
+  else pending++;
+
+  var isToday = d.label === todayName;
+  var card = document.createElement('a');
+  card.href = d.slug + '.html';
+  card.className = 'dc' + (isToday?' today':'') + (status==='done'?' done':status==='partial'?' partial':'');
+
+  var badgeClass = isToday?'sb-today':status==='done'?'sb-done':status==='partial'?'sb-partial':'sb-pending';
+  var badgeText  = isToday&&status==='pending'?'Today':status==='done'?'✅ Done':status==='partial'?'🟡 In progress':'—';
+
+  // Build score pills
+  var pills = d.subjects.map(function(s) {
+    var sc = getScore(WN, d.short, s.id);
+    if(!sc) return '<span class="score-pill sp-none">'+s.label+': —</span>';
+    var pct = Math.round((sc.bestScore/sc.totalQ)*100);
+    var cls = pct>=60?'sp-done':'sp-partial';
+    return '<span class="score-pill '+cls+'">'+s.label+' '+sc.bestScore+'/'+sc.totalQ+' ('+pct+'%)'+(pct>=60?' ✓':'')+'</span>';
+  }).join('');
+
+  card.innerHTML =
+    '<div class="dc-top"><span class="dc-day">'+d.label+'</span>'
+    +'<span class="status-badge '+badgeClass+'">'+badgeText+'</span></div>'
+    +'<div class="dc-time">'+d.time+'</div>'
+    +'<div class="dc-subs">'+d.subjects.map(function(s){return s.label;}).join(' · ')+'</div>'
+    +'<div class="dc-scores">'+pills+'</div>';
+  document.getElementById('day-grid').appendChild(card);
+});
+
+document.getElementById('ws-done').textContent = done;
+document.getElementById('ws-partial').textContent = partial;
+document.getElementById('ws-pending').textContent = pending;
+</script>
+</body>
+</html>

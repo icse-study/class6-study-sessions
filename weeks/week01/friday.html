@@ -64,7 +64,49 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   <div class="logo">📅</div>
   <div><h1>Friday · Week 1</h1><p>15 Jun – 21 Jun 2026 &nbsp;·&nbsp; Class 6 ICSE</p></div>
 </header>
-<div class="tabs"><button class="tab active" id="tab-s" onclick="switchTab('s',['s','k','b'])">🧬 Science Diagrams</button><button class="tab" id="tab-k" onclick="switchTab('k',['s','k','b'])">🗣️ Kannada Grammar</button><button class="tab" id="tab-b" onclick="switchTab('b',['s','k','b'])">🧬 Biology</button></div>
+<div class="tabs"><button class="tab active" id="tab-s" onclick="switchTab('s',['s','k','b'])">🧬 Science Diagrams</button><button class="tab" id="tab-k" onclick="switchTab('k',['s','k','b'])">🗣️ Kannada Grammar</button><button class="tab" id="tab-b" onclick="switchTab('b',['s','k','b'])">🧬 Biology</button>
+<div id="session-status" style="margin:0.75rem 1rem 0;padding:0.75rem 1rem;background:#fff;border-radius:14px;box-shadow:0 1px 4px rgba(0,0,0,0.06)">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+    <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9CA3AF">Session progress</span>
+    <span id="day-status-badge" style="font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;background:#F3F4F6;color:#9CA3AF">Not started</span>
+  </div>
+  <div id="subject-scores" style="display:flex;flex-wrap:wrap;gap:6px"></div>
+</div>
+<script>
+(function(){
+  var SUBS = [{"id": "s", "total": 3, "label": "Science Diagrams"}, {"id": "k", "total": 3, "label": "Kannada Grammar"}, {"id": "b", "total": 4, "label": "Biology"}];
+  function updateDayStatus(){
+    var badge = document.getElementById('day-status-badge');
+    var scoresDiv = document.getElementById('subject-scores');
+    scoresDiv.innerHTML = '';
+    var allDone = true, anyAttempted = false;
+    SUBS.forEach(function(s){
+      var d = getScore(1, 'fri', s.id);
+      var pill = document.createElement('span');
+      pill.style.cssText = 'font-size:12px;padding:4px 10px;border-radius:99px;font-weight:500';
+      if(!d){
+        pill.textContent = s.label + ': —';
+        pill.style.background = '#F3F4F6'; pill.style.color = '#9CA3AF';
+        allDone = false;
+      } else {
+        anyAttempted = true;
+        var pct = Math.round((d.bestScore/d.totalQ)*100);
+        var ok = pct >= 60;
+        if(!ok) allDone = false;
+        pill.textContent = s.label + ': ' + d.bestScore + '/' + d.totalQ + ' (' + pct + '%)' + (ok?' ✓':'');
+        pill.style.background = ok ? '#ECFDF5' : '#FEF2F2';
+        pill.style.color = ok ? '#065F46' : '#991B1B';
+      }
+      scoresDiv.appendChild(pill);
+    });
+    if(!anyAttempted){ badge.textContent='Not started'; badge.style.background='#F3F4F6'; badge.style.color='#9CA3AF'; }
+    else if(allDone){ badge.textContent='✅ Done'; badge.style.background='#ECFDF5'; badge.style.color='#065F46'; }
+    else{ badge.textContent='🟡 In progress'; badge.style.background='#FFFBEB'; badge.style.color='#92400E'; }
+  }
+  window.updateDayStatus = updateDayStatus;
+  updateDayStatus();
+})();
+</script>
 <div id="sec-s" class="sec active"><div class="did-you-know">
   <div class="dyk-eye">✨ Did you know?</div>
   <div class="dyk-title">🖊️ Diagrams are half the marks in Science!</div>
@@ -145,7 +187,49 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   <button class="retry" id="b-retry">Try again ↺</button>
 </div></div>
 <script>
-function quiz(id, qs) {
+
+var THRESHOLD = 0.6;
+
+function lsKey(week, dayShort, tabId) {
+  return 'icse_w' + String(week).padStart(2,'0') + '_' + dayShort + '_' + tabId;
+}
+
+function saveScore(week, dayShort, tabId, score, total, label) {
+  var key = lsKey(week, dayShort, tabId);
+  var existing = {};
+  try { existing = JSON.parse(localStorage.getItem(key) || '{}'); } catch(e) {}
+  var attempts = (existing.attempts || 0) + 1;
+  var best = Math.max(existing.bestScore || 0, score);
+  var data = {attempts: attempts, bestScore: best, totalQ: total,
+              lastDate: new Date().toISOString().slice(0,10), label: label};
+  localStorage.setItem(key, JSON.stringify(data));
+}
+
+function getScore(week, dayShort, tabId) {
+  try { return JSON.parse(localStorage.getItem(lsKey(week, dayShort, tabId)) || 'null'); }
+  catch(e) { return null; }
+}
+
+function isDayDone(week, dayShort, subjects) {
+  // subjects = [{id, total}]
+  return subjects.every(function(s) {
+    var d = getScore(week, dayShort, s.id);
+    return d && d.totalQ > 0 && (d.bestScore / d.totalQ) >= THRESHOLD;
+  });
+}
+
+function dayStatus(week, dayShort, subjects) {
+  // returns: 'done' | 'partial' | 'pending'
+  var attempted = subjects.filter(function(s) { return getScore(week, dayShort, s.id); });
+  if (attempted.length === 0) return 'pending';
+  var done = isDayDone(week, dayShort, subjects);
+  return done ? 'done' : 'partial';
+}
+
+var WEEK_NUM = 1;
+var DAY_SHORT = 'fri';
+
+function quiz(id, qs, label) {
   var i=0, sc=0, ans=false;
   function el(x){return document.getElementById(id+'-'+x);}
   function render(){
@@ -169,7 +253,7 @@ function quiz(id, qs) {
   }
   function pick(j){
     if(ans)return; ans=true;
-    var q=qs[i], fb=el('fb');
+    var q=qs[i],fb=el('fb');
     document.querySelectorAll('#'+id+'-opts .opt').forEach(function(b,k){
       if(k===q.a)b.classList.add('correct');
       else if(k===j&&j!==q.a)b.classList.add('wrong');
@@ -179,12 +263,15 @@ function quiz(id, qs) {
     el('nxt').className='nxt show';
   }
   function finish(){
+    saveScore(WEEK_NUM, DAY_SHORT, id, sc, qs.length, label);
     document.getElementById(id+'-card').style.display='none';
     document.getElementById(id+'-done').style.display='block';
     el('prog').style.width='100%'; el('pct').textContent='100%';
     el('fscore').textContent=sc+' / '+qs.length;
-    var r=sc===qs.length?['🌟','Perfect! Amazing start!']:sc>=Math.ceil(qs.length*0.6)?['🎉','Great job!']:['💪','Good try — review and retry!'];
+    var pct=Math.round((sc/qs.length)*100);
+    var r=sc===qs.length?['🌟','Perfect!']:pct>=60?['🎉','Well done! 60%+ achieved ✓']:['💪','Keep going — need 60%+ to mark as Done'];
     el('ficon').textContent=r[0]; el('fmsg').textContent=r[1];
+    updateDayStatus();
   }
   el('nxt').onclick=function(){i++;render();};
   el('retry').onclick=function(){
@@ -195,14 +282,13 @@ function quiz(id, qs) {
   };
   render();
 }
+
 function switchTab(t,all){
   all.forEach(function(x){
     document.getElementById('tab-'+x).classList.toggle('active',x===t);
     document.getElementById('sec-'+x).classList.toggle('active',x===t);
   });
 }
-quiz('s',[{"t": "Diagrams", "q": "In a diagram of a plant, which part absorbs water from the soil?", "o": ["Leaf", "Stem", "Root", "Flower"], "a": 2, "e": "Roots anchor the plant and absorb water and minerals from the soil."}, {"t": "Diagrams", "q": "Which part of a plant makes food using sunlight?", "o": ["Root", "Stem", "Leaf", "Seed"], "a": 2, "e": "Leaves contain chlorophyll and carry out photosynthesis \u2014 making food from sunlight, water and CO\u2082."}, {"t": "Diagrams", "q": "In a diagram of the human body, where is the heart located?", "o": ["Right side of chest", "Left side of chest", "Centre of the abdomen", "Behind the lungs"], "a": 1, "e": "The heart is slightly to the left side of the chest. It pumps blood around the entire body."}]);
-quiz('k',[{"t": "Kannada Script", "q": "Kannada script is written in which direction?", "o": ["Right to left", "Top to bottom", "Left to right", "Bottom to top"], "a": 2, "e": "Like English, Kannada is written left to right. The script is called 'Kannada lipi'."}, {"t": "Nouns", "q": "'\u0cb9\u0cc1\u0ca1\u0cc1\u0c97' (Huduga) means?", "o": ["Girl", "Teacher", "Boy", "Father"], "a": 2, "e": "\u0cb9\u0cc1\u0ca1\u0cc1\u0c97 = Boy. '\u0cb9\u0cc1\u0ca1\u0cc1\u0c97\u0cbf' (Hudugi) = Girl. Learning pairs like this helps you remember both!"}, {"t": "Plurals", "q": "How do you make most Kannada nouns plural?", "o": ["Add -\u0c97\u0cb3\u0cc1 (-ga\u1e37u)", "Add -\u0cb8 (-sa)", "Add -\u0ca1\u0cc1 (-du)", "No change"], "a": 0, "e": "Add \u0c97\u0cb3\u0cc1 (ga\u1e37u) to most nouns: \u0cae\u0cb0 (tree) \u2192 \u0cae\u0cb0\u0c97\u0cb3\u0cc1 (trees). It's like adding 's' in English!"}]);
-quiz('b',[{"t": "What is Biology?", "q": "Biology is the study of?", "o": ["Rocks and minerals", "Living organisms", "Chemical reactions", "Forces and energy"], "a": 1, "e": "Biology is the science of life \u2014 studying plants, animals, fungi, bacteria, and how all living things work."}, {"t": "Cells", "q": "The basic unit of all living things is the?", "o": ["Atom", "Cell", "Tissue", "Organ"], "a": 1, "e": "Cells are the smallest unit of life. Some organisms like bacteria are just one cell; humans have 37 trillion!"}, {"t": "Classification", "q": "Which of these is NOT a living thing?", "o": ["Mushroom", "Rock", "Bacterium", "Fern"], "a": 1, "e": "A rock is non-living. Living things grow, reproduce, respond to stimuli and need energy. Rocks do none of these."}, {"t": "Plants", "q": "What gas do plants absorb during photosynthesis?", "o": ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"], "a": 2, "e": "Plants absorb CO\u2082 (carbon dioxide) and release O\u2082 (oxygen) during photosynthesis \u2014 that's why plants are essential for life!"}]);</script>
+</script>
 </body>
 </html>

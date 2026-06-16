@@ -64,7 +64,49 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   <div class="logo">📅</div>
   <div><h1>Wednesday · Week 1</h1><p>15 Jun – 21 Jun 2026 &nbsp;·&nbsp; Class 6 ICSE</p></div>
 </header>
-<div class="tabs"><button class="tab active" id="tab-g" onclick="switchTab('g',['g','e'])">🌍 Geography</button><button class="tab" id="tab-e" onclick="switchTab('e',['g','e'])">✍️ English Grammar</button></div>
+<div class="tabs"><button class="tab active" id="tab-g" onclick="switchTab('g',['g','e'])">🌍 Geography</button><button class="tab" id="tab-e" onclick="switchTab('e',['g','e'])">✍️ English Grammar</button>
+<div id="session-status" style="margin:0.75rem 1rem 0;padding:0.75rem 1rem;background:#fff;border-radius:14px;box-shadow:0 1px 4px rgba(0,0,0,0.06)">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+    <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9CA3AF">Session progress</span>
+    <span id="day-status-badge" style="font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;background:#F3F4F6;color:#9CA3AF">Not started</span>
+  </div>
+  <div id="subject-scores" style="display:flex;flex-wrap:wrap;gap:6px"></div>
+</div>
+<script>
+(function(){
+  var SUBS = [{"id": "g", "total": 5, "label": "Geography"}, {"id": "e", "total": 4, "label": "English Grammar"}];
+  function updateDayStatus(){
+    var badge = document.getElementById('day-status-badge');
+    var scoresDiv = document.getElementById('subject-scores');
+    scoresDiv.innerHTML = '';
+    var allDone = true, anyAttempted = false;
+    SUBS.forEach(function(s){
+      var d = getScore(1, 'wed', s.id);
+      var pill = document.createElement('span');
+      pill.style.cssText = 'font-size:12px;padding:4px 10px;border-radius:99px;font-weight:500';
+      if(!d){
+        pill.textContent = s.label + ': —';
+        pill.style.background = '#F3F4F6'; pill.style.color = '#9CA3AF';
+        allDone = false;
+      } else {
+        anyAttempted = true;
+        var pct = Math.round((d.bestScore/d.totalQ)*100);
+        var ok = pct >= 60;
+        if(!ok) allDone = false;
+        pill.textContent = s.label + ': ' + d.bestScore + '/' + d.totalQ + ' (' + pct + '%)' + (ok?' ✓':'');
+        pill.style.background = ok ? '#ECFDF5' : '#FEF2F2';
+        pill.style.color = ok ? '#065F46' : '#991B1B';
+      }
+      scoresDiv.appendChild(pill);
+    });
+    if(!anyAttempted){ badge.textContent='Not started'; badge.style.background='#F3F4F6'; badge.style.color='#9CA3AF'; }
+    else if(allDone){ badge.textContent='✅ Done'; badge.style.background='#ECFDF5'; badge.style.color='#065F46'; }
+    else{ badge.textContent='🟡 In progress'; badge.style.background='#FFFBEB'; badge.style.color='#92400E'; }
+  }
+  window.updateDayStatus = updateDayStatus;
+  updateDayStatus();
+})();
+</script>
 <div id="sec-g" class="sec active"><div class="did-you-know">
   <div class="dyk-eye">✨ Did you know?</div>
   <div class="dyk-title">🌍 Earth is the only known planet with life!</div>
@@ -119,7 +161,49 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   <button class="retry" id="e-retry">Try again ↺</button>
 </div></div>
 <script>
-function quiz(id, qs) {
+
+var THRESHOLD = 0.6;
+
+function lsKey(week, dayShort, tabId) {
+  return 'icse_w' + String(week).padStart(2,'0') + '_' + dayShort + '_' + tabId;
+}
+
+function saveScore(week, dayShort, tabId, score, total, label) {
+  var key = lsKey(week, dayShort, tabId);
+  var existing = {};
+  try { existing = JSON.parse(localStorage.getItem(key) || '{}'); } catch(e) {}
+  var attempts = (existing.attempts || 0) + 1;
+  var best = Math.max(existing.bestScore || 0, score);
+  var data = {attempts: attempts, bestScore: best, totalQ: total,
+              lastDate: new Date().toISOString().slice(0,10), label: label};
+  localStorage.setItem(key, JSON.stringify(data));
+}
+
+function getScore(week, dayShort, tabId) {
+  try { return JSON.parse(localStorage.getItem(lsKey(week, dayShort, tabId)) || 'null'); }
+  catch(e) { return null; }
+}
+
+function isDayDone(week, dayShort, subjects) {
+  // subjects = [{id, total}]
+  return subjects.every(function(s) {
+    var d = getScore(week, dayShort, s.id);
+    return d && d.totalQ > 0 && (d.bestScore / d.totalQ) >= THRESHOLD;
+  });
+}
+
+function dayStatus(week, dayShort, subjects) {
+  // returns: 'done' | 'partial' | 'pending'
+  var attempted = subjects.filter(function(s) { return getScore(week, dayShort, s.id); });
+  if (attempted.length === 0) return 'pending';
+  var done = isDayDone(week, dayShort, subjects);
+  return done ? 'done' : 'partial';
+}
+
+var WEEK_NUM = 1;
+var DAY_SHORT = 'wed';
+
+function quiz(id, qs, label) {
   var i=0, sc=0, ans=false;
   function el(x){return document.getElementById(id+'-'+x);}
   function render(){
@@ -143,7 +227,7 @@ function quiz(id, qs) {
   }
   function pick(j){
     if(ans)return; ans=true;
-    var q=qs[i], fb=el('fb');
+    var q=qs[i],fb=el('fb');
     document.querySelectorAll('#'+id+'-opts .opt').forEach(function(b,k){
       if(k===q.a)b.classList.add('correct');
       else if(k===j&&j!==q.a)b.classList.add('wrong');
@@ -153,12 +237,15 @@ function quiz(id, qs) {
     el('nxt').className='nxt show';
   }
   function finish(){
+    saveScore(WEEK_NUM, DAY_SHORT, id, sc, qs.length, label);
     document.getElementById(id+'-card').style.display='none';
     document.getElementById(id+'-done').style.display='block';
     el('prog').style.width='100%'; el('pct').textContent='100%';
     el('fscore').textContent=sc+' / '+qs.length;
-    var r=sc===qs.length?['🌟','Perfect! Amazing start!']:sc>=Math.ceil(qs.length*0.6)?['🎉','Great job!']:['💪','Good try — review and retry!'];
+    var pct=Math.round((sc/qs.length)*100);
+    var r=sc===qs.length?['🌟','Perfect!']:pct>=60?['🎉','Well done! 60%+ achieved ✓']:['💪','Keep going — need 60%+ to mark as Done'];
     el('ficon').textContent=r[0]; el('fmsg').textContent=r[1];
+    updateDayStatus();
   }
   el('nxt').onclick=function(){i++;render();};
   el('retry').onclick=function(){
@@ -169,13 +256,13 @@ function quiz(id, qs) {
   };
   render();
 }
+
 function switchTab(t,all){
   all.forEach(function(x){
     document.getElementById('tab-'+x).classList.toggle('active',x===t);
     document.getElementById('sec-'+x).classList.toggle('active',x===t);
   });
 }
-quiz('g',[{"t": "The Earth", "q": "The Earth is shaped like?", "o": ["A perfect sphere", "A flat disc", "An oblate spheroid", "A cube"], "a": 2, "e": "The Earth is an oblate spheroid \u2014 slightly flattened at the poles and bulging at the equator."}, {"t": "Maps", "q": "What does a compass show?", "o": ["Distance", "Direction", "Height", "Temperature"], "a": 1, "e": "A compass shows direction \u2014 North, South, East, and West (NEWS!)."}, {"t": "Continents", "q": "How many continents are there on Earth?", "o": ["5", "6", "7", "8"], "a": 2, "e": "There are 7 continents: Asia, Africa, North America, South America, Europe, Australia, Antarctica."}, {"t": "India", "q": "India is located in which continent?", "o": ["Africa", "Europe", "Asia", "Australia"], "a": 2, "e": "India is in Asia \u2014 the largest continent. It occupies most of South Asia."}, {"t": "Oceans", "q": "Which is the largest ocean?", "o": ["Atlantic", "Indian", "Arctic", "Pacific"], "a": 3, "e": "The Pacific Ocean is the largest and deepest ocean, covering about one-third of Earth's surface!"}]);
-quiz('e',[{"t": "Nouns", "q": "Which is a proper noun?", "o": ["city", "river", "Bengaluru", "mountain"], "a": 2, "e": "Bengaluru is a proper noun \u2014 it names a specific city. Proper nouns always start with a capital letter."}, {"t": "Adjectives", "q": "Which word is an adjective in: 'The tall boy ran.'?", "o": ["The", "tall", "boy", "ran"], "a": 1, "e": "'tall' is an adjective \u2014 it describes the boy. Adjectives describe nouns."}, {"t": "Pronouns", "q": "Which is a pronoun?", "o": ["book", "run", "she", "quickly"], "a": 2, "e": "'she' is a pronoun \u2014 it replaces a noun (a person's name). Other pronouns: he, they, it, we."}, {"t": "Sentences", "q": "A sentence must always have?", "o": ["Only a noun", "Only a verb", "A subject and a verb", "An adjective"], "a": 2, "e": "Every complete sentence needs a subject (who/what) and a verb (action/state). Example: 'Birds fly.'"}]);</script>
+</script>
 </body>
 </html>

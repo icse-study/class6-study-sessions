@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>Dashboard · Class 6 ICSE</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0F4FF;min-height:100vh}
+header{background:linear-gradient(135deg,#4F46E5,#7C3AED);padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
+header h1{color:#fff;font-size:18px;font-weight:700}
+.back{color:rgba(255,255,255,0.85);font-size:13px;text-decoration:none;font-weight:500}
+.section{padding:1rem 1rem 0}
+.section-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:#9CA3AF;margin-bottom:0.6rem}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1rem}
+.stat-card{background:#fff;border-radius:16px;padding:1rem;box-shadow:0 1px 4px rgba(0,0,0,0.06);text-align:center}
+.stat-card .v{font-size:28px;font-weight:800;color:#4F46E5}
+.stat-card .l{font-size:12px;color:#9CA3AF;margin-top:3px}
+.stat-card.green .v{color:#10B981}
+.stat-card.amber .v{color:#F59E0B}
+.stat-card.purple .v{color:#7C3AED}
+.year-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:1rem}
+.yg-label{font-size:10px;color:#9CA3AF;text-align:center;padding:2px 0}
+.day-dot{width:100%;aspect-ratio:1;border-radius:4px;cursor:pointer;position:relative}
+.dot-done{background:#10B981}
+.dot-partial{background:#F59E0B}
+.dot-pending{background:#E5E7EB}
+.dot-future{background:#F3F4F6}
+.dot-today{outline:2px solid #4F46E5;outline-offset:1px}
+.subject-table{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-bottom:1rem}
+.st-header{display:grid;grid-template-columns:1fr 60px 60px 70px;gap:4px;padding:10px 14px;background:#F9FAFB;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#9CA3AF}
+.st-row{display:grid;grid-template-columns:1fr 60px 60px 70px;gap:4px;padding:10px 14px;border-top:1px solid #F3F4F6;font-size:13px;align-items:center}
+.st-name{color:#111827;font-weight:500}
+.st-val{text-align:center;color:#6B7280}
+.st-pct{text-align:center;font-weight:600}
+.pct-good{color:#10B981}
+.pct-ok{color:#F59E0B}
+.pct-low{color:#EF4444}
+.streak-card{background:#fff;border-radius:16px;padding:1rem;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-bottom:1rem;text-align:center}
+.streak-num{font-size:40px;font-weight:800;color:#F59E0B}
+.streak-label{font-size:13px;color:#6B7280;margin-top:4px}
+</style>
+</head>
+<body>
+<header>
+  <h1>📊 Dashboard</h1>
+  <a class="back" href="index.html">← Home</a>
+</header>
+
+<div class="section">
+  <div class="section-label">Overview</div>
+  <div class="stats-grid">
+    <div class="stat-card green"><div class="v" id="ov-done">—</div><div class="l">Days completed</div></div>
+    <div class="stat-card amber"><div class="v" id="ov-partial">—</div><div class="l">In progress</div></div>
+    <div class="stat-card"><div class="v" id="ov-total">287</div><div class="l">Total days (41 wks)</div></div>
+    <div class="stat-card purple"><div class="v" id="ov-streak">—</div><div class="l">🔥 Day streak</div></div>
+  </div>
+
+  <div class="section-label">Year at a glance</div>
+  <div style="background:#fff;border-radius:16px;padding:1rem;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-bottom:1rem">
+    <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:4px">
+      <div class="yg-label">M</div><div class="yg-label">T</div><div class="yg-label">W</div>
+      <div class="yg-label">T</div><div class="yg-label">F</div><div class="yg-label">S</div>
+      <div class="yg-label">S</div>
+    </div>
+    <div id="year-grid" style="display:grid;grid-template-columns:repeat(7,1fr);gap:3px"></div>
+    <div style="display:flex;gap:12px;margin-top:10px;font-size:11px;color:#9CA3AF;flex-wrap:wrap">
+      <span><span style="display:inline-block;width:10px;height:10px;background:#10B981;border-radius:2px;margin-right:4px"></span>Done (60%+)</span>
+      <span><span style="display:inline-block;width:10px;height:10px;background:#F59E0B;border-radius:2px;margin-right:4px"></span>In progress</span>
+      <span><span style="display:inline-block;width:10px;height:10px;background:#E5E7EB;border-radius:2px;margin-right:4px"></span>Pending</span>
+    </div>
+  </div>
+
+  <div class="section-label">Subject scores (best attempt, Week 1)</div>
+  <div class="subject-table">
+    <div class="st-header"><span>Subject</span><span style="text-align:center">Best</span><span style="text-align:center">Total Q</span><span style="text-align:center">Score</span></div>
+    <div id="subject-rows"></div>
+  </div>
+
+  <div class="section-label">Week-by-week</div>
+  <div id="week-rows" style="display:flex;flex-direction:column;gap:8px;padding-bottom:2rem"></div>
+</div>
+
+<script>
+
+var THRESHOLD = 0.6;
+
+function lsKey(week, dayShort, tabId) {
+  return 'icse_w' + String(week).padStart(2,'0') + '_' + dayShort + '_' + tabId;
+}
+
+function saveScore(week, dayShort, tabId, score, total, label) {
+  var key = lsKey(week, dayShort, tabId);
+  var existing = {};
+  try { existing = JSON.parse(localStorage.getItem(key) || '{}'); } catch(e) {}
+  var attempts = (existing.attempts || 0) + 1;
+  var best = Math.max(existing.bestScore || 0, score);
+  var data = {attempts: attempts, bestScore: best, totalQ: total,
+              lastDate: new Date().toISOString().slice(0,10), label: label};
+  localStorage.setItem(key, JSON.stringify(data));
+}
+
+function getScore(week, dayShort, tabId) {
+  try { return JSON.parse(localStorage.getItem(lsKey(week, dayShort, tabId)) || 'null'); }
+  catch(e) { return null; }
+}
+
+function isDayDone(week, dayShort, subjects) {
+  // subjects = [{id, total}]
+  return subjects.every(function(s) {
+    var d = getScore(week, dayShort, s.id);
+    return d && d.totalQ > 0 && (d.bestScore / d.totalQ) >= THRESHOLD;
+  });
+}
+
+function dayStatus(week, dayShort, subjects) {
+  // returns: 'done' | 'partial' | 'pending'
+  var attempted = subjects.filter(function(s) { return getScore(week, dayShort, s.id); });
+  if (attempted.length === 0) return 'pending';
+  var done = isDayDone(week, dayShort, subjects);
+  return done ? 'done' : 'partial';
+}
+
+var WEEKS=[{"num": 1, "mon": "2026-06-15", "sun": "2026-06-21"}, {"num": 2, "mon": "2026-06-22", "sun": "2026-06-28"}, {"num": 3, "mon": "2026-06-29", "sun": "2026-07-05"}, {"num": 4, "mon": "2026-07-06", "sun": "2026-07-12"}, {"num": 5, "mon": "2026-07-13", "sun": "2026-07-19"}, {"num": 6, "mon": "2026-07-20", "sun": "2026-07-26"}, {"num": 7, "mon": "2026-07-27", "sun": "2026-08-02"}, {"num": 8, "mon": "2026-08-03", "sun": "2026-08-09"}, {"num": 9, "mon": "2026-08-10", "sun": "2026-08-16"}, {"num": 10, "mon": "2026-08-17", "sun": "2026-08-23"}, {"num": 11, "mon": "2026-08-24", "sun": "2026-08-30"}, {"num": 12, "mon": "2026-08-31", "sun": "2026-09-06"}, {"num": 13, "mon": "2026-09-07", "sun": "2026-09-13"}, {"num": 14, "mon": "2026-09-14", "sun": "2026-09-20"}, {"num": 15, "mon": "2026-09-21", "sun": "2026-09-27"}, {"num": 16, "mon": "2026-09-28", "sun": "2026-10-04"}, {"num": 17, "mon": "2026-10-05", "sun": "2026-10-11"}, {"num": 18, "mon": "2026-10-12", "sun": "2026-10-18"}, {"num": 19, "mon": "2026-10-19", "sun": "2026-10-25"}, {"num": 20, "mon": "2026-10-26", "sun": "2026-11-01"}, {"num": 21, "mon": "2026-11-02", "sun": "2026-11-08"}, {"num": 22, "mon": "2026-11-09", "sun": "2026-11-15"}, {"num": 23, "mon": "2026-11-16", "sun": "2026-11-22"}, {"num": 24, "mon": "2026-11-23", "sun": "2026-11-29"}, {"num": 25, "mon": "2026-11-30", "sun": "2026-12-06"}, {"num": 26, "mon": "2026-12-07", "sun": "2026-12-13"}, {"num": 27, "mon": "2026-12-14", "sun": "2026-12-20"}, {"num": 28, "mon": "2026-12-21", "sun": "2026-12-27"}, {"num": 29, "mon": "2026-12-28", "sun": "2027-01-03"}, {"num": 30, "mon": "2027-01-04", "sun": "2027-01-10"}, {"num": 31, "mon": "2027-01-11", "sun": "2027-01-17"}, {"num": 32, "mon": "2027-01-18", "sun": "2027-01-24"}, {"num": 33, "mon": "2027-01-25", "sun": "2027-01-31"}, {"num": 34, "mon": "2027-02-01", "sun": "2027-02-07"}, {"num": 35, "mon": "2027-02-08", "sun": "2027-02-14"}, {"num": 36, "mon": "2027-02-15", "sun": "2027-02-21"}, {"num": 37, "mon": "2027-02-22", "sun": "2027-02-28"}, {"num": 38, "mon": "2027-03-01", "sun": "2027-03-07"}, {"num": 39, "mon": "2027-03-08", "sun": "2027-03-14"}, {"num": 40, "mon": "2027-03-15", "sun": "2027-03-21"}, {"num": 41, "mon": "2027-03-22", "sun": "2027-03-28"}];
+var DAY_SUBJECTS_MAP={"monday": [{"id": "m", "label": "Maths", "total": 5}, {"id": "k", "label": "Kannada", "total": 4}, {"id": "e", "label": "English", "total": 4}], "tuesday": [{"id": "m", "label": "Maths", "total": 4}, {"id": "p", "label": "Physics", "total": 4}, {"id": "c", "label": "CS/Python", "total": 4}], "wednesday": [{"id": "g", "label": "Geography", "total": 5}, {"id": "e", "label": "English Grammar", "total": 4}], "thursday": [{"id": "m", "label": "Maths", "total": 4}, {"id": "ch", "label": "Chemistry", "total": 4}, {"id": "f", "label": "French", "total": 4}], "friday": [{"id": "s", "label": "Science Diagrams", "total": 3}, {"id": "k", "label": "Kannada Grammar", "total": 3}, {"id": "b", "label": "Biology", "total": 4}], "saturday": [{"id": "m", "label": "Maths", "total": 5}, {"id": "h", "label": "History & Civics", "total": 4}, {"id": "pq", "label": "Science Quiz", "total": 5}], "sunday": [{"id": "k", "label": "Kannada", "total": 3}, {"id": "f", "label": "French", "total": 3}, {"id": "gh", "label": "Geo+History", "total": 3}, {"id": "mx", "label": "Mixed Quiz", "total": 5}]};
+var DAY_SHORT_MAP={"monday": "mon", "tuesday": "tue", "wednesday": "wed", "thursday": "thu", "friday": "fri", "saturday": "sat", "sunday": "sun"};
+var SLUGS=["monday","tuesday","wednesday","thursday","friday","saturday","sunday"];
+var DN=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+var today=new Date(), tD=today.toISOString().slice(0,10);
+var WEEK1_START=new Date('2026-06-15T00:00:00');
+var YEAR_END=new Date('2027-03-28T00:00:00');
+
+// ── Compute all day statuses ──────────────────────────────────────────────────
+var allDays=[]; // {date, weekNum, slug, status}
+WEEKS.forEach(function(w){
+  SLUGS.forEach(function(slug,si){
+    var dayDate=new Date(w.mon+'T00:00:00');
+    dayDate.setDate(dayDate.getDate()+si);
+    var ds=dayDate.toISOString().slice(0,10);
+    var sh=DAY_SHORT_MAP[slug], subs=DAY_SUBJECTS_MAP[slug];
+    var status=ds>tD?'future':dayStatus(w.num,sh,subs);
+    allDays.push({date:ds,weekNum:w.num,slug:slug,short:sh,status:status,subjects:subs,mon:w.mon,sun:w.sun});
+  });
+});
+
+var doneCount=allDays.filter(function(d){return d.status==='done';}).length;
+var partialCount=allDays.filter(function(d){return d.status==='partial';}).length;
+
+// Streak — consecutive done days back from today
+var streak=0;
+var sortedDone=allDays.filter(function(d){return d.status==='done'&&d.date<=tD;})
+  .sort(function(a,b){return b.date.localeCompare(a.date);});
+var prevDate=null;
+for(var i=0;i<sortedDone.length;i++){
+  if(!prevDate){ streak=1; prevDate=sortedDone[i].date; continue; }
+  var diff=(new Date(prevDate)-new Date(sortedDone[i].date))/86400000;
+  if(diff===1){ streak++; prevDate=sortedDone[i].date; }
+  else break;
+}
+
+document.getElementById('ov-done').textContent=doneCount;
+document.getElementById('ov-partial').textContent=partialCount;
+document.getElementById('ov-streak').textContent=streak;
+
+// ── Year grid ─────────────────────────────────────────────────────────────────
+var ygrid=document.getElementById('year-grid');
+allDays.forEach(function(d){
+  var dot=document.createElement('div');
+  dot.className='day-dot dot-'+d.status+(d.date===tD?' dot-today':'');
+  dot.title=d.slug.charAt(0).toUpperCase()+d.slug.slice(1)+' W'+d.weekNum+' ('+d.date+') — '+d.status;
+  dot.onclick=function(){
+    var wn=String(d.weekNum).padStart(2,'0');
+    window.location.href='weeks/week'+wn+'/'+d.slug+'.html';
+  };
+  ygrid.appendChild(dot);
+});
+
+// ── Subject scores table (Week 1 for now, will expand) ───────────────────────
+var subjectMap={};
+allDays.forEach(function(d){
+  d.subjects.forEach(function(s){
+    var sc=getScore(d.weekNum,d.short,s.id);
+    if(!sc)return;
+    var key=s.label;
+    if(!subjectMap[key])subjectMap[key]={best:0,total:0,attempts:0};
+    subjectMap[key].best=Math.max(subjectMap[key].best,sc.bestScore);
+    subjectMap[key].total=s.total;
+    subjectMap[key].attempts+=sc.attempts;
+  });
+});
+var srows=document.getElementById('subject-rows');
+var subKeys=Object.keys(subjectMap);
+if(subKeys.length===0){
+  srows.innerHTML='<div style="padding:1rem;font-size:14px;color:#9CA3AF;text-align:center">No attempts yet — start a session!</div>';
+}else{
+  subKeys.forEach(function(k){
+    var d=subjectMap[k];
+    var pct=Math.round((d.best/d.total)*100);
+    var cls=pct>=60?'pct-good':pct>=40?'pct-ok':'pct-low';
+    var row=document.createElement('div');
+    row.className='st-row';
+    row.innerHTML='<span class="st-name">'+k+'</span><span class="st-val">'+d.best+'</span><span class="st-val">'+d.total+'</span><span class="st-pct '+cls+'">'+pct+'%</span>';
+    srows.appendChild(row);
+  });
+}
+
+// ── Week-by-week rows ─────────────────────────────────────────────────────────
+var weekRows=document.getElementById('week-rows');
+WEEKS.forEach(function(w){
+  var wDone=0,wPartial=0;
+  SLUGS.forEach(function(slug){
+    var sh=DAY_SHORT_MAP[slug],subs=DAY_SUBJECTS_MAP[slug];
+    var st=dayStatus(w.num,sh,subs);
+    if(st==='done')wDone++;
+    else if(st==='partial')wPartial++;
+  });
+  var barPct=Math.round((wDone/7)*100);
+  var barColor=wDone===7?'#10B981':wDone>0||wPartial>0?'#F59E0B':'#E5E7EB';
+  var m=new Date(w.mon+'T00:00:00'),s=new Date(w.sun+'T00:00:00');
+  var dr=m.toLocaleDateString('en-IN',{day:'numeric',month:'short'})+' – '+s.toLocaleDateString('en-IN',{day:'numeric',month:'short'});
+  var isCur=tD>=w.mon&&tD<=w.sun;
+  var wn=String(w.num).padStart(2,'0');
+  var row=document.createElement('a');
+  row.href='weeks/week'+wn+'/index.html';
+  row.style.cssText='background:#fff;border-radius:14px;padding:0.75rem 1rem;box-shadow:0 1px 3px rgba(0,0,0,0.06);text-decoration:none;color:inherit;display:block;border:2px solid '+(isCur?'#4F46E5':'transparent');
+  row.innerHTML='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">'
+    +'<span style="font-size:14px;font-weight:700;color:#111827">Week '+w.num+(isCur?' <span style="font-size:11px;font-weight:600;background:#EEF2FF;color:#4F46E5;padding:2px 8px;border-radius:99px;margin-left:6px">Now</span>':'')+'</span>'
+    +'<span style="font-size:12px;color:#9CA3AF">'+dr+'</span></div>'
+    +'<div style="display:flex;align-items:center;gap:8px">'
+    +'<div style="flex:1;height:6px;background:#E5E7EB;border-radius:99px;overflow:hidden"><div style="height:100%;width:'+barPct+'%;background:'+barColor+';border-radius:99px"></div></div>'
+    +'<span style="font-size:12px;color:#9CA3AF;min-width:28px;text-align:right">'+wDone+'/7</span></div>';
+  weekRows.appendChild(row);
+});
+</script>
+</body>
+</html>
