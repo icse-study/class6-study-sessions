@@ -1,24 +1,24 @@
 {
   "version": 1,
-  "lastSaved": "2026-06-16T06:08:22.208Z",
+  "lastSaved": "2026-06-16T06:08:25.978Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
-      "attempts": 16,
+      "attempts": 32,
       "bestScore": 5,
       "totalQ": 5,
       "lastDate": "2026-06-16",
       "label": "Maths"
     },
     "icse_w01_mon_k": {
-      "attempts": 6,
+      "attempts": 12,
       "bestScore": 4,
       "totalQ": 4,
       "lastDate": "2026-06-16",
       "label": "Kannada"
     },
     "icse_w01_mon_e": {
-      "attempts": 2,
+      "attempts": 4,
       "bestScore": 4,
       "totalQ": 4,
       "lastDate": "2026-06-16",
