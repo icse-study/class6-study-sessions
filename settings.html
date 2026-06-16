@@ -90,7 +90,14 @@ var GH_REPO = 'icse-study/class6-study-sessions';
 var GH_FILE = 'progress.json';
 var GH_API  = 'https://api.github.com/repos/' + GH_REPO + '/contents/' + GH_FILE;
 
-function getToken(){ return localStorage.getItem('icse_gh_token') || ''; }
+function lsSet(key, val){
+  try{ localStorage.setItem(key, val); return true; }
+  catch(e){ return false; }
+}
+function lsGet(key){ try{ return localStorage.getItem(key) || ''; }catch(e){ return ''; } }
+function lsRemove(key){ try{ localStorage.removeItem(key); }catch(e){} }
+
+function getToken(){ return lsGet('icse_gh_token'); }
 
 function toggleShow(){
   var inp = document.getElementById('token-input');
@@ -116,15 +123,18 @@ function showStatus(id, msg, cls){
 }
 
 function saveToken(){
-  var v = document.getElementById('token-input').value.trim();
+  var v = document.getElementById('token-input').value.replace(/[\r\n\t]/g,'').trim();
   if(!v || v.indexOf('•') > -1){ showStatus('token-status','Please paste a valid token','err'); return; }
-  localStorage.setItem('icse_gh_token', v);
+  if(!lsSet('icse_gh_token', v)){
+    showStatus('token-status','❌ Could not save — if using Private Browsing, try a normal tab','err');
+    return;
+  }
   showStatus('token-status','✅ Token saved on this device','ok');
   updateBanner();
 }
 
 function clearToken(){
-  localStorage.removeItem('icse_gh_token');
+  lsRemove('icse_gh_token');
   showStatus('token-status','Token removed from this device','ok');
   updateBanner();
 }
@@ -160,12 +170,14 @@ function loadCloudInfo(resp){
 
 function getAllLocalScores(){
   var s = {};
-  for(var i = 0; i < localStorage.length; i++){
-    var k = localStorage.key(i);
-    if(k && k.indexOf('icse_w') === 0){
-      try{ s[k] = JSON.parse(localStorage.getItem(k)); }catch(e){}
+  try{
+    for(var i = 0; i < localStorage.length; i++){
+      var k = localStorage.key(i);
+      if(k && k.indexOf('icse_w') === 0){
+        try{ s[k] = JSON.parse(localStorage.getItem(k)); }catch(e){}
+      }
     }
-  }
+  }catch(e){}
   return s;
 }
 
@@ -193,7 +205,7 @@ function doSync(){
         label:     l.label || r.label
       };
     });
-    Object.keys(merged).forEach(function(k){ localStorage.setItem(k, JSON.stringify(merged[k])); });
+    Object.keys(merged).forEach(function(k){ lsSet(k, JSON.stringify(merged[k])); });
     showStatus('sync-status','Saving to cloud…','ok');
     var payload = JSON.stringify({
       version: 1, lastSaved: new Date().toISOString(),
@@ -229,14 +241,16 @@ function doSync(){
 
 // Load cloud info on open if token exists
 updateBanner();
-if(getToken()){
+(function(){
+  var t = getToken();
+  if(!t) return;
   var xhr = new XMLHttpRequest();
   xhr.open('GET', GH_API, true);
-  xhr.setRequestHeader('Authorization', 'token ' + getToken());
+  xhr.setRequestHeader('Authorization', 'token ' + t);
   xhr.setRequestHeader('Accept', 'application/vnd.github+json');
   xhr.onload = function(){ if(xhr.status===200) loadCloudInfo(JSON.parse(xhr.responseText)); };
   xhr.send();
-}
+})();
 </script>
 </body>
 </html>
