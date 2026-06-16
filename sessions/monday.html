@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Monday Study Session — Class 6</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #F0F4FF; min-height: 100vh; color: #1a1a2e; }
+header { background: linear-gradient(135deg, #4F46E5, #7C3AED); padding: 1.25rem 1.5rem; display: flex; align-items: center; gap: 12px; }
+header .logo { font-size: 28px; }
+header h1 { color: #fff; font-size: 18px; font-weight: 600; }
+header p { color: rgba(255,255,255,0.75); font-size: 13px; margin-top: 2px; }
+.back-btn { display: inline-flex; align-items: center; gap: 6px; color: #6B7280; font-size: 13px; text-decoration: none; padding: 0.75rem 1rem 0; }
+.tab-bar { display: flex; background: #fff; border-bottom: 1px solid #E5E7EB; padding: 0 1rem; position: sticky; top: 0; z-index: 10; box-shadow: 0 1px 4px rgba(0,0,0,0.06); overflow-x: auto; }
+.tab-btn { flex-shrink: 0; padding: 14px 12px; border: none; background: transparent; font-size: 14px; font-weight: 500; color: #9CA3AF; cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.2s; white-space: nowrap; }
+.tab-btn.active { color: #4F46E5; border-bottom-color: #4F46E5; }
+.section { display: none; padding: 1rem 1rem 3rem; max-width: 600px; margin: 0 auto; }
+.section.active { display: block; }
+.progress-row { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
+.progress-track { flex: 1; height: 8px; background: #E5E7EB; border-radius: 99px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, #4F46E5, #7C3AED); border-radius: 99px; transition: width 0.4s ease; }
+.progress-label { font-size: 13px; color: #6B7280; white-space: nowrap; }
+.score-row { display: flex; gap: 10px; margin-bottom: 1.25rem; }
+.score-chip { background: #fff; border-radius: 12px; padding: 10px 14px; flex: 1; box-shadow: 0 1px 3px rgba(0,0,0,0.07); }
+.score-chip label { display: block; font-size: 11px; color: #9CA3AF; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+.score-chip span { font-size: 22px; font-weight: 700; color: #4F46E5; }
+.card { background: #fff; border-radius: 18px; padding: 1.25rem; box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 1rem; }
+.topic-badge { display: inline-block; background: #EEF2FF; color: #4F46E5; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 99px; margin-bottom: 10px; }
+.q-text { font-size: 17px; font-weight: 500; line-height: 1.5; color: #111827; margin-bottom: 1.25rem; }
+.opts { display: flex; flex-direction: column; gap: 10px; }
+.opt-btn { width: 100%; padding: 14px 16px; border-radius: 12px; border: 2px solid #E5E7EB; background: #FAFAFA; font-size: 16px; text-align: left; cursor: pointer; color: #1F2937; transition: all 0.15s; -webkit-tap-highlight-color: transparent; }
+.opt-btn:active { transform: scale(0.98); }
+.opt-btn.correct { background: #ECFDF5; border-color: #10B981; color: #065F46; }
+.opt-btn.wrong { background: #FEF2F2; border-color: #EF4444; color: #7F1D1D; }
+.feedback { margin-top: 14px; padding: 12px 14px; border-radius: 12px; font-size: 14px; line-height: 1.5; display: none; }
+.feedback.show { display: block; }
+.feedback.success { background: #ECFDF5; color: #065F46; }
+.feedback.error { background: #FEF2F2; color: #7F1D1D; }
+.next-btn { display: none; width: 100%; margin-top: 14px; padding: 15px; border-radius: 14px; border: none; background: linear-gradient(135deg, #4F46E5, #7C3AED); color: #fff; font-size: 16px; font-weight: 600; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.next-btn.show { display: block; }
+.concept-card { background: linear-gradient(135deg, #EEF2FF, #F5F3FF); border-radius: 18px; padding: 1.25rem; margin-bottom: 1rem; border: 1px solid #C7D2FE; }
+.concept-card h3 { font-size: 15px; font-weight: 700; color: #4338CA; margin-bottom: 10px; }
+.concept-card p, .concept-card li { font-size: 15px; color: #374151; line-height: 1.7; }
+.formula-box { background: #fff; border: 2px solid #6366F1; border-radius: 12px; padding: 14px 16px; margin: 12px 0; text-align: center; font-size: 18px; font-weight: 700; color: #4338CA; }
+.section-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #9CA3AF; margin: 1.25rem 0 0.6rem; }
+.done-card { text-align: center; padding: 2rem 1.25rem; }
+.done-emoji { font-size: 56px; margin-bottom: 12px; }
+.done-title { font-size: 22px; font-weight: 700; color: #111827; margin-bottom: 8px; }
+.done-sub { font-size: 15px; color: #6B7280; line-height: 1.6; }
+.done-score { font-size: 36px; font-weight: 800; color: #4F46E5; margin: 16px 0; }
+.retry-btn { display: inline-block; margin-top: 16px; padding: 14px 28px; border-radius: 14px; border: 2px solid #4F46E5; background: transparent; color: #4F46E5; font-size: 15px; font-weight: 600; cursor: pointer; }
+</style>
+</head>
+<body>
+<a class="back-btn" href="../index.html">← Back to schedule</a>
+<header>
+  <div class="logo">📅</div>
+  <div><h1>Monday Study Session</h1><p>Class 6</p></div>
+</header>
+<div class="tab-bar"><button class="tab-btn active" id="tab-m" onclick="switchTab('m', tabs)">➗ Maths</button><button class="tab-btn" id="tab-k" onclick="switchTab('k', tabs)">🗣️ Kannada</button><button class="tab-btn" id="tab-e" onclick="switchTab('e', tabs)">📖 English</button></div>
+<div id="sec-m" class="section active"><div class="section-title">Practice questions</div>
+<div class="score-row">
+  <div class="score-chip"><label>Question</label><span id="m-qnum">1 / 5</span></div>
+  <div class="score-chip"><label>Score</label><span id="m-score">0</span></div>
+</div>
+<div class="progress-row">
+  <div class="progress-track"><div class="progress-fill" id="m-progress" style="width:0%"></div></div>
+  <div class="progress-label" id="m-pct">0%</div>
+</div>
+<div id="m-card" class="card">
+  <div class="topic-badge" id="m-topic"></div>
+  <div class="q-text" id="m-q"></div>
+  <div class="opts" id="m-opts"></div>
+  <div class="feedback" id="m-feedback"></div>
+  <button class="next-btn" id="m-next">Next →</button>
+</div>
+<div id="m-done" style="display:none;" class="card done-card">
+  <div class="done-emoji" id="m-emoji">🎉</div>
+  <div class="done-title">Done!</div>
+  <div class="done-score" id="m-final"></div>
+  <div class="done-sub" id="m-msg"></div>
+  <button class="retry-btn" id="m-retry">Try again ↺</button>
+</div></div><div id="sec-k" class="section"><div class="concept-card"><h3>🗣️ Kannada — Common Words & Grammar</h3><p><strong>Common words:</strong></p><ul style='margin:8px 0 8px 16px'><li>ನೀರು (Nīru) — Water &nbsp;|&nbsp; ಹಾಲು (Hālu) — Milk</li><li>ಮನೆ (Mane) — House &nbsp;|&nbsp; ಶಾಲೆ (Shāle) — School</li><li>ಅಮ್ಮ (Amma) — Mother &nbsp;|&nbsp; ಅಪ್ಪ (Appa) — Father</li></ul><p><strong>Plurals:</strong> Add ಗಳು (-gaḷu) to most nouns.</p><div class="formula-box">ಮರ (tree) → ಮರಗಳು (trees)</div></div><div class="section-title">Quick check</div>
+<div class="score-row">
+  <div class="score-chip"><label>Question</label><span id="k-qnum">1 / 5</span></div>
+  <div class="score-chip"><label>Score</label><span id="k-score">0</span></div>
+</div>
+<div class="progress-row">
+  <div class="progress-track"><div class="progress-fill" id="k-progress" style="width:0%"></div></div>
+  <div class="progress-label" id="k-pct">0%</div>
+</div>
+<div id="k-card" class="card">
+  <div class="topic-badge" id="k-topic"></div>
+  <div class="q-text" id="k-q"></div>
+  <div class="opts" id="k-opts"></div>
+  <div class="feedback" id="k-feedback"></div>
+  <button class="next-btn" id="k-next">Next →</button>
+</div>
+<div id="k-done" style="display:none;" class="card done-card">
+  <div class="done-emoji" id="k-emoji">🎉</div>
+  <div class="done-title">Done!</div>
+  <div class="done-score" id="k-final"></div>
+  <div class="done-sub" id="k-msg"></div>
+  <button class="retry-btn" id="k-retry">Try again ↺</button>
+</div></div><div id="sec-e" class="section"><div class="concept-card"><h3>✍️ English — Parts of Speech</h3><ul style='margin:0 0 0 16px'><li><strong>Noun</strong> — names a person, place, thing (e.g. <em>dog, Bengaluru</em>)</li><li><strong>Verb</strong> — action or state (e.g. <em>runs, is</em>)</li><li><strong>Adjective</strong> — describes a noun (e.g. <em>big, blue</em>)</li><li><strong>Adverb</strong> — describes a verb (e.g. <em>quickly, softly</em>)</li><li><strong>Pronoun</strong> — replaces a noun (e.g. <em>he, she, they</em>)</li></ul><div class="formula-box">Noun + Verb + Object → A complete sentence</div></div><div class="section-title">Quick check</div>
+<div class="score-row">
+  <div class="score-chip"><label>Question</label><span id="e-qnum">1 / 5</span></div>
+  <div class="score-chip"><label>Score</label><span id="e-score">0</span></div>
+</div>
+<div class="progress-row">
+  <div class="progress-track"><div class="progress-fill" id="e-progress" style="width:0%"></div></div>
+  <div class="progress-label" id="e-pct">0%</div>
+</div>
+<div id="e-card" class="card">
+  <div class="topic-badge" id="e-topic"></div>
+  <div class="q-text" id="e-q"></div>
+  <div class="opts" id="e-opts"></div>
+  <div class="feedback" id="e-feedback"></div>
+  <button class="next-btn" id="e-next">Next →</button>
+</div>
+<div id="e-done" style="display:none;" class="card done-card">
+  <div class="done-emoji" id="e-emoji">🎉</div>
+  <div class="done-title">Done!</div>
+  <div class="done-score" id="e-final"></div>
+  <div class="done-sub" id="e-msg"></div>
+  <button class="retry-btn" id="e-retry">Try again ↺</button>
+</div></div>
+<script>
+var tabs=['m','k','e'];
+
+function makeQuiz(prefix, questions) {
+  var idx=0, score=0, answered=false;
+  function render() {
+    if(idx>=questions.length){done();return;}
+    var q=questions[idx]; answered=false;
+    var el=function(id){return document.getElementById(prefix+'-'+id);};
+    el('topic').textContent=q.topic||'';
+    el('q').textContent=q.q;
+    el('qnum').textContent=(idx+1)+' / '+questions.length;
+    el('score').textContent=score;
+    var pct=Math.round((idx/questions.length)*100);
+    el('progress').style.width=pct+'%';
+    el('pct').textContent=pct+'%';
+    var fb=el('feedback'); fb.className='feedback'; fb.textContent='';
+    el('next').className='next-btn';
+    var og=el('opts'); og.innerHTML='';
+    q.opts.forEach(function(o,i){
+      var b=document.createElement('button');
+      b.className='opt-btn'; b.textContent=o;
+      b.onclick=function(){answer(i);};
+      og.appendChild(b);
+    });
+  }
+  function answer(i){
+    if(answered)return; answered=true;
+    var q=questions[idx];
+    var el=function(id){return document.getElementById(prefix+'-'+id);};
+    var fb=el('feedback');
+    document.querySelectorAll('#'+prefix+'-opts .opt-btn').forEach(function(b,j){
+      if(j===q.ans)b.classList.add('correct');
+      else if(j===i&&i!==q.ans)b.classList.add('wrong');
+    });
+    if(i===q.ans){score++;fb.textContent='✅ Correct! '+q.explain;fb.className='feedback success show';}
+    else{fb.textContent='❌ Not quite. '+q.explain;fb.className='feedback error show';}
+    el('next').className='next-btn show';
+  }
+  function done(){
+    document.getElementById(prefix+'-card').style.display='none';
+    document.getElementById(prefix+'-done').style.display='block';
+    document.getElementById(prefix+'-progress').style.width='100%';
+    document.getElementById(prefix+'-pct').textContent='100%';
+    document.getElementById(prefix+'-final').textContent=score+' / '+questions.length;
+    var msgs=score===questions.length?['🌟','Perfect score!']:score>=questions.length*0.7?['🎉','Great work!']:score>=questions.length*0.5?['👍','Good effort!']:['💪','Keep going — review and retry!'];
+    document.getElementById(prefix+'-emoji').textContent=msgs[0];
+    document.getElementById(prefix+'-msg').textContent=msgs[1];
+  }
+  document.getElementById(prefix+'-next').onclick=function(){idx++;render();};
+  document.getElementById(prefix+'-retry').onclick=function(){
+    idx=0;score=0;answered=false;
+    document.getElementById(prefix+'-card').style.display='block';
+    document.getElementById(prefix+'-done').style.display='none';
+    render();
+  };
+  render();
+}
+
+function switchTab(tab, tabs) {
+  tabs.forEach(function(t){
+    document.getElementById('tab-'+t).classList.toggle('active', t===tab);
+    document.getElementById('sec-'+t).classList.toggle('active', t===tab);
+  });
+}
+
+makeQuiz('m', [{"topic": "Tables", "q": "What is 7 \u00d7 8?", "opts": ["54", "56", "63", "48"], "ans": 1, "explain": "7 \u00d7 8 = 56."}, {"topic": "Fractions", "q": "Which is greater \u2014 3/4 or 2/3?", "opts": ["2/3", "3/4", "Equal", "Can't say"], "ans": 1, "explain": "3/4 = 0.75, 2/3 \u2248 0.67, so 3/4 is greater."}, {"topic": "Mental Maths", "q": "What is 25 \u00d7 4?", "opts": ["90", "100", "110", "80"], "ans": 1, "explain": "25 \u00d7 4 = 100."}, {"topic": "Fractions", "q": "What is 1/2 + 1/4?", "opts": ["2/6", "1/3", "3/4", "2/4"], "ans": 2, "explain": "1/2 = 2/4, so 2/4 + 1/4 = 3/4."}, {"topic": "Division", "q": "48 sweets shared among 6 children. How many each?", "opts": ["6", "7", "8", "9"], "ans": 2, "explain": "48 \u00f7 6 = 8."}]);
+makeQuiz('k', [{"topic": "Grammar", "q": "'\u0cb9\u0cc1\u0ca1\u0cc1\u0c97' means?", "opts": ["Girl", "Boy", "Child", "Teacher"], "ans": 1, "explain": "\u0cb9\u0cc1\u0ca1\u0cc1\u0c97 = Boy in Kannada."}, {"topic": "Vocabulary", "q": "What is '\u0ca8\u0cc0\u0cb0\u0cc1' in English?", "opts": ["Fire", "Air", "Water", "Earth"], "ans": 2, "explain": "\u0ca8\u0cc0\u0cb0\u0cc1 = Water."}, {"topic": "Grammar", "q": "Plural of '\u0cae\u0cb0' (tree)?", "opts": ["\u0cae\u0cb0\u0c97\u0cb3\u0cc1", "\u0cae\u0cb0\u0ca6", "\u0cae\u0cb0\u0c95\u0ccd\u0c95\u0cc6", "\u0cae\u0cb0\u0c95"], "ans": 0, "explain": "\u0cae\u0cb0 (tree) \u2192 \u0cae\u0cb0\u0c97\u0cb3\u0cc1 (trees) in Kannada."}, {"topic": "Literature", "q": "Who is known as the 'Poet of Poets' in Kannada?", "opts": ["Kuvempu", "Pampa", "Ranna", "Janna"], "ans": 0, "explain": "Kuvempu (K.V. Puttappa) is called Rastrakavi and is celebrated as the greatest Kannada poet."}, {"topic": "Vocabulary", "q": "'\u0cb6\u0cbe\u0cb2\u0cc6' means?", "opts": ["Home", "Market", "School", "Garden"], "ans": 2, "explain": "\u0cb6\u0cbe\u0cb2\u0cc6 = School."}]);
+makeQuiz('e', [{"topic": "Grammar", "q": "Identify the noun: 'The dog ran quickly.'", "opts": ["ran", "quickly", "The", "dog"], "ans": 3, "explain": "'dog' is a noun \u2014 it names the animal performing the action."}, {"topic": "Vocabulary", "q": "Antonym of 'ancient'?", "opts": ["old", "historic", "modern", "antique"], "ans": 2, "explain": "Ancient means very old; its antonym is modern."}, {"topic": "Grammar", "q": "Which is a proper noun?", "opts": ["city", "river", "Bengaluru", "mountain"], "ans": 2, "explain": "Bengaluru is a proper noun \u2014 the name of a specific city."}, {"topic": "Comprehension", "q": "A 'synonym' means a word with?", "opts": ["Opposite meaning", "Similar meaning", "No meaning", "Silent meaning"], "ans": 1, "explain": "Synonyms are words with similar meanings, e.g. happy and joyful."}, {"topic": "Grammar", "q": "'She sings beautifully.' \u2014 'beautifully' is a?", "opts": ["Noun", "Adjective", "Adverb", "Verb"], "ans": 2, "explain": "Beautifully is an adverb \u2014 it describes how she sings."}]);
+</script>
+</body>
+</html>
