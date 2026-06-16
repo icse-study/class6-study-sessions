@@ -1,14 +1,21 @@
 {
   "version": 1,
-  "lastSaved": "2026-06-16T05:44:52.065Z",
+  "lastSaved": "2026-06-16T05:45:17.908Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
-      "attempts": 1,
+      "attempts": 3,
       "bestScore": 5,
       "totalQ": 5,
       "lastDate": "2026-06-16",
       "label": "Maths"
+    },
+    "icse_w01_mon_k": {
+      "attempts": 1,
+      "bestScore": 4,
+      "totalQ": 4,
+      "lastDate": "2026-06-16",
+      "label": "Kannada"
     }
   }
 }
