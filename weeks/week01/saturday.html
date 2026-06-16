@@ -4,8 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
 <title>Week 1 · Saturday · Class 6 ICSE</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
+<style>*{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0F4FF;min-height:100vh;color:#1a1a2e}
 header{background:linear-gradient(135deg,#4F46E5,#7C3AED);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:12px}
 .logo{font-size:26px}
@@ -15,25 +14,29 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 .tabs{display:flex;background:#fff;border-bottom:1px solid #E5E7EB;position:sticky;top:0;z-index:10;box-shadow:0 1px 4px rgba(0,0,0,0.06);overflow-x:auto}
 .tab{flex-shrink:0;padding:13px 14px;border:none;background:transparent;font-size:13px;font-weight:500;color:#9CA3AF;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
 .tab.active{color:#4F46E5;border-bottom-color:#4F46E5}
-.sec{display:none;padding:1rem 1rem 3rem;max-width:600px;margin:0 auto}
+.sec{display:none;padding:1rem 1rem 3rem;max-width:680px;margin:0 auto}
 .sec.active{display:block}
-.did-you-know{background:linear-gradient(135deg,#EEF2FF,#F5F3FF);border:1px solid #C7D2FE;border-radius:18px;padding:1.25rem;margin-bottom:1rem}
+.dyk{background:linear-gradient(135deg,#EEF2FF,#F5F3FF);border:1px solid #C7D2FE;border-radius:18px;padding:1.25rem;margin-bottom:1rem}
 .dyk-eye{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:#6366F1;margin-bottom:6px}
 .dyk-title{font-size:16px;font-weight:700;color:#3730A3;margin-bottom:8px}
 .dyk-body{font-size:14px;color:#374151;line-height:1.7}
 .formula{background:#fff;border:2px solid #6366F1;border-radius:12px;padding:12px 16px;margin:10px 0;text-align:center;font-size:16px;font-weight:700;color:#4338CA}
-.q-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9CA3AF;margin:1.25rem 0 0.6rem}
-.score-row{display:flex;gap:10px;margin-bottom:1rem}
+.icard{background:#fff;border-radius:18px;padding:1.25rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:1rem}
+.icard h3{font-size:15px;font-weight:700;color:#111827;margin-bottom:8px}
+.icard p,.icard li{font-size:14px;color:#374151;line-height:1.7}
+.icard ul{margin:8px 0 0 16px}
+.ql{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9CA3AF;margin:1.25rem 0 0.6rem}
+.sr{display:flex;gap:10px;margin-bottom:1rem}
 .sc{flex:1;background:#fff;border-radius:12px;padding:10px 14px;box-shadow:0 1px 3px rgba(0,0,0,0.07)}
 .sc label{display:block;font-size:11px;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:2px}
 .sc span{font-size:20px;font-weight:700;color:#4F46E5}
-.prog-row{display:flex;align-items:center;gap:10px;margin-bottom:1rem}
-.prog-track{flex:1;height:7px;background:#E5E7EB;border-radius:99px;overflow:hidden}
-.prog-fill{height:100%;background:linear-gradient(90deg,#4F46E5,#7C3AED);border-radius:99px;transition:width 0.4s}
-.prog-pct{font-size:12px;color:#9CA3AF;white-space:nowrap}
+.pr{display:flex;align-items:center;gap:10px;margin-bottom:1rem}
+.pt{flex:1;height:7px;background:#E5E7EB;border-radius:99px;overflow:hidden}
+.pf{height:100%;background:linear-gradient(90deg,#4F46E5,#7C3AED);border-radius:99px;transition:width 0.4s}
+.pp{font-size:12px;color:#9CA3AF;white-space:nowrap}
 .card{background:#fff;border-radius:18px;padding:1.25rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:1rem}
-.topic-pill{display:inline-block;background:#EEF2FF;color:#4F46E5;font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;margin-bottom:8px}
-.q-text{font-size:16px;font-weight:500;line-height:1.5;color:#111827;margin-bottom:1.1rem}
+.tp{display:inline-block;background:#EEF2FF;color:#4F46E5;font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;margin-bottom:8px}
+.qt{font-size:16px;font-weight:500;line-height:1.5;color:#111827;margin-bottom:1.1rem}
 .opts{display:flex;flex-direction:column;gap:9px}
 .opt{width:100%;padding:13px 15px;border-radius:12px;border:2px solid #E5E7EB;background:#FAFAFA;font-size:15px;text-align:left;cursor:pointer;color:#1F2937;transition:all 0.15s;-webkit-tap-highlight-color:transparent}
 .opt:active{transform:scale(0.98)}
@@ -45,217 +48,375 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 .fb.err{background:#FEF2F2;color:#7F1D1D}
 .nxt{display:none;width:100%;margin-top:12px;padding:14px;border-radius:14px;border:none;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-size:15px;font-weight:600;cursor:pointer}
 .nxt.show{display:block}
-.done-card{text-align:center;padding:2rem 1.25rem}
-.done-icon{font-size:52px;margin-bottom:10px}
-.done-title{font-size:20px;font-weight:700;color:#111827;margin-bottom:6px}
-.done-score{font-size:34px;font-weight:800;color:#4F46E5;margin:14px 0}
-.done-sub{font-size:14px;color:#6B7280;line-height:1.6}
+.dc{text-align:center;padding:2rem 1.25rem}
+.di{font-size:52px;margin-bottom:10px}
+.dt{font-size:20px;font-weight:700;color:#111827;margin-bottom:6px}
+.ds{font-size:34px;font-weight:800;color:#4F46E5;margin:14px 0}
+.dm{font-size:14px;color:#6B7280;line-height:1.6}
 .retry{display:inline-block;margin-top:14px;padding:13px 26px;border-radius:14px;border:2px solid #4F46E5;background:transparent;color:#4F46E5;font-size:14px;font-weight:600;cursor:pointer}
-.intro-card{background:#fff;border-radius:18px;padding:1.25rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:1rem}
-.intro-card h3{font-size:15px;font-weight:700;color:#111827;margin-bottom:8px}
-.intro-card p,.intro-card li{font-size:14px;color:#374151;line-height:1.7}
-.intro-card ul{margin:8px 0 0 16px}
-.week-badge{display:inline-block;background:#F0FDF4;color:#15803D;font-size:12px;font-weight:600;padding:4px 12px;border-radius:99px;margin-bottom:1rem}
-</style>
+.prog-bar{margin:0.75rem 1rem 0;padding:0.75rem 1rem;background:#fff;border-radius:14px;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.pb-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.pb-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9CA3AF}
+.sb{font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;background:#F3F4F6;color:#9CA3AF}
+.sp{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.save-btn{width:100%;padding:12px;border-radius:12px;border:1.5px solid #6366F1;background:transparent;color:#4F46E5;font-size:14px;font-weight:600;cursor:pointer;margin-top:4px}</style>
 </head>
 <body>
 <a class="back" href="index.html">← Week 1</a>
 <header>
   <div class="logo">📅</div>
-  <div><h1>Saturday · Week 1</h1><p>15 Jun – 21 Jun 2026 &nbsp;·&nbsp; Class 6 ICSE</p></div>
+  <div><h1>Saturday · Week 1</h1><p>15 Jun – 21 Jun 2026 · Class 6 ICSE</p></div>
 </header>
 <div class="tabs"><button class="tab active" id="tab-m" onclick="switchTab('m')">➗ Maths</button><button class="tab" id="tab-h" onclick="switchTab('h')">🏛️ History & Civics</button><button class="tab" id="tab-pq" onclick="switchTab('pq')">⚡⚗️🧬 Science Quiz</button></div>
-<div class="progress-bar" style="margin:0.75rem 1rem 0;padding:0.75rem 1rem;background:#fff;border-radius:14px;box-shadow:0 1px 4px rgba(0,0,0,0.06)">
-  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
-    <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9CA3AF">Session progress</span>
-    <span id="status-badge" style="font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;background:#F3F4F6;color:#9CA3AF">Not started</span>
+<div class="prog-bar">
+  <div class="pb-top">
+    <span class="pb-label">Session progress</span>
+    <span class="sb" id="status-badge">Not started</span>
   </div>
-  <div id="subject-pills" style="display:flex;flex-wrap:wrap;gap:6px"></div>
+  <div class="sp" id="subject-pills"></div>
+  <div id="save-wrap"></div>
 </div>
-<div id="sec-m" class="sec active"><div class="did-you-know">
-  <div class="dyk-eye">✨ Did you know?</div>
-  <div class="dyk-title">🧩 Problem solving is a superpower!</div>
-  <div class="dyk-body">The best way to get good at maths is to solve problems — not just read them. Make a habit of showing all your steps, even if the answer seems obvious.</div>
-</div><div class="q-label">Weekly problems</div>
-<div class="score-row">
+<div id="sec-m" class="sec active"><div class="dyk"><div class="dyk-eye">✨ Did you know?</div><div class="dyk-title">🧩 Problem solving is a superpower!</div><div class="dyk-body">Show all your steps — even when the answer seems obvious. The method is what earns marks!</div></div><div class="ql">Questions</div><div class="sr">
   <div class="sc"><label>Question</label><span id="m-qnum">1 / 5</span></div>
   <div class="sc"><label>Score</label><span id="m-score">0</span></div>
 </div>
-<div class="prog-row">
-  <div class="prog-track"><div class="prog-fill" id="m-prog" style="width:0%"></div></div>
-  <div class="prog-pct" id="m-pct">0%</div>
-</div>
+<div class="pr"><div class="pt"><div class="pf" id="m-prog" style="width:0%"></div></div><div class="pp" id="m-pct">0%</div></div>
 <div id="m-card" class="card">
-  <div class="topic-pill" id="m-topic"></div>
-  <div class="q-text" id="m-q"></div>
+  <div class="tp" id="m-topic"></div>
+  <div class="qt" id="m-q"></div>
   <div class="opts" id="m-opts"></div>
   <div class="fb" id="m-fb"></div>
   <button class="nxt" id="m-nxt">Next →</button>
 </div>
-<div id="m-done" style="display:none" class="card done-card">
-  <div class="done-icon" id="m-ficon">🎉</div>
-  <div class="done-title">Done!</div>
-  <div class="done-score" id="m-fscore"></div>
-  <div class="done-sub" id="m-fmsg"></div>
+<div id="m-done" style="display:none" class="card dc">
+  <div class="di" id="m-ficon">🎉</div>
+  <div class="dt">Done!</div>
+  <div class="ds" id="m-fscore"></div>
+  <div class="dm" id="m-fmsg"></div>
   <button class="retry" id="m-retry">Try again ↺</button>
-</div></div><div id="sec-h" class="sec"><div class="did-you-know">
-  <div class="dyk-eye">✨ Did you know?</div>
-  <div class="dyk-title">🏛️ Those who don't know history are doomed to repeat it!</div>
-  <div class="dyk-body">Studying history teaches us not just about the past, but helps us understand why the world is the way it is — and how to make it better.</div>
-</div><div class="intro-card"><h3>History & Civics this year</h3><ul><li>Ancient civilisations — Indus Valley, Vedic Age, Mauryas, Guptas</li><li>Medieval India — Delhi Sultanate, Mughals</li><li>The Indian Constitution — rights & duties</li><li>Government — local, state, national</li></ul></div><div class="q-label">Intro questions</div>
-<div class="score-row">
+</div></div><div id="sec-h" class="sec"><div class="dyk"><div class="dyk-eye">✨ Did you know?</div><div class="dyk-title">🏛️ Those who don't know history are doomed to repeat it!</div><div class="dyk-body">History teaches us why the world is as it is today — and how to make it better.</div></div><div class="icard"><h3>History &amp; Civics this year</h3><ul><li>Ancient civilisations — Indus Valley, Vedic, Mauryas, Guptas</li><li>Medieval India — Delhi Sultanate, Mughals</li><li>The Indian Constitution — rights &amp; duties</li><li>Government — local, state, national</li></ul></div><div class="ql">Questions</div><div class="sr">
   <div class="sc"><label>Question</label><span id="h-qnum">1 / 4</span></div>
   <div class="sc"><label>Score</label><span id="h-score">0</span></div>
 </div>
-<div class="prog-row">
-  <div class="prog-track"><div class="prog-fill" id="h-prog" style="width:0%"></div></div>
-  <div class="prog-pct" id="h-pct">0%</div>
-</div>
+<div class="pr"><div class="pt"><div class="pf" id="h-prog" style="width:0%"></div></div><div class="pp" id="h-pct">0%</div></div>
 <div id="h-card" class="card">
-  <div class="topic-pill" id="h-topic"></div>
-  <div class="q-text" id="h-q"></div>
+  <div class="tp" id="h-topic"></div>
+  <div class="qt" id="h-q"></div>
   <div class="opts" id="h-opts"></div>
   <div class="fb" id="h-fb"></div>
   <button class="nxt" id="h-nxt">Next →</button>
 </div>
-<div id="h-done" style="display:none" class="card done-card">
-  <div class="done-icon" id="h-ficon">🎉</div>
-  <div class="done-title">Done!</div>
-  <div class="done-score" id="h-fscore"></div>
-  <div class="done-sub" id="h-fmsg"></div>
+<div id="h-done" style="display:none" class="card dc">
+  <div class="di" id="h-ficon">🎉</div>
+  <div class="dt">Done!</div>
+  <div class="ds" id="h-fscore"></div>
+  <div class="dm" id="h-fmsg"></div>
   <button class="retry" id="h-retry">Try again ↺</button>
-</div></div><div id="sec-pq" class="sec"><div class="did-you-know">
-  <div class="dyk-eye">✨ Did you know?</div>
-  <div class="dyk-title">🔬 Science is one big connected story!</div>
-  <div class="dyk-body">Physics explains forces and energy. Chemistry explains matter and reactions. Biology explains life. Together they explain almost everything!</div>
-</div><div class="q-label">Mixed Science Quiz — Week 1</div>
-<div class="score-row">
+</div></div><div id="sec-pq" class="sec"><div class="dyk"><div class="dyk-eye">✨ Did you know?</div><div class="dyk-title">🔬 Science is one big connected story!</div><div class="dyk-body">Physics explains forces. Chemistry explains matter. Biology explains life. Together they explain almost everything!</div></div><div class="ql">Questions</div><div class="sr">
   <div class="sc"><label>Question</label><span id="pq-qnum">1 / 5</span></div>
   <div class="sc"><label>Score</label><span id="pq-score">0</span></div>
 </div>
-<div class="prog-row">
-  <div class="prog-track"><div class="prog-fill" id="pq-prog" style="width:0%"></div></div>
-  <div class="prog-pct" id="pq-pct">0%</div>
-</div>
+<div class="pr"><div class="pt"><div class="pf" id="pq-prog" style="width:0%"></div></div><div class="pp" id="pq-pct">0%</div></div>
 <div id="pq-card" class="card">
-  <div class="topic-pill" id="pq-topic"></div>
-  <div class="q-text" id="pq-q"></div>
+  <div class="tp" id="pq-topic"></div>
+  <div class="qt" id="pq-q"></div>
   <div class="opts" id="pq-opts"></div>
   <div class="fb" id="pq-fb"></div>
   <button class="nxt" id="pq-nxt">Next →</button>
 </div>
-<div id="pq-done" style="display:none" class="card done-card">
-  <div class="done-icon" id="pq-ficon">🎉</div>
-  <div class="done-title">Done!</div>
-  <div class="done-score" id="pq-fscore"></div>
-  <div class="done-sub" id="pq-fmsg"></div>
+<div id="pq-done" style="display:none" class="card dc">
+  <div class="di" id="pq-ficon">🎉</div>
+  <div class="dt">Done!</div>
+  <div class="ds" id="pq-fscore"></div>
+  <div class="dm" id="pq-fmsg"></div>
   <button class="retry" id="pq-retry">Try again ↺</button>
 </div></div>
 <script>
+// ── Config ────────────────────────────────────────────────────────────────────
+var SUBJECTS = [{"id": "m", "label": "Maths", "total": 5}, {"id": "h", "label": "History & Civics", "total": 4}, {"id": "pq", "label": "Science Quiz", "total": 5}];
+var LS_PFX   = 'icse_w01_sat';
 
 // ── Storage ───────────────────────────────────────────────────────────────────
-var SUBJECTS = [{"id": "m", "label": "Maths", "total": 5}, {"id": "h", "label": "History & Civics", "total": 4}, {"id": "pq", "label": "Science Quiz", "total": 5}];
-
-function saveScore(id, score, total, label){
-  var key='icse_w01_sat_'+id, ex={};
-  try{ex=JSON.parse(localStorage.getItem(key)||'{}');}catch(e){}
+function saveScore(id, score, total, label) {
+  var key = LS_PFX+'_'+id, ex = {};
+  try{ ex = JSON.parse(localStorage.getItem(key)||'{}'); }catch(e){}
   localStorage.setItem(key, JSON.stringify({
-    attempts:(ex.attempts||0)+1, bestScore:Math.max(ex.bestScore||0,score),
-    totalQ:total, lastDate:new Date().toISOString().slice(0,10), label:label
+    attempts: (ex.attempts||0)+1,
+    bestScore: Math.max(ex.bestScore||0, score),
+    totalQ: total,
+    lastDate: new Date().toISOString().slice(0,10),
+    label: label
   }));
 }
-
-function getScore(id){
-  try{return JSON.parse(localStorage.getItem('icse_w01_sat_'+id)||'null');}catch(e){return null;}
+function getScore(id) {
+  try{ return JSON.parse(localStorage.getItem(LS_PFX+'_'+id)||'null'); }catch(e){ return null; }
 }
 
-function refreshProgress(){
-  var badge=document.getElementById('status-badge');
-  var pills=document.getElementById('subject-pills');
-  if(!badge||!pills)return;
-  pills.innerHTML='';
-  var done=0,attempted=0;
-  SUBJECTS.forEach(function(s){
-    var d=getScore(s.id);
-    var pill=document.createElement('span');
-    pill.style.cssText='font-size:12px;padding:4px 10px;border-radius:99px;font-weight:500;display:inline-block';
-    if(!d){
-      pill.textContent=s.label+': —';
-      pill.style.background='#F3F4F6';pill.style.color='#9CA3AF';
-    }else{
+// ── Progress bar ──────────────────────────────────────────────────────────────
+function refreshProgress() {
+  var badge = document.getElementById('status-badge');
+  var pills = document.getElementById('subject-pills');
+  if(!badge||!pills) return;
+  pills.innerHTML = '';
+  var done=0, attempted=0;
+  SUBJECTS.forEach(function(s) {
+    var d = getScore(s.id);
+    var pill = document.createElement('span');
+    pill.style.cssText = 'font-size:12px;padding:4px 10px;border-radius:99px;font-weight:500;display:inline-block';
+    if(!d) {
+      pill.textContent = s.label+': —';
+      pill.style.background='#F3F4F6'; pill.style.color='#9CA3AF';
+    } else {
       attempted++;
-      var pct=Math.round((d.bestScore/d.totalQ)*100),ok=pct>=60;
-      if(ok)done++;
-      pill.textContent=s.label+': '+d.bestScore+'/'+d.totalQ+' ('+pct+'%)'+(ok?' ✓':'');
-      pill.style.background=ok?'#ECFDF5':'#FEF2F2';
-      pill.style.color=ok?'#065F46':'#991B1B';
+      var pct=Math.round((d.bestScore/d.totalQ)*100), ok=pct>=60;
+      if(ok) done++;
+      pill.textContent = s.label+': '+d.bestScore+'/'+d.totalQ+' ('+pct+'%)'+(ok?' ✓':'');
+      pill.style.background = ok?'#ECFDF5':'#FEF2F2';
+      pill.style.color      = ok?'#065F46':'#991B1B';
     }
     pills.appendChild(pill);
   });
-  if(attempted===0){badge.textContent='Not started';badge.style.background='#F3F4F6';badge.style.color='#9CA3AF';}
-  else if(done===SUBJECTS.length){badge.textContent='✅ Done';badge.style.background='#ECFDF5';badge.style.color='#065F46';}
-  else{badge.textContent='🟡 In progress';badge.style.background='#FFFBEB';badge.style.color='#92400E';}
+  if(!attempted)      { badge.textContent='Not started';   badge.style.background='#F3F4F6'; badge.style.color='#9CA3AF'; }
+  else if(done===SUBJECTS.length) { badge.textContent='✅ Done'; badge.style.background='#ECFDF5'; badge.style.color='#065F46'; }
+  else                { badge.textContent='🟡 In progress'; badge.style.background='#FFFBEB'; badge.style.color='#92400E'; }
 }
 
-function quiz(id, qs) {
-  var i=0, sc=0, ans=false;
-  function el(x){return document.getElementById(id+'-'+x);}
-  function render(){
-    if(i>=qs.length){finish();return;}
-    var q=qs[i]; ans=false;
-    el('topic').textContent=q.t||'';
-    el('q').textContent=q.q;
-    el('qnum').textContent=(i+1)+' / '+qs.length;
-    el('score').textContent=sc;
-    el('prog').style.width=Math.round((i/qs.length)*100)+'%';
-    el('pct').textContent=Math.round((i/qs.length)*100)+'%';
+// ── Tab switcher ──────────────────────────────────────────────────────────────
+function switchTab(t) {
+  var all = ["m", "h", "pq"];
+  all.forEach(function(x) {
+    document.getElementById('tab-'+x).classList.toggle('active', x===t);
+    document.getElementById('sec-'+x).classList.toggle('active', x===t);
+  });
+}
+
+// ── Quiz engine ───────────────────────────────────────────────────────────────
+function quiz(id, qs, label) {
+  var i=0, sc=0, answered=false;
+  function el(x) { return document.getElementById(id+'-'+x); }
+  function render() {
+    if(i>=qs.length) { finish(); return; }
+    var q=qs[i]; answered=false;
+    el('topic').textContent = q.t||'';
+    el('q').textContent     = q.q;
+    el('qnum').textContent  = (i+1)+' / '+qs.length;
+    el('score').textContent = sc;
+    el('prog').style.width  = Math.round((i/qs.length)*100)+'%';
+    el('pct').textContent   = Math.round((i/qs.length)*100)+'%';
     var fb=el('fb'); fb.className='fb'; fb.textContent='';
     el('nxt').className='nxt';
     var og=el('opts'); og.innerHTML='';
-    q.o.forEach(function(o,j){
+    q.o.forEach(function(opt,j) {
       var b=document.createElement('button');
-      b.className='opt'; b.textContent=o;
-      b.onclick=function(){pick(j);};
+      b.className='opt'; b.textContent=opt;
+      b.onclick=function(){ pick(j); };
       og.appendChild(b);
     });
   }
-  function pick(j){
-    if(ans)return; ans=true;
+  function pick(j) {
+    if(answered) return; answered=true;
     var q=qs[i], fb=el('fb');
-    document.querySelectorAll('#'+id+'-opts .opt').forEach(function(b,k){
-      if(k===q.a)b.classList.add('correct');
-      else if(k===j&&j!==q.a)b.classList.add('wrong');
+    document.querySelectorAll('#'+id+'-opts .opt').forEach(function(b,k) {
+      if(k===q.a) b.classList.add('correct');
+      else if(k===j&&j!==q.a) b.classList.add('wrong');
     });
-    if(j===q.a){sc++;fb.textContent='✅ '+q.e;fb.className='fb ok show';}
-    else{fb.textContent='❌ '+q.e;fb.className='fb err show';}
+    if(j===q.a) { sc++; fb.textContent='✅ '+q.e; fb.className='fb ok show'; }
+    else         {       fb.textContent='❌ '+q.e; fb.className='fb err show'; }
     el('nxt').className='nxt show';
   }
-  function finish(){
+  function finish() {
+    saveScore(id, sc, qs.length, label);
+    refreshProgress();
     document.getElementById(id+'-card').style.display='none';
     document.getElementById(id+'-done').style.display='block';
     el('prog').style.width='100%'; el('pct').textContent='100%';
     el('fscore').textContent=sc+' / '+qs.length;
-    var r=sc===qs.length?['🌟','Perfect! Amazing start!']:sc>=Math.ceil(qs.length*0.6)?['🎉','Great job!']:['💪','Good try — review and retry!'];
+    var pct=Math.round((sc/qs.length)*100);
+    var r=sc===qs.length ? ['🌟','Perfect score!']
+        : pct>=60        ? ['🎉','Well done! 60%+ achieved ✓']
+        :                  ['💪','Need 60%+ to mark as Done — try again!'];
     el('ficon').textContent=r[0]; el('fmsg').textContent=r[1];
   }
-  el('nxt').onclick=function(){i++;render();};
-  el('retry').onclick=function(){
-    i=0;sc=0;ans=false;
+  el('nxt').onclick   = function() { i++; render(); };
+  el('retry').onclick = function() {
+    i=0; sc=0; answered=false;
     document.getElementById(id+'-card').style.display='block';
     document.getElementById(id+'-done').style.display='none';
     render();
   };
   render();
 }
-function switchTab(t){
-  var all=["m", "h", "pq"];
-  all.forEach(function(x){
-    document.getElementById('tab-'+x).classList.toggle('active',x===t);
-    document.getElementById('sec-'+x).classList.toggle('active',x===t);
+
+// ── Cloud sync ────────────────────────────────────────────────────────────────
+
+// ── Cloud Sync ────────────────────────────────────────────────────────────────
+var GH_REPO = 'icse-study/class6-study-sessions';
+var GH_FILE = 'progress.json';
+var GH_API  = 'https://api.github.com/repos/' + GH_REPO + '/contents/' + GH_FILE;
+
+function getToken() {
+  return localStorage.getItem('icse_gh_token') || '';
+}
+
+function getAllLocalScores() {
+  var scores = {};
+  for (var i = 0; i < localStorage.length; i++) {
+    var k = localStorage.key(i);
+    if (k && k.indexOf('icse_w') === 0) {
+      try { scores[k] = JSON.parse(localStorage.getItem(k)); } catch(e) {}
+    }
+  }
+  return scores;
+}
+
+function mergeScores(local, remote) {
+  var merged = JSON.parse(JSON.stringify(remote || {}));
+  Object.keys(local).forEach(function(k) {
+    var l = local[k], r = merged[k];
+    if (!r) { merged[k] = l; return; }
+    merged[k] = {
+      attempts:  (l.attempts||0) + (r.attempts||0),
+      bestScore: Math.max(l.bestScore||0, r.bestScore||0),
+      totalQ:    l.totalQ || r.totalQ,
+      lastDate:  l.lastDate > r.lastDate ? l.lastDate : r.lastDate,
+      label:     l.label || r.label
+    };
+  });
+  return merged;
+}
+
+function applyRemoteToLocal(scores) {
+  Object.keys(scores).forEach(function(k) {
+    if (k.indexOf('icse_w') === 0) {
+      var existing = null;
+      try { existing = JSON.parse(localStorage.getItem(k)); } catch(e) {}
+      var remote = scores[k];
+      if (!existing) {
+        localStorage.setItem(k, JSON.stringify(remote));
+      } else {
+        localStorage.setItem(k, JSON.stringify({
+          attempts:  (existing.attempts||0) + (remote.attempts||0),
+          bestScore: Math.max(existing.bestScore||0, remote.bestScore||0),
+          totalQ:    existing.totalQ || remote.totalQ,
+          lastDate:  existing.lastDate > remote.lastDate ? existing.lastDate : remote.lastDate,
+          label:     existing.label || remote.label
+        }));
+      }
+    }
   });
 }
-quiz('m',[{"t": "Problem Solving", "q": "Riya has 24 chocolates. She gives 1/3 to her friend. How many does she keep?", "o": ["6", "8", "16", "12"], "a": 2, "e": "1/3 of 24 = 8. She gives away 8, so she keeps 24 \u2212 8 = 16 chocolates."}, {"t": "Problem Solving", "q": "A book costs \u20b9120. If you buy 3, how much do you pay?", "o": ["\u20b9300", "\u20b9360", "\u20b9240", "\u20b9420"], "a": 1, "e": "120 \u00d7 3 = \u20b9360. Multiplication makes repeated addition faster!"}, {"t": "Problem Solving", "q": "A class has 40 students. 15 are absent. What fraction is present?", "o": ["15/40", "25/40", "1/4", "3/8"], "a": 1, "e": "40 \u2212 15 = 25 present. Fraction present = 25/40 (which simplifies to 5/8)."}, {"t": "Problem Solving", "q": "If today is Monday, what day will it be in 9 days?", "o": ["Tuesday", "Wednesday", "Thursday", "Friday"], "a": 1, "e": "9 days from Monday: 7 days = next Monday, then 2 more = Wednesday."}, {"t": "Problem Solving", "q": "A rectangle has length 10 cm and width 4 cm. What is its perimeter?", "o": ["14 cm", "28 cm", "40 cm", "20 cm"], "a": 1, "e": "Perimeter = 2 \u00d7 (l + w) = 2 \u00d7 (10 + 4) = 2 \u00d7 14 = 28 cm."}]);
-quiz('h',[{"t": "History", "q": "What does 'History' study?", "o": ["Future events", "Past events and civilisations", "Living organisms", "The Earth's surface"], "a": 1, "e": "History is the study of past events, people, and civilisations \u2014 to understand how the world became what it is today."}, {"t": "Ancient India", "q": "Where was the Indus Valley Civilisation located?", "o": ["Along the Ganga", "Along the Indus and its tributaries", "In the Deccan Plateau", "Along the Brahmaputra"], "a": 1, "e": "The Indus Valley Civilisation (c.3300\u20131300 BCE) thrived along the Indus River and its tributaries \u2014 in present-day Pakistan and northwest India."}, {"t": "Civics", "q": "What is a Constitution?", "o": ["A history book", "A set of fundamental laws governing a country", "A geography textbook", "A list of rulers"], "a": 1, "e": "A Constitution is the supreme law of a country \u2014 it defines the rights of citizens and how the government works."}, {"t": "Civics", "q": "India became a Republic on?", "o": ["15 August 1947", "26 January 1950", "2 October 1869", "26 November 1949"], "a": 1, "e": "India became a Republic on 26 January 1950 when the Constitution came into effect \u2014 that's why we celebrate Republic Day!"}]);
-quiz('pq',[{"t": "Physics", "q": "Which instrument measures temperature?", "o": ["Barometer", "Thermometer", "Voltmeter", "Ammeter"], "a": 1, "e": "A thermometer measures temperature. It works by the expansion of mercury or alcohol when heated."}, {"t": "Chemistry", "q": "Which of the following is a mixture?", "o": ["Water (H\u2082O)", "Salt (NaCl)", "Air", "Oxygen (O\u2082)"], "a": 2, "e": "Air is a mixture of gases \u2014 mainly nitrogen (78%) and oxygen (21%). Each gas keeps its own properties."}, {"t": "Biology", "q": "How many chambers does the human heart have?", "o": ["2", "3", "4", "6"], "a": 2, "e": "The heart has 4 chambers: right atrium, right ventricle, left atrium, left ventricle."}, {"t": "Physics", "q": "Light travels fastest in?", "o": ["Water", "Glass", "Air", "Vacuum"], "a": 3, "e": "Light travels fastest in vacuum at 3\u00d710\u2078 m/s. It slows down when passing through water, glass or air."}, {"t": "Chemistry", "q": "Rust is formed when iron reacts with?", "o": ["Nitrogen", "Water and oxygen", "Carbon dioxide", "Hydrogen"], "a": 1, "e": "Rust (iron oxide) forms when iron reacts with water and oxygen. This is an oxidation reaction."}]);</script>
+
+function syncProgress(onDone) {
+  var token = getToken();
+  if (!token) {
+    if (onDone) onDone(false, 'No token set — tap ⚙️ to add your sync token');
+    return;
+  }
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', GH_API, true);
+  xhr.setRequestHeader('Authorization', 'token ' + token);
+  xhr.setRequestHeader('Accept', 'application/vnd.github+json');
+  xhr.onload = function() {
+    if (xhr.status !== 200) { if(onDone) onDone(false, 'Could not reach GitHub (' + xhr.status + ')'); return; }
+    var resp = JSON.parse(xhr.responseText);
+    var sha  = resp.sha;
+    var remote = {};
+    try { remote = JSON.parse(atob(resp.content.replace(/\n/g,''))).scores || {}; } catch(e) {}
+    var local  = getAllLocalScores();
+    var merged = mergeScores(local, remote);
+    applyRemoteToLocal(merged);
+    var payload = JSON.stringify({
+      version: 1,
+      lastSaved: new Date().toISOString(),
+      device: navigator.userAgent.indexOf('iPad') > -1 ? 'iPad' : 'Desktop',
+      scores: merged
+    }, null, 2);
+    var put = new XMLHttpRequest();
+    put.open('PUT', GH_API, true);
+    put.setRequestHeader('Authorization', 'token ' + token);
+    put.setRequestHeader('Content-Type', 'application/json');
+    put.setRequestHeader('Accept', 'application/vnd.github+json');
+    put.onload = function() {
+      if (put.status === 200 || put.status === 201) {
+        if(onDone) onDone(true, 'Saved to cloud ✓');
+      } else {
+        if(onDone) onDone(false, 'Save failed (' + put.status + ')');
+      }
+    };
+    put.onerror = function() { if(onDone) onDone(false, 'Network error'); };
+    put.send(JSON.stringify({
+      message: 'Progress sync ' + new Date().toISOString().slice(0,10),
+      content: btoa(unescape(encodeURIComponent(payload))),
+      sha: sha
+    }));
+  };
+  xhr.onerror = function() { if(onDone) onDone(false, 'Network error'); };
+  xhr.send();
+}
+
+function loadRemoteProgress(onDone) {
+  var token = getToken();
+  if (!token) { if(onDone) onDone(false); return; }
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', GH_API, true);
+  xhr.setRequestHeader('Authorization', 'token ' + token);
+  xhr.setRequestHeader('Accept', 'application/vnd.github+json');
+  xhr.onload = function() {
+    if (xhr.status !== 200) { if(onDone) onDone(false); return; }
+    try {
+      var resp = JSON.parse(xhr.responseText);
+      var data = JSON.parse(atob(resp.content.replace(/\n/g,'')));
+      applyRemoteToLocal(data.scores || {});
+      if(onDone) onDone(true, data.lastSaved, data.device);
+    } catch(e) { if(onDone) onDone(false); }
+  };
+  xhr.onerror = function() { if(onDone) onDone(false); };
+  xhr.send();
+}
+
+function makeSaveButton(containerId) {
+  var wrap = document.getElementById(containerId);
+  if (!wrap) return;
+  var row = document.createElement('div');
+  row.style.cssText = 'display:flex;gap:8px;margin-top:6px';
+  var btn = document.createElement('button');
+  btn.className = 'save-btn';
+  btn.style.flex = '1';
+  btn.textContent = '☁️ Save progress';
+  btn.onclick = function() {
+    if (!getToken()) {
+      window.location.href = '../../settings.html';
+      return;
+    }
+    btn.textContent = '⏳ Saving…'; btn.disabled = true;
+    syncProgress(function(ok, msg) {
+      btn.textContent = ok ? '✅ ' + msg : '❌ ' + msg;
+      btn.disabled = false;
+      setTimeout(function() { btn.textContent = '☁️ Save progress'; }, 3000);
+      if (ok && typeof refreshProgress === 'function') refreshProgress();
+    });
+  };
+  var cfg = document.createElement('button');
+  cfg.className = 'save-btn';
+  cfg.style.cssText = 'flex:0;padding:12px 14px;font-size:16px';
+  cfg.title = 'Sync settings';
+  cfg.textContent = '⚙️';
+  cfg.onclick = function() { window.location.href = '../../settings.html'; };
+  row.appendChild(btn);
+  row.appendChild(cfg);
+  wrap.appendChild(row);
+}
+
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+quiz('m', [{"t": "Word Problem", "q": "Riya has 24 chocolates. Gives 1/3 to friend. How many does she keep?", "o": ["6", "8", "16", "12"], "a": 2, "e": "1/3 of 24 = 8. She gives 8, keeps 24 \u2212 8 = 16."}, {"t": "Word Problem", "q": "A book costs \u20b9120. Buy 3, how much do you pay?", "o": ["\u20b9300", "\u20b9360", "\u20b9240", "\u20b9420"], "a": 1, "e": "120 \u00d7 3 = \u20b9360."}, {"t": "Word Problem", "q": "Class has 40 students, 15 absent. What fraction is present?", "o": ["15/40", "25/40", "1/4", "3/8"], "a": 1, "e": "40 \u2212 15 = 25 present. Fraction = 25/40."}, {"t": "Word Problem", "q": "Today is Monday. What day in 9 days?", "o": ["Tuesday", "Wednesday", "Thursday", "Friday"], "a": 1, "e": "7 days = next Monday, then 2 more = Wednesday."}, {"t": "Word Problem", "q": "Rectangle: length 10 cm, width 4 cm. Perimeter?", "o": ["14 cm", "28 cm", "40 cm", "20 cm"], "a": 1, "e": "P = 2(l+w) = 2(10+4) = 28 cm."}], 'Maths');
+quiz('h', [{"t": "History", "q": "What does History study?", "o": ["Future events", "Past events and civilisations", "Living organisms", "The Earth"], "a": 1, "e": "History studies past events and civilisations to understand the world."}, {"t": "Ancient India", "q": "Where was the Indus Valley Civilisation?", "o": ["Along the Ganga", "Along the Indus River", "In Deccan Plateau", "Along the Brahmaputra"], "a": 1, "e": "The Indus Valley Civilisation (3300\u20131300 BCE) thrived along the Indus River."}, {"t": "Civics", "q": "What is a Constitution?", "o": ["A history book", "Fundamental laws governing a country", "A geography textbook", "A list of rulers"], "a": 1, "e": "A Constitution is the supreme law \u2014 it defines citizens' rights and government structure."}, {"t": "Civics", "q": "India became a Republic on?", "o": ["15 Aug 1947", "26 Jan 1950", "2 Oct 1869", "26 Nov 1949"], "a": 1, "e": "India became a Republic on 26 January 1950 \u2014 that's Republic Day!"}], 'History & Civics');
+quiz('pq', [{"t": "Physics", "q": "Which instrument measures temperature?", "o": ["Barometer", "Thermometer", "Voltmeter", "Ammeter"], "a": 1, "e": "A thermometer measures temperature."}, {"t": "Chemistry", "q": "Which is a mixture?", "o": ["Water (H\u2082O)", "Salt (NaCl)", "Air", "Oxygen (O\u2082)"], "a": 2, "e": "Air is a mixture \u2014 mainly nitrogen (78%) and oxygen (21%)."}, {"t": "Biology", "q": "How many chambers does the human heart have?", "o": ["2", "3", "4", "6"], "a": 2, "e": "4 chambers: right atrium, right ventricle, left atrium, left ventricle."}, {"t": "Physics", "q": "Light travels fastest in?", "o": ["Water", "Glass", "Air", "Vacuum"], "a": 3, "e": "Light travels fastest in vacuum at 3\u00d710\u2078 m/s."}, {"t": "Chemistry", "q": "Rust forms when iron reacts with?", "o": ["Nitrogen", "Water and oxygen", "Carbon dioxide", "Hydrogen"], "a": 1, "e": "Rust (iron oxide) forms when iron reacts with water and oxygen."}], 'Science Quiz');
+refreshProgress();
+makeSaveButton('save-wrap');
+loadRemoteProgress(function(ok) {
+  if(ok) refreshProgress();
+});
+</script>
 </body>
 </html>
