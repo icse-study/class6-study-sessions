@@ -90,6 +90,10 @@ var GH_REPO = 'icse-study/class6-study-sessions';
 var GH_FILE = 'progress.json';
 var GH_API  = 'https://api.github.com/repos/' + GH_REPO + '/contents/' + GH_FILE;
 
+function lsError(){
+  try{ localStorage.setItem('__ls_test__','1'); localStorage.removeItem('__ls_test__'); return null; }
+  catch(e){ return e; }
+}
 function lsSet(key, val){
   try{ localStorage.setItem(key, val); return true; }
   catch(e){ return false; }
@@ -105,7 +109,17 @@ function toggleShow(){
 }
 
 function updateBanner(){
-  var t = getToken(), el = document.getElementById('token-banner');
+  var el = document.getElementById('token-banner');
+  var lsErr = lsError();
+  if(lsErr){
+    var isPB = lsErr.code === 22 || lsErr.name === 'QuotaExceededError';
+    el.textContent = isPB
+      ? '⚠️ Storage blocked — disable Private Browsing to save your token'
+      : '⚠️ Storage blocked — on iPad: Settings → Safari → uncheck "Block All Cookies"';
+    el.className = 'token-banner tb-none';
+    return;
+  }
+  var t = getToken();
   if(t){
     el.textContent = '✅ Sync token set — progress will save to cloud';
     el.className = 'token-banner tb-set';
@@ -126,7 +140,14 @@ function saveToken(){
   var v = document.getElementById('token-input').value.replace(/[\r\n\t]/g,'').trim();
   if(!v || v.indexOf('•') > -1){ showStatus('token-status','Please paste a valid token','err'); return; }
   if(!lsSet('icse_gh_token', v)){
-    showStatus('token-status','❌ Could not save — if using Private Browsing, try a normal tab','err');
+    var e = lsError();
+    var msg = '❌ Could not save — ';
+    if(!e || e.code === 22 || e.name === 'QuotaExceededError'){
+      msg += 'disable Private Browsing and try again';
+    } else {
+      msg += 'on iPad go to: Settings → Safari → uncheck "Block All Cookies"';
+    }
+    showStatus('token-status', msg, 'err');
     return;
   }
   showStatus('token-status','✅ Token saved on this device','ok');
