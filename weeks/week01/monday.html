@@ -15,7 +15,7 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 .tabs{display:flex;background:#fff;border-bottom:1px solid #E5E7EB;position:sticky;top:0;z-index:10;box-shadow:0 1px 4px rgba(0,0,0,0.06);overflow-x:auto}
 .tab{flex-shrink:0;padding:13px 14px;border:none;background:transparent;font-size:13px;font-weight:500;color:#9CA3AF;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
 .tab.active{color:#4F46E5;border-bottom-color:#4F46E5}
-.sec{display:none;padding:1rem 1rem 3rem;max-width:680px;margin:0 auto}
+.sec{display:none;padding:1rem 1rem 3rem;max-width:600px;margin:0 auto}
 .sec.active{display:block}
 .did-you-know{background:linear-gradient(135deg,#EEF2FF,#F5F3FF);border:1px solid #C7D2FE;border-radius:18px;padding:1.25rem;margin-bottom:1rem}
 .dyk-eye{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:#6366F1;margin-bottom:6px}
@@ -72,41 +72,6 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   </div>
   <div id="subject-scores" style="display:flex;flex-wrap:wrap;gap:6px"></div>
 </div>
-<script>
-(function(){
-  var SUBS = [{"id": "m", "total": 5, "label": "Maths"}, {"id": "k", "total": 4, "label": "Kannada"}, {"id": "e", "total": 4, "label": "English"}];
-  function updateDayStatus(){
-    var badge = document.getElementById('day-status-badge');
-    var scoresDiv = document.getElementById('subject-scores');
-    scoresDiv.innerHTML = '';
-    var allDone = true, anyAttempted = false;
-    SUBS.forEach(function(s){
-      var d = getScore(1, 'mon', s.id);
-      var pill = document.createElement('span');
-      pill.style.cssText = 'font-size:12px;padding:4px 10px;border-radius:99px;font-weight:500';
-      if(!d){
-        pill.textContent = s.label + ': —';
-        pill.style.background = '#F3F4F6'; pill.style.color = '#9CA3AF';
-        allDone = false;
-      } else {
-        anyAttempted = true;
-        var pct = Math.round((d.bestScore/d.totalQ)*100);
-        var ok = pct >= 60;
-        if(!ok) allDone = false;
-        pill.textContent = s.label + ': ' + d.bestScore + '/' + d.totalQ + ' (' + pct + '%)' + (ok?' ✓':'');
-        pill.style.background = ok ? '#ECFDF5' : '#FEF2F2';
-        pill.style.color = ok ? '#065F46' : '#991B1B';
-      }
-      scoresDiv.appendChild(pill);
-    });
-    if(!anyAttempted){ badge.textContent='Not started'; badge.style.background='#F3F4F6'; badge.style.color='#9CA3AF'; }
-    else if(allDone){ badge.textContent='✅ Done'; badge.style.background='#ECFDF5'; badge.style.color='#065F46'; }
-    else{ badge.textContent='🟡 In progress'; badge.style.background='#FFFBEB'; badge.style.color='#92400E'; }
-  }
-  window.updateDayStatus = updateDayStatus;
-  updateDayStatus();
-})();
-</script>
 <div id="sec-m" class="sec active"><div class="did-you-know">
   <div class="dyk-eye">✨ Did you know?</div>
   <div class="dyk-title">🔢 Numbers are everywhere!</div>
@@ -189,70 +154,77 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 <script>
 
 var THRESHOLD = 0.6;
-
-function lsKey(week, dayShort, tabId) {
-  return 'icse_w' + String(week).padStart(2,'0') + '_' + dayShort + '_' + tabId;
+function lsKey(week,ds,tid){return 'icse_w'+String(week).padStart(2,'0')+'_'+ds+'_'+tid;}
+function saveScore(week,ds,tid,score,total,label){
+  var key=lsKey(week,ds,tid),existing={};
+  try{existing=JSON.parse(localStorage.getItem(key)||'{}');}catch(e){}
+  var data={attempts:(existing.attempts||0)+1,bestScore:Math.max(existing.bestScore||0,score),
+            totalQ:total,lastDate:new Date().toISOString().slice(0,10),label:label};
+  localStorage.setItem(key,JSON.stringify(data));
 }
-
-function saveScore(week, dayShort, tabId, score, total, label) {
-  var key = lsKey(week, dayShort, tabId);
-  var existing = {};
-  try { existing = JSON.parse(localStorage.getItem(key) || '{}'); } catch(e) {}
-  var attempts = (existing.attempts || 0) + 1;
-  var best = Math.max(existing.bestScore || 0, score);
-  var data = {attempts: attempts, bestScore: best, totalQ: total,
-              lastDate: new Date().toISOString().slice(0,10), label: label};
-  localStorage.setItem(key, JSON.stringify(data));
+function getScore(week,ds,tid){
+  try{return JSON.parse(localStorage.getItem(lsKey(week,ds,tid))||'null');}catch(e){return null;}
 }
-
-function getScore(week, dayShort, tabId) {
-  try { return JSON.parse(localStorage.getItem(lsKey(week, dayShort, tabId)) || 'null'); }
-  catch(e) { return null; }
-}
-
-function isDayDone(week, dayShort, subjects) {
-  // subjects = [{id, total}]
-  return subjects.every(function(s) {
-    var d = getScore(week, dayShort, s.id);
-    return d && d.totalQ > 0 && (d.bestScore / d.totalQ) >= THRESHOLD;
+function isDayDone(week,ds,subjects){
+  return subjects.every(function(s){
+    var d=getScore(week,ds,s.id);
+    return d&&d.totalQ>0&&(d.bestScore/d.totalQ)>=THRESHOLD;
   });
 }
-
-function dayStatus(week, dayShort, subjects) {
-  // returns: 'done' | 'partial' | 'pending'
-  var attempted = subjects.filter(function(s) { return getScore(week, dayShort, s.id); });
-  if (attempted.length === 0) return 'pending';
-  var done = isDayDone(week, dayShort, subjects);
-  return done ? 'done' : 'partial';
+function updateDayStatus(week,ds,subs){
+  var badge=document.getElementById('day-status-badge');
+  var scoresDiv=document.getElementById('subject-scores');
+  if(!badge||!scoresDiv)return;
+  scoresDiv.innerHTML='';
+  var allDone=true,anyAttempted=false;
+  subs.forEach(function(s){
+    var d=getScore(week,ds,s.id);
+    var pill=document.createElement('span');
+    pill.style.cssText='font-size:12px;padding:4px 10px;border-radius:99px;font-weight:500';
+    if(!d){
+      pill.textContent=s.label+': —';
+      pill.style.background='#F3F4F6';pill.style.color='#9CA3AF';
+      allDone=false;
+    }else{
+      anyAttempted=true;
+      var pct=Math.round((d.bestScore/d.totalQ)*100),ok=pct>=60;
+      if(!ok)allDone=false;
+      pill.textContent=s.label+': '+d.bestScore+'/'+d.totalQ+' ('+pct+'%)'+(ok?' ✓':'');
+      pill.style.background=ok?'#ECFDF5':'#FEF2F2';
+      pill.style.color=ok?'#065F46':'#991B1B';
+    }
+    scoresDiv.appendChild(pill);
+  });
+  if(!anyAttempted){badge.textContent='Not started';badge.style.background='#F3F4F6';badge.style.color='#9CA3AF';}
+  else if(allDone){badge.textContent='✅ Done';badge.style.background='#ECFDF5';badge.style.color='#065F46';}
+  else{badge.textContent='🟡 In progress';badge.style.background='#FFFBEB';badge.style.color='#92400E';}
 }
 
-var WEEK_NUM = 1;
-var DAY_SHORT = 'mon';
-
-function quiz(id, qs, label) {
-  var i=0, sc=0, ans=false;
+var _WEEK=1, _DS='mon', _SUBS=[{"id": "m", "label": "Maths", "total": 5}, {"id": "k", "label": "Kannada", "total": 4}, {"id": "e", "label": "English", "total": 4}];
+function quiz(id,qs,label){
+  var i=0,sc=0,ans=false;
   function el(x){return document.getElementById(id+'-'+x);}
   function render(){
     if(i>=qs.length){finish();return;}
-    var q=qs[i]; ans=false;
+    var q=qs[i];ans=false;
     el('topic').textContent=q.t||'';
     el('q').textContent=q.q;
     el('qnum').textContent=(i+1)+' / '+qs.length;
     el('score').textContent=sc;
     el('prog').style.width=Math.round((i/qs.length)*100)+'%';
     el('pct').textContent=Math.round((i/qs.length)*100)+'%';
-    var fb=el('fb'); fb.className='fb'; fb.textContent='';
+    var fb=el('fb');fb.className='fb';fb.textContent='';
     el('nxt').className='nxt';
-    var og=el('opts'); og.innerHTML='';
+    var og=el('opts');og.innerHTML='';
     q.o.forEach(function(o,j){
       var b=document.createElement('button');
-      b.className='opt'; b.textContent=o;
+      b.className='opt';b.textContent=o;
       b.onclick=function(){pick(j);};
       og.appendChild(b);
     });
   }
   function pick(j){
-    if(ans)return; ans=true;
+    if(ans)return;ans=true;
     var q=qs[i],fb=el('fb');
     document.querySelectorAll('#'+id+'-opts .opt').forEach(function(b,k){
       if(k===q.a)b.classList.add('correct');
@@ -263,15 +235,15 @@ function quiz(id, qs, label) {
     el('nxt').className='nxt show';
   }
   function finish(){
-    saveScore(WEEK_NUM, DAY_SHORT, id, sc, qs.length, label);
+    saveScore(_WEEK,_DS,id,sc,qs.length,label);
     document.getElementById(id+'-card').style.display='none';
     document.getElementById(id+'-done').style.display='block';
-    el('prog').style.width='100%'; el('pct').textContent='100%';
+    el('prog').style.width='100%';el('pct').textContent='100%';
     el('fscore').textContent=sc+' / '+qs.length;
     var pct=Math.round((sc/qs.length)*100);
-    var r=sc===qs.length?['🌟','Perfect!']:pct>=60?['🎉','Well done! 60%+ achieved ✓']:['💪','Keep going — need 60%+ to mark as Done'];
-    el('ficon').textContent=r[0]; el('fmsg').textContent=r[1];
-    updateDayStatus();
+    var r=sc===qs.length?['🌟','Perfect!']:pct>=60?['🎉','Well done! 60%+ achieved ✓']:['💪','Need 60%+ to mark as Done — try again!'];
+    el('ficon').textContent=r[0];el('fmsg').textContent=r[1];
+    updateDayStatus(_WEEK,_DS,_SUBS);
   }
   el('nxt').onclick=function(){i++;render();};
   el('retry').onclick=function(){
@@ -282,13 +254,13 @@ function quiz(id, qs, label) {
   };
   render();
 }
-
 function switchTab(t,all){
   all.forEach(function(x){
     document.getElementById('tab-'+x).classList.toggle('active',x===t);
     document.getElementById('sec-'+x).classList.toggle('active',x===t);
   });
 }
+updateDayStatus(_WEEK,_DS,_SUBS);
 </script>
 </body>
 </html>
