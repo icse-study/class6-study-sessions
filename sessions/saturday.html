@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Saturday Study Session — Class 6</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #F0F4FF; min-height: 100vh; color: #1a1a2e; }
+header { background: linear-gradient(135deg, #4F46E5, #7C3AED); padding: 1.25rem 1.5rem; display: flex; align-items: center; gap: 12px; }
+header .logo { font-size: 28px; }
+header h1 { color: #fff; font-size: 18px; font-weight: 600; }
+header p { color: rgba(255,255,255,0.75); font-size: 13px; margin-top: 2px; }
+.back-btn { display: inline-flex; align-items: center; gap: 6px; color: #6B7280; font-size: 13px; text-decoration: none; padding: 0.75rem 1rem 0; }
+.tab-bar { display: flex; background: #fff; border-bottom: 1px solid #E5E7EB; padding: 0 1rem; position: sticky; top: 0; z-index: 10; box-shadow: 0 1px 4px rgba(0,0,0,0.06); overflow-x: auto; }
+.tab-btn { flex-shrink: 0; padding: 14px 12px; border: none; background: transparent; font-size: 14px; font-weight: 500; color: #9CA3AF; cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.2s; white-space: nowrap; }
+.tab-btn.active { color: #4F46E5; border-bottom-color: #4F46E5; }
+.section { display: none; padding: 1rem 1rem 3rem; max-width: 600px; margin: 0 auto; }
+.section.active { display: block; }
+.progress-row { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
+.progress-track { flex: 1; height: 8px; background: #E5E7EB; border-radius: 99px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, #4F46E5, #7C3AED); border-radius: 99px; transition: width 0.4s ease; }
+.progress-label { font-size: 13px; color: #6B7280; white-space: nowrap; }
+.score-row { display: flex; gap: 10px; margin-bottom: 1.25rem; }
+.score-chip { background: #fff; border-radius: 12px; padding: 10px 14px; flex: 1; box-shadow: 0 1px 3px rgba(0,0,0,0.07); }
+.score-chip label { display: block; font-size: 11px; color: #9CA3AF; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+.score-chip span { font-size: 22px; font-weight: 700; color: #4F46E5; }
+.card { background: #fff; border-radius: 18px; padding: 1.25rem; box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 1rem; }
+.topic-badge { display: inline-block; background: #EEF2FF; color: #4F46E5; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 99px; margin-bottom: 10px; }
+.q-text { font-size: 17px; font-weight: 500; line-height: 1.5; color: #111827; margin-bottom: 1.25rem; }
+.opts { display: flex; flex-direction: column; gap: 10px; }
+.opt-btn { width: 100%; padding: 14px 16px; border-radius: 12px; border: 2px solid #E5E7EB; background: #FAFAFA; font-size: 16px; text-align: left; cursor: pointer; color: #1F2937; transition: all 0.15s; -webkit-tap-highlight-color: transparent; }
+.opt-btn:active { transform: scale(0.98); }
+.opt-btn.correct { background: #ECFDF5; border-color: #10B981; color: #065F46; }
+.opt-btn.wrong { background: #FEF2F2; border-color: #EF4444; color: #7F1D1D; }
+.feedback { margin-top: 14px; padding: 12px 14px; border-radius: 12px; font-size: 14px; line-height: 1.5; display: none; }
+.feedback.show { display: block; }
+.feedback.success { background: #ECFDF5; color: #065F46; }
+.feedback.error { background: #FEF2F2; color: #7F1D1D; }
+.next-btn { display: none; width: 100%; margin-top: 14px; padding: 15px; border-radius: 14px; border: none; background: linear-gradient(135deg, #4F46E5, #7C3AED); color: #fff; font-size: 16px; font-weight: 600; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.next-btn.show { display: block; }
+.concept-card { background: linear-gradient(135deg, #EEF2FF, #F5F3FF); border-radius: 18px; padding: 1.25rem; margin-bottom: 1rem; border: 1px solid #C7D2FE; }
+.concept-card h3 { font-size: 15px; font-weight: 700; color: #4338CA; margin-bottom: 10px; }
+.concept-card p, .concept-card li { font-size: 15px; color: #374151; line-height: 1.7; }
+.formula-box { background: #fff; border: 2px solid #6366F1; border-radius: 12px; padding: 14px 16px; margin: 12px 0; text-align: center; font-size: 18px; font-weight: 700; color: #4338CA; }
+.section-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #9CA3AF; margin: 1.25rem 0 0.6rem; }
+.done-card { text-align: center; padding: 2rem 1.25rem; }
+.done-emoji { font-size: 56px; margin-bottom: 12px; }
+.done-title { font-size: 22px; font-weight: 700; color: #111827; margin-bottom: 8px; }
+.done-sub { font-size: 15px; color: #6B7280; line-height: 1.6; }
+.done-score { font-size: 36px; font-weight: 800; color: #4F46E5; margin: 16px 0; }
+.retry-btn { display: inline-block; margin-top: 16px; padding: 14px 28px; border-radius: 14px; border: 2px solid #4F46E5; background: transparent; color: #4F46E5; font-size: 15px; font-weight: 600; cursor: pointer; }
+</style>
+</head>
+<body>
+<a class="back-btn" href="../index.html">← Back to schedule</a>
+<header>
+  <div class="logo">📅</div>
+  <div><h1>Saturday Study Session</h1><p>Class 6</p></div>
+</header>
+<div class="tab-bar"><button class="tab-btn active" id="tab-m" onclick="switchTab('m', tabs)">➗ Maths</button><button class="tab-btn" id="tab-h" onclick="switchTab('h', tabs)">🏛️ History & Civics</button><button class="tab-btn" id="tab-p" onclick="switchTab('p', tabs)">⚡ Physics Quiz</button><button class="tab-btn" id="tab-ch" onclick="switchTab('ch', tabs)">⚗️ Chemistry Quiz</button><button class="tab-btn" id="tab-b" onclick="switchTab('b', tabs)">🧬 Biology Quiz</button></div>
+<div id="sec-m" class="section active"><div class="section-title">Practice questions</div>
+<div class="score-row">
+  <div class="score-chip"><label>Question</label><span id="m-qnum">1 / 5</span></div>
+  <div class="score-chip"><label>Score</label><span id="m-score">0</span></div>
+</div>
+<div class="progress-row">
+  <div class="progress-track"><div class="progress-fill" id="m-progress" style="width:0%"></div></div>
+  <div class="progress-label" id="m-pct">0%</div>
+</div>
+<div id="m-card" class="card">
+  <div class="topic-badge" id="m-topic"></div>
+  <div class="q-text" id="m-q"></div>
+  <div class="opts" id="m-opts"></div>
+  <div class="feedback" id="m-feedback"></div>
+  <button class="next-btn" id="m-next">Next →</button>
+</div>
+<div id="m-done" style="display:none;" class="card done-card">
+  <div class="done-emoji" id="m-emoji">🎉</div>
+  <div class="done-title">Done!</div>
+  <div class="done-score" id="m-final"></div>
+  <div class="done-sub" id="m-msg"></div>
+  <button class="retry-btn" id="m-retry">Try again ↺</button>
+</div></div><div id="sec-h" class="section"><div class="concept-card"><h3>🏛️ The Indus Valley Civilisation</h3><p>One of the world's oldest civilisations (3300–1300 BCE), found along the Indus River.</p><ul style='margin:10px 0 0 16px'><li>Major cities: <strong>Mohenjo-daro</strong> and <strong>Harappa</strong></li><li>Known for advanced <strong>town planning</strong>, drainage systems, and trade</li><li>Declined around 1900 BCE (reasons debated — floods, drought, migration)</li></ul><div class="formula-box">3300 BCE → 2600 BCE (peak) → 1900 BCE (decline)</div></div><div class="section-title">Quick check</div>
+<div class="score-row">
+  <div class="score-chip"><label>Question</label><span id="h-qnum">1 / 5</span></div>
+  <div class="score-chip"><label>Score</label><span id="h-score">0</span></div>
+</div>
+<div class="progress-row">
+  <div class="progress-track"><div class="progress-fill" id="h-progress" style="width:0%"></div></div>
+  <div class="progress-label" id="h-pct">0%</div>
+</div>
+<div id="h-card" class="card">
+  <div class="topic-badge" id="h-topic"></div>
+  <div class="q-text" id="h-q"></div>
+  <div class="opts" id="h-opts"></div>
+  <div class="feedback" id="h-feedback"></div>
+  <button class="next-btn" id="h-next">Next →</button>
+</div>
+<div id="h-done" style="display:none;" class="card done-card">
+  <div class="done-emoji" id="h-emoji">🎉</div>
+  <div class="done-title">Done!</div>
+  <div class="done-score" id="h-final"></div>
+  <div class="done-sub" id="h-msg"></div>
+  <button class="retry-btn" id="h-retry">Try again ↺</button>
+</div></div><div id="sec-p" class="section"><div class="concept-card"><h3>⚡ Motion — Speed, Distance & Time</h3><p>When something moves, it covers a <strong>distance</strong> in a <strong>time</strong>. How fast = <strong>speed</strong>.</p><div class="formula-box">Speed = Distance ÷ Time</div><p><strong>Example:</strong> Car travels 120 km in 2 hours → Speed = 60 km/h</p><p style='margin-top:10px'><strong>Rearranged:</strong></p><div class="formula-box">D = S × T &nbsp;|&nbsp; T = D ÷ S</div></div><div class="section-title">Quick check</div>
+<div class="score-row">
+  <div class="score-chip"><label>Question</label><span id="p-qnum">1 / 5</span></div>
+  <div class="score-chip"><label>Score</label><span id="p-score">0</span></div>
+</div>
+<div class="progress-row">
+  <div class="progress-track"><div class="progress-fill" id="p-progress" style="width:0%"></div></div>
+  <div class="progress-label" id="p-pct">0%</div>
+</div>
+<div id="p-card" class="card">
+  <div class="topic-badge" id="p-topic"></div>
+  <div class="q-text" id="p-q"></div>
+  <div class="opts" id="p-opts"></div>
+  <div class="feedback" id="p-feedback"></div>
+  <button class="next-btn" id="p-next">Next →</button>
+</div>
+<div id="p-done" style="display:none;" class="card done-card">
+  <div class="done-emoji" id="p-emoji">🎉</div>
+  <div class="done-title">Done!</div>
+  <div class="done-score" id="p-final"></div>
+  <div class="done-sub" id="p-msg"></div>
+  <button class="retry-btn" id="p-retry">Try again ↺</button>
+</div></div><div id="sec-ch" class="section"><div class="concept-card"><h3>⚗️ States of Matter</h3><p>All matter exists in three states:</p><ul style='margin:10px 0 0 16px'><li><strong>Solid</strong> — fixed shape and volume (e.g. ice)</li><li><strong>Liquid</strong> — fixed volume, no fixed shape (e.g. water)</li><li><strong>Gas</strong> — no fixed shape or volume (e.g. steam)</li></ul><div class="formula-box">Solid ⟶ Liquid (Melting) ⟶ Gas (Evaporation)</div></div><div class="section-title">Quick check</div>
+<div class="score-row">
+  <div class="score-chip"><label>Question</label><span id="ch-qnum">1 / 5</span></div>
+  <div class="score-chip"><label>Score</label><span id="ch-score">0</span></div>
+</div>
+<div class="progress-row">
+  <div class="progress-track"><div class="progress-fill" id="ch-progress" style="width:0%"></div></div>
+  <div class="progress-label" id="ch-pct">0%</div>
+</div>
+<div id="ch-card" class="card">
+  <div class="topic-badge" id="ch-topic"></div>
+  <div class="q-text" id="ch-q"></div>
+  <div class="opts" id="ch-opts"></div>
+  <div class="feedback" id="ch-feedback"></div>
+  <button class="next-btn" id="ch-next">Next →</button>
+</div>
+<div id="ch-done" style="display:none;" class="card done-card">
+  <div class="done-emoji" id="ch-emoji">🎉</div>
+  <div class="done-title">Done!</div>
+  <div class="done-score" id="ch-final"></div>
+  <div class="done-sub" id="ch-msg"></div>
+  <button class="retry-btn" id="ch-retry">Try again ↺</button>
+</div></div><div id="sec-b" class="section"><div class="concept-card"><h3>🧬 The Cell — Basic Unit of Life</h3><p>Every living thing is made of <strong>cells</strong>. Key parts:</p><ul style='margin:10px 0 0 16px'><li><strong>Nucleus</strong> — control centre, contains DNA</li><li><strong>Cell membrane</strong> — controls what enters/exits</li><li><strong>Mitochondria</strong> — powerhouse, makes energy</li><li><strong>Chloroplast</strong> — only in plant cells, for photosynthesis</li></ul><div class="formula-box">6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂</div></div><div class="section-title">Quick check</div>
+<div class="score-row">
+  <div class="score-chip"><label>Question</label><span id="b-qnum">1 / 5</span></div>
+  <div class="score-chip"><label>Score</label><span id="b-score">0</span></div>
+</div>
+<div class="progress-row">
+  <div class="progress-track"><div class="progress-fill" id="b-progress" style="width:0%"></div></div>
+  <div class="progress-label" id="b-pct">0%</div>
+</div>
+<div id="b-card" class="card">
+  <div class="topic-badge" id="b-topic"></div>
+  <div class="q-text" id="b-q"></div>
+  <div class="opts" id="b-opts"></div>
+  <div class="feedback" id="b-feedback"></div>
+  <button class="next-btn" id="b-next">Next →</button>
+</div>
+<div id="b-done" style="display:none;" class="card done-card">
+  <div class="done-emoji" id="b-emoji">🎉</div>
+  <div class="done-title">Done!</div>
+  <div class="done-score" id="b-final"></div>
+  <div class="done-sub" id="b-msg"></div>
+  <button class="retry-btn" id="b-retry">Try again ↺</button>
+</div></div>
+<script>
+var tabs=['m','h','p','ch','b'];
+
+function makeQuiz(prefix, questions) {
+  var idx=0, score=0, answered=false;
+  function render() {
+    if(idx>=questions.length){done();return;}
+    var q=questions[idx]; answered=false;
+    var el=function(id){return document.getElementById(prefix+'-'+id);};
+    el('topic').textContent=q.topic||'';
+    el('q').textContent=q.q;
+    el('qnum').textContent=(idx+1)+' / '+questions.length;
+    el('score').textContent=score;
+    var pct=Math.round((idx/questions.length)*100);
+    el('progress').style.width=pct+'%';
+    el('pct').textContent=pct+'%';
+    var fb=el('feedback'); fb.className='feedback'; fb.textContent='';
+    el('next').className='next-btn';
+    var og=el('opts'); og.innerHTML='';
+    q.opts.forEach(function(o,i){
+      var b=document.createElement('button');
+      b.className='opt-btn'; b.textContent=o;
+      b.onclick=function(){answer(i);};
+      og.appendChild(b);
+    });
+  }
+  function answer(i){
+    if(answered)return; answered=true;
+    var q=questions[idx];
+    var el=function(id){return document.getElementById(prefix+'-'+id);};
+    var fb=el('feedback');
+    document.querySelectorAll('#'+prefix+'-opts .opt-btn').forEach(function(b,j){
+      if(j===q.ans)b.classList.add('correct');
+      else if(j===i&&i!==q.ans)b.classList.add('wrong');
+    });
+    if(i===q.ans){score++;fb.textContent='✅ Correct! '+q.explain;fb.className='feedback success show';}
+    else{fb.textContent='❌ Not quite. '+q.explain;fb.className='feedback error show';}
+    el('next').className='next-btn show';
+  }
+  function done(){
+    document.getElementById(prefix+'-card').style.display='none';
+    document.getElementById(prefix+'-done').style.display='block';
+    document.getElementById(prefix+'-progress').style.width='100%';
+    document.getElementById(prefix+'-pct').textContent='100%';
+    document.getElementById(prefix+'-final').textContent=score+' / '+questions.length;
+    var msgs=score===questions.length?['🌟','Perfect score!']:score>=questions.length*0.7?['🎉','Great work!']:score>=questions.length*0.5?['👍','Good effort!']:['💪','Keep going — review and retry!'];
+    document.getElementById(prefix+'-emoji').textContent=msgs[0];
+    document.getElementById(prefix+'-msg').textContent=msgs[1];
+  }
+  document.getElementById(prefix+'-next').onclick=function(){idx++;render();};
+  document.getElementById(prefix+'-retry').onclick=function(){
+    idx=0;score=0;answered=false;
+    document.getElementById(prefix+'-card').style.display='block';
+    document.getElementById(prefix+'-done').style.display='none';
+    render();
+  };
+  render();
+}
+
+function switchTab(tab, tabs) {
+  tabs.forEach(function(t){
+    document.getElementById('tab-'+t).classList.toggle('active', t===tab);
+    document.getElementById('sec-'+t).classList.toggle('active', t===tab);
+  });
+}
+
+makeQuiz('m', [{"topic": "Word Problem", "q": "A train travels 360 km in 4 hours. What is its speed?", "opts": ["80 km/h", "90 km/h", "100 km/h", "72 km/h"], "ans": 1, "explain": "Speed = 360 \u00f7 4 = 90 km/h."}, {"topic": "Profit & Loss", "q": "Cost price \u20b980, selling price \u20b9100. Profit?", "opts": ["\u20b910", "\u20b915", "\u20b920", "\u20b925"], "ans": 2, "explain": "Profit = SP \u2212 CP = 100 \u2212 80 = \u20b920."}, {"topic": "Ratio", "q": "Ratio of 25 to 75 in simplest form?", "opts": ["5:15", "1:3", "3:1", "2:6"], "ans": 1, "explain": "25:75 = 1:3 (divide both by 25)."}, {"topic": "Percentage", "q": "What is 20% of 150?", "opts": ["25", "30", "35", "40"], "ans": 1, "explain": "20/100 \u00d7 150 = 30."}, {"topic": "LCM", "q": "LCM of 4 and 6?", "opts": ["8", "10", "12", "24"], "ans": 2, "explain": "Multiples of 4: 4,8,12\u2026 Multiples of 6: 6,12\u2026 LCM = 12."}]);
+makeQuiz('h', [{"topic": "Ancient India", "q": "Which civilisation flourished along the Indus River?", "opts": ["Vedic", "Gupta", "Indus Valley", "Mauryan"], "ans": 2, "explain": "The Indus Valley Civilisation (3300\u20131300 BCE) thrived along the Indus."}, {"topic": "Civics", "q": "How many Fundamental Rights does the Indian Constitution give?", "opts": ["5", "6", "7", "8"], "ans": 1, "explain": "The Indian Constitution provides 6 Fundamental Rights."}, {"topic": "History", "q": "Who wrote the Arthashastra?", "opts": ["Ashoka", "Chandragupta", "Kautilya", "Vikramaditya"], "ans": 2, "explain": "Kautilya (also called Chanakya) wrote the Arthashastra."}, {"topic": "Civics", "q": "The Preamble of India begins with?", "opts": ["We the Citizens", "We the People", "We the Indians", "We the Nation"], "ans": 1, "explain": "The Preamble begins with 'We the People of India'."}, {"topic": "History", "q": "First Battle of Panipat was fought in?", "opts": ["1526", "1556", "1761", "1498"], "ans": 0, "explain": "The First Battle of Panipat was fought in 1526 between Babur and Ibrahim Lodi."}]);
+makeQuiz('p', [{"topic": "Speed", "q": "A cyclist covers 30 km in 3 hours. Speed?", "opts": ["8 km/h", "10 km/h", "12 km/h", "90 km/h"], "ans": 1, "explain": "Speed = 30 \u00f7 3 = 10 km/h."}, {"topic": "Distance", "q": "Train at 60 km/h for 2 hours. Distance?", "opts": ["30 km", "90 km", "120 km", "180 km"], "ans": 2, "explain": "Distance = 60 \u00d7 2 = 120 km."}, {"topic": "Speed", "q": "Runner covers 400 m in 50 s. Speed?", "opts": ["4 m/s", "6 m/s", "8 m/s", "10 m/s"], "ans": 2, "explain": "Speed = 400 \u00f7 50 = 8 m/s."}, {"topic": "Force", "q": "Which of these is a contact force?", "opts": ["Gravity", "Magnetism", "Friction", "Electrostatic"], "ans": 2, "explain": "Friction acts when surfaces touch \u2014 it is a contact force."}, {"topic": "Light", "q": "Speed of light in vacuum?", "opts": ["3\u00d710\u2076 m/s", "3\u00d710\u2078 m/s", "3\u00d710\u00b9\u2070 m/s", "3\u00d710\u2074 m/s"], "ans": 1, "explain": "Speed of light = 3 \u00d7 10\u2078 m/s."}]);
+makeQuiz('ch', [{"topic": "Matter", "q": "Which state of matter has a fixed volume but no fixed shape?", "opts": ["Solid", "Liquid", "Gas", "Plasma"], "ans": 1, "explain": "Liquids have fixed volume but take the shape of their container."}, {"topic": "Elements", "q": "Chemical symbol of Gold?", "opts": ["Go", "Gd", "Au", "Ag"], "ans": 2, "explain": "Gold's symbol is Au from Latin 'Aurum'."}, {"topic": "Mixtures", "q": "Which is a pure substance?", "opts": ["Salt water", "Air", "Distilled water", "Milk"], "ans": 2, "explain": "Distilled water contains only H\u2082O \u2014 it is a pure substance."}, {"topic": "Acids", "q": "What colour does red litmus turn in a base?", "opts": ["Red", "Blue", "Green", "Yellow"], "ans": 1, "explain": "Bases turn red litmus blue."}, {"topic": "Elements", "q": "How many elements are in H\u2082O?", "opts": ["1", "2", "3", "4"], "ans": 1, "explain": "H\u2082O has 2 elements: Hydrogen and Oxygen."}]);
+makeQuiz('b', [{"topic": "Cells", "q": "The control centre of a cell is the?", "opts": ["Cell wall", "Mitochondria", "Nucleus", "Vacuole"], "ans": 2, "explain": "The nucleus controls all cell activities \u2014 it is the control centre."}, {"topic": "Nutrition", "q": "Which nutrient gives us energy?", "opts": ["Minerals", "Vitamins", "Carbohydrates", "Water"], "ans": 2, "explain": "Carbohydrates are the primary energy source for the body."}, {"topic": "Photosynthesis", "q": "Photosynthesis takes place in?", "opts": ["Roots", "Stem", "Chloroplast", "Vacuole"], "ans": 2, "explain": "Chloroplasts contain chlorophyll where photosynthesis happens."}, {"topic": "Respiration", "q": "Gas released during photosynthesis?", "opts": ["CO\u2082", "N\u2082", "O\u2082", "H\u2082"], "ans": 2, "explain": "Plants release Oxygen (O\u2082) during photosynthesis."}, {"topic": "Bones", "q": "How many bones in an adult human body?", "opts": ["206", "208", "212", "200"], "ans": 0, "explain": "An adult human body has 206 bones."}]);
+</script>
+</body>
+</html>
