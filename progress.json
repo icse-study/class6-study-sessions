@@ -1,60 +1,60 @@
 {
   "version": 1,
-  "lastSaved": "2026-06-17T12:12:44.579Z",
+  "lastSaved": "2026-06-17T12:13:08.031Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
-      "attempts": 35641,
+      "attempts": 97091,
       "bestScore": 5,
       "totalQ": 5,
       "lastDate": "2026-06-16",
       "label": "Maths"
     },
     "icse_w01_mon_k": {
-      "attempts": 13369,
+      "attempts": 36419,
       "bestScore": 4,
       "totalQ": 4,
       "lastDate": "2026-06-16",
       "label": "Kannada"
     },
     "icse_w01_mon_e": {
-      "attempts": 4466,
+      "attempts": 12166,
       "bestScore": 4,
       "totalQ": 4,
       "lastDate": "2026-06-16",
       "label": "English"
     },
     "icse_w01_tue_m": {
-      "attempts": 232,
+      "attempts": 632,
       "bestScore": 4,
       "totalQ": 4,
       "lastDate": "2026-06-16",
       "label": "Maths"
     },
     "icse_w01_tue_p": {
-      "attempts": 87,
+      "attempts": 237,
       "bestScore": 4,
       "totalQ": 4,
       "lastDate": "2026-06-16",
       "label": "Physics"
     },
     "icse_w01_tue_c": {
-      "attempts": 29,
+      "attempts": 79,
       "bestScore": 4,
       "totalQ": 4,
       "lastDate": "2026-06-16",
       "label": "CS/Python"
     },
     "icse_w01_wed_g": {
-      "attempts": 12,
+      "attempts": 33,
       "bestScore": 5,
       "totalQ": 5,
       "lastDate": "2026-06-17",
       "label": "Geography"
     },
     "icse_w01_wed_e": {
-      "attempts": 4,
-      "bestScore": 3,
+      "attempts": 12,
+      "bestScore": 4,
       "totalQ": 4,
       "lastDate": "2026-06-17",
       "label": "English Grammar"
