@@ -58,17 +58,32 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 .pb-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9CA3AF}
 .sb{font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;background:#F3F4F6;color:#9CA3AF}
 .sp{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
-.save-btn{width:100%;padding:12px;border-radius:12px;border:1.5px solid #6366F1;background:transparent;color:#4F46E5;font-size:14px;font-weight:600;cursor:pointer;margin-top:4px}</style>
+.save-btn{width:100%;padding:12px;border-radius:12px;border:1.5px solid #6366F1;background:transparent;color:#4F46E5;font-size:14px;font-weight:600;cursor:pointer;margin-top:4px}
+.tbl-wrap{overflow-x:auto;border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:1rem}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;background:#fff}
+.tbl th{background:#EEF2FF;color:#3730A3;font-weight:700;padding:9px 12px;text-align:left;border-bottom:2px solid #C7D2FE;white-space:nowrap}
+.tbl td{padding:9px 12px;border-bottom:1px solid #F3F4F6;color:#374151;vertical-align:top}
+.tbl tr:last-child td{border-bottom:none}
+.tbl td:first-child{font-weight:600;color:#111827;white-space:nowrap}
+.hook{font-size:13px;color:#3730A3;margin-top:6px;padding:6px 10px;background:#EEF2FF;border-radius:8px;border-left:3px solid #818CF8;font-style:italic}
+.qa{background:#fff;border-radius:18px;padding:1.1rem 1.25rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:1rem;border-left:4px solid #7C3AED}
+.qa .qn{font-size:14px;font-weight:700;color:#111827;line-height:1.6;margin-bottom:8px}
+.qa details{margin-top:6px}
+.qa summary{font-size:12px;font-weight:700;color:#4F46E5;cursor:pointer;list-style:none}
+.qa summary::-webkit-details-marker{display:none}
+.qa .ans{font-size:13px;color:#374151;line-height:1.7;margin-top:8px;padding:8px 11px;background:#F5F3FF;border-radius:8px}</style>
 </head>
 <body>
 <a class="back" href="index.html">← Week 3</a>
 <header>
-  <div class="logo">🔄</div>
-  <div><h1>Sunday · Week 3</h1><p>29 Jun 2026 · 11:15 AM – 12:00 PM · Class 6 ICSE</p></div>
+  <div class="logo">📚</div>
+  <div><h1>Sunday · Week 3</h1><p>5 Jul 2026 · Sunday AM · 🌍 Geography · 🇫🇷 French · Class 6 ICSE</p></div>
 </header>
 <div class="tabs">
-  <button class="tab active" id="tab-notes" onclick="switchTab('notes')">📖 Review</button>
-  <button class="tab" id="tab-geo" onclick="switchTab('geo')">❓ Quiz</button>
+  <button class="tab active" id="tab-notes" onclick="switchTab('notes')">📖 Geo Review</button>
+  <button class="tab" id="tab-gh" onclick="switchTab('gh')">🌍 Geo Quiz</button>
+  <button class="tab" id="tab-fnotes" onclick="switchTab('fnotes')">📖 French Study</button>
+  <button class="tab" id="tab-f" onclick="switchTab('f')">🇫🇷 French Quiz</button>
 </div>
 <div class="prog-bar">
   <div class="pb-top">
@@ -142,12 +157,12 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   </div>
 
   <div style="margin-top:1.25rem;text-align:center;padding-bottom:1rem">
-    <button onclick="switchTab('geo')" style="padding:14px 32px;border-radius:14px;border:none;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-size:15px;font-weight:600;cursor:pointer;width:100%;max-width:320px">Take the Quiz →</button>
+    <button onclick="switchTab('gh')" style="padding:14px 32px;border-radius:14px;border:none;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-size:15px;font-weight:600;cursor:pointer;width:100%;max-width:320px">Take the Quiz →</button>
   </div>
 </div>
 
 <!-- Quiz tab -->
-<div id="sec-geo" class="sec">
+<div id="sec-gh" class="sec">
   <div class="dyk">
     <div class="dyk-eye">❓ Quiz · 10 Questions · Medium</div>
     <div class="dyk-title">Landforms of the Earth — Review</div>
@@ -155,28 +170,131 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   </div>
   <div class="ql">Questions</div>
   <div class="sr">
-    <div class="sc"><label>Question</label><span id="geo-qnum">1 / 10</span></div>
-    <div class="sc"><label>Score</label><span id="geo-score">0</span></div>
+    <div class="sc"><label>Question</label><span id="gh-qnum">1 / 10</span></div>
+    <div class="sc"><label>Score</label><span id="gh-score">0</span></div>
   </div>
-  <div class="pr"><div class="pt"><div class="pf" id="geo-prog" style="width:0%"></div></div><div class="pp" id="geo-pct">0%</div></div>
-  <div id="geo-card" class="card">
-    <div class="tp" id="geo-topic"></div>
-    <div class="qt" id="geo-q"></div>
-    <div class="opts" id="geo-opts"></div>
-    <div class="fb" id="geo-fb"></div>
-    <button class="nxt" id="geo-nxt">Next →</button>
+  <div class="pr"><div class="pt"><div class="pf" id="gh-prog" style="width:0%"></div></div><div class="pp" id="gh-pct">0%</div></div>
+  <div id="gh-card" class="card">
+    <div class="tp" id="gh-topic"></div>
+    <div class="qt" id="gh-q"></div>
+    <div class="opts" id="gh-opts"></div>
+    <div class="fb" id="gh-fb"></div>
+    <button class="nxt" id="gh-nxt">Next →</button>
   </div>
-  <div id="geo-done" style="display:none" class="card dc">
-    <div class="di" id="geo-ficon">🎉</div>
+  <div id="gh-done" style="display:none" class="card dc">
+    <div class="di" id="gh-ficon">🎉</div>
     <div class="dt">Done!</div>
-    <div class="ds" id="geo-fscore"></div>
-    <div class="dm" id="geo-fmsg"></div>
-    <button class="retry" id="geo-retry">Try again ↺</button>
+    <div class="ds" id="gh-fscore"></div>
+    <div class="dm" id="gh-fmsg"></div>
+    <button class="retry" id="gh-retry">Try again ↺</button>
+  </div>
+</div>
+
+<!-- French Study tab (Day 4) -->
+<div id="sec-fnotes" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">🇫🇷 Français · Day 4 · Dialogue &amp; Comprehension</div>
+    <div class="dyk-title">Le dialogue, la lecture et les accents</div>
+    <div class="dyk-body">Everyday dialogue, talking about aches (j'ai mal à…), short reading comprehension, plural rules and the French accents. Read the cards, try the Writing Practice, then take the quiz.</div>
+  </div>
+
+  <div class="ql">💬 Dialogue Expressions</div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Français</th><th>English</th></tr></thead>
+      <tbody>
+        <tr><td>Salut !</td><td>Hi!</td></tr>
+        <tr><td>Ça va ?</td><td>How's it going?</td></tr>
+        <tr><td>Comme ci comme ça</td><td>So-so</td></tr>
+        <tr><td>Ah ! C'est dommage !</td><td>Oh! That's too bad!</td></tr>
+        <tr><td>Pourquoi ?</td><td>Why?</td></tr>
+        <tr><td>Il a un beau jardin</td><td>He has a nice garden</td></tr>
+        <tr><td>Merci !</td><td>Thank you!</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="icard">
+    <h3>Talking about aches — j'ai mal à / aux …</h3>
+    <p>J'ai mal <strong>à la</strong> tête (I have a headache) · J'ai mal <strong>aux</strong> genoux (my knees hurt) · J'ai mal <strong>aux</strong> mains (my hands hurt) · J'ai mal <strong>au</strong> dos (my back hurts).</p>
+    <div class="hook">💡 à + le → au · à + les → aux · à + la stays à la.</div>
+  </div>
+
+  <div class="ql">📖 Reading Comprehension</div>
+  <div class="icard">
+    <h3>Haddock — Manuel's dog (le chien)</h3>
+    <p>le chien (dog) · les pattes (paws) · la queue (tail) · le museau (snout) · les oreilles (ears) · bizarre (strange).</p>
+  </div>
+  <div class="icard">
+    <h3>Anne's friends</h3>
+    <p><strong>Catherine</strong> — Italian; curly hair (frisés); small eyes (petits yeux); thin and pretty (mince et jolie).<br>
+    <strong>Claire</strong> — French (like Anne); long black hair (longs et noirs); blue eyes (bleus); beautiful and very intelligent (belle et très intelligente).</p>
+  </div>
+
+  <div class="ql">➕ Plurals &amp; Accents</div>
+  <div class="icard">
+    <h3>Making sentences plural</h3>
+    <p>Add <strong>-s</strong> to nouns, change articles (le/la → les), add <strong>-s</strong> to adjectives, and use the plural verb form.</p>
+    <div class="ex"><strong>Singular:</strong> Nicolas habite à Lyon. → <strong>Plural:</strong> Nicolas et Pierre habitent à Lyon.</div>
+  </div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Accent</th><th>Letter</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>Accent aigu</td><td>é</td><td>février, été</td></tr>
+        <tr><td>Accent grave</td><td>è</td><td>règle, mère</td></tr>
+        <tr><td>Accent circonflexe</td><td>ê</td><td>hôtel, frère</td></tr>
+        <tr><td>Tréma</td><td>ë</td><td>Noël</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="icard">
+    <h3>Punctuation names</h3>
+    <p>le point (.) · le point d'interrogation (?) · le point d'exclamation (!) · la virgule (,) · l'apostrophe (') · le trait d'union (-).</p>
+  </div>
+
+  <div class="ql">✍️ Writing Practice — answer on paper, then check</div>
+  <div class="qa"><div class="qn">16. Put this dialogue in the correct order: "Merci beaucoup" / "Non, je suis au sixième." / "Salut ! Je suis Paul. Et toi ?" / "Je m'appelle Éric." / "Tu as un beau visage."</div><details><summary>▸ Show model answer</summary><div class="ans">1) Salut ! Je suis Paul. Et toi ? 2) Je m'appelle Éric. 3) Tu as un beau visage. 4) Merci beaucoup. 5) Non, je suis au sixième.</div></details></div>
+  <div class="qa"><div class="qn">17. Describe Anne's friend Claire using at least 4 characteristics from the text.</div><details><summary>▸ Show model answer</summary><div class="ans">Claire is Anne's friend. She is French. She has long black hair and blue eyes. She is beautiful and very intelligent.</div></details></div>
+  <div class="qa"><div class="qn">18. Write a short paragraph (4–5 sentences) describing a family member.</div><details><summary>▸ Show model answer</summary><div class="ans">Sample: Ma mère s'appelle Sophie. Elle a les cheveux longs et bruns. Elle a les yeux verts. Elle est mince et grande. Elle a un joli sourire.</div></details></div>
+  <div class="qa"><div class="qn">19. What is the rule for making a sentence negative in French? Give an example.</div><details><summary>▸ Show model answer</summary><div class="ans">Put <strong>ne</strong> before the verb and <strong>pas</strong> after it (ne → n' before a vowel). Example: "Je parle français" → "Je ne parle pas français."</div></details></div>
+  <div class="qa"><div class="qn">20. Translate to French: (a) I have a headache. (b) They are Italian. (c) We have a nice garden.</div><details><summary>▸ Show model answer</summary><div class="ans">(a) J'ai mal à la tête. (b) Ils sont italiens. (or Elles sont italiennes for all girls) (c) Nous avons un beau jardin.</div></details></div>
+
+  <div style="margin-top:1.25rem;text-align:center;padding-bottom:1rem">
+    <button onclick="switchTab('f')" style="padding:14px 32px;border-radius:14px;border:none;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-size:15px;font-weight:600;cursor:pointer;width:100%;max-width:320px">Take the Quiz →</button>
+  </div>
+</div>
+
+<!-- French Quiz tab (Day 4) -->
+<div id="sec-f" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">❓ Quiz · 15 Questions · Easy → Medium</div>
+    <div class="dyk-title">French Day 4 — Dialogue &amp; Comprehension</div>
+    <div class="dyk-body">5 multiple-choice + 5 true/false + 5 fill-in-the-blank. You need <strong>9 / 15 (60%+)</strong> to mark French as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="f-qnum">1 / 15</span></div>
+    <div class="sc"><label>Score</label><span id="f-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="f-prog" style="width:0%"></div></div><div class="pp" id="f-pct">0%</div></div>
+  <div id="f-card" class="card">
+    <div class="tp" id="f-topic"></div>
+    <div class="qt" id="f-q"></div>
+    <div class="opts" id="f-opts"></div>
+    <div class="fb" id="f-fb"></div>
+    <button class="nxt" id="f-nxt">Next →</button>
+  </div>
+  <div id="f-done" style="display:none" class="card dc">
+    <div class="di" id="f-ficon">🎉</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="f-fscore"></div>
+    <div class="dm" id="f-fmsg"></div>
+    <button class="retry" id="f-retry">Try again ↺</button>
   </div>
 </div>
 
 <script>
-var SUBJECTS = [{"id":"geo","label":"Geography","total":10}];
+var SUBJECTS = [{"id":"gh","label":"Geography","total":10},{"id":"f","label":"French","total":15}];
 var LS_PFX   = 'icse_w03_sun';
 
 function saveScore(id, score, total, label) {
@@ -223,7 +341,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["notes","geo"];
+  var all = ["notes","gh","fnotes","f"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -400,7 +518,7 @@ function makeSaveButton(containerId){
 }
 
 // Init
-quiz('geo', [
+quiz('gh', [
   {"t":"Mountains","q":"Which mountain type forms when tectonic plates collide?","o":["Block Mountains","Volcanic Mountains","Fold Mountains","Rift Mountains"],"a":2,"e":"Plates collide → crust crumples into folds. Examples: Himalayas, Alps, Andes."},
   {"t":"Plateau","q":"The Deccan Plateau is an example of which landform?","o":["Plain","Valley","Plateau","Block Mountain"],"a":2,"e":"A plateau is an elevated, broad, flat area rising sharply above surroundings — classic tableland."},
   {"t":"Valley","q":"What causes a Rift Valley to form?","o":["Volcanic eruption","River erosion","Central block sinks between two faults","Glacial melting"],"a":2,"e":"Two parallel faults; the block between them drops down. Example: Narmada Valley."},
@@ -412,6 +530,25 @@ quiz('geo', [
   {"t":"Mountains","q":"Which is NOT a Fold Mountain range?","o":["Andes","Alps","Vindhyas","Himalayas"],"a":2,"e":"Vindhyas are Block Mountains (formed by faulting), not Fold Mountains."},
   {"t":"People","q":"Life in mountains typically features:","o":["High population & easy farming","Low population & limited agriculture","Many railways","Rich fertile soil"],"a":1,"e":"Rugged terrain limits farming; building infrastructure is costly."}
 ], 'Geography');
+
+quiz('f', [
+  {"t":"MCQ · Aches","q":"\"J'ai mal aux genoux\" means:","o":["My hands hurt","My knees hurt","My head hurts","My back hurts"],"a":1,"e":"les genoux = knees, so 'j'ai mal aux genoux' = my knees hurt."},
+  {"t":"MCQ · Comprehension","q":"What is the nationality of Catherine?","o":["French","Italian","Spanish","German"],"a":1,"e":"In the text, Catherine is Italian (Claire is French)."},
+  {"t":"MCQ · Dialogue","q":"\"Comme ci comme ça\" means:","o":["Very good","So-so","Terrible","Excellent"],"a":1,"e":"Comme ci comme ça = so-so."},
+  {"t":"MCQ · Comprehension","q":"What colour are Claire's eyes?","o":["Brown","Green","Blue","Black"],"a":2,"e":"Claire has blue eyes (les yeux bleus)."},
+  {"t":"MCQ · Vocabulary","q":"Which of these means 'the dog' in French?","o":["le chat","le chien","le cheval","l'oiseau"],"a":1,"e":"le chien = the dog (le chat = cat, le cheval = horse, l'oiseau = bird)."},
+  {"t":"True / False","q":"\"Ah ! C'est dommage !\" means \"Oh! That's great!\"","o":["Vrai (True)","Faux (False)"],"a":1,"e":"Faux. C'est dommage = 'That's too bad / a pity'."},
+  {"t":"True / False","q":"Haddock is the name of Manuel's cat.","o":["Vrai (True)","Faux (False)"],"a":1,"e":"Faux. Haddock is Manuel's dog (le chien)."},
+  {"t":"True / False","q":"Catherine has long and straight hair.","o":["Vrai (True)","Faux (False)"],"a":1,"e":"Faux. Catherine has curly hair (cheveux frisés)."},
+  {"t":"True / False","q":"\"Le trait d'union\" means hyphen.","o":["Vrai (True)","Faux (False)"],"a":0,"e":"Vrai. le trait d'union = the hyphen (-)."},
+  {"t":"True / False","q":"\"J'ai mal aux mains\" means \"My feet hurt.\"","o":["Vrai (True)","Faux (False)"],"a":1,"e":"Faux. les mains = hands, so it means 'my hands hurt'. Feet = les pieds."},
+  {"t":"Fill in the blank","q":"Le chien a des ______ bruns et un ______ rose.","o":["pattes … nez","mains … bras","oreilles … pied","doigts … cou"],"a":0,"e":"A dog has brown paws (pattes) and a pink nose (nez)."},
+  {"t":"Fill in the blank","q":"Le pluriel de \"Nicolas habite à Lyon\" est \"Nicolas et Pierre ______ à Lyon.\"","o":["habitent","habite","habitons","habitez"],"a":0,"e":"A plural subject (ils) takes habitent."},
+  {"t":"Fill in the blank","q":"Le contraire (opposite) de \"long\" est ______.","o":["court","grand","large","petit"],"a":0,"e":"The opposite of long (long) is court (short)."},
+  {"t":"Fill in the blank","q":"Le verbe \"aller\" pour \"Ils\" est ______.","o":["vont","allons","vais","allez"],"a":0,"e":"aller (irregular): ils/elles vont."},
+  {"t":"Fill in the blank","q":"L'oiseau ______ ce matin.  (chanter)","o":["chante","chantent","chantons","chanter"],"a":0,"e":"il/elle (l'oiseau) + -ER → -e: l'oiseau chante."}
+], 'French');
+
 refreshProgress();
 makeSaveButton('save-wrap');
 loadRemoteProgress(function(ok){ if(ok) refreshProgress(); });

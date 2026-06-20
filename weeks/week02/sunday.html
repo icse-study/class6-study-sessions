@@ -68,17 +68,25 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 .tbl th{background:#EEF2FF;color:#3730A3;font-weight:700;padding:9px 12px;text-align:left;border-bottom:2px solid #C7D2FE;white-space:nowrap}
 .tbl td{padding:9px 12px;border-bottom:1px solid #F3F4F6;color:#374151;vertical-align:top}
 .tbl tr:last-child td{border-bottom:none}
-.tbl td:first-child{font-weight:600;color:#111827}</style>
+.tbl td:first-child{font-weight:600;color:#111827}
+.qa{background:#fff;border-radius:18px;padding:1.1rem 1.25rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:1rem;border-left:4px solid #7C3AED}
+.qa .qn{font-size:14px;font-weight:700;color:#111827;line-height:1.6;margin-bottom:8px}
+.qa details{margin-top:6px}
+.qa summary{font-size:12px;font-weight:700;color:#4F46E5;cursor:pointer;list-style:none}
+.qa summary::-webkit-details-marker{display:none}
+.qa .ans{font-size:13px;color:#374151;line-height:1.7;margin-top:8px;padding:8px 11px;background:#F5F3FF;border-radius:8px}</style>
 </head>
 <body>
 <a class="back" href="index.html">← Week 2</a>
 <header>
   <div class="logo">📚</div>
-  <div><h1>Sunday · Week 2</h1><p>28 Jun 2026 · 10:00 AM – 4:00 PM · 🗣️ Kannada · 🧠 Mixed Quiz</p></div>
+  <div><h1>Sunday · Week 2</h1><p>28 Jun 2026 · 10:00 AM – 4:00 PM · 🗣️ Kannada · 🇫🇷 French · 🧠 Mixed Quiz</p></div>
 </header>
 <div class="tabs">
   <button class="tab active" id="tab-notes" onclick="switchTab('notes')">📖 Kannada Revision</button>
   <button class="tab" id="tab-k" onclick="switchTab('k')">❓ Kannada Quiz</button>
+  <button class="tab" id="tab-fnotes" onclick="switchTab('fnotes')">📖 French Study</button>
+  <button class="tab" id="tab-f" onclick="switchTab('f')">🇫🇷 French Quiz</button>
   <button class="tab" id="tab-mxnotes" onclick="switchTab('mxnotes')">📖 Mixed Study</button>
   <button class="tab" id="tab-mx" onclick="switchTab('mx')">🧠 Mixed Quiz</button>
 </div>
@@ -152,6 +160,125 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
     <div class="ds" id="k-fscore"></div>
     <div class="dm" id="k-fmsg"></div>
     <button class="retry" id="k-retry">Try again ↺</button>
+  </div>
+</div>
+
+<!-- French Study tab (Day 2) -->
+<div id="sec-fnotes" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">🇫🇷 Français · Day 2 · Liaison &amp; Description</div>
+    <div class="dyk-title">La liaison et la description physique</div>
+    <div class="dyk-body">Learn how French links words smoothly (la liaison), how to describe people (hair, eyes, family), and the subject pronouns. Read the cards, try the Writing Practice, then take the quiz.</div>
+  </div>
+
+  <div class="ql">🔗 Les Liaisons (linking words)</div>
+  <div class="icard">
+    <h3>What is a liaison?</h3>
+    <p>When a word ends in a silent consonant and the next word begins with a vowel, we pronounce that consonant to link the two words smoothly.</p>
+    <div class="ex"><strong>Les élèves</strong> → lay-<strong>z</strong>ay-lev · <strong>Ils ont</strong> → eel-<strong>z</strong>on · <strong>Un grand homme</strong> → un-gran-<strong>t</strong>om</div>
+  </div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Change in liaison</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>d → t</td><td>un gran<strong>d</strong> homme</td></tr>
+        <tr><td>f → v</td><td>neu<strong>f</strong> heures</td></tr>
+        <tr><td>s, x → z</td><td>le<strong>s</strong> enfants, beau<strong>x</strong> enfants</td></tr>
+        <tr><td>ain / ein → aine / eine</td><td>un lointa<strong>in</strong> ami</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="icard">
+    <h3>Forbidden liaisons (no link)</h3>
+    <p>Do <strong>not</strong> link in these cases:</p>
+    <div class="ex">After <strong>et</strong> (and): une fille et | un homme · After proper nouns: Paris | est grand · Before <strong>h aspiré</strong>: les | héros · After question words: Comment | est-elle ? · Before a singular noun: il prend | un livre</div>
+    <div class="hook">💡 "et" never links to the next word.</div>
+  </div>
+
+  <div class="ql">🧑 La description physique — Body Parts</div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Français</th><th>English</th><th>Français</th><th>English</th></tr></thead>
+      <tbody>
+        <tr><td>la tête</td><td>head</td><td>le cou</td><td>neck</td></tr>
+        <tr><td>les cheveux</td><td>hair</td><td>l'épaule</td><td>shoulder</td></tr>
+        <tr><td>les yeux</td><td>eyes</td><td>le bras</td><td>arm</td></tr>
+        <tr><td>le nez</td><td>nose</td><td>la main</td><td>hand</td></tr>
+        <tr><td>la bouche</td><td>mouth</td><td>les doigts</td><td>fingers</td></tr>
+        <tr><td>les dents</td><td>teeth</td><td>le ventre</td><td>stomach</td></tr>
+        <tr><td>les oreilles</td><td>ears</td><td>les jambes</td><td>legs</td></tr>
+        <tr><td>le menton</td><td>chin</td><td>le genou</td><td>knee</td></tr>
+        <tr><td>le visage</td><td>face</td><td>le pied</td><td>foot</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="icard">
+    <h3>Describing hair (les cheveux)</h3>
+    <p><strong>Length:</strong> longs (long) · courts (short) &nbsp; <strong>Type:</strong> raides (straight) · ondulés (wavy) · frisés (curly) &nbsp; <strong>Colour:</strong> noirs (black) · bruns (brown) · blonds (blonde)</p>
+    <div class="ex">Elle a les cheveux longs et ondulés. · Il a les yeux bleus. · Il est grand et mince.</div>
+  </div>
+
+  <div class="ql">👪 La famille</div>
+  <div class="icard">
+    <h3>Family members</h3>
+    <p>le grand-père (grandfather) · la grand-mère (grandmother) · le père (father) · la mère (mother) · le frère (brother) · la sœur (sister)</p>
+  </div>
+
+  <div class="ql">🙋 Les pronoms sujets (subject pronouns)</div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Pronoun</th><th>English</th><th>Use</th></tr></thead>
+      <tbody>
+        <tr><td>Je / J'</td><td>I</td><td>J' before a vowel: J'ai</td></tr>
+        <tr><td>Tu</td><td>You (informal)</td><td>friends / family</td></tr>
+        <tr><td>Il</td><td>He</td><td>masculine</td></tr>
+        <tr><td>Elle</td><td>She</td><td>feminine</td></tr>
+        <tr><td>Nous</td><td>We</td><td>a group including me</td></tr>
+        <tr><td>Vous</td><td>You (formal / plural)</td><td>polite or many people</td></tr>
+        <tr><td>Ils</td><td>They (m)</td><td>all-male / mixed group</td></tr>
+        <tr><td>Elles</td><td>They (f)</td><td>all-female group</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="ql">✍️ Writing Practice — answer on paper, then check</div>
+  <div class="qa"><div class="qn">16. What is a liaison in French? When does it occur?</div><details><summary>▸ Show model answer</summary><div class="ans">A liaison is the pronunciation of a normally silent final consonant when the next word begins with a vowel, creating a smooth link between the words.</div></details></div>
+  <div class="qa"><div class="qn">17. Why is there no liaison after "et"? Give an example.</div><details><summary>▸ Show model answer</summary><div class="ans">"et" (and) is a coordinating conjunction and never links to the following word. Example: "une fille et un homme" — no liaison on the t of et.</div></details></div>
+  <div class="qa"><div class="qn">18. Describe Manuel's father (Jérome Dupont) using at least 3 physical characteristics.</div><details><summary>▸ Show model answer</summary><div class="ans">Il est grand et musclé. Il a les jambes longues et fortes. (He is tall and muscular, with long, strong legs.)</div></details></div>
+  <div class="qa"><div class="qn">19. List 5 body parts in French with their English translations.</div><details><summary>▸ Show model answer</summary><div class="ans">la tête – head, les yeux – eyes, le nez – nose, la bouche – mouth, les oreilles – ears (also: les cheveux – hair, les mains – hands).</div></details></div>
+  <div class="qa"><div class="qn">20. Write a sentence describing someone with long curly hair and blue eyes in French.</div><details><summary>▸ Show model answer</summary><div class="ans">Elle a les cheveux longs et frisés, et elle a les yeux bleus.</div></details></div>
+
+  <div style="margin-top:1.25rem;text-align:center;padding-bottom:1rem">
+    <button onclick="switchTab('f')" style="padding:14px 32px;border-radius:14px;border:none;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-size:15px;font-weight:600;cursor:pointer;width:100%;max-width:320px">Take the Quiz →</button>
+  </div>
+</div>
+
+<!-- French Quiz tab (Day 2) -->
+<div id="sec-f" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">❓ Quiz · 15 Questions · Easy → Medium</div>
+    <div class="dyk-title">French Day 2 — Liaison &amp; Description</div>
+    <div class="dyk-body">5 multiple-choice + 5 true/false + 5 fill-in-the-blank. You need <strong>9 / 15 (60%+)</strong> to mark French as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="f-qnum">1 / 15</span></div>
+    <div class="sc"><label>Score</label><span id="f-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="f-prog" style="width:0%"></div></div><div class="pp" id="f-pct">0%</div></div>
+  <div id="f-card" class="card">
+    <div class="tp" id="f-topic"></div>
+    <div class="qt" id="f-q"></div>
+    <div class="opts" id="f-opts"></div>
+    <div class="fb" id="f-fb"></div>
+    <button class="nxt" id="f-nxt">Next →</button>
+  </div>
+  <div id="f-done" style="display:none" class="card dc">
+    <div class="di" id="f-ficon">🎉</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="f-fscore"></div>
+    <div class="dm" id="f-fmsg"></div>
+    <button class="retry" id="f-retry">Try again ↺</button>
   </div>
 </div>
 
@@ -254,7 +381,7 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 </div>
 
 <script>
-var SUBJECTS = [{"id":"k","label":"Kannada Revision","total":15},{"id":"mx","label":"Mixed Quiz","total":30}];
+var SUBJECTS = [{"id":"k","label":"Kannada Revision","total":15},{"id":"f","label":"French","total":15},{"id":"mx","label":"Mixed Quiz","total":30}];
 var LS_PFX   = 'icse_w02_sun';
 
 function saveScore(id, score, total, label) {
@@ -301,7 +428,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["notes","k","mxnotes","mx"];
+  var all = ["notes","k","fnotes","f","mxnotes","mx"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -493,6 +620,24 @@ quiz('k', [
   {"t":"🔴 Literature","q":"ಸಿದ್ಧಾರೂಢ ಸ್ವಾಮಿ ಮಠವು ಯಾವ ಊರಿನಲ್ಲಿದೆ?","o":["ಮೈಸೂರು","ಹುಬ್ಬಳ್ಳಿ","ಬೆಂಗಳೂರು","ಮಂಗಳೂರು"],"a":1,"e":"ಸಿದ್ಧಾರೂಢ ಸ್ವಾಮಿ ಮಠ ಹುಬ್ಬಳ್ಳಿಯಲ್ಲಿದೆ."},
   {"t":"🔴 Literature · Analysis","q":"\"ಸಿದ್ಧಾರೂಢರ ಜೋಳಿಗೆ, ನಾಡಿಗೆಲ್ಲ ಹೋಳಿಗೆ\" — ಈ ಸಾಲು ಏನನ್ನು ಸೂಚಿಸುತ್ತದೆ?","o":["ಸಿದ್ಧಾರೂಢರು ತುಂಬಾ ಬಡವರು","ಸಿದ್ಧಾರೂಢರು ತಾವು ಪಡೆದದ್ದಕ್ಕಿಂತ ಹೆಚ್ಚು ಸಮಾಜಕ್ಕೆ ಕೊಡುತ್ತಾರೆ","ಜೋಳಿಗೆ ಒಂದು ಆಯುಧ","ಹೋಳಿಗೆ ಒಂದು ಊರಿನ ಹೆಸರು"],"a":1,"e":"ಭಿಕ್ಷೆಯ ಜೋಳಿಗೆ ಎಲ್ಲರಿಗೂ ಸಿಹಿ ಹೋಳಿಗೆಯಾಗುತ್ತದೆ — ಅಂದರೆ ಅವರು ಪಡೆದದ್ದಕ್ಕಿಂತ ಹೆಚ್ಚು ನಾಡಿಗೆ ಕೊಡುತ್ತಾರೆ (national benefactor)."}
 ], 'Kannada Revision');
+
+quiz('f', [
+  {"t":"MCQ · Liaison","q":"What happens to the letter 'd' in a liaison when it is followed by a vowel?","o":["It becomes 'v'","It becomes 'z'","It becomes 't'","It stays 'd'"],"a":2,"e":"In a liaison, d → t. Example: un gran(d) homme → un-gran-t-om."},
+  {"t":"MCQ · Liaison","q":"Which of these is a FORBIDDEN liaison (no link)?","o":["Les élèves","Un grand homme","Une fille et un homme","Neuf heures"],"a":2,"e":"No liaison is made after 'et' (and), so 'une fille et un homme' has no link."},
+  {"t":"MCQ · Vocabulary","q":"\"Les cheveux\" in English means:","o":["the eyes","the hair","the nose","the teeth"],"a":1,"e":"les cheveux = the hair."},
+  {"t":"MCQ · Family","q":"What is 'le père de Manuel'?","o":["Manuel's brother","Manuel's father","Manuel's friend","Manuel's grandfather"],"a":1,"e":"le père = the father, so 'le père de Manuel' is Manuel's father."},
+  {"t":"MCQ · Pronouns","q":"How do you say 'They' for a group of all girls?","o":["Ils","Elles","Nous","Vous"],"a":1,"e":"Elles = they (feminine), for an all-female group. Ils is for masculine or mixed groups."},
+  {"t":"True / False","q":"In a liaison, 's' and 'x' become 'z'.","o":["Vrai (True)","Faux (False)"],"a":0,"e":"Vrai. s and x are pronounced 'z' in a liaison (les enfants → lay-z-enfants)."},
+  {"t":"True / False","q":"\"Les héros\" is an example of a liaison.","o":["Vrai (True)","Faux (False)"],"a":1,"e":"Faux. 'héros' starts with an h aspiré, so the liaison is forbidden: les | héros."},
+  {"t":"True / False","q":"The French word for 'knee' is 'le genou'.","o":["Vrai (True)","Faux (False)"],"a":0,"e":"Vrai. le genou = the knee (plural: les genoux)."},
+  {"t":"True / False","q":"'Tu' is used to address your teacher.","o":["Vrai (True)","Faux (False)"],"a":1,"e":"Faux. Use 'vous' (formal) for a teacher; 'tu' is informal, for friends and family."},
+  {"t":"True / False","q":"The French word for 'shoulder' is 'la bouche'.","o":["Vrai (True)","Faux (False)"],"a":1,"e":"Faux. la bouche = mouth; shoulder = l'épaule."},
+  {"t":"Fill in the blank","q":"In a liaison, 'f' becomes ______.","o":["v","z","t","s"],"a":0,"e":"f → v in a liaison: neuf heures → neu-v-heures."},
+  {"t":"Fill in the blank","q":"The French word for 'face' is ______.","o":["le visage","la tête","le menton","le cou"],"a":0,"e":"le visage = the face (la tête = head, le menton = chin, le cou = neck)."},
+  {"t":"Fill in the blank","q":"The plural of 'le pied' is ______.","o":["les pieds","les pieux","le pieds","les pied"],"a":0,"e":"le pied → les pieds (add -s and change le → les)."},
+  {"t":"Fill in the blank","q":"The French pronoun for 'I' before a vowel is ______.","o":["J'","Je","Tu","Il"],"a":0,"e":"Je becomes J' before a vowel: J'ai, J'aime."},
+  {"t":"Fill in the blank","q":"The French for 'grandmother' is la ______.","o":["grand-mère","grand-père","mère","sœur"],"a":0,"e":"la grand-mère = grandmother (le grand-père = grandfather)."}
+], 'French');
 
 quiz('mx', [
   {"t":"History & Civics","q":"Who is known as the 'Father of the Indian Constitution'?","o":["Mahatma Gandhi","Dr. B. R. Ambedkar","Jawaharlal Nehru","Dr. Rajendra Prasad"],"a":1,"e":"Dr. B. R. Ambedkar chaired the Drafting Committee and is the chief architect of the Constitution."},
