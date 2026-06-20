@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-06-20T08:43:45.053900Z",
+  "lastSaved": "2026-06-20T08:48:48.042Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -70,7 +70,7 @@
       "attempts": 1,
       "bestScore": 4,
       "totalQ": 4,
-      "lastDate": "2026-06-19",
+      "lastDate": "2026-06-20",
       "label": "Chemistry"
     },
     "icse_w01_thu_f": {
@@ -123,7 +123,7 @@
       "label": "Science Quiz"
     },
     "icse_w02_mon_m": {
-      "attempts": 97,
+      "attempts": 582,
       "bestScore": 7,
       "totalQ": 10,
       "lastDate": "2026-06-20",
