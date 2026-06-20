@@ -113,7 +113,9 @@ A day page hosts **all of that day's timetable subjects**, each as its own quiz 
 
 ### Subject id must match `DAY_SUBJECTS_MAP` (critical)
 
-The home page (`index.html`) and `dashboard.html` each carry an identical `DAY_SUBJECTS_MAP` that drives completion tracking. A day is "Done" only when **every** id listed there has a passing score in `localStorage`. The id you pass to `quiz(id, …)` on a day page **must exactly equal** the id in `DAY_SUBJECTS_MAP` for that day in **both** files — otherwise the dashboard never registers the subject. Keep both copies in sync. (Known ids in use: `m` Maths, `k` Kannada, `e` English, `phy` Physics, `geo` Geography, `c` CS/Python, `ch` Chemistry, `f` French, `s` Science Diagrams, `b` Biology, `h` History & Civics, `gh` Geo+History, `mx` Mixed Quiz.) `DAY_SUBJECTS_MAP` `total` values are cosmetic — the Done calc uses the stored `totalQ`, not the map total.
+The home page (`index.html`) and `dashboard.html` each carry an identical `DAY_SUBJECTS_MAP` that drives completion tracking. A day is "Done" only when **every** id listed there has a passing score in `localStorage`. The id you pass to `quiz(id, …)` on a day page **must exactly equal** the id in `DAY_SUBJECTS_MAP` for that day in **both** files — otherwise the dashboard never registers the subject. Keep both copies in sync.
+
+**The map is global across all 41 weeks**, so the same subject must use the **same id on every week's page**. (Canonical ids: `m` Maths, `k` Kannada, `e` English, `p` Physics, `g` Geography, `c` CS/Python, `ch` Chemistry, `f` French, `s` Science Diagrams, `b` Biology, `h` History & Civics, `pq` Saturday Science Quiz, `gh` Geo+History, `mx` Mixed Quiz.) Do **not** invent per-week variants (e.g. `phy`/`geo` instead of `p`/`g`): a single map can't match both, and renaming the map to fit one week silently breaks every other week — including past weeks that already hold real `localStorage`/`progress.json` data under the original id. `DAY_SUBJECTS_MAP` `total` values are cosmetic — the Done calc uses the stored `totalQ`, not the map total.
 
 ## Cloud sync (settings.html)
 

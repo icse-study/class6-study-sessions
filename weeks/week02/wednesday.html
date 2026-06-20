@@ -68,7 +68,7 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 </header>
 <div class="tabs">
   <button class="tab active" id="tab-notes" onclick="switchTab('notes')">📖 Study</button>
-  <button class="tab" id="tab-geo" onclick="switchTab('geo')">❓ Quiz</button>
+  <button class="tab" id="tab-g" onclick="switchTab('g')">❓ Quiz</button>
 </div>
 <div class="prog-bar">
   <div class="pb-top">
@@ -165,12 +165,12 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   </div>
 
   <div style="margin-top:1.25rem;text-align:center;padding-bottom:1rem">
-    <button onclick="switchTab('geo')" style="padding:14px 32px;border-radius:14px;border:none;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-size:15px;font-weight:600;cursor:pointer;width:100%;max-width:320px">Take the Quiz →</button>
+    <button onclick="switchTab('g')" style="padding:14px 32px;border-radius:14px;border:none;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-size:15px;font-weight:600;cursor:pointer;width:100%;max-width:320px">Take the Quiz →</button>
   </div>
 </div>
 
 <!-- Quiz tab -->
-<div id="sec-geo" class="sec">
+<div id="sec-g" class="sec">
   <div class="dyk">
     <div class="dyk-eye">❓ Quiz · 10 Questions · Medium</div>
     <div class="dyk-title">Landforms of the Earth</div>
@@ -178,28 +178,28 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   </div>
   <div class="ql">Questions</div>
   <div class="sr">
-    <div class="sc"><label>Question</label><span id="geo-qnum">1 / 10</span></div>
-    <div class="sc"><label>Score</label><span id="geo-score">0</span></div>
+    <div class="sc"><label>Question</label><span id="g-qnum">1 / 10</span></div>
+    <div class="sc"><label>Score</label><span id="g-score">0</span></div>
   </div>
-  <div class="pr"><div class="pt"><div class="pf" id="geo-prog" style="width:0%"></div></div><div class="pp" id="geo-pct">0%</div></div>
-  <div id="geo-card" class="card">
-    <div class="tp" id="geo-topic"></div>
-    <div class="qt" id="geo-q"></div>
-    <div class="opts" id="geo-opts"></div>
-    <div class="fb" id="geo-fb"></div>
-    <button class="nxt" id="geo-nxt">Next →</button>
+  <div class="pr"><div class="pt"><div class="pf" id="g-prog" style="width:0%"></div></div><div class="pp" id="g-pct">0%</div></div>
+  <div id="g-card" class="card">
+    <div class="tp" id="g-topic"></div>
+    <div class="qt" id="g-q"></div>
+    <div class="opts" id="g-opts"></div>
+    <div class="fb" id="g-fb"></div>
+    <button class="nxt" id="g-nxt">Next →</button>
   </div>
-  <div id="geo-done" style="display:none" class="card dc">
-    <div class="di" id="geo-ficon">🎉</div>
+  <div id="g-done" style="display:none" class="card dc">
+    <div class="di" id="g-ficon">🎉</div>
     <div class="dt">Done!</div>
-    <div class="ds" id="geo-fscore"></div>
-    <div class="dm" id="geo-fmsg"></div>
-    <button class="retry" id="geo-retry">Try again ↺</button>
+    <div class="ds" id="g-fscore"></div>
+    <div class="dm" id="g-fmsg"></div>
+    <button class="retry" id="g-retry">Try again ↺</button>
   </div>
 </div>
 
 <script>
-var SUBJECTS = [{"id":"geo","label":"Geography","total":10}];
+var SUBJECTS = [{"id":"g","label":"Geography","total":10}];
 var LS_PFX   = 'icse_w02_wed';
 
 function saveScore(id, score, total, label) {
@@ -246,7 +246,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["notes","geo"];
+  var all = ["notes","g"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -423,7 +423,7 @@ function makeSaveButton(containerId){
 }
 
 // Init
-quiz('geo', [
+quiz('g', [
   {"t":"Mountains","q":"Which mountain type forms when tectonic plates collide?","o":["Block Mountains","Volcanic Mountains","Fold Mountains","Rift Mountains"],"a":2,"e":"Plates collide → crust crumples into folds. Examples: Himalayas, Alps, Andes."},
   {"t":"Plateau","q":"The Deccan Plateau is an example of which landform?","o":["Plain","Valley","Plateau","Block Mountain"],"a":2,"e":"A plateau is an elevated, broad, flat area rising sharply above surroundings — classic tableland."},
   {"t":"Valley","q":"What causes a Rift Valley to form?","o":["Volcanic eruption","River erosion","Central block sinks between two faults","Glacial melting"],"a":2,"e":"Two parallel faults; the block between them drops down. Example: Narmada Valley."},
