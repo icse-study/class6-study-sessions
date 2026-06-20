@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
-<title>Week 2 · Sunday · Kannada Revision · Class 6 ICSE</title>
+<title>Week 2 · Sunday · Class 6 ICSE</title>
 <style>*{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0F4FF;min-height:100vh;color:#1a1a2e}
 header{background:linear-gradient(135deg,#4F46E5,#7C3AED);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:12px}
@@ -62,17 +62,25 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 .pb-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9CA3AF}
 .sb{font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;background:#F3F4F6;color:#9CA3AF}
 .sp{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
-.save-btn{width:100%;padding:12px;border-radius:12px;border:1.5px solid #4F46E5;background:transparent;color:#4F46E5;font-size:14px;font-weight:600;cursor:pointer;margin-top:4px}</style>
+.save-btn{width:100%;padding:12px;border-radius:12px;border:1.5px solid #4F46E5;background:transparent;color:#4F46E5;font-size:14px;font-weight:600;cursor:pointer;margin-top:4px}
+.tbl-wrap{overflow-x:auto;border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:1rem}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;background:#fff}
+.tbl th{background:#EEF2FF;color:#3730A3;font-weight:700;padding:9px 12px;text-align:left;border-bottom:2px solid #C7D2FE;white-space:nowrap}
+.tbl td{padding:9px 12px;border-bottom:1px solid #F3F4F6;color:#374151;vertical-align:top}
+.tbl tr:last-child td{border-bottom:none}
+.tbl td:first-child{font-weight:600;color:#111827}</style>
 </head>
 <body>
 <a class="back" href="index.html">← Week 2</a>
 <header>
-  <div class="logo">🔁</div>
-  <div><h1>Sunday · Week 2</h1><p>28 Jun 2026 · 10:00 – 10:30 AM · ಕನ್ನಡ ಪುನರಾವರ್ತನೆ — Kannada Revision</p></div>
+  <div class="logo">📚</div>
+  <div><h1>Sunday · Week 2</h1><p>28 Jun 2026 · 10:00 AM – 4:00 PM · 🗣️ Kannada · 🧠 Mixed Quiz</p></div>
 </header>
 <div class="tabs">
-  <button class="tab active" id="tab-notes" onclick="switchTab('notes')">📖 Revision</button>
-  <button class="tab" id="tab-k" onclick="switchTab('k')">❓ Revision Quiz</button>
+  <button class="tab active" id="tab-notes" onclick="switchTab('notes')">📖 Kannada Revision</button>
+  <button class="tab" id="tab-k" onclick="switchTab('k')">❓ Kannada Quiz</button>
+  <button class="tab" id="tab-mxnotes" onclick="switchTab('mxnotes')">📖 Mixed Study</button>
+  <button class="tab" id="tab-mx" onclick="switchTab('mx')">🧠 Mixed Quiz</button>
 </div>
 <div class="prog-bar">
   <div class="pb-top">
@@ -147,8 +155,106 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   </div>
 </div>
 
+<!-- Mixed Study tab -->
+<div id="sec-mxnotes" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">🧠 Did You Know?</div>
+    <div class="dyk-title">A century-long dream realised</div>
+    <div class="dyk-body">Architect <strong>Antoni Gaudí</strong> said of his unfinished Sagrada Família, <em>"My client is not in a hurry"</em> (meaning God). On <strong>10 June 2026</strong>, exactly <strong>100 years after Gaudí's death</strong>, the <strong>Tower of Jesus Christ</strong> (172.5 m) was blessed — making the Sagrada Família the tallest Catholic church in the world.</div>
+  </div>
+
+  <div class="dyk">
+    <div class="dyk-eye">📚 Cheat Sheet · 10-minute read</div>
+    <div class="dyk-title">Read twice, then take the Mixed Quiz</div>
+    <div class="dyk-body">Medium/hard mix across History, Geography, Maths &amp; Science, GK and June-2026 current affairs.</div>
+  </div>
+
+  <div class="ql">🏛️ History &amp; Civics</div>
+  <div class="tbl-wrap"><table class="tbl"><tbody>
+    <tr><td>Father of the Constitution</td><td>Dr. B. R. Ambedkar — Chairman, Drafting Committee</td></tr>
+    <tr><td>"Napoleon of India"</td><td>Samudragupta (Gupta Empire) — undefeated conqueror</td></tr>
+    <tr><td>'Dancing Girl' statuette</td><td>Indus Valley Civilization (Mohenjo-daro)</td></tr>
+    <tr><td>Fundamental Rights today</td><td>Six (Right to Property removed as a FR in 1978)</td></tr>
+    <tr><td>Fatehpur Sikri built by</td><td>Akbar, 1571</td></tr>
+  </tbody></table></div>
+
+  <div class="ql">🌍 Geography</div>
+  <div class="tbl-wrap"><table class="tbl"><tbody>
+    <tr><td>Lowest atmosphere layer</td><td>Troposphere (weather + breathing)</td></tr>
+    <tr><td>India by land area</td><td>7th largest country</td></tr>
+    <tr><td>Continent that is also a country</td><td>Australia (smallest continent)</td></tr>
+    <tr><td>Largest hot desert</td><td>Sahara (North Africa)</td></tr>
+    <tr><td>Line through central India</td><td>Tropic of Cancer (~23.5°N, passes 8 states)</td></tr>
+  </tbody></table></div>
+
+  <div class="ql">🔢 Maths &amp; Science</div>
+  <div class="tbl-wrap"><table class="tbl"><tbody>
+    <tr><td>√225 − √64</td><td>15 − 8 = 7</td></tr>
+    <tr><td>Interior angles of a pentagon</td><td>(5−2) × 180° = 540°</td></tr>
+    <tr><td>Seconds in 2 h 30 min</td><td>2.5 × 3600 = 9,000 s</td></tr>
+    <tr><td>Gas released in photosynthesis</td><td>Oxygen (O₂)</td></tr>
+    <tr><td>Scurvy deficiency</td><td>Vitamin C</td></tr>
+    <tr><td>Bones in adult human body</td><td>206</td></tr>
+  </tbody></table></div>
+
+  <div class="ql">✨ English &amp; General Knowledge</div>
+  <div class="tbl-wrap"><table class="tbl"><tbody>
+    <tr><td>Panchatantra author</td><td>Vishnu Sharma</td></tr>
+    <tr><td>"Pink City"</td><td>Jaipur (painted pink in 1876)</td></tr>
+    <tr><td>Hardest natural substance</td><td>Diamond (10 on Mohs scale)</td></tr>
+    <tr><td>"City of Lakes"</td><td>Udaipur (Rajasthan)</td></tr>
+    <tr><td>First practical light bulb</td><td>Thomas Edison (1879)</td></tr>
+    <tr><td>Gas lighter than air (balloons)</td><td>Helium (inert)</td></tr>
+  </tbody></table></div>
+
+  <div class="ql">🗞️ Current Affairs · June 2026</div>
+  <div class="tbl-wrap"><table class="tbl"><tbody>
+    <tr><td>52nd G7 Summit host</td><td>France (Evian) — India a Partner Country</td></tr>
+    <tr><td>#1 in AI capability</td><td>United States (India 4th, SIDE 2026)</td></tr>
+    <tr><td>Event from 11 Jun 2026</td><td>FIFA Men's World Cup — USA, Canada, Mexico</td></tr>
+    <tr><td>World's first trillionaire</td><td>Elon Musk (SpaceX IPO)</td></tr>
+    <tr><td>App blocked for NEET-UG</td><td>Telegram (until 22 Jun)</td></tr>
+    <tr><td>Most peaceful country (19 yrs)</td><td>Iceland (Global Peace Index 2026)</td></tr>
+    <tr><td>Global Wind Day 2026 host</td><td>Goa</td></tr>
+    <tr><td>Sagrada Família milestone</td><td>Tower of Jesus blessed, 10 Jun 2026</td></tr>
+  </tbody></table></div>
+
+  <div style="margin-top:1.25rem;text-align:center;padding-bottom:1rem">
+    <button onclick="switchTab('mx')" style="padding:14px 32px;border-radius:14px;border:none;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-size:15px;font-weight:600;cursor:pointer;width:100%;max-width:320px">Take the Mixed Quiz →</button>
+  </div>
+</div>
+
+<!-- Mixed Quiz tab -->
+<div id="sec-mx" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">🧠 Mixed Quiz · 30 Questions · Medium → Hard</div>
+    <div class="dyk-title">History · Geography · Maths/Science · GK · Current Affairs</div>
+    <div class="dyk-body">A full-spread mixed quiz. You need <strong>18 / 30 (60%+)</strong> to mark as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="mx-qnum">1 / 30</span></div>
+    <div class="sc"><label>Score</label><span id="mx-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="mx-prog" style="width:0%"></div></div><div class="pp" id="mx-pct">0%</div></div>
+  <div id="mx-card" class="card">
+    <div class="tp" id="mx-topic"></div>
+    <div class="qt" id="mx-q"></div>
+    <div class="opts" id="mx-opts"></div>
+    <div class="fb" id="mx-fb"></div>
+    <button class="nxt" id="mx-nxt">Next →</button>
+  </div>
+  <div id="mx-done" style="display:none" class="card dc">
+    <div class="di" id="mx-ficon">🎉</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="mx-fscore"></div>
+    <div class="dm" id="mx-fmsg"></div>
+    <button class="retry" id="mx-retry">Try again ↺</button>
+  </div>
+</div>
+
 <script>
-var SUBJECTS = [{"id":"k","label":"Kannada Revision","total":15}];
+var SUBJECTS = [{"id":"k","label":"Kannada Revision","total":15},{"id":"mx","label":"Mixed Quiz","total":30}];
 var LS_PFX   = 'icse_w02_sun';
 
 function saveScore(id, score, total, label) {
@@ -195,7 +301,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["notes","k"];
+  var all = ["notes","k","mxnotes","mx"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -387,6 +493,40 @@ quiz('k', [
   {"t":"🔴 Literature","q":"ಸಿದ್ಧಾರೂಢ ಸ್ವಾಮಿ ಮಠವು ಯಾವ ಊರಿನಲ್ಲಿದೆ?","o":["ಮೈಸೂರು","ಹುಬ್ಬಳ್ಳಿ","ಬೆಂಗಳೂರು","ಮಂಗಳೂರು"],"a":1,"e":"ಸಿದ್ಧಾರೂಢ ಸ್ವಾಮಿ ಮಠ ಹುಬ್ಬಳ್ಳಿಯಲ್ಲಿದೆ."},
   {"t":"🔴 Literature · Analysis","q":"\"ಸಿದ್ಧಾರೂಢರ ಜೋಳಿಗೆ, ನಾಡಿಗೆಲ್ಲ ಹೋಳಿಗೆ\" — ಈ ಸಾಲು ಏನನ್ನು ಸೂಚಿಸುತ್ತದೆ?","o":["ಸಿದ್ಧಾರೂಢರು ತುಂಬಾ ಬಡವರು","ಸಿದ್ಧಾರೂಢರು ತಾವು ಪಡೆದದ್ದಕ್ಕಿಂತ ಹೆಚ್ಚು ಸಮಾಜಕ್ಕೆ ಕೊಡುತ್ತಾರೆ","ಜೋಳಿಗೆ ಒಂದು ಆಯುಧ","ಹೋಳಿಗೆ ಒಂದು ಊರಿನ ಹೆಸರು"],"a":1,"e":"ಭಿಕ್ಷೆಯ ಜೋಳಿಗೆ ಎಲ್ಲರಿಗೂ ಸಿಹಿ ಹೋಳಿಗೆಯಾಗುತ್ತದೆ — ಅಂದರೆ ಅವರು ಪಡೆದದ್ದಕ್ಕಿಂತ ಹೆಚ್ಚು ನಾಡಿಗೆ ಕೊಡುತ್ತಾರೆ (national benefactor)."}
 ], 'Kannada Revision');
+
+quiz('mx', [
+  {"t":"History & Civics","q":"Who is known as the 'Father of the Indian Constitution'?","o":["Mahatma Gandhi","Dr. B. R. Ambedkar","Jawaharlal Nehru","Dr. Rajendra Prasad"],"a":1,"e":"Dr. B. R. Ambedkar chaired the Drafting Committee and is the chief architect of the Constitution."},
+  {"t":"History & Civics","q":"Which ancient Indian ruler is called the 'Napoleon of India' for his many military victories?","o":["Chandragupta Maurya","Ashoka the Great","Samudragupta","Akbar"],"a":2,"e":"Historian V. A. Smith gave Samudragupta (Gupta Empire) this title for his undefeated campaigns."},
+  {"t":"History & Civics","q":"The bronze 'Dancing Girl' statuette was found in which ancient civilization?","o":["Mesopotamian Civilization","Egyptian Civilization","Indus Valley Civilization","Chinese Civilization"],"a":2,"e":"It was discovered at Mohenjo-daro, a major Indus Valley city."},
+  {"t":"History & Civics","q":"How many Fundamental Rights are guaranteed to Indian citizens today?","o":["Five","Six","Seven","Eight"],"a":1,"e":"Originally seven; the Right to Property was removed as a Fundamental Right in 1978, leaving six."},
+  {"t":"History & Civics","q":"Which Mughal Emperor built the historic city of Fatehpur Sikri near Agra?","o":["Babur","Humayun","Akbar","Shah Jahan"],"a":2,"e":"Akbar founded Fatehpur Sikri in 1571 as his capital."},
+  {"t":"Geography","q":"Which is the lowest layer of Earth's atmosphere, where we live and breathe?","o":["Stratosphere","Mesosphere","Thermosphere","Troposphere"],"a":3,"e":"The troposphere (up to ~10–15 km) is where all weather occurs."},
+  {"t":"Geography","q":"What is India's rank in the world by total land area?","o":["5th","6th","7th","8th"],"a":2,"e":"India is 7th largest, after Russia, Canada, China, USA, Brazil and Australia."},
+  {"t":"Geography","q":"Which continent is unique because it is both a continent and a country?","o":["Africa","Antarctica","Australia","South America"],"a":2,"e":"Australia is the smallest continent and a single country."},
+  {"t":"Geography","q":"What is the largest hot desert in the world?","o":["Gobi Desert","Kalahari Desert","Thar Desert","Sahara Desert"],"a":3,"e":"The Sahara covers most of northern Africa — the largest hot desert."},
+  {"t":"🔴 Geography","q":"Which important line of latitude passes through central India?","o":["Equator","Tropic of Cancer","Tropic of Capricorn","Arctic Circle"],"a":1,"e":"The Tropic of Cancer (~23.5°N) crosses 8 Indian states through the middle of the country."},
+  {"t":"🔴 Maths","q":"What is the value of  √225 − √64 ?","o":["7","9","13","161"],"a":0,"e":"√225 = 15 and √64 = 8, so 15 − 8 = 7."},
+  {"t":"🔴 Maths","q":"What is the sum of all interior angles of a pentagon (5 sides)?","o":["360°","540°","720°","180°"],"a":1,"e":"Sum = (n − 2) × 180° = (5 − 2) × 180° = 540°."},
+  {"t":"🔴 Maths","q":"How many seconds are there in 2 hours and 30 minutes?","o":["7,200 seconds","8,400 seconds","9,000 seconds","9,600 seconds"],"a":2,"e":"2.5 hours × 3,600 seconds = 9,000 seconds."},
+  {"t":"Science","q":"Which gas do plants release into the air during photosynthesis?","o":["Carbon Dioxide","Nitrogen","Oxygen","Hydrogen"],"a":2,"e":"Plants take in CO₂ and release oxygen (O₂) as a byproduct."},
+  {"t":"Science","q":"Scurvy is caused by a severe lack of which vitamin?","o":["Vitamin A","Vitamin B1","Vitamin C","Vitamin D"],"a":2,"e":"Vitamin C deficiency causes scurvy (bleeding gums, weakness)."},
+  {"t":"🔴 Science","q":"How many bones are there in the adult human body?","o":["201","206","212","196"],"a":1,"e":"An adult has 206 bones; a newborn has about 300 that later fuse together."},
+  {"t":"GK · Literature","q":"Who wrote the ancient Indian collection of animal fables, the Panchatantra?","o":["Vishnu Sharma","Kalidasa","Tulsidas","Valmiki"],"a":0,"e":"Vishnu Sharma wrote the Panchatantra to teach wise conduct to young princes."},
+  {"t":"GK","q":"Which Indian city is widely known as the 'Pink City'?","o":["Udaipur","Jaipur","Jodhpur","Bengaluru"],"a":1,"e":"Jaipur was painted pink in 1876 to welcome the Prince of Wales."},
+  {"t":"GK","q":"What is the hardest naturally occurring substance on Earth?","o":["Gold","Iron","Diamond","Quartz"],"a":2,"e":"Diamond scores a perfect 10 on the Mohs hardness scale."},
+  {"t":"GK","q":"Which Indian city is nicknamed the 'City of Lakes'?","o":["Udaipur","Mumbai","New Delhi","Chennai"],"a":0,"e":"Udaipur in Rajasthan is famous for its interconnected lakes and palaces."},
+  {"t":"GK","q":"Who invented the first practical incandescent light bulb?","o":["Alexander Graham Bell","Nikola Tesla","Thomas Edison","Benjamin Franklin"],"a":2,"e":"Thomas Edison commercialised the long-lasting light bulb in 1879."},
+  {"t":"GK","q":"Which gas is commonly used to fill party balloons because it is lighter than air?","o":["Oxygen","Helium","Argon","Carbon Dioxide"],"a":1,"e":"Helium is inert, non-flammable and much lighter than air."},
+  {"t":"Current Affairs · Jun 2026","q":"India was a Partner Country at the 52nd G7 Summit (June 2026). Where was it hosted?","o":["Italy","France","Canada","Japan"],"a":1,"e":"The 52nd G7 Summit was held in Evian, France (15–17 June 2026)."},
+  {"t":"Current Affairs · Jun 2026","q":"Per the SIDE 2026 report, India ranks 4th in AI capability. Which country ranks 1st?","o":["Singapore","United Kingdom","China","United States"],"a":3,"e":"The US leads, followed by China and Singapore, with India 4th."},
+  {"t":"Current Affairs · Jun 2026","q":"A major sporting event began on 11 June 2026, co-hosted by the USA, Canada and Mexico. Which event?","o":["ICC Men's T20 World Cup","Summer Olympic Games","FIFA Men's World Cup","Commonwealth Games"],"a":2,"e":"The 2026 FIFA Men's World Cup — a record 48 teams and 104 matches."},
+  {"t":"Current Affairs · Jun 2026","q":"In June 2026, who became the world's first official trillionaire after SpaceX's IPO?","o":["Jeff Bezos","Elon Musk","Bernard Arnault","Bill Gates"],"a":1,"e":"SpaceX's Nasdaq IPO pushed Elon Musk's net worth past $1 trillion."},
+  {"t":"Current Affairs · Jun 2026","q":"Which messaging app did India temporarily block ahead of the NEET-UG re-exam to prevent cheating?","o":["WhatsApp","Signal","Telegram","Discord"],"a":2,"e":"Telegram was restricted until 22 June; the Delhi High Court upheld the decision."},
+  {"t":"Current Affairs · Jun 2026","q":"Per the 2026 Global Peace Index, which country stayed most peaceful for the 19th straight year?","o":["New Zealand","Iceland","Denmark","Switzerland"],"a":1,"e":"Iceland has topped the Global Peace Index since 2008 — no standing army, very low crime."},
+  {"t":"Current Affairs · Jun 2026","q":"India hosted the Global Wind Day 2026 Conference on 15 June. In which state?","o":["Maharashtra","Kerala","Gujarat","Goa"],"a":3,"e":"Held in Goa, themed 'Wind Energy: From Ambition to Acceleration'."},
+  {"t":"Current Affairs · Jun 2026","q":"On 10 June 2026 Pope Leo XIV blessed the tallest tower of which Barcelona basilica, 100 years after its architect's death?","o":["Sagrada Família","Notre-Dame","St. Peter's Basilica","Milan Cathedral"],"a":0,"e":"The Tower of Jesus Christ at the Sagrada Família — now the tallest Catholic church in the world."}
+], 'Mixed Quiz');
+
 refreshProgress();
 makeSaveButton('save-wrap');
 loadRemoteProgress(function(ok){ if(ok) refreshProgress(); });
