@@ -82,6 +82,8 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   <button class="tab" id="tab-write" onclick="switchTab('write')">✍️ Writing</button>
   <button class="tab" id="tab-k" onclick="switchTab('k')">🗣️ Kannada Quiz</button>
   <button class="tab" id="tab-m" onclick="switchTab('m')">➗ Maths Quiz</button>
+  <button class="tab" id="tab-enotes" onclick="switchTab('enotes')">📖 English Study</button>
+  <button class="tab" id="tab-e" onclick="switchTab('e')">📖 English Quiz</button>
 </div>
 <div class="prog-bar">
   <div class="pb-top">
@@ -246,8 +248,80 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   </div>
 </div>
 
+<!-- English Study tab (Lit Day 1) -->
+<div id="sec-enotes" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">📖 English Literature · Day 1 · R.K. Narayan</div>
+    <div class="dyk-title">"When Granny Wanted a Lemon" — Act I</div>
+    <div class="dyk-body">The return home, Swami's pity for his lonely grandmother, and her request for a lemon. Read the cards, try the Writing Practice, then take the quiz.</div>
+  </div>
+
+  <div class="ql">📖 The Story — Act I</div>
+  <div class="icard">
+    <h3>The return &amp; the kitchen ritual</h3>
+    <p>After a long school day, <strong>Swami (Swaminathan)</strong> parts from his friend <strong>Mani</strong> at the <strong>Grove Street junction</strong> and walks home. By custom he charges straight into the kitchen and noisily sucks hot coffee from a brass tumbler — showing his impatient, energetic, youthful nature.</p>
+  </div>
+  <div class="icard">
+    <h3>Swami's compassion</h3>
+    <p>When <strong>Granny</strong> calls out in her shaky, <em>querulous</em> voice, Swami feels a sudden wave of <strong>pity</strong>. He notices how the rest of the household completely ignores her, making her a lonely, isolated figure in her own home.</p>
+  </div>
+  <div class="icard">
+    <h3>The transaction</h3>
+    <p>Granny has an acute <strong>stomach ache</strong> and needs a fresh <strong>lemon</strong> to ease it. She offers Swami <strong>six pies</strong> in total:</p>
+    <div class="ex"><strong>3 pies</strong> → to buy the single lemon &nbsp;·&nbsp; <strong>3 pies</strong> → as a reward for running the errand quickly.</div>
+  </div>
+
+  <div class="ql">📒 Vocabulary</div>
+  <div class="icard">
+    <h3>Key words</h3>
+    <p><strong>Querulous</strong> — complaining in a petulant, whining manner.<br>
+    <strong>Pies</strong> — a colonial-era Indian coin (12 pies = 1 anna; 3 pies = 1 pice) → tells us the story is set in pre-independence India.<br>
+    <strong>Custom</strong> — a traditional or regular way of behaving.</p>
+  </div>
+
+  <div class="ql">✍️ Writing Practice — answer on paper, then check</div>
+  <div class="qa"><div class="qn">1. "He felt a sudden pity for this old woman who sat there calling out to people who paid no attention to her." What does this reveal about the household?</div><details><summary>▸ Show model answer</summary><div class="ans">The household is self-absorbed and dismissive of the elderly matriarch. Only Swami has the youthful empathy to stop and listen to her.</div></details></div>
+  <div class="qa"><div class="qn">2. Why did Granny offer Swami double the actual price of a single lemon?</div><details><summary>▸ Show model answer</summary><div class="ans">She added three pies as a reward/incentive to motivate Swami to act immediately, because she was in physical distress and needed the cure quickly.</div></details></div>
+  <div class="qa"><div class="qn">3. How does Swami's behaviour in the kitchen contrast with his response to Granny's voice?</div><details><summary>▸ Show model answer</summary><div class="ans">In the kitchen he is loud, aggressive and self-centred; the moment he hears her fragile voice his manner softens into quiet pity and tenderness.</div></details></div>
+  <div class="qa"><div class="qn">4. What does "pies" represent, and how does it help us understand the setting?</div><details><summary>▸ Show model answer</summary><div class="ans">Pies were low-value coins of British colonial India — placing the story in pre-independence, rural South India.</div></details></div>
+  <div class="qa"><div class="qn">5. Predict Swami's coming conflict, given that he hesitated when asked to hurry.</div><details><summary>▸ Show model answer</summary><div class="ans">His wish to play and roam freely outside conflicts with the strict time limit set by Granny's illness — hinting he may get distracted and delay the errand.</div></details></div>
+
+  <div style="margin-top:1.25rem;text-align:center;padding-bottom:1rem">
+    <button onclick="switchTab('e')" style="padding:14px 32px;border-radius:14px;border:none;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-size:15px;font-weight:600;cursor:pointer;width:100%;max-width:320px">Take the English Quiz →</button>
+  </div>
+</div>
+
+<!-- English Quiz tab (Lit Day 1) -->
+<div id="sec-e" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">❓ Quiz · 15 Questions · Medium → Hard</div>
+    <div class="dyk-title">Granny — Act I</div>
+    <div class="dyk-body">Comprehension, character and vocabulary. You need <strong>9 / 15 (60%+)</strong> to mark English as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="e-qnum">1 / 15</span></div>
+    <div class="sc"><label>Score</label><span id="e-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="e-prog" style="width:0%"></div></div><div class="pp" id="e-pct">0%</div></div>
+  <div id="e-card" class="card">
+    <div class="tp" id="e-topic"></div>
+    <div class="qt" id="e-q"></div>
+    <div class="opts" id="e-opts"></div>
+    <div class="fb" id="e-fb"></div>
+    <button class="nxt" id="e-nxt">Next →</button>
+  </div>
+  <div id="e-done" style="display:none" class="card dc">
+    <div class="di" id="e-ficon">🎉</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="e-fscore"></div>
+    <div class="dm" id="e-fmsg"></div>
+    <button class="retry" id="e-retry">Try again ↺</button>
+  </div>
+</div>
+
 <script>
-var SUBJECTS = [{"id":"m","label":"Maths","total":10},{"id":"k","label":"Kannada","total":10}];
+var SUBJECTS = [{"id":"m","label":"Maths","total":10},{"id":"k","label":"Kannada","total":10},{"id":"e","label":"English","total":15}];
 var LS_PFX   = 'icse_w02_mon';
 
 function saveScore(id, score, total, label) {
@@ -294,7 +368,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["notes","write","k","m"];
+  var all = ["notes","write","k","m","enotes","e"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -494,6 +568,24 @@ quiz('m', [
   {"t":"🔴 Absolute Value","q":"Evaluate:  |–12| – |–20| + |5|","o":["3","–3","37","–37"],"a":1,"e":"Absolute value removes the sign:  12 – 20 + 5 = –8 + 5 = –3."},
   {"t":"🔴 Word Problem · Profit/Loss","q":"A shopkeeper gains ₹450 on Monday, loses ₹600 on Tuesday, and gains ₹250 on Wednesday. What is the net result?","o":["A loss of ₹100","A gain of ₹100","A loss of ₹400","A gain of ₹1 300"],"a":1,"e":"Gain = +, loss = –:  (+450) + (–600) + (+250) = +100, i.e. a gain of ₹100."}
 ], 'Maths');
+
+quiz('e', [
+  {"t":"MCQ","q":"Where do Swaminathan and Mani separate before Swami walks home?","o":["The school main gate","Market Road bazaar","Grove Street junction","The local cricket ground"],"a":2,"e":"Swami and Mani regularly part ways at the Grove Street junction."},
+  {"t":"MCQ","q":"Why did Swami feel a surge of pity when he heard his grandmother's voice?","o":["She was crying out loud in agony","Everyone else in the house routinely ignored her","She had been denied food all day","She was being scolded by his father"],"a":1,"e":"His pity comes from her social isolation — the family ignores her."},
+  {"t":"MCQ","q":"What breakdown of money does Granny propose to Swami?","o":["6 pies for the lemon, 0 for him","3 pies for the lemon, 3 pies as a reward","4 pies for the lemon, 2 pies as a reward","1 anna for the lemon, 6 pies as a reward"],"a":1,"e":"She splits the six pies evenly: 3 for the lemon, 3 as an incentive."},
+  {"t":"MCQ","q":"Swami's forceful way of drinking coffee shows that he is:","o":["Angry at his mother","In a hurry / full of youthful restlessness","Disgusted by the taste","Mimicking his father"],"a":1,"e":"Sucking coffee violently shows his energetic, restless schoolboy nature."},
+  {"t":"Fill in the blank","q":"It was a regular ______ for Swami to run into the kitchen as soon as he came home.","o":["custom","secret","punishment","game"],"a":0,"e":"'Custom' = a regular, traditional way of behaving."},
+  {"t":"Fill in the blank","q":"Granny was suffering from a terrible ______, which made her ask for a lemon.","o":["stomach ache","headache","fever","toothache"],"a":0,"e":"Her stomach ache is the root of the whole errand."},
+  {"t":"Fill in the blank","q":"Granny asked for the lemon in a voice Swami found shaky and ______.","o":["querulous","cheerful","musical","booming"],"a":0,"e":"'Querulous' = complaining / whining."},
+  {"t":"True / False","q":"Swami rejected Granny's reward because he thought three pies was too small.","o":["True","False"],"a":1,"e":"False — he accepted the money and only panicked later when told to hurry."},
+  {"t":"True / False","q":"There were already twelve fresh lemons sitting in the kitchen when Granny made her request.","o":["True","False"],"a":1,"e":"False — if there were, she wouldn't send Swami out with her savings."},
+  {"t":"True / False","q":"Swami was deeply observant of how isolated his grandmother felt in the family.","o":["True","False"],"a":0,"e":"True — he is sensitive to the fact that others ignore her."},
+  {"t":"🔴 Hard","q":"The use of 'pies' as money tells us the story is set in:","o":["Modern, independent India","British colonial-era (pre-independence) India","Ancient India","A future India"],"a":1,"e":"Pies were low-value coins of British colonial India — pre-independence South India."},
+  {"t":"🔴 Hard","q":"What does the household's behaviour toward Granny mainly reveal?","o":["The family deeply respects her","The family is self-absorbed and dismissive of the elderly","Granny rules the household","Granny prefers to be left alone"],"a":1,"e":"Only Swami stops to listen — the rest are self-absorbed and ignore the elderly matriarch."},
+  {"t":"🔴 Hard","q":"Why did Granny offer double the actual price of one lemon?","o":["Lemons were very expensive then","To give Swami an incentive to act quickly, as she was in pain","She was extremely wealthy","She wanted Swami to keep the change"],"a":1,"e":"The extra three pies were a reward to make Swami hurry while she suffered."},
+  {"t":"🔴 Hard","q":"The word 'querulous' most nearly means:","o":["Cheerful and loud","Complaining in a whining manner","Soft and sweet","Fierce and angry"],"a":1,"e":"Querulous = peevishly complaining / whining."},
+  {"t":"🔴 Hard","q":"Swami's hesitation when told to hurry mainly signals:","o":["He did not want the money","A conflict between his wish to play freely and the urgent errand","His dislike of Granny","His tiredness after school"],"a":1,"e":"His freedom-loving impulses clash with the strict time limit of the errand — foreshadowing trouble."}
+], 'English Literature');
 
 refreshProgress();
 makeSaveButton('save-wrap');

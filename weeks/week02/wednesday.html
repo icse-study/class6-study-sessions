@@ -58,17 +58,25 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 .pb-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9CA3AF}
 .sb{font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;background:#F3F4F6;color:#9CA3AF}
 .sp{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
-.save-btn{width:100%;padding:12px;border-radius:12px;border:1.5px solid #6366F1;background:transparent;color:#4F46E5;font-size:14px;font-weight:600;cursor:pointer;margin-top:4px}</style>
+.save-btn{width:100%;padding:12px;border-radius:12px;border:1.5px solid #6366F1;background:transparent;color:#4F46E5;font-size:14px;font-weight:600;cursor:pointer;margin-top:4px}
+.tbl-wrap{overflow-x:auto;border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:1rem}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;background:#fff}
+.tbl th{background:#EEF2FF;color:#3730A3;font-weight:700;padding:9px 12px;text-align:left;border-bottom:2px solid #C7D2FE;white-space:nowrap}
+.tbl td{padding:9px 12px;border-bottom:1px solid #F3F4F6;color:#374151;vertical-align:top}
+.tbl tr:last-child td{border-bottom:none}
+.tbl td:first-child{font-weight:600;color:#111827}</style>
 </head>
 <body>
 <a class="back" href="index.html">← Week 2</a>
 <header>
-  <div class="logo">🌍</div>
-  <div><h1>Wednesday · Week 2</h1><p>25 Jun 2026 · 6:15 – 7:00 PM · Class 6 ICSE</p></div>
+  <div class="logo">📚</div>
+  <div><h1>Wednesday · Week 2</h1><p>24 Jun 2026 · 6:00 – 7:50 PM · 🌍 Geography · ✍️ English Grammar</p></div>
 </header>
 <div class="tabs">
-  <button class="tab active" id="tab-notes" onclick="switchTab('notes')">📖 Study</button>
-  <button class="tab" id="tab-g" onclick="switchTab('g')">❓ Quiz</button>
+  <button class="tab active" id="tab-notes" onclick="switchTab('notes')">🌍 Geo Study</button>
+  <button class="tab" id="tab-g" onclick="switchTab('g')">🌍 Geo Quiz</button>
+  <button class="tab" id="tab-enotes" onclick="switchTab('enotes')">✍️ Grammar Study</button>
+  <button class="tab" id="tab-e" onclick="switchTab('e')">✍️ Grammar Quiz</button>
 </div>
 <div class="prog-bar">
   <div class="pb-top">
@@ -198,8 +206,85 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   </div>
 </div>
 
+<!-- English Grammar Study tab (Day 1) -->
+<div id="sec-enotes" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">✍️ English Grammar · Day 1 · Voice</div>
+    <div class="dyk-title">Active &amp; Passive Voice — the basics</div>
+    <div class="dyk-body">Learn the difference between active and passive voice, how pronouns change, and how to convert Simple Present and Simple Past sentences. Read the cards, then take the quiz.</div>
+  </div>
+
+  <div class="ql">🔁 Active vs Passive</div>
+  <div class="icard">
+    <h3>The idea</h3>
+    <p><strong>Active voice:</strong> the subject <em>does</em> the action — <em>The hunter shot the arrow.</em><br>
+    <strong>Passive voice:</strong> the subject <em>receives</em> the action; the doer moves to the end after <strong>"by"</strong> — <em>The arrow was shot by the hunter.</em></p>
+  </div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Active subject</th><th>Passive (becomes)</th></tr></thead>
+      <tbody>
+        <tr><td>I</td><td>by me</td></tr>
+        <tr><td>He</td><td>by him</td></tr>
+        <tr><td>She</td><td>by her</td></tr>
+        <tr><td>They</td><td>by them</td></tr>
+        <tr><td>We</td><td>by us</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="ql">⏱️ Tense Conversions</div>
+  <div class="icard">
+    <h3>Simple Present → is / am / are + V₃</h3>
+    <p><em>The chef bakes delicious tarts.</em> → <em>Delicious tarts <strong>are baked</strong> by the chef.</em></p>
+    <p>💡 A plural object changes the helper (is → are).</p>
+  </div>
+  <div class="icard">
+    <h3>Simple Past → was / were + V₃</h3>
+    <p><em>The police caught the thieves.</em> → <em>The thieves <strong>were caught</strong> by the police.</em></p>
+    <p>💡 Irregular verbs change form: catch → caught, write → written, drive → driven.</p>
+  </div>
+  <div class="icard">
+    <h3>ICSE special note</h3>
+    <p>Some verbs take <strong>"to"</strong> instead of "by": <em>The answer is known <strong>to</strong> me</em> (not "by me").</p>
+  </div>
+
+  <div style="margin-top:1.25rem;text-align:center;padding-bottom:1rem">
+    <button onclick="switchTab('e')" style="padding:14px 32px;border-radius:14px;border:none;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-size:15px;font-weight:600;cursor:pointer;width:100%;max-width:320px">Take the Grammar Quiz →</button>
+  </div>
+</div>
+
+<!-- English Grammar Quiz tab (Day 1) -->
+<div id="sec-e" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">❓ Quiz · 15 Questions · Medium → Hard</div>
+    <div class="dyk-title">Active &amp; Passive Voice — Day 1</div>
+    <div class="dyk-body">Identify the voice and convert Present/Past sentences. You need <strong>9 / 15 (60%+)</strong> to mark English Grammar as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="e-qnum">1 / 15</span></div>
+    <div class="sc"><label>Score</label><span id="e-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="e-prog" style="width:0%"></div></div><div class="pp" id="e-pct">0%</div></div>
+  <div id="e-card" class="card">
+    <div class="tp" id="e-topic"></div>
+    <div class="qt" id="e-q"></div>
+    <div class="opts" id="e-opts"></div>
+    <div class="fb" id="e-fb"></div>
+    <button class="nxt" id="e-nxt">Next →</button>
+  </div>
+  <div id="e-done" style="display:none" class="card dc">
+    <div class="di" id="e-ficon">🎉</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="e-fscore"></div>
+    <div class="dm" id="e-fmsg"></div>
+    <button class="retry" id="e-retry">Try again ↺</button>
+  </div>
+</div>
+
 <script>
-var SUBJECTS = [{"id":"g","label":"Geography","total":10}];
+var SUBJECTS = [{"id":"g","label":"Geography","total":10},{"id":"e","label":"English Grammar","total":15}];
 var LS_PFX   = 'icse_w02_wed';
 
 function saveScore(id, score, total, label) {
@@ -246,7 +331,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["notes","g"];
+  var all = ["notes","g","enotes","e"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -435,6 +520,24 @@ quiz('g', [
   {"t":"Mountains","q":"Which is NOT a Fold Mountain range?","o":["Andes","Alps","Vindhyas","Himalayas"],"a":2,"e":"Vindhyas are Block Mountains (formed by faulting), not Fold Mountains."},
   {"t":"People","q":"Life in mountains typically features:","o":["High population & easy farming","Low population & limited agriculture","Many railways","Rich fertile soil"],"a":1,"e":"Rugged terrain limits farming; building infrastructure is costly."}
 ], 'Geography');
+
+quiz('e', [
+  {"t":"MCQ","q":"Passive voice of: \"The technician repairs the broken computers every Tuesday.\"","o":["The broken computers were repaired by the technician every Tuesday.","The broken computers are repaired by the technician every Tuesday.","The technician is repairing the broken computers every Tuesday.","The broken computers will be repaired by the technician every Tuesday."],"a":1,"e":"Simple present passive: are/is + V₃ → 'are repaired' (plural object 'computers')."},
+  {"t":"MCQ","q":"Which sentence is in the Passive Voice?","o":["The heavy rain flooded the basement yesterday.","We were guided through the old museum by an expert.","The birds built a small nest on our balcony.","She forgot her library book at school."],"a":1,"e":"'were guided … by an expert' = passive (subject receives the action)."},
+  {"t":"MCQ","q":"Change to active: \"A beautiful landscape was painted by Rohit.\"","o":["Rohit paints a beautiful landscape.","Rohit was painting a beautiful landscape.","Rohit painted a beautiful landscape.","Rohit has painted a beautiful landscape."],"a":2,"e":"'was painted' is simple past, so active is simple past: 'Rohit painted …'."},
+  {"t":"Fill in the blank","q":"Passive: \"The bridge ______ by the structural engineer.\"  (Active: The structural engineer designed the bridge.)","o":["was designed","is designed","were designed","designed"],"a":0,"e":"Simple past, singular subject → 'was designed'."},
+  {"t":"Fill in the blank","q":"Passive: \"The answer is known ______ me.\"  (Active: I know the answer.)","o":["to","by","with","for"],"a":0,"e":"ICSE exception: 'known TO me', not 'known by me'."},
+  {"t":"Fill in the blank","q":"Passive: \"The dry leaves ______ away by the wind.\"  (Active: The wind blew the dry leaves away.)","o":["were blown","was blown","are blown","blew"],"a":0,"e":"Simple past, plural object → 'were blown' (blow → blown)."},
+  {"t":"True / False","q":"The passive of \"He scored a brilliant goal\" is \"A brilliant goal is scored by him.\"","o":["True","False"],"a":1,"e":"False — it should be 'was scored' (simple past), not 'is scored'."},
+  {"t":"True / False","q":"In a passive voice sentence, the action is done to the subject.","o":["True","False"],"a":0,"e":"True — that is the definition of the passive voice."},
+  {"t":"True / False","q":"The past participle (V₃) of \"drive\" is \"drove\".","o":["True","False"],"a":1,"e":"False — 'drove' is V₂; the V₃ (past participle) is 'driven'."},
+  {"t":"True / False","q":"\"The package arrived yesterday\" cannot be made passive because it has no object.","o":["True","False"],"a":0,"e":"True — 'arrived' is intransitive (no object), so it has no passive form."},
+  {"t":"🔴 Hard","q":"Convert to passive: \"The strict teacher punished the rowdy students.\"","o":["The rowdy students were punished by the strict teacher.","The rowdy students are punished by the strict teacher.","The rowdy students was punished by the strict teacher.","The strict teacher was punished by the rowdy students."],"a":0,"e":"Simple past, plural object → 'were punished by the strict teacher'."},
+  {"t":"🔴 Hard","q":"Convert to passive: \"Does your mother bake fresh bread every morning?\"","o":["Is fresh bread baked by your mother every morning?","Was fresh bread baked by your mother every morning?","Does fresh bread baked by your mother?","Is fresh bread being baked by your mother every morning?"],"a":0,"e":"Present-tense question passive: 'Is fresh bread baked by your mother every morning?'"},
+  {"t":"🔴 Hard","q":"Convert to active: \"The national anthem was sung proudly by the choir.\"","o":["The choir proudly sang the national anthem.","The choir proudly sings the national anthem.","The choir was singing the national anthem proudly.","The choir has sung the national anthem proudly."],"a":0,"e":"Simple past passive → simple past active: 'The choir proudly sang …'."},
+  {"t":"🔴 Hard","q":"Convert to passive: \"The stray dog bit the postman.\"","o":["The postman was bitten by the stray dog.","The postman was bit by the stray dog.","The postman is bitten by the stray dog.","The postman were bitten by the stray dog."],"a":0,"e":"bite → bitten (V₃); simple past, singular → 'was bitten'."},
+  {"t":"🔴 Hard","q":"Convert to active: \"Are these beautiful sweaters knitted by your grandmother?\"","o":["Does your grandmother knit these beautiful sweaters?","Did your grandmother knit these beautiful sweaters?","Is your grandmother knitting these beautiful sweaters?","Has your grandmother knitted these beautiful sweaters?"],"a":0,"e":"Present passive question → present active question: 'Does your grandmother knit …?'"}
+], 'English Grammar');
 refreshProgress();
 makeSaveButton('save-wrap');
 loadRemoteProgress(function(ok){ if(ok) refreshProgress(); });
