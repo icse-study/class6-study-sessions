@@ -101,6 +101,7 @@ function lsSet(key, val){
 function lsGet(key){ try{ return localStorage.getItem(key) || ''; }catch(e){ return ''; } }
 function lsRemove(key){ try{ localStorage.removeItem(key); }catch(e){} }
 
+function satt(n){n=+n||0;return (n>1000||n<0)?(n<0?0:1):n;}
 function getToken(){ return lsGet('icse_gh_token'); }
 
 function toggleShow(){
@@ -219,7 +220,7 @@ function doSync(){
       var l = local[k], r = merged[k];
       if(!r){ merged[k] = l; return; }
       merged[k] = {
-        attempts:  (l.attempts||0) + (r.attempts||0),
+        attempts:  Math.max(satt(l.attempts), satt(r.attempts)),
         bestScore: Math.max(l.bestScore||0, r.bestScore||0),
         totalQ:    l.totalQ || r.totalQ,
         lastDate:  l.lastDate > r.lastDate ? l.lastDate : r.lastDate,

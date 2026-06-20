@@ -123,7 +123,7 @@ function saveScore(id, score, total, label) {
   var key = LS_PFX+'_'+id, ex = {};
   try{ ex = JSON.parse(localStorage.getItem(key)||'{}'); }catch(e){}
   localStorage.setItem(key, JSON.stringify({
-    attempts: (ex.attempts||0)+1,
+    attempts: satt(ex.attempts)+1,
     bestScore: Math.max(ex.bestScore||0, score),
     totalQ: total,
     lastDate: new Date().toISOString().slice(0,10),
@@ -236,6 +236,7 @@ var GH_REPO = 'icse-study/class6-study-sessions';
 var GH_FILE = 'progress.json';
 var GH_API  = 'https://api.github.com/repos/' + GH_REPO + '/contents/' + GH_FILE;
 
+function satt(n){n=+n||0;return (n>1000||n<0)?(n<0?0:1):n;}
 function getToken() {
   return localStorage.getItem('icse_gh_token') || '';
 }
@@ -257,7 +258,7 @@ function mergeScores(local, remote) {
     var l = local[k], r = merged[k];
     if (!r) { merged[k] = l; return; }
     merged[k] = {
-      attempts:  (l.attempts||0) + (r.attempts||0),
+      attempts:  Math.max(satt(l.attempts), satt(r.attempts)),
       bestScore: Math.max(l.bestScore||0, r.bestScore||0),
       totalQ:    l.totalQ || r.totalQ,
       lastDate:  l.lastDate > r.lastDate ? l.lastDate : r.lastDate,
@@ -277,7 +278,7 @@ function applyRemoteToLocal(scores) {
         localStorage.setItem(k, JSON.stringify(remote));
       } else {
         localStorage.setItem(k, JSON.stringify({
-          attempts:  (existing.attempts||0) + (remote.attempts||0),
+          attempts:  Math.max(satt(existing.attempts), satt(remote.attempts)),
           bestScore: Math.max(existing.bestScore||0, remote.bestScore||0),
           totalQ:    existing.totalQ || remote.totalQ,
           lastDate:  existing.lastDate > remote.lastDate ? existing.lastDate : remote.lastDate,

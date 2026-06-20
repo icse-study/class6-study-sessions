@@ -254,7 +254,7 @@ function saveScore(id, score, total, label) {
   var key = LS_PFX+'_'+id, ex = {};
   try{ ex = JSON.parse(localStorage.getItem(key)||'{}'); }catch(e){}
   try{ localStorage.setItem(key, JSON.stringify({
-    attempts: (ex.attempts||0)+1,
+    attempts: satt(ex.attempts)+1,
     bestScore: Math.max(ex.bestScore||0, score),
     totalQ: total,
     lastDate: new Date().toISOString().slice(0,10),
@@ -361,6 +361,7 @@ var GH_REPO = 'icse-study/class6-study-sessions';
 var GH_FILE = 'progress.json';
 var GH_API  = 'https://api.github.com/repos/'+GH_REPO+'/contents/'+GH_FILE;
 
+function satt(n){n=+n||0;return (n>1000||n<0)?(n<0?0:1):n;}
 function getToken(){ return localStorage.getItem('icse_gh_token')||''; }
 
 function getAllLocalScores(){
@@ -379,7 +380,7 @@ function mergeScores(local, remote){
   Object.keys(local).forEach(function(k){
     var l=local[k],r=merged[k];
     if(!r){merged[k]=l;return;}
-    merged[k]={attempts:(l.attempts||0)+(r.attempts||0),bestScore:Math.max(l.bestScore||0,r.bestScore||0),totalQ:l.totalQ||r.totalQ,lastDate:l.lastDate>r.lastDate?l.lastDate:r.lastDate,label:l.label||r.label};
+    merged[k]={attempts:Math.max(satt(l.attempts),satt(r.attempts)),bestScore:Math.max(l.bestScore||0,r.bestScore||0),totalQ:l.totalQ||r.totalQ,lastDate:l.lastDate>r.lastDate?l.lastDate:r.lastDate,label:l.label||r.label};
   });
   return merged;
 }
@@ -392,7 +393,7 @@ function applyRemoteToLocal(scores){
       var rem=scores[k];
       try{
         if(!ex){ localStorage.setItem(k,JSON.stringify(rem)); }
-        else{ localStorage.setItem(k,JSON.stringify({attempts:(ex.attempts||0)+(rem.attempts||0),bestScore:Math.max(ex.bestScore||0,rem.bestScore||0),totalQ:ex.totalQ||rem.totalQ,lastDate:ex.lastDate>rem.lastDate?ex.lastDate:rem.lastDate,label:ex.label||rem.label})); }
+        else{ localStorage.setItem(k,JSON.stringify({attempts:Math.max(satt(ex.attempts),satt(rem.attempts)),bestScore:Math.max(ex.bestScore||0,rem.bestScore||0),totalQ:ex.totalQ||rem.totalQ,lastDate:ex.lastDate>rem.lastDate?ex.lastDate:rem.lastDate,label:ex.label||rem.label})); }
       }catch(e){}
     }
   });

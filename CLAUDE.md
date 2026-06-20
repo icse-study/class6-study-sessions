@@ -124,3 +124,7 @@ The GitHub API endpoint is:
 PUT https://api.github.com/repos/icse-study/class6-study-sessions/contents/progress.json
 ```
 Token must have **Contents: Read & Write** on this repo only.
+
+### Sync merge rule (important)
+
+When merging local and remote scores (`mergeScores` / `applyRemoteToLocal` in every page, and the inline merge in `settings.html`), `attempts` must use **`Math.max`**, never a sum. Summing on every sync compounds exponentially (Fibonacci-like) and blew the counter up to billions. Each merge wraps values in `satt(n)` — a sanitizer that resets absurd values (`>1000` or negative) to `1` — so any residual corruption self-heals as data flows through. `bestScore` already uses `max`; `attempts` now matches. If you copy the engine into a new page, keep the `satt()` helper and the `Math.max(satt(...), satt(...))` form.
