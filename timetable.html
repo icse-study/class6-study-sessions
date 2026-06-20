@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>Weekly Timetable · Class 6 ICSE 2026-27</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0F4FF;min-height:100vh;color:#1a1a2e;padding-bottom:2rem}
+header{background:linear-gradient(135deg,#4F46E5,#7C3AED);padding:1.75rem 1.25rem 1.5rem;text-align:center}
+.logo{font-size:44px;margin-bottom:8px}
+header h1{color:#fff;font-size:22px;font-weight:700}
+header p{color:rgba(255,255,255,0.8);font-size:13px;margin-top:4px}
+.hdr-links{display:flex;justify-content:center;gap:10px;margin-top:12px}
+.hdr-btn{color:rgba(255,255,255,0.9);font-size:13px;font-weight:600;text-decoration:none;background:rgba(255,255,255,0.15);padding:6px 14px;border-radius:99px}
+.note{font-size:12px;color:#6B7280;text-align:center;padding:0.9rem 1rem 0;line-height:1.5}
+.day{background:#fff;margin:0.85rem 1rem 0;border-radius:16px;box-shadow:0 1px 4px rgba(0,0,0,0.06);overflow:hidden;border-left:5px solid #4F46E5}
+.day.science{border-left-color:#059669}
+.day.weekend{border-left-color:#D97706}
+.day.today{box-shadow:0 0 0 2px #4F46E5,0 2px 10px rgba(79,70,229,0.25)}
+.day-h{display:flex;align-items:center;justify-content:space-between;padding:0.85rem 1.1rem;background:#F8FAFF}
+.day-h .name{font-size:16px;font-weight:800;color:#111827}
+.day-h .tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#fff;background:#4F46E5;padding:3px 9px;border-radius:99px}
+.day.science .day-h .tag{background:#059669}
+.day.weekend .day-h .tag{background:#D97706}
+.slot{display:flex;gap:11px;padding:0.7rem 1.1rem;border-top:1px solid #F1F1F6}
+.slot.brk{background:#FAFAFC}
+.slot .time{font-size:11px;font-weight:700;color:#9CA3AF;min-width:96px;padding-top:2px;white-space:nowrap}
+.slot .body{flex:1}
+.slot .subj{font-size:14px;font-weight:600;color:#1F2937}
+.slot.brk .subj{color:#9CA3AF;font-weight:500}
+.slot .focus{font-size:12px;color:#6B7280;margin-top:2px}
+.block-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:#9CA3AF;padding:0 1.1rem;margin-top:0.5rem}
+footer{text-align:center;padding:1.5rem 1rem 0;font-size:12px;color:#9CA3AF}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">🗓️</div>
+  <h1>Weekly Timetable</h1>
+  <p>Class 6 · ICSE 2026–27</p>
+  <div class="hdr-links">
+    <a class="hdr-btn" href="index.html">🏠 Home</a>
+    <a class="hdr-btn" href="dashboard.html">📊 Dashboard</a>
+  </div>
+</header>
+
+<div class="note">Weekday sessions start 6:00 PM · Weekends have morning &amp; afternoon blocks. Today's day is highlighted.</div>
+
+<div id="grid"></div>
+
+<footer>Class 6 · ICSE 2026–27 · Fixed weekly study plan</footer>
+
+<script>
+// Theme: 'science' = green accent, 'weekend' = amber accent, default = indigo
+var TIMETABLE = [
+  {name:"Monday", theme:"", tag:"Weekday", slots:[
+    {t:"6:00–6:15 PM", s:"➗ Maths Quick Practice", f:"Tables, Fractions, Mental Maths"},
+    {t:"6:15–7:00 PM", s:"🗣️ Kannada Literature", f:"Reading, Vocabulary, Oral Practice"},
+    {t:"7:00–7:10 PM", s:"Break", f:"Refresh", brk:true},
+    {t:"7:10–7:50 PM", s:"📖 English Literature", f:"Reading & Summary"}
+  ]},
+  {name:"Tuesday", theme:"science", tag:"Weekday", slots:[
+    {t:"6:00–6:15 PM", s:"➗ Maths Quick Practice", f:"3–5 Problems"},
+    {t:"6:15–7:00 PM", s:"⚡ Physics", f:"Concepts & Numericals"},
+    {t:"7:00–7:10 PM", s:"Break", f:"Refresh", brk:true},
+    {t:"7:10–7:50 PM", s:"💻 Computer Science / Python", f:"Coding & Logic"}
+  ]},
+  {name:"Wednesday", theme:"", tag:"Weekday", slots:[
+    {t:"6:00–6:15 PM", s:"🌍 Map Revision", f:"Geography Recall"},
+    {t:"6:15–7:00 PM", s:"🌍 Geography", f:"Maps, Climate & Landforms"},
+    {t:"7:00–7:10 PM", s:"Break", f:"Refresh", brk:true},
+    {t:"7:10–7:50 PM", s:"✍️ English Grammar & Writing", f:"Composition & Grammar"}
+  ]},
+  {name:"Thursday", theme:"science", tag:"Weekday", slots:[
+    {t:"6:00–6:15 PM", s:"➗ Maths Formula Recall", f:"Mental Practice"},
+    {t:"6:15–7:00 PM", s:"⚗️ Chemistry", f:"Concepts & Definitions"},
+    {t:"7:00–7:10 PM", s:"Break", f:"Refresh", brk:true},
+    {t:"7:10–7:50 PM", s:"🇫🇷 French", f:"Grammar & Vocabulary"}
+  ]},
+  {name:"Friday", theme:"science", tag:"Weekday", slots:[
+    {t:"6:00–6:15 PM", s:"🧬 Science Diagram Recall", f:"Biology Keywords"},
+    {t:"6:15–7:00 PM", s:"🗣️ Kannada Grammar & Writing", f:"Grammar & Composition"},
+    {t:"7:00–7:10 PM", s:"Break", f:"Refresh", brk:true},
+    {t:"7:10–7:50 PM", s:"🧬 Biology", f:"Diagrams & Concepts"}
+  ]},
+  {name:"Saturday", theme:"weekend", tag:"Weekend", block:"Morning", slots:[
+    {t:"10:00–10:45 AM", s:"➗ Maths Problem Solving", f:"Weekly Practice"},
+    {t:"10:45–11:00 AM", s:"Break", f:"Refresh", brk:true},
+    {t:"11:00–11:45 AM", s:"🏛️ History & Civics", f:"Timelines & Civics"}
+  ], block2:"Afternoon", slots2:[
+    {t:"2:30–3:00 PM", s:"⚡ Physics Quiz", f:"Recall & Numericals"},
+    {t:"3:00–3:30 PM", s:"⚗️ Chemistry Quiz", f:"Definitions & Concepts"},
+    {t:"3:30–3:40 PM", s:"🛑 Brain Break", f:"Snack / Walk / Water", brk:true},
+    {t:"3:40–4:10 PM", s:"🧬 Biology Quiz", f:"Diagrams & Labelling"}
+  ]},
+  {name:"Sunday", theme:"weekend", tag:"Weekend", block:"Morning", slots:[
+    {t:"10:00–10:30 AM", s:"🗣️ Kannada", f:"Reading & Writing"},
+    {t:"10:30–11:00 AM", s:"🇫🇷 French", f:"Vocabulary & Sentences"},
+    {t:"11:15–12:00 PM", s:"🌍 Geography + 🏛️ History & Civics", f:"Maps, Timelines, Key Terms"}
+  ], block2:"Afternoon", slots2:[
+    {t:"2:30–4:00 PM", s:"🧠 Mixed Quiz Day", f:"All subjects revision"},
+    {t:"After 4:00 PM", s:"🌳 Free Time", f:"Sports, Reading, Family Time", brk:true}
+  ]}
+];
+
+var DN = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+var todayName = DN[new Date().getDay()];
+
+function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+
+function slotHtml(sl){
+  return '<div class="slot'+(sl.brk?' brk':'')+'">'+
+    '<div class="time">'+esc(sl.t)+'</div>'+
+    '<div class="body"><div class="subj">'+esc(sl.s)+'</div>'+
+    '<div class="focus">'+esc(sl.f)+'</div></div></div>';
+}
+
+var html = '';
+TIMETABLE.forEach(function(d){
+  var cls = 'day' + (d.theme?' '+d.theme:'') + (d.name===todayName?' today':'');
+  html += '<div class="'+cls+'">';
+  html += '<div class="day-h"><span class="name">'+esc(d.name)+(d.name===todayName?' · Today':'')+'</span><span class="tag">'+esc(d.tag)+'</span></div>';
+  if(d.block) html += '<div class="block-label">'+esc(d.block)+'</div>';
+  d.slots.forEach(function(sl){ html += slotHtml(sl); });
+  if(d.slots2){
+    if(d.block2) html += '<div class="block-label">'+esc(d.block2)+'</div>';
+    d.slots2.forEach(function(sl){ html += slotHtml(sl); });
+  }
+  html += '</div>';
+});
+document.getElementById('grid').innerHTML = html;
+</script>
+</body>
+</html>

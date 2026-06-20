@@ -6,6 +6,22 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A static HTML/JS study app for a Class 6 ICSE student (academic year 2026–27, 41 weeks, Jun 2026 – Mar 2027). No build step, no framework, no npm. Everything runs directly in the browser via GitHub Pages. Progress is stored in `localStorage` and optionally synced to `progress.json` in this repo via the GitHub Contents API using a personal access token.
 
+## Weekly timetable
+
+The student follows a fixed weekly timetable. When adding content to a placeholder day, build the quiz subjects to match that day's scheduled subjects below. Weekdays start 6:00 PM; weekends have morning + afternoon blocks.
+
+| Day | Slots (subject — focus) |
+|-----|-------------------------|
+| **Monday** | ➗ Maths Quick Practice (Tables/Fractions/Mental) · 🗣️ Kannada Literature (Reading/Vocab/Oral) · *Break* · 📖 English Literature (Reading & Summary) |
+| **Tuesday** | ➗ Maths Quick Practice (3–5 Problems) · ⚡ Physics (Concepts & Numericals) · *Break* · 💻 Computer Science / Python (Coding & Logic) |
+| **Wednesday** | 🌍 Map Revision (Geography Recall) · 🌍 Geography (Maps/Climate/Landforms) · *Break* · ✍️ English Grammar & Writing (Composition & Grammar) |
+| **Thursday** | ➗ Maths Formula Recall (Mental Practice) · ⚗️ Chemistry (Concepts & Definitions) · *Break* · 🇫🇷 French (Grammar & Vocabulary) |
+| **Friday** | 🧬 Science Diagram Recall (Biology Keywords) · 🗣️ Kannada Grammar & Writing (Grammar & Composition) · *Break* · 🧬 Biology (Diagrams & Concepts) |
+| **Saturday AM** | ➗ Maths Problem Solving (Weekly Practice) · *Break* · 🏛️ History & Civics (Timelines & Civics) |
+| **Saturday PM** | ⚡ Physics Quiz (Recall & Numericals) · ⚗️ Chemistry Quiz (Definitions & Concepts) · 🛑 Brain Break · 🧬 Biology Quiz (Diagrams & Labelling) |
+| **Sunday AM** | 🗣️ Kannada (Reading & Writing) · 🇫🇷 French (Vocabulary & Sentences) · 🌍 Geography + 🏛️ History & Civics (Maps/Timelines/Key Terms) |
+| **Sunday PM** | 🧠 Mixed Quiz Day · then Sports, Reading, Family Time |
+
 ## How to run locally
 
 Open any `.html` file directly in a browser, or use a local server to avoid cross-origin issues:
@@ -21,6 +37,7 @@ No build, install, lint, or test commands exist. Changes are deployed by pushing
 
 ```
 index.html          ← Home: week grid, "today's session" banner, year progress
+timetable.html      ← Static weekly timetable (subject per day/slot), self-contained
 dashboard.html      ← Analytics: year-at-a-glance dot grid, subject table, streak
 settings.html       ← GitHub token entry, manual cloud sync trigger
 progress.json       ← Cloud sync store (written by the GitHub API, not by hand)
@@ -87,8 +104,16 @@ The `quiz(id, questions, label)` function is copy-pasted into every session page
 1. Open the target `weeks/weekNN/dayname.html` (currently a single-card locked placeholder)
 2. Replace the entire file with the session page pattern above
 3. Set the correct `LS_PFX` (e.g. `icse_w02_wed`), `SUBJECTS` array, tab IDs, and quiz data
-4. Use `quiz(id, [...], 'Label')` for each scored tab; non-scored tabs (study notes) are not added to `SUBJECTS`
+4. Use `quiz(id, [...], 'Label')` for each scored tab; non-scored tabs (study notes / writing practice) are not added to `SUBJECTS`
 5. The "Done" threshold is 60% — a 10-question quiz needs 6 correct
+
+### Multi-subject days
+
+A day page hosts **all of that day's timetable subjects**, each as its own quiz tab (plus optional study/writing tabs). Add a subject by appending to four things: a `<button class="tab" id="tab-{id}">`, a `<div id="sec-{id}">` section, the `SUBJECTS` array, and the `all = [...]` list inside `switchTab`. Then add one `quiz('{id}', [...], 'Label')` call. The shared `quiz()`/sync engine is per-id, so multiple quizzes coexist on one page. Use a day-level header (`📚` logo, "Maths · Kannada · English" subtitle) once a page has more than one subject.
+
+### Subject id must match `DAY_SUBJECTS_MAP` (critical)
+
+The home page (`index.html`) and `dashboard.html` each carry an identical `DAY_SUBJECTS_MAP` that drives completion tracking. A day is "Done" only when **every** id listed there has a passing score in `localStorage`. The id you pass to `quiz(id, …)` on a day page **must exactly equal** the id in `DAY_SUBJECTS_MAP` for that day in **both** files — otherwise the dashboard never registers the subject. Keep both copies in sync. (Known ids in use: `m` Maths, `k` Kannada, `e` English, `phy` Physics, `geo` Geography, `c` CS/Python, `ch` Chemistry, `f` French, `s` Science Diagrams, `b` Biology, `h` History & Civics, `gh` Geo+History, `mx` Mixed Quiz.) `DAY_SUBJECTS_MAP` `total` values are cosmetic — the Done calc uses the stored `totalQ`, not the map total.
 
 ## Cloud sync (settings.html)
 
