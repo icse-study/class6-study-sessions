@@ -174,6 +174,7 @@ function switchTab(t) {
 
 // ── Quiz engine ───────────────────────────────────────────────────────────────
 function quiz(id, qs, label) {
+  qs.forEach(function(q){ if(!q.o||q._sh) return; var c=q.o[q.a]; for(var a=q.o.length-1;a>0;a--){var b=Math.floor(Math.random()*(a+1)),t=q.o[a];q.o[a]=q.o[b];q.o[b]=t;} q.a=q.o.indexOf(c); q._sh=1; });
   var i=0, sc=0, answered=false;
   function el(x) { return document.getElementById(id+'-'+x); }
   function render() {

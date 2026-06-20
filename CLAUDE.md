@@ -86,6 +86,7 @@ Each session page is **self-contained** — all CSS and JS are inline. No extern
 ## Quiz engine
 
 The `quiz(id, questions, label)` function is copy-pasted into every session page that has a quiz. It:
+- **Shuffles each question's options once on load** (so the correct answer isn't always in the same position), recomputing `q.a` via `indexOf`. Keep this line when copying the engine; it relies on option strings being unique within a question.
 - Renders one question at a time with 4 options
 - Marks correct/wrong on click, shows explanation feedback (`.fb`)
 - On finish: calls `saveScore()`, calls `refreshProgress()`, shows the done card
