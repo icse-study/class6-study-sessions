@@ -116,18 +116,11 @@
       "label": "History & Civics"
     },
     "icse_w01_sat_pq": {
-      "attempts": 934,
+      "attempts": 1,
       "bestScore": 5,
       "totalQ": 5,
       "lastDate": "2026-06-20",
       "label": "Science Quiz"
-    },
-    "icse_w02_mon_m": {
-      "attempts": 582,
-      "bestScore": 7,
-      "totalQ": 10,
-      "lastDate": "2026-06-20",
-      "label": "Maths"
     }
   }
 }
