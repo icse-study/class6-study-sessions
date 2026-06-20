@@ -1,129 +1,129 @@
 {
   "version": 1,
-  "lastSaved": "2026-06-20T08:04:41.413Z",
+  "lastSaved": "2026-06-20T08:05:17.851Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
-      "attempts": 4014781498725,
+      "attempts": 10560783315165,
       "bestScore": 5,
       "totalQ": 5,
       "lastDate": "2026-06-16",
       "label": "Maths"
     },
     "icse_w01_mon_k": {
-      "attempts": 1505950558965,
+      "attempts": 3961365653805,
       "bestScore": 4,
       "totalQ": 4,
       "lastDate": "2026-06-16",
       "label": "Kannada"
     },
     "icse_w01_mon_e": {
-      "attempts": 503070178170,
+      "attempts": 1323313646250,
       "bestScore": 4,
       "totalQ": 4,
       "lastDate": "2026-06-16",
       "label": "English"
     },
     "icse_w01_tue_m": {
-      "attempts": 26135810016,
+      "attempts": 68749601052,
       "bestScore": 4,
       "totalQ": 4,
       "lastDate": "2026-06-20",
       "label": "Maths"
     },
     "icse_w01_tue_p": {
-      "attempts": 9801467481,
+      "attempts": 25782517498,
       "bestScore": 4,
       "totalQ": 4,
-      "lastDate": "2026-06-19",
+      "lastDate": "2026-06-20",
       "label": "Physics"
     },
     "icse_w01_tue_c": {
-      "attempts": 3268592088,
+      "attempts": 8597950548,
       "bestScore": 4,
       "totalQ": 4,
       "lastDate": "2026-06-19",
       "label": "CS/Python"
     },
     "icse_w01_wed_g": {
-      "attempts": 1356453690,
+      "attempts": 3568117842,
       "bestScore": 5,
       "totalQ": 5,
       "lastDate": "2026-06-17",
       "label": "Geography"
     },
     "icse_w01_wed_e": {
-      "attempts": 499292612,
+      "attempts": 1313376852,
       "bestScore": 4,
       "totalQ": 4,
       "lastDate": "2026-06-17",
       "label": "English Grammar"
     },
     "icse_w01_thu_m": {
-      "attempts": 2661597,
+      "attempts": 7001265,
       "bestScore": 4,
       "totalQ": 4,
       "lastDate": "2026-06-18",
       "label": "Maths"
     },
     "icse_w01_thu_ch": {
-      "attempts": 384023,
+      "attempts": 1010163,
       "bestScore": 4,
       "totalQ": 4,
       "lastDate": "2026-06-19",
       "label": "Chemistry"
     },
     "icse_w01_thu_f": {
-      "attempts": 135953,
+      "attempts": 357621,
       "bestScore": 4,
       "totalQ": 4,
       "lastDate": "2026-06-18",
       "label": "French"
     },
     "icse_w01_fri_s": {
-      "attempts": 24177,
+      "attempts": 63597,
       "bestScore": 3,
       "totalQ": 3,
       "lastDate": "2026-06-19",
       "label": "Science Diagrams"
     },
     "icse_w01_fri_k": {
-      "attempts": 18218,
+      "attempts": 47922,
       "bestScore": 3,
       "totalQ": 3,
       "lastDate": "2026-06-19",
       "label": "Kannada Grammar"
     },
     "icse_w01_fri_b": {
-      "attempts": 3150,
+      "attempts": 8286,
       "bestScore": 4,
       "totalQ": 4,
       "lastDate": "2026-06-19",
       "label": "Biology"
     },
     "icse_w01_sat_m": {
-      "attempts": 682,
+      "attempts": 1794,
       "bestScore": 5,
       "totalQ": 5,
       "lastDate": "2026-06-20",
       "label": "Maths"
     },
     "icse_w01_sat_h": {
-      "attempts": 260,
+      "attempts": 684,
       "bestScore": 4,
       "totalQ": 4,
       "lastDate": "2026-06-20",
       "label": "History & Civics"
     },
     "icse_w01_sat_pq": {
-      "attempts": 98,
+      "attempts": 258,
       "bestScore": 5,
       "totalQ": 5,
       "lastDate": "2026-06-20",
       "label": "Science Quiz"
     },
     "icse_w02_mon_m": {
-      "attempts": 11,
+      "attempts": 27,
       "bestScore": 7,
       "totalQ": 10,
       "lastDate": "2026-06-20",
