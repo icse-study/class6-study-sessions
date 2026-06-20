@@ -80,6 +80,8 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   <button class="tab active" id="tab-notes" onclick="switchTab('notes')">📖 Physics Study</button>
   <button class="tab" id="tab-p" onclick="switchTab('p')">⚡ Physics Quiz</button>
   <button class="tab" id="tab-m" onclick="switchTab('m')">➗ Maths Quiz</button>
+  <button class="tab" id="tab-cnotes" onclick="switchTab('cnotes')">💻 Python Study</button>
+  <button class="tab" id="tab-c" onclick="switchTab('c')">💻 Python Quiz</button>
 </div>
 <div class="prog-bar">
   <div class="pb-top">
@@ -270,8 +272,97 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   </div>
 </div>
 
+<!-- Python Study tab -->
+<div id="sec-cnotes" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">💻 Computer Science · Python Basics</div>
+    <div class="dyk-title">Getting started with Python 🐍</div>
+    <div class="dyk-body">Python is a popular, easy-to-read programming language used for apps, games, websites and AI. Learn output, variables, data types, input and operators — then take the quiz.</div>
+  </div>
+
+  <div class="ql">🐍 What is Python?</div>
+  <div class="icard">
+    <h3>About Python</h3>
+    <p>A high-level programming language created by <strong>Guido van Rossum</strong> (1991). It is loved for its simple, English-like syntax and is used to build games, websites, apps and AI.</p>
+  </div>
+
+  <div class="ql">🖨️ Output — print()</div>
+  <div class="icard">
+    <h3>The print() function</h3>
+    <p><code>print()</code> displays output on the screen. Text inside quotes is a <strong>string</strong>.</p>
+    <div class="ex"><strong>print("Hello!")</strong> → Hello! &nbsp;·&nbsp; <strong>print(3 + 4)</strong> → 7 &nbsp;·&nbsp; <strong>print("Py" + "thon")</strong> → Python</div>
+  </div>
+
+  <div class="ql">📦 Variables &amp; Data Types</div>
+  <div class="icard">
+    <h3>Variables</h3>
+    <p>A <strong>variable</strong> stores a value: <code>age = 11</code>. Names can use letters, digits and underscores, but cannot start with a digit or be a keyword (like <code>class</code>).</p>
+  </div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Data type</th><th>Means</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>int</td><td>whole number</td><td>5, -3, 100</td></tr>
+        <tr><td>float</td><td>decimal number</td><td>3.14, -0.5</td></tr>
+        <tr><td>str</td><td>text (string)</td><td>"Hello", 'Py'</td></tr>
+        <tr><td>bool</td><td>true / false</td><td>True, False</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="ql">⌨️ Input &amp; Operators</div>
+  <div class="icard">
+    <h3>Reading input</h3>
+    <p><code>input()</code> reads what the user types and always returns a <strong>string</strong>. To get a number, wrap it: <code>int(input())</code>.</p>
+  </div>
+  <div class="icard">
+    <h3>Operators</h3>
+    <p><strong>Arithmetic:</strong> <code>+ - * /</code>, <code>//</code> (whole-number divide), <code>%</code> (remainder), <code>**</code> (power).<br>
+    <strong>Comparison:</strong> <code>== != &lt; &gt; &lt;= &gt;=</code> → give <code>True</code>/<code>False</code>.</p>
+    <div class="ex">7 // 2 → 3 &nbsp;·&nbsp; 7 % 2 → 1 &nbsp;·&nbsp; 2 ** 3 → 8 &nbsp;·&nbsp; 10 == 10 → True</div>
+    <div class="hook">💡 <code>=</code> assigns a value; <code>==</code> checks if two values are equal.</div>
+  </div>
+  <div class="icard">
+    <h3>Comments</h3>
+    <p>A line starting with <code>#</code> is a comment — Python ignores it. Use comments to explain your code.</p>
+  </div>
+
+  <div style="margin-top:1.25rem;text-align:center;padding-bottom:1rem">
+    <button onclick="switchTab('c')" style="padding:14px 32px;border-radius:14px;border:none;background:linear-gradient(135deg,#059669,#0D9488);color:#fff;font-size:15px;font-weight:600;cursor:pointer;width:100%;max-width:320px">Take the Python Quiz →</button>
+  </div>
+</div>
+
+<!-- Python Quiz tab -->
+<div id="sec-c" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">❓ Quiz · 15 Questions · Medium</div>
+    <div class="dyk-title">Python Basics</div>
+    <div class="dyk-body">Output, variables, data types, input and operators. You need <strong>9 / 15 (60%+)</strong> to mark CS/Python as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="c-qnum">1 / 15</span></div>
+    <div class="sc"><label>Score</label><span id="c-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="c-prog" style="width:0%"></div></div><div class="pp" id="c-pct">0%</div></div>
+  <div id="c-card" class="card">
+    <div class="tp" id="c-topic"></div>
+    <div class="qt" id="c-q"></div>
+    <div class="opts" id="c-opts"></div>
+    <div class="fb" id="c-fb"></div>
+    <button class="nxt" id="c-nxt">Next →</button>
+  </div>
+  <div id="c-done" style="display:none" class="card dc">
+    <div class="di" id="c-ficon">🎉</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="c-fscore"></div>
+    <div class="dm" id="c-fmsg"></div>
+    <button class="retry" id="c-retry">Try again ↺</button>
+  </div>
+</div>
+
 <script>
-var SUBJECTS = [{"id":"m","label":"Maths","total":10},{"id":"p","label":"Physics","total":10}];
+var SUBJECTS = [{"id":"m","label":"Maths","total":10},{"id":"p","label":"Physics","total":10},{"id":"c","label":"CS/Python","total":15}];
 var LS_PFX   = 'icse_w02_tue';
 
 function saveScore(id, score, total, label) {
@@ -318,7 +409,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["notes","p","m"];
+  var all = ["notes","p","m","cnotes","c"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -519,6 +610,24 @@ quiz('m', [
   {"t":"🔴 Distributive over Subtraction","q":"Find  36 × 99  using the distributive property.","o":["3564","3636","3600","3654"],"a":0,"e":"36 × 99 = 36 × (100 − 1) = 3600 − 36 = 3564."},
   {"t":"🔴 Zero & One in Division","q":"Which of the following statements is CORRECT?","o":["0 ÷ 5 = 0","5 ÷ 0 = 0","5 ÷ 0 = 5","0 ÷ 0 = 1"],"a":0,"e":"Zero divided by any non-zero number is 0. But division BY zero (5÷0, 0÷0) is undefined — it has no value."}
 ], 'Maths');
+
+quiz('c', [
+  {"t":"About Python","q":"Who created the Python programming language?","o":["Guido van Rossum","Dennis Ritchie","James Gosling","Charles Babbage"],"a":0,"e":"Python was created by Guido van Rossum in 1991."},
+  {"t":"Output","q":"Which function is used to display output on the screen in Python?","o":["print()","input()","show()","output()"],"a":0,"e":"print() prints text or values to the screen."},
+  {"t":"Strings","q":"What does print(\"Py\" + \"thon\") display?","o":["Python","Py thon","\"Py\"+\"thon\"","Error"],"a":0,"e":"The + joins (concatenates) two strings → Python."},
+  {"t":"Variables","q":"Which of these is a VALID Python variable name?","o":["_score","2cool","my score","class"],"a":0,"e":"Names can't start with a digit, can't contain spaces, and can't be keywords like 'class'. '_score' is valid."},
+  {"t":"Data types","q":"What is the data type of the value 3.14?","o":["float","int","str","bool"],"a":0,"e":"Numbers with a decimal point are of type float."},
+  {"t":"Data types","q":"What is the data type of \"Hello\"?","o":["str","int","bool","float"],"a":0,"e":"Text inside quotes is a string (str)."},
+  {"t":"Input","q":"By default, the input() function returns a value of which type?","o":["str","int","float","bool"],"a":0,"e":"input() always returns a string."},
+  {"t":"Input","q":"To store a whole number typed by the user, you should write:","o":["int(input())","input()","print(input())","str(input())"],"a":0,"e":"Wrap input() in int() to convert the text to a number: int(input())."},
+  {"t":"Operators","q":"What is the value of 7 // 2 in Python?","o":["3","3.5","1","4"],"a":0,"e":"// is whole-number (floor) division: 7 // 2 = 3."},
+  {"t":"Operators","q":"What is the value of 7 % 2?","o":["1","3","0","3.5"],"a":0,"e":"% gives the remainder: 7 ÷ 2 leaves remainder 1."},
+  {"t":"Operators","q":"What does 2 ** 3 give?","o":["8","6","9","5"],"a":0,"e":"** is power: 2 to the power 3 = 2×2×2 = 8."},
+  {"t":"Comments","q":"Which symbol begins a comment in Python?","o":["#","//","/*","<!--"],"a":0,"e":"A line starting with # is a comment and is ignored by Python."},
+  {"t":"Data types","q":"The value True belongs to which data type?","o":["bool","str","int","float"],"a":0,"e":"True and False are Boolean (bool) values."},
+  {"t":"Comparison","q":"What does 10 == 5 evaluate to?","o":["False","True","10","Error"],"a":0,"e":"== checks equality; 10 is not equal to 5, so the result is False."},
+  {"t":"Variables","q":"After  x = 5  then  x = x + 3,  what is the value of x?","o":["8","5","3","53"],"a":0,"e":"x becomes 5 + 3 = 8 (the new value replaces the old one)."}
+], 'CS/Python');
 
 refreshProgress();
 makeSaveButton('save-wrap');
