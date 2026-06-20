@@ -126,7 +126,8 @@ var DAY_SUBJECTS_MAP={"monday": [{"id": "m", "label": "Maths", "total": 5}, {"id
 var DAY_SHORT_MAP={"monday": "mon", "tuesday": "tue", "wednesday": "wed", "thursday": "thu", "friday": "fri", "saturday": "sat", "sunday": "sun"};
 var SLUGS=["monday","tuesday","wednesday","thursday","friday","saturday","sunday"];
 var DN=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-var today=new Date(), tD=today.toISOString().slice(0,10);
+function localYMD(dt){return dt.getFullYear()+'-'+String(dt.getMonth()+1).padStart(2,'0')+'-'+String(dt.getDate()).padStart(2,'0');}
+var today=new Date(), tD=localYMD(today);
 var WEEK1_START=new Date('2026-06-15T00:00:00');
 var YEAR_END=new Date('2027-03-28T00:00:00');
 
@@ -134,8 +135,8 @@ var YEAR_END=new Date('2027-03-28T00:00:00');
 var allDays=[]; // {date, weekNum, slug, status}
 WEEKS.forEach(function(w){
   SLUGS.forEach(function(slug,si){
-    var dayDate=new Date(w.mon+'T00:00:00');
-    dayDate.setDate(dayDate.getDate()+si);
+    var dayDate=new Date(w.mon+'T00:00:00Z');
+    dayDate.setUTCDate(dayDate.getUTCDate()+si);
     var ds=dayDate.toISOString().slice(0,10);
     var sh=DAY_SHORT_MAP[slug], subs=DAY_SUBJECTS_MAP[slug];
     var status=ds>tD?'future':dayStatus(w.num,sh,subs);
