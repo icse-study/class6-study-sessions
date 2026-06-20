@@ -79,12 +79,14 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 <body>
 <a class="back" href="index.html">← Week 2</a>
 <header>
-  <div class="logo">🇫🇷</div>
-  <div><h1>Thursday · Week 2</h1><p>25 Jun 2026 · 7:10 – 7:50 PM · 🇫🇷 French — Pronunciation &amp; Culture (Day 1)</p></div>
+  <div class="logo">📚</div>
+  <div><h1>Thursday · Week 2</h1><p>25 Jun 2026 · 6:00 – 7:50 PM · ➗ Maths · ⚗️ Chemistry · 🇫🇷 French</p></div>
 </header>
 <div class="tabs">
-  <button class="tab active" id="tab-fnotes" onclick="switchTab('fnotes')">📖 Study</button>
-  <button class="tab" id="tab-f" onclick="switchTab('f')">❓ Quiz</button>
+  <button class="tab active" id="tab-fnotes" onclick="switchTab('fnotes')">📖 French Study</button>
+  <button class="tab" id="tab-f" onclick="switchTab('f')">🇫🇷 French Quiz</button>
+  <button class="tab" id="tab-chnotes" onclick="switchTab('chnotes')">⚗️ Chem Study</button>
+  <button class="tab" id="tab-ch" onclick="switchTab('ch')">⚗️ Chem Quiz</button>
 </div>
 <div class="prog-bar">
   <div class="pb-top">
@@ -243,8 +245,93 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   </div>
 </div>
 
+<!-- Chemistry Study tab (Day 1) -->
+<div id="sec-chnotes" class="sec">
+  <div class="dyk" style="background:linear-gradient(135deg,#ECFDF5,#F0FDFA);border-color:#A7F3D0">
+    <div class="dyk-eye" style="color:#059669">⚗️ Chemistry · Day 1 · Introduction</div>
+    <div class="dyk-title" style="color:#064E3B">Science, Chemistry &amp; the Great Chemists</div>
+    <div class="dyk-body">Chemistry is the branch of science that studies the composition and properties of matter. Learn what science &amp; chemistry are, how alchemy began, and the scientists who built modern chemistry. Read the cards, then take the quiz.</div>
+  </div>
+
+  <div class="ql">🔬 Science &amp; Chemistry</div>
+  <div class="icard">
+    <h3>What is Science?</h3>
+    <p>Science is the systematic, ongoing effort to study, understand and use nature for meaningful purposes — built through observation and experiment. Its three main branches are <strong>Physics</strong> (matter &amp; energy), <strong>Chemistry</strong> (composition &amp; properties of matter) and <strong>Biology</strong> (living organisms).</p>
+  </div>
+  <div class="icard">
+    <h3>What is Chemistry?</h3>
+    <p>The branch of science that deals with the <strong>composition</strong> and the <strong>physical and chemical properties</strong> of matter — what substances are made of, how they are made, whether they change, and how they become useful.</p>
+  </div>
+
+  <div class="ql">⚗️ Alchemy — the ancient practice</div>
+  <div class="icard">
+    <h3>Alchemy &amp; Alchemists</h3>
+    <p>From the Greek word <strong>'Khemeia'</strong> — "art of transmuting metals". Alchemists were early chemists who mixed experiments with spiritual discipline (in India, mainly for medicines — now Ayurveda).</p>
+    <div class="ex"><strong>Goal:</strong> the mythical <strong>Philosopher's Stone</strong> — believed to turn base metals (iron, copper) into gold and bring wealth, health &amp; immortality. They never succeeded.</div>
+    <div class="hook">💡 The Iron Pillar near the Qutab Minar (7 m) is iron with a high percentage of phosphorous → rust-resistant.</div>
+  </div>
+  <div class="icard">
+    <h3>What alchemists DID achieve</h3>
+    <p>They developed methods to extract metals, made alloys, and were the first to isolate <strong>zinc</strong> and <strong>phosphorous</strong>. But with no separation of science &amp; spirituality and no standard language, alchemy faded — by the 18th century chemistry became a proper science.</p>
+  </div>
+
+  <div class="ql">👨‍🔬 Great Chemists</div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Scientist</th><th>Known for</th></tr></thead>
+      <tbody>
+        <tr><td>Robert Boyle</td><td>Father of Modern Chemistry; separated chemistry from alchemy</td></tr>
+        <tr><td>Antoine Lavoisier</td><td>Named carbon, hydrogen, oxygen; oxygen in respiration/combustion; water is a compound</td></tr>
+        <tr><td>John Dalton</td><td>Matter is made of atoms — Dalton's Atomic Theory</td></tr>
+        <tr><td>Dmitri Mendeleev</td><td>Periodic Law &amp; the Periodic Table</td></tr>
+        <tr><td>Acharya P.C. Ray</td><td>India's first pharmaceutical company</td></tr>
+        <tr><td>Alfred Nobel</td><td>Invented dynamite; the Nobel Prizes (10 Dec)</td></tr>
+        <tr><td>Marie Curie</td><td>Discovered radium; Nobel Prize twice; portable X-ray</td></tr>
+        <tr><td>Joseph Priestly</td><td>Oxygen</td></tr>
+        <tr><td>Daniel Rutherford</td><td>Nitrogen</td></tr>
+        <tr><td>Henry Cavendish</td><td>Hydrogen &amp; CO₂</td></tr>
+        <tr><td>Humphry Davy</td><td>Isolated potassium &amp; sodium; safety lamp</td></tr>
+        <tr><td>William Ramsay</td><td>Inert gases: helium, argon, krypton, xenon</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="margin-top:1.25rem;text-align:center;padding-bottom:1rem">
+    <button onclick="switchTab('ch')" style="padding:14px 32px;border-radius:14px;border:none;background:linear-gradient(135deg,#059669,#0D9488);color:#fff;font-size:15px;font-weight:600;cursor:pointer;width:100%;max-width:320px">Take the Chemistry Quiz →</button>
+  </div>
+</div>
+
+<!-- Chemistry Quiz tab (Day 1) -->
+<div id="sec-ch" class="sec">
+  <div class="dyk" style="background:linear-gradient(135deg,#ECFDF5,#F0FDFA);border-color:#A7F3D0">
+    <div class="dyk-eye" style="color:#059669">❓ Quiz · 15 Questions · Medium → Hard</div>
+    <div class="dyk-title" style="color:#064E3B">Chemistry Day 1 — Introduction &amp; Chemists</div>
+    <div class="dyk-body">10 core questions + 5 harder ones. You need <strong>9 / 15 (60%+)</strong> to mark Chemistry as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="ch-qnum">1 / 15</span></div>
+    <div class="sc"><label>Score</label><span id="ch-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="ch-prog" style="width:0%"></div></div><div class="pp" id="ch-pct">0%</div></div>
+  <div id="ch-card" class="card">
+    <div class="tp" id="ch-topic"></div>
+    <div class="qt" id="ch-q"></div>
+    <div class="opts" id="ch-opts"></div>
+    <div class="fb" id="ch-fb"></div>
+    <button class="nxt" id="ch-nxt">Next →</button>
+  </div>
+  <div id="ch-done" style="display:none" class="card dc">
+    <div class="di" id="ch-ficon">🎉</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="ch-fscore"></div>
+    <div class="dm" id="ch-fmsg"></div>
+    <button class="retry" id="ch-retry">Try again ↺</button>
+  </div>
+</div>
+
 <script>
-var SUBJECTS = [{"id":"f","label":"French","total":15}];
+var SUBJECTS = [{"id":"f","label":"French","total":15},{"id":"ch","label":"Chemistry","total":15}];
 var LS_PFX   = 'icse_w02_thu';
 
 function saveScore(id, score, total, label) {
@@ -291,7 +378,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["fnotes","f"];
+  var all = ["fnotes","f","chnotes","ch"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -484,6 +571,24 @@ quiz('f', [
   {"t":"Fill in the blank","q":"The French currency today is the ______.","o":["Euro","Franc","Dollar","Pound"],"a":0,"e":"France uses the Euro now (the Franc was used before)."},
   {"t":"Fill in the blank","q":"The two main rivers in France are the ______.","o":["Seine and Loire","Rhône and Po","Thames and Seine","Loire and Danube"],"a":0,"e":"The two famous rivers are the Seine and the Loire."}
 ], 'French');
+
+quiz('ch', [
+  {"t":"MCQ","q":"The branch of science that deals with the composition and properties of matter is called:","o":["Physics","Biology","Chemistry","Alchemy"],"a":2,"e":"Chemistry studies the composition and the physical & chemical properties of matter."},
+  {"t":"MCQ","q":"The Iron Pillar near the Qutab Minar is notable for:","o":["Being the tallest pillar in the world","Its rust-resistant composition","Being made entirely of gold","Its age of 5000 years"],"a":1,"e":"It is iron with a high percentage of phosphorous, which makes it rust-resistant."},
+  {"t":"MCQ","q":"Who is known as the \"Father of Modern Chemistry\"?","o":["Antoine Lavoisier","John Dalton","Robert William Boyle","Alfred Nobel"],"a":2,"e":"Boyle first performed experiments under controlled conditions and separated chemistry from alchemy."},
+  {"t":"MCQ","q":"The \"Philosopher's Stone\" was believed to:","o":["Cure all diseases","Turn base metals into gold","Make people immortal","All of the above"],"a":3,"e":"It was believed to bring wealth (gold), health (cure) and immortality."},
+  {"t":"MCQ","q":"Who discovered oxygen?","o":["Daniel Rutherford","Joseph Priestly","Henry Cavendish","Dmitri Mendeleev"],"a":1,"e":"Joseph Priestly discovered oxygen. Rutherford → nitrogen; Cavendish → hydrogen."},
+  {"t":"Fill in the blank","q":"The word \"Alchemy\" comes from the Greek word ______ meaning \"art of transmuting metals\".","o":["Khemeia","Khimia","Kemia","Alkahest"],"a":0,"e":"'Khemeia' = the art of transmuting metals."},
+  {"t":"Fill in the blank","q":"______ established water as a compound and named carbon, hydrogen and oxygen.","o":["Antoine Lavoisier","John Dalton","Robert Boyle","Dmitri Mendeleev"],"a":0,"e":"Lavoisier named C/H/O and showed water is a compound."},
+  {"t":"Fill in the blank","q":"______ proved that matter consists of small particles called atoms and proposed the atomic theory.","o":["John Dalton","Robert Boyle","Antoine Lavoisier","Marie Curie"],"a":0,"e":"Dalton's Atomic Theory: matter is made of atoms."},
+  {"t":"True / False","q":"Alchemists successfully found the \"Philosopher's Stone\" and turned iron into gold.","o":["True","False"],"a":1,"e":"False — alchemists never succeeded in finding it or making gold."},
+  {"t":"True / False","q":"Marie Curie won the Nobel Prize only once, for her discovery of radium.","o":["True","False"],"a":1,"e":"False — she won the Nobel Prize twice."},
+  {"t":"🔴 Hard","q":"The alchemists were the first to isolate which two elements?","o":["Zinc and phosphorous","Oxygen and nitrogen","Sodium and potassium","Helium and argon"],"a":0,"e":"Alchemists were the first to isolate zinc and phosphorous."},
+  {"t":"🔴 Hard","q":"Sir Humphry Davy is best known for:","o":["Discovering oxygen","Isolating potassium and sodium, and devising a safety lamp","Discovering nitrogen","Formulating the periodic table"],"a":1,"e":"Davy isolated potassium & sodium and devised the miners' safety lamp."},
+  {"t":"🔴 Hard","q":"Sir William Ramsay is credited with discovering which group of gases?","o":["Inert (noble) gases — helium, argon, krypton, xenon","Acidic gases","Hydrogen and oxygen","Greenhouse gases"],"a":0,"e":"Ramsay discovered the inert/noble gases (He, Ar, Kr, Xe)."},
+  {"t":"🔴 Hard","q":"Nitrogen was discovered by:","o":["Joseph Priestly","Daniel Rutherford","Henry Cavendish","Humphry Davy"],"a":1,"e":"Daniel Rutherford discovered nitrogen (Priestly → oxygen, Cavendish → hydrogen)."},
+  {"t":"🔴 Hard","q":"Why did alchemy fail to grow into a proper science?","o":["It used too much laboratory equipment","It did not separate scientific from spiritual practice and had no standardised method or common language","It was banned by all governments","It worked only with gold"],"a":1,"e":"No separation of science & spirituality and no standard language/method — so by the 18th century chemistry replaced it."}
+], 'Chemistry');
 
 refreshProgress();
 makeSaveButton('save-wrap');

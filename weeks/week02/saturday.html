@@ -73,11 +73,13 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 <a class="back" href="index.html">← Week 2</a>
 <header>
   <div class="logo">🏆</div>
-  <div><h1>Saturday · Week 2</h1><p>28 Jun 2026 · 2:30 – 3:00 PM · Physics Quiz — Matter</p></div>
+  <div><h1>Saturday · Week 2</h1><p>28 Jun 2026 · 2:30 – 4:10 PM · ⚡ Physics Quiz · ⚗️ Chemistry Quiz</p></div>
 </header>
 <div class="tabs">
-  <button class="tab active" id="tab-notes" onclick="switchTab('notes')">🔄 Quick Review</button>
-  <button class="tab" id="tab-pq" onclick="switchTab('pq')">❓ Quiz</button>
+  <button class="tab active" id="tab-notes" onclick="switchTab('notes')">🔄 Physics Review</button>
+  <button class="tab" id="tab-pq" onclick="switchTab('pq')">⚡ Physics Quiz</button>
+  <button class="tab" id="tab-chnotes" onclick="switchTab('chnotes')">⚗️ Chem Study</button>
+  <button class="tab" id="tab-ch" onclick="switchTab('ch')">⚗️ Chem Quiz</button>
 </div>
 <div class="prog-bar">
   <div class="pb-top">
@@ -182,8 +184,93 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   </div>
 </div>
 
+<!-- Chemistry Study tab (Day 2) -->
+<div id="sec-chnotes" class="sec">
+  <div class="dyk" style="background:linear-gradient(135deg,#ECFDF5,#F0FDFA);border-color:#A7F3D0">
+    <div class="dyk-eye" style="color:#059669">⚗️ Chemistry · Day 2 · Applications</div>
+    <div class="dyk-title" style="color:#064E3B">Chemistry in Everyday Life</div>
+    <div class="dyk-body">Chemistry touches food, farming, clothing, medicine, fuel and more — and has a dark side too. Read the cards, then take the quiz.</div>
+  </div>
+
+  <div class="ql">🌾 Food &amp; Agriculture</div>
+  <div class="icard">
+    <h3>Agro-chemicals</h3>
+    <p><strong>Fertilisers</strong> give nutrients &amp; raise crop yield (urea, sodium nitrate, potash, ammonium phosphate). <strong>Pesticides</strong> kill pests (e.g. Aldrin).</p>
+    <div class="ex"><strong>Insecticides</strong> kill insects (DDT, Gammaxene/BHC). <strong>Fungicides</strong> protect from fungi (Bordeaux mixture, sulphur).</div>
+  </div>
+  <div class="icard">
+    <h3>Food preservation</h3>
+    <p>Preservatives stop microorganisms &amp; decay: sodium benzoate, ascorbic acid, citric acid. <strong>Common salt</strong> preserves pickles; <strong>sugar</strong> preserves jams &amp; jellies.</p>
+  </div>
+
+  <div class="ql">👕 Clothing · 💊 Medicine · ⛽ Fuel</div>
+  <div class="icard">
+    <h3>Textiles, medicines &amp; petroleum</h3>
+    <p><strong>Synthetic fibres</strong> (nylon, polyester, spandex) are strong, wrinkle-resistant and dry fast. <strong>Medicines</strong>: aspirin, paracetamol, antibiotics (penicillin, tetracyclin). <strong>Petroleum refining</strong> gives petrol, diesel, LPG, CNG, kerosene and wax.</p>
+  </div>
+  <div class="icard">
+    <h3>Cosmetics, building materials &amp; industry</h3>
+    <p>Talcum powder comes from <strong>talc</strong> (magnesium, silicon, oxygen). Cement, mortar, steel, glass and paints are made by chemical processes. Common salt from sea water and sugar from sugarcane are also industrial chemical processes.</p>
+  </div>
+
+  <div class="ql">⚠️ Dark Side &amp; Abbreviations</div>
+  <div class="icard">
+    <h3>The dark side of chemistry</h3>
+    <p><strong>Chemical weapons / explosives</strong> (TNT, RDX, atom &amp; hydrogen bombs), <strong>addictive drugs</strong> (heroin, cocaine), and <strong>pollutants</strong> (poisonous gases, industrial waste) harm life and the environment.</p>
+  </div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Abbr.</th><th>Full form</th></tr></thead>
+      <tbody>
+        <tr><td>LPG</td><td>Liquified Petroleum Gas</td></tr>
+        <tr><td>DDT</td><td>Dichlorodiphenyl trichloroethane</td></tr>
+        <tr><td>BHC</td><td>Benzene hexachloride</td></tr>
+        <tr><td>TNT</td><td>Trinitro-toluene</td></tr>
+        <tr><td>RDX</td><td>Rapid Detonating Explosive</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="icard">
+    <h3>Energy resources</h3>
+    <p>Current sources: petroleum, coal, wood, nuclear fuels (exhaustible). Being studied for the future: <strong>solar, ocean energy and biogas</strong> — inexhaustible (renewable) sources.</p>
+  </div>
+
+  <div style="margin-top:1.25rem;text-align:center;padding-bottom:1rem">
+    <button onclick="switchTab('ch')" style="padding:14px 32px;border-radius:14px;border:none;background:linear-gradient(135deg,#059669,#0D9488);color:#fff;font-size:15px;font-weight:600;cursor:pointer;width:100%;max-width:320px">Take the Chemistry Quiz →</button>
+  </div>
+</div>
+
+<!-- Chemistry Quiz tab (Day 2) -->
+<div id="sec-ch" class="sec">
+  <div class="dyk" style="background:linear-gradient(135deg,#ECFDF5,#F0FDFA);border-color:#A7F3D0">
+    <div class="dyk-eye" style="color:#059669">❓ Quiz · 15 Questions · Medium → Hard</div>
+    <div class="dyk-title" style="color:#064E3B">Chemistry Day 2 — Applications</div>
+    <div class="dyk-body">10 core questions + 5 harder ones. You need <strong>9 / 15 (60%+)</strong> to mark Chemistry as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="ch-qnum">1 / 15</span></div>
+    <div class="sc"><label>Score</label><span id="ch-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="ch-prog" style="width:0%"></div></div><div class="pp" id="ch-pct">0%</div></div>
+  <div id="ch-card" class="card">
+    <div class="tp" id="ch-topic"></div>
+    <div class="qt" id="ch-q"></div>
+    <div class="opts" id="ch-opts"></div>
+    <div class="fb" id="ch-fb"></div>
+    <button class="nxt" id="ch-nxt">Next →</button>
+  </div>
+  <div id="ch-done" style="display:none" class="card dc">
+    <div class="di" id="ch-ficon">🎉</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="ch-fscore"></div>
+    <div class="dm" id="ch-fmsg"></div>
+    <button class="retry" id="ch-retry">Try again ↺</button>
+  </div>
+</div>
+
 <script>
-var SUBJECTS = [{"id":"pq","label":"Physics","total":10}];
+var SUBJECTS = [{"id":"pq","label":"Physics","total":10},{"id":"ch","label":"Chemistry","total":15}];
 var LS_PFX   = 'icse_w02_sat';
 
 function saveScore(id, score, total, label) {
@@ -230,7 +317,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["notes","pq"];
+  var all = ["notes","pq","chnotes","ch"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -417,6 +504,25 @@ quiz('pq', [
   {"t":"🔴 Hard · Intermolecular Force","q":"If water's intermolecular force suddenly became as strong as iron's, how would water change?","o":["Water would evaporate much faster","Water would flow faster than before","Water would behave like a solid — lose its ability to flow and have a fixed shape","Water would instantly turn into a gas"],"a":2,"e":"Very strong intermolecular forces = molecules cannot slide past each other → water becomes rigid like a solid."},
   {"t":"🔴 Hard · Intermolecular Space","q":"Imagine no intermolecular space exists anywhere. How would matter change?","o":["Everything would stay the same","Only gases would be affected","All matter would become extremely rigid; liquids and gases would lose the ability to flow","All solids would melt into liquids"],"a":2,"e":"Without space between particles, they cannot move relative to each other → no flow, no compression, extreme rigidity across all states."}
 ], 'Physics');
+
+quiz('ch', [
+  {"t":"MCQ","q":"Which of the following is NOT a preservative?","o":["Sodium benzoate","Ascorbic acid","Urea","Citric acid"],"a":2,"e":"Urea is a fertiliser, not a preservative."},
+  {"t":"MCQ","q":"Synthetic fibres like nylon and polyester are:","o":["Weak and wrinkle easily","Strong, wrinkle-resistant and dry quickly","Only used for natural fabrics","Found naturally in nature"],"a":1,"e":"Synthetic fibres are strong, wrinkle-resistant and dry quickly."},
+  {"t":"MCQ","q":"Bordeaux mixture and sulphur are examples of:","o":["Insecticides","Fertilisers","Fungicides","Preservatives"],"a":2,"e":"They are fungicides — they protect crops from harmful fungi."},
+  {"t":"MCQ","q":"Which of the following is an addictive drug?","o":["Penicillin","Aspirin","Heroin","Paracetamol"],"a":2,"e":"Heroin is an addictive drug; the others are medicines."},
+  {"t":"MCQ","q":"The mineral talc, used in talcum powder, contains which elements?","o":["Carbon, hydrogen, oxygen","Magnesium, silicon, oxygen","Iron, copper, zinc","Sodium, calcium, chlorine"],"a":1,"e":"Talc contains magnesium, silicon and oxygen."},
+  {"t":"Fill in the blank","q":"______ provide essential nutrients to crops and increase their yield.","o":["Fertilisers","Pesticides","Insecticides","Preservatives"],"a":0,"e":"Fertilisers (e.g. urea, ammonium phosphate) give nutrients and raise yield."},
+  {"t":"Fill in the blank","q":"The full form of TNT is ______.","o":["Trinitro-toluene","Trinitrogen toluene","Tetra-nitro toluene","Trinitro tetroxide"],"a":0,"e":"TNT = Trinitro-toluene, an explosive."},
+  {"t":"Fill in the blank","q":"______ are chemicals used to kill pests that affect the yield of crops and fruits.","o":["Pesticides","Fertilisers","Preservatives","Cosmetics"],"a":0,"e":"Pesticides kill pests (e.g. Aldrin)."},
+  {"t":"True / False","q":"Sugar acts as a preservative in pickles, and common salt acts as a preservative in jams and jellies.","o":["True","False"],"a":1,"e":"False — it is the opposite: salt preserves pickles, sugar preserves jams & jellies."},
+  {"t":"True / False","q":"Solar energy, ocean energy and biogas are exhaustible sources of energy.","o":["True","False"],"a":1,"e":"False — they are inexhaustible (renewable). Coal and petroleum are exhaustible."},
+  {"t":"🔴 Hard","q":"DDT and Gammaxene (BHC) are examples of:","o":["Fungicides","Insecticides","Fertilisers","Preservatives"],"a":1,"e":"DDT and BHC are insecticides — a type of pesticide that kills insects."},
+  {"t":"🔴 Hard","q":"The full form of DDT is:","o":["Dichlorodiphenyl trichloroethane","Benzene hexachloride","Trinitro-toluene","Rapid detonating explosive"],"a":0,"e":"DDT = Dichlorodiphenyl trichloroethane."},
+  {"t":"🔴 Hard","q":"Which of these belongs to the 'dark side of chemistry'?","o":["Fertilisers","Antibiotics","RDX and chemical weapons","Talcum powder"],"a":2,"e":"Explosives like RDX/TNT and chemical weapons are the harmful 'dark side' of chemistry."},
+  {"t":"🔴 Hard","q":"Preparing common salt from sea water and sugar from sugarcane juice are examples of chemistry's role in:","o":["Agriculture","Industry (chemical processes)","Cosmetics","Communication"],"a":1,"e":"These are industrial chemical processes."},
+  {"t":"🔴 Hard","q":"Which set lists ONLY products of petroleum refining?","o":["Petrol, diesel, LPG, kerosene","Urea, potash, DDT","Nylon, polyester, spandex","Aspirin, penicillin, tetracyclin"],"a":0,"e":"Petrol, diesel, LPG and kerosene all come from refining petroleum."}
+], 'Chemistry');
+
 refreshProgress();
 makeSaveButton('save-wrap');
 loadRemoteProgress(function(ok){ if(ok) refreshProgress(); });
