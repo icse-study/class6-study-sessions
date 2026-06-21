@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-06-21T04:31:19.799Z",
+  "lastSaved": "2026-06-21T04:31:42.444Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -137,7 +137,7 @@
       "label": "Kannada"
     },
     "icse_w01_sun_f": {
-      "attempts": 1,
+      "attempts": 3,
       "bestScore": 3,
       "totalQ": 3,
       "lastDate": "2026-06-21",
