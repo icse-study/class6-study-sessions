@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-06-20T10:26:00.150Z",
+  "lastSaved": "2026-06-21T04:28:04.554Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -116,11 +116,25 @@
       "label": "History & Civics"
     },
     "icse_w01_sat_pq": {
-      "attempts": 1,
+      "attempts": 934,
       "bestScore": 5,
       "totalQ": 5,
       "lastDate": "2026-06-20",
       "label": "Science Quiz"
+    },
+    "icse_w02_mon_m": {
+      "attempts": 582,
+      "bestScore": 7,
+      "totalQ": 10,
+      "lastDate": "2026-06-20",
+      "label": "Maths"
+    },
+    "icse_w01_sun_k": {
+      "attempts": 1,
+      "bestScore": 3,
+      "totalQ": 3,
+      "lastDate": "2026-06-21",
+      "label": "Kannada"
     }
   }
 }
