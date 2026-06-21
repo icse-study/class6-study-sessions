@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-06-21T04:32:05.280Z",
+  "lastSaved": "2026-06-21T04:32:29.549Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -151,7 +151,7 @@
       "label": "Geo+History"
     },
     "icse_w01_sun_mx": {
-      "attempts": 2,
+      "attempts": 3,
       "bestScore": 5,
       "totalQ": 5,
       "lastDate": "2026-06-21",
