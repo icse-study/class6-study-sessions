@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-06-21T04:28:04.554Z",
+  "lastSaved": "2026-06-21T04:28:28.292Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -135,6 +135,13 @@
       "totalQ": 3,
       "lastDate": "2026-06-21",
       "label": "Kannada"
+    },
+    "icse_w01_sun_f": {
+      "attempts": 1,
+      "bestScore": 3,
+      "totalQ": 3,
+      "lastDate": "2026-06-21",
+      "label": "French"
     }
   }
 }
