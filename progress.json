@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-06-21T04:32:29.549Z",
+  "lastSaved": "2026-06-21T13:51:14.707Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -39,21 +39,21 @@
       "label": "Physics"
     },
     "icse_w01_tue_c": {
-      "attempts": 1,
+      "attempts": 844,
       "bestScore": 4,
       "totalQ": 4,
       "lastDate": "2026-06-20",
       "label": "CS/Python"
     },
     "icse_w01_wed_g": {
-      "attempts": 1,
+      "attempts": 348,
       "bestScore": 5,
       "totalQ": 5,
       "lastDate": "2026-06-17",
       "label": "Geography"
     },
     "icse_w01_wed_e": {
-      "attempts": 1,
+      "attempts": 129,
       "bestScore": 4,
       "totalQ": 4,
       "lastDate": "2026-06-17",
