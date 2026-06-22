@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-06-22T14:01:07.108Z",
+  "lastSaved": "2026-06-22T14:03:55.559Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -163,6 +163,13 @@
       "totalQ": 10,
       "lastDate": "2026-06-22",
       "label": "Kannada Literature"
+    },
+    "icse_w02_mon_e": {
+      "attempts": 1,
+      "bestScore": 13,
+      "totalQ": 15,
+      "lastDate": "2026-06-22",
+      "label": "English Literature"
     }
   }
 }
