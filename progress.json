@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-06-22T13:56:44.757Z",
+  "lastSaved": "2026-06-22T14:01:07.108Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -123,10 +123,10 @@
       "label": "Science Quiz"
     },
     "icse_w02_mon_m": {
-      "attempts": 582,
-      "bestScore": 7,
+      "attempts": 584,
+      "bestScore": 8,
       "totalQ": 10,
-      "lastDate": "2026-06-20",
+      "lastDate": "2026-06-22",
       "label": "Maths"
     },
     "icse_w01_sun_k": {
