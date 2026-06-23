@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-06-23T01:25:37.183Z",
+  "lastSaved": "2026-06-23T13:00:44.106Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -170,6 +170,13 @@
       "totalQ": 15,
       "lastDate": "2026-06-22",
       "label": "English Literature"
+    },
+    "icse_w02_tue_p": {
+      "attempts": 1,
+      "bestScore": 9,
+      "totalQ": 10,
+      "lastDate": "2026-06-23",
+      "label": "Physics"
     }
   }
 }
