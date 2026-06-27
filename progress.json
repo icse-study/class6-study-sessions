@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-06-27T05:12:09.704Z",
+  "lastSaved": "2026-06-27T05:18:58.796Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -219,6 +219,13 @@
       "totalQ": 15,
       "lastDate": "2026-06-27",
       "label": "Chemistry"
+    },
+    "icse_w02_fri_k": {
+      "attempts": 3,
+      "bestScore": 7,
+      "totalQ": 10,
+      "lastDate": "2026-06-27",
+      "label": "Kannada Grammar"
     }
   }
 }
