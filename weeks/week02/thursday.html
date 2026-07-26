@@ -83,6 +83,7 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   <div><h1>Thursday · Week 2</h1><p>25 Jun 2026 · 6:00 – 7:50 PM · ➗ Maths · ⚗️ Chemistry · 🇫🇷 French</p></div>
 </header>
 <div class="tabs">
+  <button class="tab" id="tab-m" onclick="switchTab('m')">➗ Maths Recall</button>
   <button class="tab active" id="tab-fnotes" onclick="switchTab('fnotes')">📖 French Study</button>
   <button class="tab" id="tab-f" onclick="switchTab('f')">🇫🇷 French Quiz</button>
   <button class="tab" id="tab-chnotes" onclick="switchTab('chnotes')">⚗️ Chem Study</button>
@@ -301,6 +302,35 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   </div>
 </div>
 
+<!-- Maths Formula Recall tab -->
+<div id="sec-m" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">❓ Quiz · 15 Questions · Mental Practice</div>
+    <div class="dyk-title">Maths — Formula Recall</div>
+    <div class="dyk-body">Formulas and mental shortcuts: area &amp; perimeter, fraction rules, BODMAS, integer signs, HCF &amp; LCM. Try to work these <strong>in your head</strong> — that is the point of a recall session. You need <strong>9 / 15 (60%+)</strong> to mark Maths as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="m-qnum">1 / 15</span></div>
+    <div class="sc"><label>Score</label><span id="m-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="m-prog" style="width:0%"></div></div><div class="pp" id="m-pct">0%</div></div>
+  <div id="m-card" class="card">
+    <div class="tp" id="m-topic"></div>
+    <div class="qt" id="m-q"></div>
+    <div class="opts" id="m-opts"></div>
+    <div class="fb" id="m-fb"></div>
+    <button class="nxt" id="m-nxt">Next →</button>
+  </div>
+  <div id="m-done" style="display:none" class="card dc">
+    <div class="di" id="m-ficon">🎉</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="m-fscore"></div>
+    <div class="dm" id="m-fmsg"></div>
+    <button class="retry" id="m-retry">Try again ↺</button>
+  </div>
+</div>
+
 <!-- Chemistry Quiz tab (Day 1) -->
 <div id="sec-ch" class="sec">
   <div class="dyk" style="background:linear-gradient(135deg,#ECFDF5,#F0FDFA);border-color:#A7F3D0">
@@ -331,7 +361,7 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 </div>
 
 <script>
-var SUBJECTS = [{"id":"f","label":"French","total":15},{"id":"ch","label":"Chemistry","total":15}];
+var SUBJECTS = [{"id":"m","label":"Maths","total":15},{"id":"f","label":"French","total":15},{"id":"ch","label":"Chemistry","total":15}];
 var LS_PFX   = 'icse_w02_thu';
 
 function saveScore(id, score, total, label) {
@@ -378,7 +408,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["fnotes","f","chnotes","ch"];
+  var all = ["m","fnotes","f","chnotes","ch"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -554,6 +584,24 @@ function makeSaveButton(containerId){
   row.appendChild(btn);row.appendChild(cfg);
   wrap.appendChild(row);
 }
+
+quiz('m', [
+  {"t":"Area & Perimeter","q":"A square has a side of 9 cm. What is its AREA?","o":["36 cm²","18 cm²","81 cm²","81 cm"],"a":2,"e":"Area of a square = side × side = 9 × 9 = 81 cm². Note the unit is cm² — area is always in square units."},
+  {"t":"Area & Perimeter","q":"A square has a side of 12 m. What is its PERIMETER?","o":["48 m","144 m","24 m","48 m²"],"a":0,"e":"Perimeter of a square = 4 × side = 4 × 12 = 48 m. Perimeter is a length, so the unit is m, not m²."},
+  {"t":"Area & Perimeter","q":"A triangle has base 10 cm and height 6 cm. Its area is?","o":["60 cm²","30 cm²","16 cm²","32 cm²"],"a":1,"e":"Area of a triangle = ½ × base × height = ½ × 10 × 6 = 30 cm². Forgetting the ½ is the most common slip."},
+  {"t":"Area & Perimeter","q":"Two rectangles both have a perimeter of 20 cm. What can you say about their areas?","o":["The areas must also be equal","The areas can be different","The areas must both be 25 cm²","A rectangle cannot have perimeter 20 cm"],"a":1,"e":"Equal perimeter does not mean equal area. A 6×4 rectangle gives area 24 cm²; a 9×1 rectangle has the same perimeter but area 9 cm²."},
+  {"t":"Fractions","q":"To ADD two fractions with different denominators, what must you do first?","o":["Add the numerators and the denominators","Make the denominators the same","Turn them upside down","Multiply them together"],"a":1,"e":"You need a common denominator before adding. Adding denominators (1/2 + 1/3 = 2/5) is wrong — the real answer is 3/6 + 2/6 = 5/6."},
+  {"t":"Fractions","q":"What is 3/4 ÷ 1/2?","o":["3/8","1/2","3/2","2/3"],"a":2,"e":"Dividing by a fraction = multiplying by its reciprocal. 3/4 ÷ 1/2 = 3/4 × 2/1 = 6/4 = 3/2. Notice dividing by a fraction under 1 makes the answer BIGGER."},
+  {"t":"Fractions","q":"What is 2/3 × 3/5 in its simplest form?","o":["6/15","2/5","5/8","6/8"],"a":1,"e":"Multiply straight across: (2×3)/(3×5) = 6/15. Divide both by 3 → 2/5. Always simplify the final answer."},
+  {"t":"Decimals","q":"In the number 4.05, what does the digit 5 stand for?","o":["5 tenths","5 hundredths","5 thousandths","5 units"],"a":1,"e":"After the decimal point the places are tenths, hundredths, thousandths. The 5 is in the second place, so it is 5 hundredths."},
+  {"t":"BODMAS","q":"Work out 12 + 6 ÷ 3 × 2","o":["16","12","2","20"],"a":0,"e":"BODMAS: divide and multiply first, left to right. 6 ÷ 3 = 2, then 2 × 2 = 4, then 12 + 4 = 16. Doing 12 + 6 first gives the wrong answer."},
+  {"t":"Integers","q":"What is (−7) × (−3)?","o":["−21","21","−10","10"],"a":1,"e":"A negative times a negative gives a positive. (−7) × (−3) = +21."},
+  {"t":"Integers","q":"What is (−15) ÷ 3?","o":["5","−5","−12","−45"],"a":1,"e":"Different signs give a negative result. (−15) ÷ 3 = −5."},
+  {"t":"Integers","q":"Which of these has the GREATEST value?","o":["−1","−9","0","−20"],"a":2,"e":"On the number line, further right = greater. 0 beats every negative number, and among negatives −1 is the largest."},
+  {"t":"Properties","q":"Using the distributive property, the quickest way to work out 7 × 98 mentally is?","o":["7 × 100 − 7 × 2","7 × 90 + 8","7 × 100 + 7 × 2","7 × 98 cannot be done mentally"],"a":0,"e":"7 × 98 = 7 × (100 − 2) = 700 − 14 = 686. Breaking a number into an easy part plus/minus a small part is the core mental-maths trick."},
+  {"t":"Properties","q":"Which operation is NOT commutative (order does not matter)?","o":["Addition","Multiplication","Subtraction","None — all are commutative"],"a":2,"e":"Subtraction is not commutative: 8 − 3 = 5 but 3 − 8 = −5. Addition and multiplication give the same answer either way round."},
+  {"t":"HCF & LCM","q":"The LCM of 4 and 6 is 12. What is their HCF?","o":["1","2","4","24"],"a":1,"e":"HCF is the largest number dividing both. Factors of 4: 1,2,4. Factors of 6: 1,2,3,6. The highest shared factor is 2. Check: HCF × LCM = 2 × 12 = 24 = 4 × 6. ✓"}
+], 'Maths');
 
 quiz('f', [
   {"t":"MCQ · Pronunciation","q":"How is the letter 'c' pronounced before 'e' in French?","o":["'k' sound","'s' sound","'sh' sound","Silent"],"a":1,"e":"Before e or i, 'c' is soft → 's' sound (e.g. ce). Before a/o/u it is 'k' (comment)."},
