@@ -67,7 +67,7 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   <div class="logo">📅</div>
   <div><h1>Saturday · Week 1</h1><p>15 Jun – 21 Jun 2026 · Class 6 ICSE</p></div>
 </header>
-<div class="tabs"><button class="tab active" id="tab-m" onclick="switchTab('m')">➗ Maths</button><button class="tab" id="tab-h" onclick="switchTab('h')">🏛️ History & Civics</button><button class="tab" id="tab-pq" onclick="switchTab('pq')">⚡⚗️🧬 Science Quiz</button></div>
+<div class="tabs"><button class="tab active" id="tab-m" onclick="switchTab('m')">➗ Maths</button><button class="tab" id="tab-h" onclick="switchTab('h')">🏛️ History & Civics</button><button class="tab" id="tab-pq" onclick="switchTab('pq')">⚡⚗️🧬 Science Quiz</button><button class="tab" id="tab-ch" onclick="switchTab('ch')">⚗️ Chemistry</button></div>
 <div class="prog-bar">
   <div class="pb-top">
     <span class="pb-label">Session progress</span>
@@ -130,10 +130,28 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   <div class="ds" id="pq-fscore"></div>
   <div class="dm" id="pq-fmsg"></div>
   <button class="retry" id="pq-retry">Try again ↺</button>
+</div></div><div id="sec-ch" class="sec"><div class="dyk" style="background:#ECFDF5;border-color:#A7F3D0"><div class="dyk-eye" style="color:#059669">✨ Did you know?</div><div class="dyk-title" style="color:#065F46">⚗️ Everything you touch is chemistry!</div><div class="dyk-body" style="color:#047857">The air you breathe, the food you eat, even your own body — all of it is matter made of atoms, constantly changing. This quiz revises Thursday's Chemistry: matter, states, elements, compounds, mixtures and symbols.</div></div><div class="ql">Questions</div><div class="sr">
+  <div class="sc"><label>Question</label><span id="ch-qnum">1 / 15</span></div>
+  <div class="sc"><label>Score</label><span id="ch-score">0</span></div>
+</div>
+<div class="pr"><div class="pt"><div class="pf" id="ch-prog" style="width:0%"></div></div><div class="pp" id="ch-pct">0%</div></div>
+<div id="ch-card" class="card">
+  <div class="tp" id="ch-topic"></div>
+  <div class="qt" id="ch-q"></div>
+  <div class="opts" id="ch-opts"></div>
+  <div class="fb" id="ch-fb"></div>
+  <button class="nxt" id="ch-nxt">Next →</button>
+</div>
+<div id="ch-done" style="display:none" class="card dc">
+  <div class="di" id="ch-ficon">🎉</div>
+  <div class="dt">Done!</div>
+  <div class="ds" id="ch-fscore"></div>
+  <div class="dm" id="ch-fmsg"></div>
+  <button class="retry" id="ch-retry">Try again ↺</button>
 </div></div>
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-var SUBJECTS = [{"id": "m", "label": "Maths", "total": 5}, {"id": "h", "label": "History & Civics", "total": 4}, {"id": "pq", "label": "Science Quiz", "total": 5}];
+var SUBJECTS = [{"id": "m", "label": "Maths", "total": 5}, {"id": "h", "label": "History & Civics", "total": 4}, {"id": "pq", "label": "Science Quiz", "total": 5}, {"id": "ch", "label": "Chemistry", "total": 15}];
 var LS_PFX   = 'icse_w01_sat';
 
 // ── Storage ───────────────────────────────────────────────────────────────────
@@ -183,7 +201,7 @@ function refreshProgress() {
 
 // ── Tab switcher ──────────────────────────────────────────────────────────────
 function switchTab(t) {
-  var all = ["m", "h", "pq"];
+  var all = ["m", "h", "pq", "ch"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -414,6 +432,24 @@ function makeSaveButton(containerId) {
 quiz('m', [{"t": "Word Problem", "q": "Riya has 24 chocolates. Gives 1/3 to friend. How many does she keep?", "o": ["6", "8", "16", "12"], "a": 2, "e": "1/3 of 24 = 8. She gives 8, keeps 24 \u2212 8 = 16."}, {"t": "Word Problem", "q": "A book costs \u20b9120. Buy 3, how much do you pay?", "o": ["\u20b9300", "\u20b9360", "\u20b9240", "\u20b9420"], "a": 1, "e": "120 \u00d7 3 = \u20b9360."}, {"t": "Word Problem", "q": "Class has 40 students, 15 absent. What fraction is present?", "o": ["15/40", "25/40", "1/4", "3/8"], "a": 1, "e": "40 \u2212 15 = 25 present. Fraction = 25/40."}, {"t": "Word Problem", "q": "Today is Monday. What day in 9 days?", "o": ["Tuesday", "Wednesday", "Thursday", "Friday"], "a": 1, "e": "7 days = next Monday, then 2 more = Wednesday."}, {"t": "Word Problem", "q": "Rectangle: length 10 cm, width 4 cm. Perimeter?", "o": ["14 cm", "28 cm", "40 cm", "20 cm"], "a": 1, "e": "P = 2(l+w) = 2(10+4) = 28 cm."}], 'Maths');
 quiz('h', [{"t": "History", "q": "What does History study?", "o": ["Future events", "Past events and civilisations", "Living organisms", "The Earth"], "a": 1, "e": "History studies past events and civilisations to understand the world."}, {"t": "Ancient India", "q": "Where was the Indus Valley Civilisation?", "o": ["Along the Ganga", "Along the Indus River", "In Deccan Plateau", "Along the Brahmaputra"], "a": 1, "e": "The Indus Valley Civilisation (3300\u20131300 BCE) thrived along the Indus River."}, {"t": "Civics", "q": "What is a Constitution?", "o": ["A history book", "Fundamental laws governing a country", "A geography textbook", "A list of rulers"], "a": 1, "e": "A Constitution is the supreme law \u2014 it defines citizens' rights and government structure."}, {"t": "Civics", "q": "India became a Republic on?", "o": ["15 Aug 1947", "26 Jan 1950", "2 Oct 1869", "26 Nov 1949"], "a": 1, "e": "India became a Republic on 26 January 1950 \u2014 that's Republic Day!"}], 'History & Civics');
 quiz('pq', [{"t": "Physics", "q": "Which instrument measures temperature?", "o": ["Barometer", "Thermometer", "Voltmeter", "Ammeter"], "a": 1, "e": "A thermometer measures temperature."}, {"t": "Chemistry", "q": "Which is a mixture?", "o": ["Water (H\u2082O)", "Salt (NaCl)", "Air", "Oxygen (O\u2082)"], "a": 2, "e": "Air is a mixture \u2014 mainly nitrogen (78%) and oxygen (21%)."}, {"t": "Biology", "q": "How many chambers does the human heart have?", "o": ["2", "3", "4", "6"], "a": 2, "e": "4 chambers: right atrium, right ventricle, left atrium, left ventricle."}, {"t": "Physics", "q": "Light travels fastest in?", "o": ["Water", "Glass", "Air", "Vacuum"], "a": 3, "e": "Light travels fastest in vacuum at 3\u00d710\u2078 m/s."}, {"t": "Chemistry", "q": "Rust forms when iron reacts with?", "o": ["Nitrogen", "Water and oxygen", "Carbon dioxide", "Hydrogen"], "a": 1, "e": "Rust (iron oxide) forms when iron reacts with water and oxygen."}], 'Science Quiz');
+
+quiz('ch', [
+{"t": "What is Chemistry", "q": "Two questions are asked in a lab. Which one is a chemist's question rather than a physicist's?", "o": ["How fast does the ball fall?", "What new substance forms when iron is left in damp air?", "How much force is needed to lift the box?", "How loud is the sound of the bell?"], "a": 1, "e": "Chemistry studies what matter is made of and how it changes into new substances. Falling, force and sound are all physics — the substance itself does not change."},
+{"t": "States of Matter", "q": "Why is fire NOT counted as a state of matter?", "o": ["It is too hot to measure", "It is a reaction giving off heat and light, not a form of matter", "It has no colour", "It only exists in gases"], "a": 1, "e": "The three states are solid, liquid and gas. Fire is the result of a chemical reaction (burning) — it is an event, not a form that matter takes."},
+{"t": "States of Matter", "q": "A substance has a fixed volume but takes the shape of its container. What is it?", "o": ["Solid", "Liquid", "Gas", "Any of the three"], "a": 1, "e": "Liquids keep a fixed volume but flow to fit the container's shape. Solids fix both shape and volume; gases fix neither."},
+{"t": "States of Matter", "q": "In which state are the particles packed closest together and only able to vibrate in place?", "o": ["Gas", "Liquid", "Solid", "They are the same in all three"], "a": 2, "e": "In a solid the particles are tightly packed in fixed positions and can only vibrate — that is why solids hold their shape."},
+{"t": "Elements", "q": "Which of these is an element?", "o": ["Brass", "Steel", "Mercury", "Bronze"], "a": 2, "e": "Mercury is a single element (Hg). Brass, steel and bronze are all alloys — mixtures of two or more metals."},
+{"t": "Compounds", "q": "Water is H₂O. What does the small 2 tell you?", "o": ["Water is the 2nd element", "Each molecule has 2 hydrogen atoms", "Water has 2 states", "Hydrogen is twice as heavy"], "a": 1, "e": "The subscript counts atoms: H₂O means 2 hydrogen atoms joined to 1 oxygen atom in every molecule of water."},
+{"t": "Compounds", "q": "How many atoms in total are in one molecule of carbon dioxide, CO₂?", "o": ["2", "3", "4", "1"], "a": 1, "e": "CO₂ = 1 carbon atom + 2 oxygen atoms = 3 atoms in total."},
+{"t": "Symbols", "q": "The symbol for gold is Au. Where does the 'Au' come from?", "o": ["The Latin name Aurum", "The scientist who found it", "The country Australia", "Its golden colour in Greek"], "a": 0, "e": "Several symbols come from Latin names: gold = Aurum (Au), silver = Argentum (Ag), iron = Ferrum (Fe), sodium = Natrium (Na)."},
+{"t": "Symbols", "q": "Which symbol correctly matches its element?", "o": ["So — Sodium", "Na — Sodium", "Si — Silver", "Ir — Iron"], "a": 1, "e": "Sodium is Na (from Natrium). Silver is Ag, iron is Fe, and Si is actually silicon."},
+{"t": "Symbols", "q": "A symbol has two letters, like Mg for magnesium. Which is the correct way to write it?", "o": ["MG — both capital", "mg — both small", "Mg — first capital, second small", "M.g — with a dot"], "a": 2, "e": "The rule is always: first letter capital, second letter small. MG or mg would mean something else entirely."},
+{"t": "Mixtures", "q": "Air is described as a mixture, not a compound. Why?", "o": ["Its gases are not chemically joined and can be separated", "It contains only one gas", "It has no oxygen in it", "It is invisible"], "a": 0, "e": "Air's gases (about 78% nitrogen, 21% oxygen) are simply mixed together, not chemically bonded, so they can be separated by physical means."},
+{"t": "Mixtures", "q": "Salt is stirred into water until it disappears. How can the salt be got back?", "o": ["It cannot — it has become a new substance", "By filtering the solution", "By evaporating the water", "By adding more salt"], "a": 2, "e": "Dissolving is a physical change. Evaporating the water leaves the salt behind. Filtering fails because the dissolved salt passes straight through the paper."},
+{"t": "Compounds vs Mixtures", "q": "Which statement about a compound is TRUE?", "o": ["It can be separated by filtering", "Its properties are the same as the elements in it", "Its elements are joined in a fixed ratio", "Any amount of each element can be used"], "a": 2, "e": "A compound always joins its elements in a fixed ratio and has completely new properties. It can only be split by a chemical reaction, not by filtering."},
+{"t": "Changes", "q": "Which of these is a CHEMICAL change?", "o": ["Ice melting into water", "Iron rusting in damp air", "Sugar dissolving in tea", "Water boiling into steam"], "a": 1, "e": "Rusting forms a brand new substance (iron oxide) and cannot be undone easily. Melting, dissolving and boiling are physical changes — no new substance appears."},
+{"t": "Changes", "q": "What is the clearest sign that a chemical change has taken place?", "o": ["The substance changed shape", "A new substance with new properties formed", "The substance got warmer", "The substance was cut into pieces"], "a": 1, "e": "The key test is a NEW substance. Warming, cutting and reshaping all leave the same substance behind, so they are physical changes."}
+], 'Chemistry');
 refreshProgress();
 makeSaveButton('save-wrap');
 loadRemoteProgress(function(ok) {
