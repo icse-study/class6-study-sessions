@@ -400,7 +400,7 @@ var GH_REPO = 'icse-study/class6-study-sessions';
 var GH_FILE = 'progress.json';
 var GH_API  = 'https://api.github.com/repos/'+GH_REPO+'/contents/'+GH_FILE;
 
-function satt(n){n=+n||0;return (n>1000||n<0)?(n<0?0:1):n;}
+function satt(n){n=+n||0;return (n>50||n<0)?(n<0?0:1):n;}
 function getToken(){ return localStorage.getItem('icse_gh_token')||''; }
 
 function getAllLocalScores(){
