@@ -80,13 +80,15 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 <body>
 <a class="back" href="index.html">← Week 2</a>
 <header>
-  <div class="logo">🗣️</div>
-  <div><h1>Friday · Week 2</h1><p>27 Jun 2026 · 6:15 – 7:00 PM · ಕನ್ನಡ ವ್ಯಾಕರಣ — Kannada Grammar &amp; Writing</p></div>
+  <div class="logo">📚</div>
+  <div><h1>Friday · Week 2</h1><p>27 Jun 2026 · 6:00 – 7:50 PM · 🧬 Science Diagrams · 🗣️ Kannada Grammar · 🧬 Biology</p></div>
 </header>
 <div class="tabs">
+  <button class="tab" id="tab-s" onclick="switchTab('s')">🔬 Diagram Recall</button>
   <button class="tab active" id="tab-notes" onclick="switchTab('notes')">📖 Grammar Study</button>
   <button class="tab" id="tab-write" onclick="switchTab('write')">✍️ Practice</button>
-  <button class="tab" id="tab-k" onclick="switchTab('k')">❓ Quiz</button>
+  <button class="tab" id="tab-k" onclick="switchTab('k')">❓ Kannada Quiz</button>
+  <button class="tab" id="tab-b" onclick="switchTab('b')">🧬 Biology</button>
 </div>
 <div class="prog-bar">
   <div class="pb-top">
@@ -98,6 +100,35 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 </div>
 
 <!-- Study tab -->
+<!-- Science Diagram Recall tab (warm-up) -->
+<div id="sec-s" class="sec">
+  <div class="dyk" style="background:#ECFDF5;border-color:#A7F3D0">
+    <div class="dyk-eye" style="color:#059669">🔬 Warm-Up · 10 Questions · Keywords &amp; Labels</div>
+    <div class="dyk-title" style="color:#065F46">Science Diagram Recall</div>
+    <div class="dyk-body" style="color:#047857">Quick-fire <strong>labelling and keyword</strong> recall — the parts you must be able to name on a diagram. This is the warm-up for tonight's Biology quiz, so do it first. You need <strong>6 / 10 (60%+)</strong> to mark this Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="s-qnum">1 / 10</span></div>
+    <div class="sc"><label>Score</label><span id="s-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="s-prog" style="width:0%"></div></div><div class="pp" id="s-pct">0%</div></div>
+  <div id="s-card" class="card">
+    <div class="tp" id="s-topic"></div>
+    <div class="qt" id="s-q"></div>
+    <div class="opts" id="s-opts"></div>
+    <div class="fb" id="s-fb"></div>
+    <button class="nxt" id="s-nxt">Next →</button>
+  </div>
+  <div id="s-done" style="display:none" class="card dc">
+    <div class="di" id="s-ficon">🎉</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="s-fscore"></div>
+    <div class="dm" id="s-fmsg"></div>
+    <button class="retry" id="s-retry">Try again ↺</button>
+  </div>
+</div>
+
 <div id="sec-notes" class="sec active">
   <div class="dyk">
     <div class="dyk-eye">🗣️ ಕನ್ನಡ ವ್ಯಾಕರಣ · Grammar</div>
@@ -258,8 +289,37 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   </div>
 </div>
 
+<!-- Biology tab -->
+<div id="sec-b" class="sec">
+  <div class="dyk" style="background:#ECFDF5;border-color:#A7F3D0">
+    <div class="dyk-eye" style="color:#059669">❓ Quiz · 15 Questions · Medium → Hard</div>
+    <div class="dyk-title" style="color:#065F46">Biology — Cells, Classification &amp; Plant Parts</div>
+    <div class="dyk-body" style="color:#047857">Goes deeper than the diagram warm-up: what each part actually <strong>does</strong>, and how living things are grouped. You need <strong>9 / 15 (60%+)</strong> to mark Biology as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="b-qnum">1 / 15</span></div>
+    <div class="sc"><label>Score</label><span id="b-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="b-prog" style="width:0%"></div></div><div class="pp" id="b-pct">0%</div></div>
+  <div id="b-card" class="card">
+    <div class="tp" id="b-topic"></div>
+    <div class="qt" id="b-q"></div>
+    <div class="opts" id="b-opts"></div>
+    <div class="fb" id="b-fb"></div>
+    <button class="nxt" id="b-nxt">Next →</button>
+  </div>
+  <div id="b-done" style="display:none" class="card dc">
+    <div class="di" id="b-ficon">🎉</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="b-fscore"></div>
+    <div class="dm" id="b-fmsg"></div>
+    <button class="retry" id="b-retry">Try again ↺</button>
+  </div>
+</div>
+
 <script>
-var SUBJECTS = [{"id":"k","label":"Kannada Grammar","total":10}];
+var SUBJECTS = [{"id":"s","label":"Science Diagrams","total":10},{"id":"k","label":"Kannada Grammar","total":10},{"id":"b","label":"Biology","total":15}];
 var LS_PFX   = 'icse_w02_fri';
 
 function saveScore(id, score, total, label) {
@@ -306,7 +366,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["notes","write","k"];
+  var all = ["s","notes","write","k","b"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -481,6 +541,37 @@ function makeSaveButton(containerId){
   row.appendChild(btn);row.appendChild(cfg);
   wrap.appendChild(row);
 }
+
+quiz('s', [
+  {"t":"Plant Parts","q":"On a plant diagram, which part is labelled as the one that anchors the plant and takes in water?","o":["Stem","Root","Leaf","Bud"],"a":1,"e":"The ROOT anchors the plant in the soil and absorbs water and minerals."},
+  {"t":"Leaf","q":"What is the correct name for the broad, flat green part of a leaf?","o":["Lamina","Petiole","Midrib","Stipule"],"a":0,"e":"The lamina (or blade) is the broad flat part. The petiole is the stalk joining it to the stem; the midrib is the thick central vein."},
+  {"t":"Leaf","q":"What are the tiny pores on the surface of a leaf called?","o":["Veins","Stomata","Pores of Bowman","Cuticles"],"a":1,"e":"Stomata (singular: stoma) are the tiny openings, mostly on the underside of the leaf."},
+  {"t":"Leaf","q":"Which green substance in a leaf is labelled as the one that traps sunlight?","o":["Chlorophyll","Chloroform","Cytoplasm","Cellulose"],"a":0,"e":"Chlorophyll is the green pigment that traps sunlight. Be careful — chlorophyll, cytoplasm and cellulose all start similarly but are very different things."},
+  {"t":"Flower","q":"Which part of a flower produces pollen?","o":["Stigma","Ovary","Anther","Sepal"],"a":2,"e":"The anther, held up by the filament, produces pollen. Anther + filament together = the stamen, the male part."},
+  {"t":"Flower","q":"The pistil is the female part of a flower. Which three parts make it up?","o":["Stigma, style, ovary","Anther, filament, stigma","Petal, sepal, ovary","Stigma, filament, ovule"],"a":0,"e":"The pistil (carpel) = stigma (catches pollen) + style (the stalk) + ovary (holds the ovules)."},
+  {"t":"Cell","q":"Which part of a cell is labelled as the control centre?","o":["Cytoplasm","Vacuole","Nucleus","Membrane"],"a":2,"e":"The nucleus controls all the cell's activities and holds the genetic material."},
+  {"t":"Cell","q":"What is the jelly-like substance that fills a cell and holds the other parts?","o":["Cytoplasm","Chlorophyll","Cell sap","Plasma wall"],"a":0,"e":"Cytoplasm is the jelly-like material filling the cell, in which the other cell parts sit."},
+  {"t":"Cell","q":"Which structure is found in a plant cell but NOT in an animal cell?","o":["Nucleus","Cell membrane","Cell wall","Cytoplasm"],"a":2,"e":"Only plant cells have a rigid cell wall outside the membrane. Both cell types have a nucleus, membrane and cytoplasm."},
+  {"t":"Transport","q":"Which tube carries water from the roots UP to the leaves?","o":["Phloem","Xylem","Artery","Stomata"],"a":1,"e":"Xylem carries water and minerals upward. Phloem carries food. Remember: 'Xylem = water rises'."}
+], 'Science Diagrams');
+
+quiz('b', [
+  {"t":"Photosynthesis","q":"Plants are called PRODUCERS. Why?","o":["They produce oxygen only","They make their own food using sunlight","They produce seeds","They are eaten by animals"],"a":1,"e":"Producers make their own food by photosynthesis. Animals are consumers because they must eat other living things."},
+  {"t":"Photosynthesis","q":"Which TWO raw materials does a plant take in for photosynthesis?","o":["Oxygen and water","Carbon dioxide and water","Nitrogen and sunlight","Glucose and oxygen"],"a":1,"e":"Carbon dioxide (from the air) + water (from the roots), using sunlight energy, make glucose and release oxygen. Oxygen and glucose are the PRODUCTS, not the raw materials."},
+  {"t":"Photosynthesis","q":"In which part of the plant cell does photosynthesis actually happen?","o":["Nucleus","Vacuole","Chloroplast","Cell wall"],"a":2,"e":"Chloroplasts are the tiny green structures containing chlorophyll — that is where photosynthesis takes place."},
+  {"t":"Leaf Function","q":"Why are most leaves broad and flat?","o":["To catch as much sunlight as possible","To store water","To make the plant look attractive","To protect the stem"],"a":0,"e":"A broad flat surface gives the largest area to absorb sunlight and exchange gases — the leaf's two main jobs."},
+  {"t":"Leaf Function","q":"What is the main job of the stomata?","o":["To absorb water from soil","To let gases in and out, and water vapour escape","To make chlorophyll","To support the leaf"],"a":1,"e":"Stomata let carbon dioxide in, oxygen out, and water vapour escape during transpiration. They can open and close using guard cells."},
+  {"t":"Transpiration","q":"What is transpiration?","o":["Water moving up the stem","Loss of water vapour from a plant's leaves","Making food from sunlight","Taking in carbon dioxide"],"a":1,"e":"Transpiration is the loss of water as vapour, mainly through the stomata. It also helps pull more water up from the roots."},
+  {"t":"Transport","q":"A ring of bark is stripped from a tree trunk, cutting the phloem but not the xylem. What happens?","o":["The leaves die of thirst at once","Food cannot travel down to the roots","Water stops rising to the leaves","Nothing changes"],"a":1,"e":"Phloem carries FOOD made in the leaves down to the rest of the plant. Cut it and the roots are starved, even though water still rises through the intact xylem."},
+  {"t":"Cells","q":"Why does a plant cell keep a fixed, boxy shape while an animal cell is more rounded?","o":["Plant cells have a rigid cell wall","Plant cells have no nucleus","Animal cells have no cytoplasm","Animal cells are always smaller"],"a":0,"e":"The rigid cell wall made of cellulose gives plant cells their fixed, box-like shape and support."},
+  {"t":"Cells","q":"What is the job of the cell membrane?","o":["To make food for the cell","To control what enters and leaves the cell","To store the cell's food","To carry out photosynthesis"],"a":1,"e":"The cell membrane is selectively permeable — it controls which substances pass in and out of the cell."},
+  {"t":"Cells","q":"Which of these is made of just ONE cell?","o":["Mango tree","Amoeba","Housefly","Earthworm"],"a":1,"e":"Amoeba is unicellular — a single cell doing every job of life. The others are multicellular."},
+  {"t":"Classification","q":"What makes an animal a VERTEBRATE?","o":["It has legs","It has a backbone","It lays eggs","It lives on land"],"a":1,"e":"Vertebrates have a backbone (spine). Invertebrates — insects, worms, jellyfish — have none."},
+  {"t":"Classification","q":"Which group of animals has young that begin life in water with gills, then develop lungs for land?","o":["Reptiles","Fish","Amphibians","Mammals"],"a":2,"e":"Amphibians such as frogs start as tadpoles breathing through gills, then grow lungs. 'Amphi' means 'both' — both lives."},
+  {"t":"Classification","q":"Which feature is found in ALL mammals?","o":["They fly","They have feathers","They feed their young on milk","They lay eggs"],"a":2,"e":"All mammals feed their young on milk and have hair or fur. Most give birth to live young, though a few, like the platypus, lay eggs."},
+  {"t":"Classification","q":"A bat flies and a whale swims. Why are both still classed as mammals?","o":["Because they are large","Because they feed their young on milk and are warm-blooded","Because they lay eggs","Because they live in groups"],"a":1,"e":"Classification depends on body features, not on where an animal lives or how it moves. Both are warm-blooded and feed their young on milk."},
+  {"t":"Roots","q":"Besides anchoring the plant, what is the root's other main job?","o":["Absorbing water and minerals","Making food","Producing seeds","Releasing oxygen"],"a":0,"e":"Roots absorb water and dissolved minerals from the soil, taken in through tiny root hairs that increase the surface area."}
+], 'Biology');
 
 quiz('k', [
   {"t":"Varnamala","q":"ಯೋಗವಾಹಗಳಲ್ಲಿ ಅನುಸ್ವಾರವನ್ನು ಸೂಚಿಸುವುದು ಯಾವುದು?","o":["ಅಃ (ವಿಸರ್ಗ)","ಅಂ (ಅನುಸ್ವಾರ)","ಅ","ಕ್"],"a":1,"e":"ಯೋಗವಾಹಗಳು 2: ಅಂ (ಅನುಸ್ವಾರ) ಮತ್ತು ಅಃ (ವಿಸರ್ಗ). ಅನುಸ್ವಾರ = ಅಂ."},
