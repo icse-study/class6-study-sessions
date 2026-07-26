@@ -55,16 +55,6 @@ Progress optionally syncs to `progress.json` in this repo through the GitHub Con
 
 When local and remote scores merge, `attempts` uses `Math.max` — never a sum — and every value passes through a `satt()` sanitizer. See the sync section of `CLAUDE.md` for the invariants before touching that code.
 
-## Build status
+## Adding content
 
-Content is added week by week. As of 26 July 2026:
-
-| Week | Built |
-|---|---|
-| Week 1 | 22 / 22 ✅ |
-| Week 2 | 20 / 22 |
-| Week 3 | 6 / 22 |
-| Week 4 | 1 / 22 |
-| Weeks 5–41 | placeholders |
-
-Undeveloped days show a locked placeholder card until their session is built. `CLAUDE.md` documents how to fill one in — including the rule that a subject's id must match `DAY_SUBJECTS_MAP` in both `index.html` and `dashboard.html`, and must stay the same across all 41 weeks.
+Content is added week by week. Undeveloped days show a locked placeholder card until their session is built. `CLAUDE.md` documents how to fill one in — including the rule that a subject's id must match `DAY_SUBJECTS_MAP` in both `index.html` and `dashboard.html`, and must stay the same across all 41 weeks.
