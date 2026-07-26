@@ -131,3 +131,16 @@ Token must have **Contents: Read & Write** on this repo only.
 ### Sync merge rule (important)
 
 When merging local and remote scores (`mergeScores` / `applyRemoteToLocal` in every page, and the inline merge in `settings.html`), `attempts` must use **`Math.max`**, never a sum. Summing on every sync compounds exponentially (Fibonacci-like) and blew the counter up to billions. Each merge wraps values in `satt(n)` — a sanitizer that resets absurd values (`>1000` or negative) to `1` — so any residual corruption self-heals as data flows through. `bestScore` already uses `max`; `attempts` now matches. If you copy the engine into a new page, keep the `satt()` helper and the `Math.max(satt(...), satt(...))` form.
+
+**Three invariants keep this fixed — check all three when copying the engine:**
+
+1. **Merge uses max, never sum:** `attempts: Math.max(satt(a.attempts), satt(b.attempts))`. A `+` here is the original bug and compounds exponentially.
+2. **The increment is wrapped:** `saveScore` must use `attempts: satt(ex.attempts)+1`, not `(ex.attempts||0)+1`. Unwrapped, a corrupt value keeps growing instead of being caught.
+3. **The threshold is 50, not 1000:** `satt()` resets values `>50` or negative to `1`. The 1000 bar was too high — the real corruption sat between 129 and 934 and slipped through for weeks. A Class 6 student never re-takes one quiz 50 times, so anything above that is corruption by definition.
+
+Two `satt()` variants exist in the codebase (a `parseInt` form and a `+n||0` form); both must carry the same threshold. Audit with:
+
+```bash
+grep -rh "function satt" --include="*.html" . | sort -u          # thresholds agree?
+grep -rn "attempts.*+ *1" --include="*.html" . | grep -v satt    # unwrapped increments?
+```

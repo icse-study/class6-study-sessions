@@ -368,7 +368,7 @@ function saveScore(id, score, total, label) {
   var key = LS_PFX+'_'+id, ex = {};
   try{ ex = JSON.parse(localStorage.getItem(key)||'{}'); }catch(e){}
   try{ localStorage.setItem(key, JSON.stringify({
-    attempts: (ex.attempts||0)+1,
+    attempts: satt(ex.attempts)+1,
     bestScore: Math.max(ex.bestScore||0, score),
     totalQ: total,
     lastDate: new Date().toISOString().slice(0,10),
