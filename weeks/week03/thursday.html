@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
-<title>Week 3 · Thursday · French · Class 6 ICSE</title>
+<title>Week 3 · Thursday · Maths · Chemistry · French · Class 6 ICSE</title>
 <style>*{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0F4FF;min-height:100vh;color:#1a1a2e}
 header{background:linear-gradient(135deg,#4F46E5,#7C3AED);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:12px}
@@ -26,6 +26,10 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 .icard .ex{font-size:13px;color:#6B7280;margin-top:6px;padding:6px 10px;background:#F9FAFB;border-radius:8px;border-left:3px solid #C7D2FE}
 .icard .hook{font-size:13px;color:#3730A3;margin-top:6px;padding:6px 10px;background:#EEF2FF;border-radius:8px;border-left:3px solid #818CF8;font-style:italic}
 .ql{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9CA3AF;margin:1.25rem 0 0.6rem}
+.tip{background:#FFFBEB;border:1px solid #FCD34D;border-radius:14px;padding:1rem 1.25rem;margin-top:0.5rem;margin-bottom:1rem}
+.tip-eye{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:#92400E;margin-bottom:6px}
+.tip-body{font-size:13px;color:#78350F;line-height:1.8}
+.fx{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:14px;font-weight:700;color:#3730A3;background:#EEF2FF;border-radius:8px;padding:2px 8px;display:inline-block}
 .tbl-wrap{overflow-x:auto;border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:1rem}
 .tbl{width:100%;border-collapse:collapse;font-size:13px;background:#fff}
 .tbl th{background:#EEF2FF;color:#3730A3;font-weight:700;padding:9px 12px;text-align:left;border-bottom:2px solid #C7D2FE;white-space:nowrap}
@@ -76,12 +80,16 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 <body>
 <a class="back" href="index.html">← Week 3</a>
 <header>
-  <div class="logo">🇫🇷</div>
-  <div><h1>Thursday · Week 3</h1><p>2 Jul 2026 · 7:10 – 7:50 PM · 🇫🇷 French — Verbs &amp; Grammar (Day 3)</p></div>
+  <div class="logo">📚</div>
+  <div><h1>Thursday · Week 3</h1><p>2 Jul 2026 · ➗ Maths Formula Recall · ⚗️ Chemistry · 🇫🇷 French</p></div>
 </header>
 <div class="tabs">
-  <button class="tab active" id="tab-fnotes" onclick="switchTab('fnotes')">📖 Study</button>
-  <button class="tab" id="tab-f" onclick="switchTab('f')">❓ Quiz</button>
+  <button class="tab active" id="tab-mnotes" onclick="switchTab('mnotes')">➗ Formula Sheet</button>
+  <button class="tab" id="tab-m" onclick="switchTab('m')">➗ Formula Quiz</button>
+  <button class="tab" id="tab-chnotes" onclick="switchTab('chnotes')">⚗️ Chemistry Study</button>
+  <button class="tab" id="tab-ch" onclick="switchTab('ch')">⚗️ Chemistry Quiz</button>
+  <button class="tab" id="tab-fnotes" onclick="switchTab('fnotes')">🇫🇷 French Study</button>
+  <button class="tab" id="tab-f" onclick="switchTab('f')">🇫🇷 French Quiz</button>
 </div>
 <div class="prog-bar">
   <div class="pb-top">
@@ -92,8 +100,240 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   <div id="save-wrap"></div>
 </div>
 
-<!-- Study tab -->
-<div id="sec-fnotes" class="sec active">
+<!-- Maths Formula Sheet tab -->
+<div id="sec-mnotes" class="sec active">
+  <div class="dyk">
+    <div class="dyk-eye">➗ Maths · Formula Recall</div>
+    <div class="dyk-title">The formula sheet</div>
+    <div class="dyk-body">Mensuration, commerce, motion, statistics and identities — all in one place. Read each row aloud once, cover it, and say it back. Then take the 15-question quiz.</div>
+  </div>
+
+  <div class="ql">📐 Area &amp; perimeter (2-D)</div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Shape</th><th>Area</th><th>Perimeter</th></tr></thead>
+      <tbody>
+        <tr><td>Rectangle</td><td><span class="fx">l × b</span></td><td><span class="fx">2(l + b)</span></td></tr>
+        <tr><td>Square</td><td><span class="fx">a × a = a²</span></td><td><span class="fx">4 × a</span></td></tr>
+        <tr><td>Triangle</td><td><span class="fx">½ × b × h</span></td><td>sum of the 3 sides</td></tr>
+        <tr><td>Parallelogram</td><td><span class="fx">b × h</span></td><td>2(sum of adjacent sides)</td></tr>
+        <tr><td>Circle</td><td><span class="fx">π r²</span></td><td>Circumference = <span class="fx">2 π r</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="icard">
+    <h3>Watch the traps</h3>
+    <p>For a triangle the <strong>height must be perpendicular</strong> to the base — not a slanting side. For a circle, <strong>2πr</strong> is the distance <em>around</em> it (circumference) while <strong>πr²</strong> is the space <em>inside</em> it (area).</p>
+    <div class="hook">💡 π ≈ 22/7 ≈ 3.14. Area formulas always give square units (cm²); perimeter gives plain units (cm).</div>
+  </div>
+
+  <div class="ql">🧊 Volume &amp; surface area (3-D)</div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Solid</th><th>Volume</th><th>Total surface area</th></tr></thead>
+      <tbody>
+        <tr><td>Cuboid</td><td><span class="fx">l × b × h</span></td><td><span class="fx">2(lb + bh + hl)</span></td></tr>
+        <tr><td>Cube (edge a)</td><td><span class="fx">a³</span></td><td><span class="fx">6a²</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="icard">
+    <h3>Why 6a² ?</h3>
+    <p>A cube has <strong>6 identical square faces</strong>, and each face has area a². So the total surface area is 6 × a² = <strong>6a²</strong>. Volume uses all three dimensions, so it is a × a × a = a³ and is measured in cubic units (cm³).</p>
+  </div>
+
+  <div class="ql">💰 Commerce &amp; 🚗 motion</div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Quantity</th><th>Formula</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td>Profit</td><td><span class="fx">SP − CP</span></td><td>when SP &gt; CP</td></tr>
+        <tr><td>Loss</td><td><span class="fx">CP − SP</span></td><td>when CP &gt; SP</td></tr>
+        <tr><td>Profit %</td><td><span class="fx">(Profit ÷ CP) × 100</span></td><td>always on <strong>CP</strong></td></tr>
+        <tr><td>Simple Interest</td><td><span class="fx">(P × R × T) ÷ 100</span></td><td>P = principal, R = rate % p.a., T = years</td></tr>
+        <tr><td>Amount</td><td><span class="fx">P + SI</span></td><td></td></tr>
+        <tr><td>Speed</td><td><span class="fx">Distance ÷ Time</span></td><td>Distance = Speed × Time</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="ql">📊 Statistics, algebra &amp; temperature</div>
+  <div class="icard">
+    <h3>Mean</h3>
+    <p><span class="fx">Mean = Sum of all observations ÷ Number of observations</span></p>
+    <div class="ex">Marks 4, 6, 8, 10, 12 → sum 40 ÷ 5 = mean 8.</div>
+  </div>
+  <div class="icard">
+    <h3>Algebraic identities</h3>
+    <p><span class="fx">(a + b)² = a² + 2ab + b²</span><br>
+    <span class="fx">(a − b)² = a² − 2ab + b²</span><br>
+    <span class="fx">(a + b)(a − b) = a² − b²</span></p>
+    <div class="hook">💡 The commonest mistake is writing (a + b)² = a² + b². The middle term <strong>2ab</strong> is never optional.</div>
+  </div>
+  <div class="icard">
+    <h3>Celsius → Fahrenheit</h3>
+    <p><span class="fx">F = (9/5) × C + 32</span> &nbsp;and back: <span class="fx">C = (5/9) × (F − 32)</span></p>
+    <div class="ex">C = 100 → F = (9/5)(100) + 32 = 180 + 32 = 212 °F (boiling point of water).</div>
+  </div>
+  <div class="tip">
+    <div class="tip-eye">🧠 Recall drill</div>
+    <div class="tip-body">Cover the tables and say aloud: area of a triangle · circumference of a circle · TSA of a cube · SI · speed · (a + b)². If any one hesitates, read that row again before starting the quiz.</div>
+  </div>
+
+  <div style="margin-top:1.25rem;text-align:center;padding-bottom:1rem">
+    <button onclick="switchTab('m')" style="padding:14px 32px;border-radius:14px;border:none;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-size:15px;font-weight:600;cursor:pointer;width:100%;max-width:320px">Take the Formula Quiz →</button>
+  </div>
+</div>
+
+<!-- Maths Formula Quiz tab -->
+<div id="sec-m" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">❓ Quiz · 15 Questions</div>
+    <div class="dyk-title">Maths Formula Recall</div>
+    <div class="dyk-body">Mensuration, commerce, motion, mean and identities. You need <strong>9 / 15 (60%+)</strong> to mark Maths as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="m-qnum">1 / 15</span></div>
+    <div class="sc"><label>Score</label><span id="m-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="m-prog" style="width:0%"></div></div><div class="pp" id="m-pct">0%</div></div>
+  <div id="m-card" class="card">
+    <div class="tp" id="m-topic"></div>
+    <div class="qt" id="m-q"></div>
+    <div class="opts" id="m-opts"></div>
+    <div class="fb" id="m-fb"></div>
+    <button class="nxt" id="m-nxt">Next →</button>
+  </div>
+  <div id="m-done" style="display:none" class="card dc">
+    <div class="di" id="m-ficon">🎉</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="m-fscore"></div>
+    <div class="dm" id="m-fmsg"></div>
+    <button class="retry" id="m-retry">Try again ↺</button>
+  </div>
+</div>
+
+<!-- Chemistry Study tab -->
+<div id="sec-chnotes" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">⚗️ Chemistry · Matter &amp; Separation</div>
+    <div class="dyk-title">States of matter, changes of state &amp; mixtures</div>
+    <div class="dyk-body">What matter is, how it changes state, how pure substances differ from mixtures, and how mixtures are separated. Read the cards, then take the quiz.</div>
+  </div>
+
+  <div class="ql">🧱 Matter and its states</div>
+  <div class="icard">
+    <h3>Matter</h3>
+    <p><strong>Matter</strong> is anything that <strong>occupies space and has mass</strong>. It is made of tiny particles that are always moving and that attract one another.</p>
+    <div class="ex">Air, water, sugar, iron, wood, milk — all matter. Light, heat and sound are NOT matter (no mass, no volume).</div>
+  </div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Property</th><th>🧊 Solid</th><th>💧 Liquid</th><th>💨 Gas</th></tr></thead>
+      <tbody>
+        <tr><td>Shape</td><td><strong>Definite</strong></td><td>Takes the container's</td><td>Takes the container's</td></tr>
+        <tr><td>Volume</td><td><strong>Definite</strong></td><td>Definite</td><td>Not definite</td></tr>
+        <tr><td>Particle spacing</td><td>Very close</td><td>Slightly apart</td><td>Very far apart</td></tr>
+        <tr><td>Force of attraction</td><td>Strongest</td><td>Weaker</td><td>Almost none</td></tr>
+        <tr><td>Compressibility</td><td>None</td><td>Negligible</td><td><strong>High</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="icard">
+    <h3>Why gases compress so easily</h3>
+    <p>Gas particles are <strong>very far apart</strong> with large empty spaces between them and almost no force of attraction. Pressing them simply pushes the particles closer into that empty space. In solids and liquids the particles are already touching, so there is nowhere left to go.</p>
+    <div class="hook">💡 That is why a cylinder can hold a whole roomful of LPG.</div>
+  </div>
+
+  <div class="ql">🔥 Changes of state</div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Process</th><th>Change</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>Melting (fusion)</td><td>Solid → Liquid</td><td>Ice → water at 0 °C</td></tr>
+        <tr><td>Freezing (solidification)</td><td>Liquid → Solid</td><td>Water freezes at <strong>0 °C</strong></td></tr>
+        <tr><td>Boiling / Vaporisation</td><td>Liquid → Gas (at boiling point)</td><td>Water boils at 100 °C</td></tr>
+        <tr><td><strong>Evaporation</strong></td><td>Liquid → Vapour <em>below</em> boiling point, from the surface only</td><td>Wet clothes drying</td></tr>
+        <tr><td><strong>Condensation</strong></td><td>Gas → Liquid</td><td>Dew on a cold glass</td></tr>
+        <tr><td><strong>Sublimation</strong></td><td>Solid → Gas directly (no liquid stage)</td><td>Camphor, naphthalene balls, dry ice, iodine, ammonium chloride</td></tr>
+        <tr><td>Deposition</td><td>Gas → Solid directly</td><td>Frost forming</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="icard">
+    <h3>Boiling vs evaporation</h3>
+    <p><strong>Boiling</strong> happens at one fixed temperature, throughout the whole liquid, and needs heating. <strong>Evaporation</strong> happens at <em>any</em> temperature, only at the surface, and is a cooling process.</p>
+  </div>
+
+  <div class="ql">🧪 Pure substances &amp; mixtures</div>
+  <div class="icard">
+    <h3>The two families</h3>
+    <p>A <strong>pure substance</strong> has only one kind of particle. The two types are <strong>elements</strong> (one kind of atom — iron, oxygen, gold) and <strong>compounds</strong> (two or more elements chemically joined in a fixed ratio — water, salt, CO₂).</p>
+    <p>A <strong>mixture</strong> has two or more substances simply mixed, in <em>any</em> ratio, with no chemical bonding — so its parts keep their own properties and can be separated by physical means.</p>
+    <div class="ex"><strong>Air is a mixture</strong> — nitrogen, oxygen, carbon dioxide and water vapour are not chemically combined, their proportions vary from place to place, and they can be separated physically.</div>
+  </div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Method</th><th>Used to separate</th></tr></thead>
+      <tbody>
+        <tr><td>Handpicking</td><td>Large visible impurities from grain</td></tr>
+        <tr><td>Winnowing</td><td>Lighter husk from heavier grain using wind</td></tr>
+        <tr><td>Sieving</td><td>Particles of different sizes (flour from bran)</td></tr>
+        <tr><td><strong>Filtration</strong></td><td>Insoluble solid from a liquid — <strong>tea leaves from tea</strong>, sand from water</td></tr>
+        <tr><td><strong>Sedimentation</strong></td><td>Heavier insoluble particles <em>settling</em> at the bottom</td></tr>
+        <tr><td>Decantation</td><td>Pouring off the clear liquid after sedimentation</td></tr>
+        <tr><td>Evaporation</td><td>Dissolved solid from a solution (salt from sea water)</td></tr>
+        <tr><td>Sublimation</td><td>A subliming solid from a non-subliming one (camphor + sand)</td></tr>
+        <tr><td>Magnetic separation</td><td>Iron filings from sulphur or sand</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="ql">🔬 Symbols &amp; the lab</div>
+  <div class="icard">
+    <h3>Useful facts</h3>
+    <p>Chemical symbol of water = <strong>H₂O</strong> (2 hydrogen atoms + 1 oxygen atom). Carbon dioxide = CO₂, common salt = NaCl, oxygen = O₂.</p>
+    <p>Temperature is measured with a <strong>thermometer</strong> (a laboratory thermometer reads about −10 °C to 110 °C). Mass is measured with a beam balance, and volume of a liquid with a measuring cylinder.</p>
+    <div class="hook">💡 On the Celsius scale water freezes at <strong>0 °C</strong> and boils at <strong>100 °C</strong>.</div>
+  </div>
+
+  <div style="margin-top:1.25rem;text-align:center;padding-bottom:1rem">
+    <button onclick="switchTab('ch')" style="padding:14px 32px;border-radius:14px;border:none;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-size:15px;font-weight:600;cursor:pointer;width:100%;max-width:320px">Take the Chemistry Quiz →</button>
+  </div>
+</div>
+
+<!-- Chemistry Quiz tab -->
+<div id="sec-ch" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">❓ Quiz · 15 Questions</div>
+    <div class="dyk-title">Matter, Changes of State &amp; Separation</div>
+    <div class="dyk-body">States of matter, sublimation, mixtures and separation methods. You need <strong>9 / 15 (60%+)</strong> to mark Chemistry as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="ch-qnum">1 / 15</span></div>
+    <div class="sc"><label>Score</label><span id="ch-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="ch-prog" style="width:0%"></div></div><div class="pp" id="ch-pct">0%</div></div>
+  <div id="ch-card" class="card">
+    <div class="tp" id="ch-topic"></div>
+    <div class="qt" id="ch-q"></div>
+    <div class="opts" id="ch-opts"></div>
+    <div class="fb" id="ch-fb"></div>
+    <button class="nxt" id="ch-nxt">Next →</button>
+  </div>
+  <div id="ch-done" style="display:none" class="card dc">
+    <div class="di" id="ch-ficon">🎉</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="ch-fscore"></div>
+    <div class="dm" id="ch-fmsg"></div>
+    <button class="retry" id="ch-retry">Try again ↺</button>
+  </div>
+</div>
+
+<!-- French Study tab -->
+<div id="sec-fnotes" class="sec">
   <div class="dyk">
     <div class="dyk-eye">🇫🇷 Français · Day 3 · Verbs &amp; Grammar</div>
     <div class="dyk-title">Les verbes, les articles et la négation</div>
@@ -192,7 +432,7 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 </div>
 
 <script>
-var SUBJECTS = [{"id":"f","label":"French","total":15}];
+var SUBJECTS = [{"id":"m","label":"Maths","total":15},{"id":"ch","label":"Chemistry","total":15},{"id":"f","label":"French","total":15}];
 var LS_PFX   = 'icse_w03_thu';
 
 function saveScore(id, score, total, label) {
@@ -239,7 +479,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["fnotes","f"];
+  var all = ["mnotes","m","chnotes","ch","fnotes","f"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -415,6 +655,42 @@ function makeSaveButton(containerId){
   row.appendChild(btn);row.appendChild(cfg);
   wrap.appendChild(row);
 }
+
+quiz('m', [
+  {"t":"Area","q":"What is the formula for the area of a rectangle?","o":["length × breadth","2 × (length + breadth)","½ × length × breadth","length + breadth"],"a":0,"e":"Area of a rectangle = l × b, measured in square units. 2(l + b) is its perimeter."},
+  {"t":"Perimeter","q":"What is the formula for the perimeter of a square?","o":["4 × side","side × side","2 × side","6 × side²"],"a":0,"e":"A square has 4 equal sides, so perimeter = 4a. Its area is a²."},
+  {"t":"Area","q":"What is the formula for the area of a triangle?","o":["½ × base × height","base × height","½ × (base + height)","3 × base"],"a":0,"e":"Area of a triangle = ½ × b × h, where the height is perpendicular to the base."},
+  {"t":"Circle","q":"What is the circumference of a circle of radius r?","o":["2 π r","π r²","π d²","2 π r²"],"a":0,"e":"Circumference = 2πr (the distance around). πr² is the area (the space inside)."},
+  {"t":"Commerce","q":"Write the formula for Simple Interest.","o":["(P × R × T) ÷ 100","P × R × T","(P + R + T) ÷ 100","(P × R) ÷ T"],"a":0,"e":"SI = PRT/100, where P = principal, R = rate % per annum, T = time in years."},
+  {"t":"Commerce","q":"If SP is greater than CP, Profit is calculated as:","o":["SP − CP","CP − SP","SP + CP","(SP ÷ CP) × 100"],"a":0,"e":"Profit = SP − CP. If CP > SP it is a loss = CP − SP. Profit % is always worked out on the CP."},
+  {"t":"Volume","q":"What is the volume of a cuboid of length l, breadth b and height h?","o":["l × b × h","2(lb + bh + hl)","l + b + h","6 × l × b"],"a":0,"e":"Volume = l × b × h (cubic units). 2(lb + bh + hl) is its total surface area."},
+  {"t":"Area","q":"What is the formula for the area of a parallelogram?","o":["base × height","½ × base × height","2 × (base + height)","base × base"],"a":0,"e":"Area of a parallelogram = b × h — double a triangle on the same base and height."},
+  {"t":"Motion","q":"Write the formula for speed.","o":["Distance ÷ Time","Time ÷ Distance","Distance × Time","Distance + Time"],"a":0,"e":"Speed = Distance / Time. Rearranged: Distance = Speed × Time, Time = Distance / Speed."},
+  {"t":"Surface area","q":"What is the total surface area of a cube of edge a?","o":["6a²","a³","4a","12a"],"a":0,"e":"A cube has 6 identical square faces, each of area a² → TSA = 6a². Its volume is a³."},
+  {"t":"Statistics","q":"How is the mean of a set of observations found?","o":["Sum of observations ÷ number of observations","The middle observation","The most frequent observation","Largest − smallest observation"],"a":0,"e":"Mean = sum ÷ count. The middle value is the median and the most frequent is the mode."},
+  {"t":"🔴 Identity","q":"What is the expansion of (a + b)² ?","o":["a² + 2ab + b²","a² + b²","a² − 2ab + b²","2a + 2b"],"a":0,"e":"(a + b)² = a² + 2ab + b². Forgetting the middle term 2ab is the most common mistake."},
+  {"t":"Circle","q":"What is the formula for the area of a circle?","o":["π r²","2 π r","π d","½ π r"],"a":0,"e":"Area = πr², where π ≈ 22/7. Take care not to swap it with 2πr, the circumference."},
+  {"t":"Perimeter","q":"What is the perimeter of a rectangle?","o":["2 × (length + breadth)","length × breadth","length + breadth","4 × length"],"a":0,"e":"Perimeter = 2(l + b), because opposite sides of a rectangle are equal."},
+  {"t":"🔴 Conversion","q":"Which formula converts a Celsius temperature C into Fahrenheit F?","o":["F = (9/5) × C + 32","F = (5/9) × C + 32","F = (9/5) × (C − 32)","F = C + 32"],"a":0,"e":"F = (9/5)C + 32. Check it: C = 100 gives F = 180 + 32 = 212 °F, the boiling point of water."}
+], 'Maths Formula Recall');
+
+quiz('ch', [
+  {"t":"Definition","q":"Matter is defined as anything that:","o":["Occupies space and has mass","Can be seen and touched","Has colour and smell","Can be burnt"],"a":0,"e":"Matter occupies space (has volume) and has mass. Light, heat and sound are not matter."},
+  {"t":"States","q":"What are the three common states of matter?","o":["Solid, liquid and gas","Solid, liquid and plasma","Hot, cold and warm","Element, compound and mixture"],"a":0,"e":"Solid, liquid and gas are the three common states. Plasma is the fourth, found at very high temperatures."},
+  {"t":"States","q":"Which state of matter has BOTH a definite shape and a definite volume?","o":["Solid","Liquid","Gas","Vapour"],"a":0,"e":"Only solids have both. Liquids have a definite volume but take the container's shape; gases have neither."},
+  {"t":"Change of state","q":"The process in which a solid changes directly into a gas is called:","o":["Sublimation","Evaporation","Condensation","Melting"],"a":0,"e":"Sublimation skips the liquid stage — camphor, naphthalene balls, dry ice and iodine all sublime."},
+  {"t":"Change of state","q":"A liquid changing into vapour at ANY temperature below its boiling point, from its surface only, is called:","o":["Evaporation","Boiling","Condensation","Sublimation"],"a":0,"e":"Evaporation is a surface phenomenon that happens at any temperature; boiling happens throughout the liquid at a fixed temperature."},
+  {"t":"Temperature","q":"What is the freezing point of water on the Celsius scale?","o":["0 °C","32 °C","100 °C","−10 °C"],"a":0,"e":"Water freezes at 0 °C and boils at 100 °C. (32 is the freezing point on the Fahrenheit scale.)"},
+  {"t":"Separation","q":"Which technique separates tea leaves from brewed tea?","o":["Filtration","Evaporation","Sublimation","Winnowing"],"a":0,"e":"Tea leaves are an insoluble solid in a liquid, so a strainer filters them out."},
+  {"t":"Separation","q":"The settling down of heavier insoluble solid particles in a liquid is called:","o":["Sedimentation","Decantation","Filtration","Condensation"],"a":0,"e":"Sedimentation is the settling; pouring off the clear liquid above the sediment is decantation."},
+  {"t":"Examples","q":"Which of these is a common example of a substance that sublimes?","o":["Camphor","Common salt","Sand","Iron"],"a":0,"e":"Camphor (also naphthalene, dry ice, iodine, ammonium chloride) turns straight from solid to gas."},
+  {"t":"Pure substances","q":"What are the two main types of pure substances?","o":["Elements and compounds","Solids and liquids","Mixtures and solutions","Metals and non-metals"],"a":0,"e":"An element has one kind of atom; a compound has two or more elements chemically joined in a fixed ratio."},
+  {"t":"🔴 Hard","q":"Air is considered a mixture because:","o":["Its gases are not chemically combined, are present in varying proportions, and can be separated physically","It is invisible and has no smell","It contains only oxygen","It is a compound of nitrogen and oxygen"],"a":0,"e":"Air's gases keep their own properties, vary in proportion from place to place, and are separable by physical means — the definition of a mixture."},
+  {"t":"Change of state","q":"The conversion of water vapour back into liquid water is called:","o":["Condensation","Evaporation","Sublimation","Freezing"],"a":0,"e":"Condensation is gas → liquid, like dew forming on a cold glass. Freezing is liquid → solid."},
+  {"t":"Lab","q":"Which instrument is used in a laboratory to measure temperature?","o":["Thermometer","Barometer","Beam balance","Measuring cylinder"],"a":0,"e":"A thermometer measures temperature; a barometer measures air pressure and a beam balance measures mass."},
+  {"t":"Symbols","q":"What is the chemical formula for water?","o":["H₂O","CO₂","O₂","NaCl"],"a":0,"e":"Water is H₂O — two hydrogen atoms joined to one oxygen atom."},
+  {"t":"🔴 Hard","q":"Why are gases far more compressible than solids and liquids?","o":["Their particles are very far apart with large empty spaces and almost no force of attraction","Gas particles are lighter in weight","Gases have no mass","Gas particles are much smaller than solid particles"],"a":0,"e":"Compressing pushes gas particles into the large empty spaces between them. In solids and liquids the particles already touch, so there is no space left."}
+], 'Chemistry');
 
 quiz('f', [
   {"t":"MCQ · Être","q":"How do you say \"I am\" in French?","o":["Je ai","Je suis","Je es","Je avons"],"a":1,"e":"être (to be): je suis = I am."},

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
-<title>Week 3 · Tuesday · Physics · Class 6 ICSE</title>
+<title>Week 3 · Tuesday · Maths · Physics · Python · Class 6 ICSE</title>
 <style>*{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0F4FF;min-height:100vh;color:#1a1a2e}
 header{background:linear-gradient(135deg,#059669,#0D9488);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:12px}
@@ -68,17 +68,27 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 .pb-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9CA3AF}
 .sb{font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;background:#F3F4F6;color:#9CA3AF}
 .sp{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
-.save-btn{width:100%;padding:12px;border-radius:12px;border:1.5px solid #059669;background:transparent;color:#059669;font-size:14px;font-weight:600;cursor:pointer;margin-top:4px}</style>
+.save-btn{width:100%;padding:12px;border-radius:12px;border:1.5px solid #059669;background:transparent;color:#059669;font-size:14px;font-weight:600;cursor:pointer;margin-top:4px}
+.code{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;background:#0F172A;color:#E2E8F0;border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.65;overflow-x:auto;margin-top:8px;white-space:pre}
+.code .cm{color:#94A3B8;font-style:italic}
+.code .kw{color:#F472B6}
+.code .st{color:#86EFAC}
+.icard code{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;background:#F1F5F9;color:#0F172A;padding:1px 6px;border-radius:6px;font-size:13px}
+.tbl code{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;background:#F1F5F9;color:#0F172A;padding:1px 5px;border-radius:5px;font-size:12px}</style>
 </head>
 <body>
 <a class="back" href="index.html">← Week 3</a>
 <header>
-  <div class="logo">⚡</div>
-  <div><h1>Tuesday · Week 3</h1><p>30 Jun 2026 · 6:15 – 7:00 PM · ⚡ Physics — Matter (Solids), Day 1</p></div>
+  <div class="logo">📚</div>
+  <div><h1>Tuesday · Week 3</h1><p>30 Jun 2026 · ➗ Maths Quick Practice · ⚡ Physics · 💻 Computer Science</p></div>
 </header>
 <div class="tabs">
-  <button class="tab active" id="tab-pnotes" onclick="switchTab('pnotes')">📖 Study</button>
-  <button class="tab" id="tab-p" onclick="switchTab('p')">❓ Quiz</button>
+  <button class="tab active" id="tab-mnotes" onclick="switchTab('mnotes')">➗ Maths Study</button>
+  <button class="tab" id="tab-m" onclick="switchTab('m')">➗ Maths Quiz</button>
+  <button class="tab" id="tab-pnotes" onclick="switchTab('pnotes')">⚡ Physics Study</button>
+  <button class="tab" id="tab-p" onclick="switchTab('p')">⚡ Physics Quiz</button>
+  <button class="tab" id="tab-cnotes" onclick="switchTab('cnotes')">💻 Python Study</button>
+  <button class="tab" id="tab-c" onclick="switchTab('c')">💻 Python Quiz</button>
 </div>
 <div class="prog-bar">
   <div class="pb-top">
@@ -89,8 +99,121 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   <div id="save-wrap"></div>
 </div>
 
-<!-- Study tab -->
-<div id="sec-pnotes" class="sec active">
+<!-- Maths Study tab -->
+<div id="sec-mnotes" class="sec active">
+  <div class="dyk">
+    <div class="dyk-eye">➗ Maths · Quick Practice</div>
+    <div class="dyk-title">Numbers, factors, fractions &amp; measurement</div>
+    <div class="dyk-body">A fast revision of place value, HCF &amp; LCM, fractions, integers, BODMAS, perimeter, angles and units. Read the cards, then take the 15-question quiz.</div>
+  </div>
+
+  <div class="ql">🔢 Place Value &amp; Rounding</div>
+  <div class="icard">
+    <h3>Place value vs face value</h3>
+    <p><strong>Face value</strong> = the digit itself. <strong>Place value</strong> = digit × the value of its place. In the Indian system the places are: Ones, Tens, Hundreds, Thousands, Ten-thousands, Lakhs, Ten-lakhs.</p>
+    <div class="ex">In <strong>4,72,153</strong> → the 7 sits in the <strong>ten-thousands</strong> place, so its place value is 7 × 10,000 = <strong>70,000</strong>. Its face value is just 7.</div>
+  </div>
+  <div class="icard">
+    <h3>Greatest &amp; smallest numbers</h3>
+    <p>To build the <strong>greatest</strong> number, arrange the digits in <em>descending</em> order. For the <strong>smallest</strong>, use <em>ascending</em> order — but if 0 is one of the digits, it cannot come first, so swap it with the next digit.</p>
+    <div class="ex">Digits 2, 0, 5, 8, 3 → greatest = <strong>85320</strong>, smallest = <strong>20358</strong>.</div>
+  </div>
+  <div class="icard">
+    <h3>Rounding off</h3>
+    <p>Look at the digit <em>just to the right</em> of the place you are rounding to. If it is <strong>5 or more, round up</strong>; if it is <strong>4 or less, round down</strong>. Everything to the right becomes 0.</p>
+    <div class="ex">4,682 to the nearest hundred → the tens digit is 8 (≥5), so round up → <strong>4,700</strong>.</div>
+  </div>
+
+  <div class="ql">🧮 Factors, Multiples, HCF &amp; LCM</div>
+  <div class="icard">
+    <h3>HCF and LCM</h3>
+    <p><strong>HCF</strong> (Highest Common Factor) — the biggest number that divides all of them. <strong>LCM</strong> (Lowest Common Multiple) — the smallest number that all of them divide into.</p>
+    <div class="ex">12 = 2×2×3, 18 = 2×3×3 → common = 2×3 = <strong>HCF 6</strong>.<br>4 = 2², 6 = 2×3, 8 = 2³ → take highest powers 2³×3 = <strong>LCM 24</strong>.</div>
+    <div class="hook">💡 HCF ≤ the smallest number; LCM ≥ the largest number. Use this to check your answer instantly.</div>
+  </div>
+  <div class="icard">
+    <h3>Prime numbers</h3>
+    <p>A <strong>prime</strong> has exactly two factors — 1 and itself. The first primes are <strong>2, 3, 5, 7, 11, 13…</strong> Note that <strong>1 is not prime</strong> (it has only one factor) and <strong>2 is the only even prime</strong>.</p>
+    <div class="ex">Sum of the first four primes = 2 + 3 + 5 + 7 = <strong>17</strong>.</div>
+  </div>
+
+  <div class="ql">🍕 Fractions, Percentages &amp; Integers</div>
+  <div class="icard">
+    <h3>Fraction → percentage</h3>
+    <p>Multiply the fraction by <strong>100</strong> and add the % sign.</p>
+    <div class="ex">¾ × 100 = <strong>75%</strong> · ½ = 50% · ⅕ = 20% · ⅛ = 12.5%</div>
+  </div>
+  <div class="icard">
+    <h3>Improper → mixed fraction</h3>
+    <p>Divide the numerator by the denominator. The <strong>quotient</strong> is the whole number, the <strong>remainder</strong> becomes the new numerator, and the denominator stays the same.</p>
+    <div class="ex">23 ÷ 5 → quotient 4, remainder 3 → <strong>4 ³⁄₅</strong></div>
+  </div>
+  <div class="icard">
+    <h3>Adding integers</h3>
+    <p><strong>Same signs</strong> → add the numbers, keep the sign. <strong>Different signs</strong> → subtract the smaller from the larger, and keep the sign of the <em>larger</em> number.</p>
+    <div class="ex">(−15) + (+8): 15 − 8 = 7, and 15 is bigger and negative → <strong>−7</strong>.<br>Successor of −99 = −99 + 1 = <strong>−98</strong> (successors always move right on the number line).</div>
+  </div>
+
+  <div class="ql">📐 BODMAS, Shapes &amp; Angles</div>
+  <div class="icard">
+    <h3>BODMAS order</h3>
+    <p><strong>B</strong>rackets → <strong>O</strong>rders (powers) → <strong>D</strong>ivision &amp; <strong>M</strong>ultiplication (left to right) → <strong>A</strong>ddition &amp; <strong>S</strong>ubtraction (left to right).</p>
+    <div class="ex">24 ÷ 6 × 2 + 3 → (24 ÷ 6) = 4 → 4 × 2 = 8 → 8 + 3 = <strong>11</strong>. Do ÷ and × left to right — <em>not</em> × before ÷.</div>
+  </div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Idea</th><th>Rule</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>Regular polygon perimeter</td><td>number of sides × side</td><td>Pentagon, 7 cm → 5 × 7 = <strong>35 cm</strong></td></tr>
+        <tr><td>Complementary angles</td><td>add up to 90°</td><td>Complement of 70° = 20°</td></tr>
+        <tr><td>Supplementary angles</td><td>add up to 180°</td><td>Supplement of 70° = <strong>110°</strong></td></tr>
+        <tr><td>kg → g</td><td>× 1000</td><td>3.5 kg = <strong>3500 g</strong></td></tr>
+        <tr><td>km → m · m → cm</td><td>× 1000 · × 100</td><td>2 km = 2000 m · 5 m = 500 cm</td></tr>
+        <tr><td>Mean (average)</td><td>sum ÷ number of items</td><td>1+2+3+4+5 = 15, 15 ÷ 5 = <strong>3</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tip">
+    <div class="tip-eye">⚡ Speed tips</div>
+    <div class="tip-body">• Converting <em>to a smaller unit</em> always multiplies; to a bigger unit always divides.<br>• The mean of consecutive numbers starting at 1 is just the middle number.<br>• Check integer answers on a number line — left is smaller, right is bigger.</div>
+  </div>
+
+  <div style="margin-top:1.25rem;text-align:center;padding-bottom:1rem">
+    <button onclick="switchTab('m')" style="padding:14px 32px;border-radius:14px;border:none;background:linear-gradient(135deg,#059669,#0D9488);color:#fff;font-size:15px;font-weight:600;cursor:pointer;width:100%;max-width:320px">Take the Maths Quiz →</button>
+  </div>
+</div>
+
+<!-- Maths Quiz tab -->
+<div id="sec-m" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">❓ Quiz · 15 Questions</div>
+    <div class="dyk-title">Maths Quick Practice</div>
+    <div class="dyk-body">Place value, HCF/LCM, fractions, integers, BODMAS and measurement. You need <strong>9 / 15 (60%+)</strong> to mark Maths as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="m-qnum">1 / 15</span></div>
+    <div class="sc"><label>Score</label><span id="m-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="m-prog" style="width:0%"></div></div><div class="pp" id="m-pct">0%</div></div>
+  <div id="m-card" class="card">
+    <div class="tp" id="m-topic"></div>
+    <div class="qt" id="m-q"></div>
+    <div class="opts" id="m-opts"></div>
+    <div class="fb" id="m-fb"></div>
+    <button class="nxt" id="m-nxt">Next →</button>
+  </div>
+  <div id="m-done" style="display:none" class="card dc">
+    <div class="di" id="m-ficon">🎉</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="m-fscore"></div>
+    <div class="dm" id="m-fmsg"></div>
+    <button class="retry" id="m-retry">Try again ↺</button>
+  </div>
+</div>
+
+<!-- Physics Study tab -->
+<div id="sec-pnotes" class="sec">
   <div class="dyk">
     <div class="dyk-eye">⚡ Physics · Day 1 · Matter</div>
     <div class="dyk-title">Matter, its particles &amp; solids</div>
@@ -192,8 +315,135 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   </div>
 </div>
 
+<!-- Python Study tab -->
+<div id="sec-cnotes" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">💻 Computer Science · Python Basics</div>
+    <div class="dyk-title">IDLE, print, variables &amp; operators</div>
+    <div class="dyk-body">Everything you need for the quiz: how Python is written, the data types, the operators, input/output and the two kinds of loops. Read the cards, then take the quiz.</div>
+  </div>
+
+  <div class="ql">🖥️ Getting started</div>
+  <div class="icard">
+    <h3>IDLE</h3>
+    <p><strong>IDLE</strong> stands for <strong>Integrated Development and Learning Environment</strong>. It is the editor that comes free with Python. It has two parts — the <strong>shell</strong> (types results straight away) and the <strong>script editor</strong> (where you save programs).</p>
+    <div class="ex">A saved Python program has the extension <strong>.py</strong> — for example <code>myfirst.py</code>.</div>
+  </div>
+  <div class="icard">
+    <h3>Comments</h3>
+    <p>A comment is a note for humans — Python ignores it. Start a single-line comment with the <strong>hash symbol <code>#</code></strong>.</p>
+    <div class="code"><span class="cm"># this line is ignored by Python</span>
+<span class="kw">print</span>(<span class="st">"Hello"</span>)  <span class="cm"># so is this part</span></div>
+  </div>
+  <div class="icard">
+    <h3>Case sensitivity &amp; indentation</h3>
+    <p>Python is <strong>case-sensitive</strong>: <code>Print</code>, <code>PRINT</code> and <code>print</code> are three different things — only <code>print</code> works. Python also uses <strong>indentation</strong> (spaces at the start of a line, normally 4) instead of curly braces to show which lines belong inside a block.</p>
+    <div class="code"><span class="kw">if</span> age &gt;= 18:
+    <span class="kw">print</span>(<span class="st">"Adult"</span>)   <span class="cm"># indented → inside the if</span>
+<span class="kw">print</span>(<span class="st">"Done"</span>)         <span class="cm"># not indented → outside</span></div>
+  </div>
+
+  <div class="ql">📤 Input &amp; Output</div>
+  <div class="icard">
+    <h3>print() and input()</h3>
+    <p><code>print()</code> displays something on the screen. <code>input()</code> reads what the user types — and it <strong>always returns a string</strong>, so wrap it in <code>int()</code> when you need a number.</p>
+    <div class="code">name = <span class="kw">input</span>(<span class="st">"Your name: "</span>)
+age  = <span class="kw">int</span>(<span class="kw">input</span>(<span class="st">"Your age: "</span>))
+<span class="kw">print</span>(<span class="st">"Hi"</span>, name)</div>
+  </div>
+
+  <div class="ql">🔢 Data types &amp; operators</div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Type</th><th>Means</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td><code>int</code></td><td>whole number</td><td><code>x = 42</code></td></tr>
+        <tr><td><code>float</code></td><td>decimal number</td><td><code>5.5</code> → <code>&lt;class 'float'&gt;</code></td></tr>
+        <tr><td><code>str</code></td><td>text in quotes</td><td><code>"Hello"</code></td></tr>
+        <tr><td><code>bool</code></td><td>True or False</td><td><code>True</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Operator</th><th>Does</th><th>Example → result</th></tr></thead>
+      <tbody>
+        <tr><td><code>+ - *</code></td><td>add, subtract, multiply</td><td><code>3 * 4</code> → 12</td></tr>
+        <tr><td><code>/</code></td><td>normal division (float)</td><td><code>10 / 3</code> → 3.333…</td></tr>
+        <tr><td><code>//</code></td><td>floor division (whole part)</td><td><code>10 // 3</code> → <strong>3</strong></td></tr>
+        <tr><td><code>%</code></td><td>modulus — the remainder</td><td><code>10 % 3</code> → <strong>1</strong></td></tr>
+        <tr><td><code>**</code></td><td>power</td><td><code>2 ** 3</code> → 8</td></tr>
+        <tr><td><code>and</code></td><td>True only if <em>both</em> are True</td><td><code>a &gt; 0 and b &gt; 0</code></td></tr>
+        <tr><td><code>or</code> / <code>not</code></td><td>either one / reverses</td><td><code>not True</code> → False</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="icard">
+    <h3>Strings repeat with *</h3>
+    <p>Multiplying a string by a number repeats it. Adding two strings joins them (concatenation).</p>
+    <div class="code"><span class="kw">print</span>(<span class="st">"3 * 'A'"</span>)   <span class="cm"># prints the text itself</span>
+<span class="kw">print</span>(3 * <span class="st">'A'</span>)     <span class="cm"># AAA</span>
+<span class="kw">print</span>(<span class="st">'AB'</span> + <span class="st">'CD'</span>)  <span class="cm"># ABCD</span></div>
+  </div>
+
+  <div class="ql">🔁 Decisions &amp; loops</div>
+  <div class="icard">
+    <h3>if / elif / else</h3>
+    <p>A decision block always <strong>starts with the keyword <code>if</code></strong>, ends the line with a colon <code>:</code> and indents the lines inside.</p>
+    <div class="code"><span class="kw">if</span> marks &gt;= 90:
+    <span class="kw">print</span>(<span class="st">"A grade"</span>)
+<span class="kw">elif</span> marks &gt;= 50:
+    <span class="kw">print</span>(<span class="st">"Pass"</span>)
+<span class="kw">else</span>:
+    <span class="kw">print</span>(<span class="st">"Try again"</span>)</div>
+  </div>
+  <div class="icard">
+    <h3>for vs while</h3>
+    <p>Use a <strong><code>for</code> loop</strong> when you know <em>how many times</em> to repeat. Use a <strong><code>while</code> loop</strong> when you only know the <em>condition</em> to stop.</p>
+    <div class="code"><span class="kw">for</span> i <span class="kw">in</span> <span class="kw">range</span>(5):     <span class="cm"># exactly 5 times</span>
+    <span class="kw">print</span>(i)
+
+<span class="kw">while</span> guess != 7:      <span class="cm"># unknown number of times</span>
+    guess = <span class="kw">int</span>(<span class="kw">input</span>())</div>
+    <div class="hook">💡 <code>range(5)</code> gives 0, 1, 2, 3, 4 — it starts at 0 and stops <em>before</em> 5.</div>
+  </div>
+
+  <div style="margin-top:1.25rem;text-align:center;padding-bottom:1rem">
+    <button onclick="switchTab('c')" style="padding:14px 32px;border-radius:14px;border:none;background:linear-gradient(135deg,#059669,#0D9488);color:#fff;font-size:15px;font-weight:600;cursor:pointer;width:100%;max-width:320px">Take the Python Quiz →</button>
+  </div>
+</div>
+
+<!-- Python Quiz tab -->
+<div id="sec-c" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">❓ Quiz · 15 Questions</div>
+    <div class="dyk-title">Python Basics</div>
+    <div class="dyk-body">IDLE, comments, data types, operators, input/output and loops. You need <strong>9 / 15 (60%+)</strong> to mark Computer Science as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="c-qnum">1 / 15</span></div>
+    <div class="sc"><label>Score</label><span id="c-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="c-prog" style="width:0%"></div></div><div class="pp" id="c-pct">0%</div></div>
+  <div id="c-card" class="card">
+    <div class="tp" id="c-topic"></div>
+    <div class="qt" id="c-q"></div>
+    <div class="opts" id="c-opts"></div>
+    <div class="fb" id="c-fb"></div>
+    <button class="nxt" id="c-nxt">Next →</button>
+  </div>
+  <div id="c-done" style="display:none" class="card dc">
+    <div class="di" id="c-ficon">🎉</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="c-fscore"></div>
+    <div class="dm" id="c-fmsg"></div>
+    <button class="retry" id="c-retry">Try again ↺</button>
+  </div>
+</div>
+
 <script>
-var SUBJECTS = [{"id":"p","label":"Physics","total":15}];
+var SUBJECTS = [{"id":"m","label":"Maths","total":15},{"id":"p","label":"Physics","total":15},{"id":"c","label":"CS/Python","total":15}];
 var LS_PFX   = 'icse_w03_tue';
 
 function saveScore(id, score, total, label) {
@@ -240,7 +490,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["pnotes","p"];
+  var all = ["mnotes","m","pnotes","p","cnotes","c"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -417,6 +667,24 @@ function makeSaveButton(containerId){
   wrap.appendChild(row);
 }
 
+quiz('m', [
+  {"t":"Place value","q":"Write the place value of 7 in the number 4,72,153.","o":["70,000","7,000","7","7,00,000"],"a":0,"e":"7 is in the ten-thousands place → 7 × 10,000 = 70,000."},
+  {"t":"Number building","q":"What is the greatest 5-digit number formed using the digits 2, 0, 5, 8, 3 without repetition?","o":["85320","85302","82530","80532"],"a":0,"e":"Arrange the digits in descending order: 8 > 5 > 3 > 2 > 0 → 85320."},
+  {"t":"Rounding","q":"Round off 4,682 to the nearest hundred.","o":["4700","4600","4680","5000"],"a":0,"e":"The tens digit is 8, which is 5 or more, so round the hundreds up → 4700."},
+  {"t":"Percentage","q":"Express the fraction 3/4 as a percentage.","o":["75%","34%","43%","30%"],"a":0,"e":"3/4 × 100 = 75%."},
+  {"t":"HCF","q":"Find the HCF of 12 and 18.","o":["6","2","3","36"],"a":0,"e":"12 = 2×2×3 and 18 = 2×3×3. Common factors 2×3 = 6. (36 is the LCM, not the HCF.)"},
+  {"t":"LCM","q":"Find the LCM of 4, 6 and 8.","o":["24","12","48","96"],"a":0,"e":"Highest powers: 2³ × 3 = 24. It is the smallest number divisible by 4, 6 and 8."},
+  {"t":"Fractions","q":"Convert 23/5 into a mixed fraction.","o":["4 and 3/5","3 and 4/5","5 and 3/4","4 and 5/3"],"a":0,"e":"23 ÷ 5 gives quotient 4 and remainder 3 → 4 3/5."},
+  {"t":"Primes","q":"What is the sum of the first four prime numbers?","o":["17","11","16","26"],"a":0,"e":"The first four primes are 2, 3, 5 and 7 → 2+3+5+7 = 17. Remember 1 is NOT a prime number."},
+  {"t":"Integers","q":"Evaluate: (−15) + (+8)","o":["−7","7","−23","23"],"a":0,"e":"Different signs → subtract 8 from 15 = 7, and keep the sign of the bigger number (15 is negative) → −7."},
+  {"t":"Integers","q":"Write the successor of −99.","o":["−98","−100","98","100"],"a":0,"e":"The successor is the next number to the right: −99 + 1 = −98."},
+  {"t":"🔴 BODMAS","q":"Simplify: 24 ÷ 6 × 2 + 3","o":["11","5","8","15"],"a":0,"e":"Division and multiplication are done left to right: 24 ÷ 6 = 4, then 4 × 2 = 8, then 8 + 3 = 11."},
+  {"t":"Perimeter","q":"Find the perimeter of a regular pentagon with each side measuring 7 cm.","o":["35 cm","28 cm","49 cm","14 cm"],"a":0,"e":"A regular pentagon has 5 equal sides → 5 × 7 = 35 cm."},
+  {"t":"Angles","q":"What is the supplement of an angle measuring 70°?","o":["110°","20°","30°","290°"],"a":0,"e":"Supplementary angles add up to 180° → 180° − 70° = 110°. (20° would be the complement.)"},
+  {"t":"Units","q":"Convert 3.5 kg into grams.","o":["3500 g","350 g","35000 g","35 g"],"a":0,"e":"1 kg = 1000 g, so 3.5 × 1000 = 3500 g. Going to a smaller unit always multiplies."},
+  {"t":"Mean","q":"Find the mean of the first five natural numbers.","o":["3","2.5","5","15"],"a":0,"e":"1+2+3+4+5 = 15, and 15 ÷ 5 = 3. (15 is the sum, not the mean.)"}
+], 'Maths Quick Practice');
+
 quiz('p', [
   {"t":"MCQ","q":"Matter is defined as anything that:","o":["Has colour and smell","Occupies space and has mass","Can be seen with the naked eye","Can be touched only"],"a":1,"e":"Matter occupies space and has mass."},
   {"t":"MCQ","q":"The smallest particle of matter that can exist freely in nature is called:","o":["Atom","Molecule","Proton","Neutron"],"a":1,"e":"A molecule is the smallest particle capable of independent (free) existence."},
@@ -434,6 +702,24 @@ quiz('p', [
   {"t":"🔴 Hard","q":"Which statement about forces is correct?","o":["Cohesive = different substances; adhesive = same substance","Cohesive = same substance; adhesive = different substances","Both act only in gases","Both are the same force"],"a":1,"e":"Cohesion = same substance (water–water); adhesion = different substances (water–glass)."},
   {"t":"🔴 Hard","q":"Why is it easier to move your hand through air than through water?","o":["Air is lighter than water","Air particles have weaker intermolecular forces and are farther apart, giving less resistance","Water has no particles","Air has no mass"],"a":1,"e":"Weaker forces and larger spaces between air particles mean far less resistance than in water."}
 ], 'Physics');
+
+quiz('c', [
+  {"t":"Tools","q":"What does IDLE stand for in Python?","o":["Integrated Development and Learning Environment","Interactive Data Language Editor","Internal Design Level Engine","Indented Line Development Editor"],"a":0,"e":"IDLE = Integrated Development and Learning Environment — the editor bundled with Python."},
+  {"t":"Syntax","q":"Which symbol is used in Python to write a single-line comment?","o":["#","//","/* */","--"],"a":0,"e":"The hash symbol # starts a single-line comment. Python ignores everything after it on that line."},
+  {"t":"Output","q":"Which function displays output on the screen in Python?","o":["print()","input()","show()","display()"],"a":0,"e":"print() writes to the screen; input() does the opposite — it reads from the user."},
+  {"t":"Data types","q":"What is the data type of the value stored in x = 42 ?","o":["int","float","str","bool"],"a":0,"e":"42 is a whole number with no decimal point → int. It would be a float only if written 42.0."},
+  {"t":"Operators","q":"Which operator finds the remainder of a division in Python?","o":["%","//","/","**"],"a":0,"e":"% is the modulus operator: 10 % 3 gives 1, the remainder."},
+  {"t":"Operators","q":"What is the result of 10 // 3 in Python?","o":["3","3.33","1","4"],"a":0,"e":"// is floor division — it keeps only the whole part, so 10 // 3 = 3. (10 % 3 = 1 and 10 / 3 = 3.33.)"},
+  {"t":"Data types","q":"What is the output of print(type(5.5)) ?","o":["<class 'float'>","<class 'int'>","<class 'double'>","float"],"a":0,"e":"5.5 has a decimal point, so its type is float, printed as <class 'float'>."},
+  {"t":"Keywords","q":"Which keyword starts a conditional decision-making block in Python?","o":["if","when","check","switch"],"a":0,"e":"A decision block begins with if, followed by the condition and a colon."},
+  {"t":"True / False","q":"Python is a case-sensitive programming language.","o":["True","False"],"a":0,"e":"True — print, Print and PRINT are all different. Only lowercase print works."},
+  {"t":"Input","q":"Which function accepts input typed by the user?","o":["input()","print()","read()","get()"],"a":0,"e":"input() reads what the user types — and always returns it as a string."},
+  {"t":"Files","q":"What is the file extension of a saved Python source file?","o":[".py",".pt",".python",".pyt"],"a":0,"e":"Python programs are saved with the .py extension, e.g. myfirst.py."},
+  {"t":"Operators","q":"Which logical operator checks that BOTH conditions are true?","o":["and","or","not","both"],"a":0,"e":"and is True only when both sides are True. or needs just one; not reverses the answer."},
+  {"t":"Strings","q":"What will print(3 * 'A') output in the Python console?","o":["AAA","3A","A3","AAAA"],"a":0,"e":"Multiplying a string by a number repeats it, so 3 * 'A' gives AAA."},
+  {"t":"Loops","q":"Which loop is used when the number of repetitions is known beforehand?","o":["for loop","while loop","do-while loop","repeat loop"],"a":0,"e":"A for loop runs a fixed number of times (e.g. for i in range(5)). A while loop repeats until a condition changes."},
+  {"t":"🔴 Syntax","q":"Which symbol ends the header line of a block (like if or for), with indentation showing what is inside it?","o":["Colon :","Semicolon ;","Curly braces { }","Full stop ."],"a":0,"e":"The header line ends with a colon, and the indented lines below it form the block. Python uses indentation instead of curly braces."}
+], 'CS/Python');
 refreshProgress();
 makeSaveButton('save-wrap');
 loadRemoteProgress(function(ok){ if(ok) refreshProgress(); });
