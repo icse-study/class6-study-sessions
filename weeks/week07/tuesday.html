@@ -83,6 +83,9 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   <button class="tab active" id="tab-pnotes" onclick="switchTab('pnotes')">📖 Study</button>
   <button class="tab" id="tab-p" onclick="switchTab('p')">❓ Quiz</button>
   <button class="tab" id="tab-write" onclick="switchTab('write')">✍️ Practice</button>
+  <button class="tab" id="tab-mcnotes" onclick="switchTab('mcnotes')">&#128218; Maths &amp; Python Notes</button>
+  <button class="tab" id="tab-m" onclick="switchTab('m')">&#10135; Maths</button>
+  <button class="tab" id="tab-c" onclick="switchTab('c')">&#128187; Python</button>
 </div>
 <div class="prog-bar">
   <div class="pb-top">
@@ -236,8 +239,86 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   <div class="qa"><div class="qn">8. A book of 400 pages is 2 cm thick, ignoring the covers. Find the thickness of one sheet of paper in millimetres. (Careful — one sheet carries two pages.)</div><details><summary>▸ Show model answer</summary><div class="ans">400 pages = <strong>200 sheets</strong>. Thickness of one sheet = 2 cm ÷ 200 = 0.01 cm = <strong>0.1 mm</strong>. Dividing by 400 instead gives 0.05 mm, which is the thickness of a page, not of a sheet.</div></details></div>
 </div>
 
+<div id="sec-mcnotes" class="sec">
+
+  <div class="dyk">
+    <div class="dyk-eye">&#128218; Tuesday &middot; Week 7 &middot; Maths &amp; Python</div>
+    <div class="dyk-title">Perimeter &amp; Area &middot; if / elif / else</div>
+    <div class="dyk-body">Two short slots either side of Physics. Watch your <strong>units</strong> in Maths and your <strong>indentation</strong> in Python.</div>
+  </div>
+  <div class="icard">
+    <h3>&#10135; The formulas</h3>
+    <p><strong>Square:</strong> perimeter = 4 &times; side, area = side&sup2;. <strong>Rectangle:</strong> perimeter = 2(l + b), area = l &times; b. <strong>Triangle:</strong> perimeter = sum of the three sides, area = &frac12; &times; base &times; height.</p>
+    <div class="ex">Perimeter is a length (cm, m). Area covers a surface, so it is always in <strong>square</strong> units (cm&sup2;, m&sup2;). Forgetting the &frac12; in the triangle formula is the single most common mistake.</div>
+  </div>
+  <div class="icard">
+    <h3>&#128187; Conditionals in Python</h3>
+    <p><code>if</code> tests a condition; <code>elif</code> tests another one if the first failed; <code>else</code> catches everything remaining. Only <strong>one</strong> branch of the chain ever runs.</p>
+    <div class="ex">Comparison operators: &lt; &gt; &lt;= &gt;= <code>==</code> (equal to) <code>!=</code> (not equal to). Logical operators: <code>and</code>, <code>or</code>, <code>not</code>. Remember <code>=</code> assigns but <code>==</code> compares.</div>
+  </div>
+
+  <div style="margin-top:1.25rem;text-align:center;padding-bottom:1rem">
+    <button onclick="switchTab('m')" style="padding:14px 32px;border-radius:14px;border:none;background:linear-gradient(135deg,#059669,#0D9488);color:#fff;font-size:15px;font-weight:600;cursor:pointer;width:100%;max-width:320px">Start the Maths Quiz &rarr;</button>
+  </div>
+</div>
+
+<div id="sec-m" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">&#10068; Quiz &middot; 15 Questions &middot; Application</div>
+    <div class="dyk-title">Maths &mdash; Perimeter &amp; Area of Plane Figures</div>
+    <div class="dyk-body">Squares, rectangles and triangles, plus working backwards from an answer. You need <strong>9 / 15 (60%+)</strong> to mark it as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="m-qnum">1 / 15</span></div>
+    <div class="sc"><label>Score</label><span id="m-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="m-prog" style="width:0%"></div></div><div class="pp" id="m-pct">0%</div></div>
+  <div id="m-card" class="card">
+    <div class="tp" id="m-topic"></div>
+    <div class="qt" id="m-q"></div>
+    <div class="opts" id="m-opts"></div>
+    <div class="fb" id="m-fb"></div>
+    <button class="nxt" id="m-nxt">Next &rarr;</button>
+  </div>
+  <div id="m-done" style="display:none" class="card dc">
+    <div class="di" id="m-ficon">&#127881;</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="m-fscore"></div>
+    <div class="dm" id="m-fmsg"></div>
+    <button class="retry" id="m-retry">Try again &#8634;</button>
+  </div>
+</div>
+
+<div id="sec-c" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">&#10068; Quiz &middot; 15 Questions &middot; Coding &amp; Logic</div>
+    <div class="dyk-title">Python &mdash; Conditional Statements</div>
+    <div class="dyk-body">if, elif and else, with code you have to trace by hand. You need <strong>9 / 15 (60%+)</strong> to mark it as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="c-qnum">1 / 15</span></div>
+    <div class="sc"><label>Score</label><span id="c-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="c-prog" style="width:0%"></div></div><div class="pp" id="c-pct">0%</div></div>
+  <div id="c-card" class="card">
+    <div class="tp" id="c-topic"></div>
+    <div class="qt" id="c-q"></div>
+    <div class="opts" id="c-opts"></div>
+    <div class="fb" id="c-fb"></div>
+    <button class="nxt" id="c-nxt">Next &rarr;</button>
+  </div>
+  <div id="c-done" style="display:none" class="card dc">
+    <div class="di" id="c-ficon">&#127881;</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="c-fscore"></div>
+    <div class="dm" id="c-fmsg"></div>
+    <button class="retry" id="c-retry">Try again &#8634;</button>
+  </div>
+</div>
 <script>
-var SUBJECTS = [{"id":"p","label":"Physics","total":15}];
+var SUBJECTS = [{"id": "p", "label": "Physics", "total": 15}, {"id": "m", "label": "Maths", "total": 15}, {"id": "c", "label": "Python", "total": 15}];
 var LS_PFX   = 'icse_w07_tue';
 
 function saveScore(id, score, total, label) {
@@ -284,7 +365,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["pnotes","p","write"];
+  var all = ["pnotes", "p", "write", "mcnotes", "m", "c"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -480,7 +561,43 @@ quiz('p', [
 ], 'Physics');
 refreshProgress();
 makeSaveButton('save-wrap');
-loadRemoteProgress(function(ok){ if(ok) refreshProgress(); });
+loadRemoteProgress(function(ok){ if(ok) quiz('m', [
+  {"t": "Perimeter", "q": "What is the perimeter of a square of side 6 cm?", "o": ["24 cm", "12 cm", "36 cm", "48 cm"], "a": 0, "e": "Perimeter = 4 × side = 24 cm. 36 cm² would be its area."},
+  {"t": "Area", "q": "What is the area of a rectangle 8 cm long and 5 cm broad?", "o": ["40 cm²", "13 cm²", "26 cm²", "80 cm²"], "a": 0, "e": "Area = l × b = 40 cm². 26 cm would be the perimeter."},
+  {"t": "Perimeter", "q": "What is the perimeter of a rectangle 10 m long and 4 m broad?", "o": ["28 m", "14 m", "40 m", "80 m"], "a": 0, "e": "Perimeter = 2(10 + 4) = 28 m. Forgetting to double the sum gives 14."},
+  {"t": "Area", "q": "Find the area of a square of side 9 cm.", "o": ["81 cm²", "36 cm²", "18 cm²", "72 cm²"], "a": 0, "e": "Area = side × side = 81 cm². 36 cm is the perimeter."},
+  {"t": "Working Backwards", "q": "The perimeter of a square is 36 cm. What is its side?", "o": ["9 cm", "6 cm", "12 cm", "18 cm"], "a": 0, "e": "side = 36 ÷ 4 = 9 cm."},
+  {"t": "🔴 Hard · Working Backwards", "q": "A rectangle has an area of 48 cm² and a length of 8 cm. Find its breadth.", "o": ["6 cm", "4 cm", "8 cm", "12 cm"], "a": 0, "e": "b = area ÷ l = 48 ÷ 8 = 6 cm."},
+  {"t": "Triangles", "q": "What is the area of a triangle with base 10 cm and height 6 cm?", "o": ["30 cm²", "60 cm²", "16 cm²", "20 cm²"], "a": 0, "e": "Area = ½ × base × height = ½ × 10 × 6 = 30 cm². Forgetting the ½ gives 60 — the commonest error."},
+  {"t": "🔴 Hard · Working Backwards", "q": "The perimeter of a rectangle is 40 m and its length is 12 m. Find its breadth.", "o": ["8 m", "6 m", "10 m", "14 m"], "a": 0, "e": "2(12 + b) = 40 → 12 + b = 20 → b = 8 m. Halve the perimeter before subtracting."},
+  {"t": "🔴 Hard · Multi-Step", "q": "What is the area of a square whose perimeter is 48 cm?", "o": ["144 cm²", "96 cm²", "192 cm²", "48 cm²"], "a": 0, "e": "Step 1: side = 48 ÷ 4 = 12 cm. Step 2: area = 12 × 12 = 144 cm²."},
+  {"t": "Triangles", "q": "Find the perimeter of a triangle with sides 5 cm, 12 cm and 13 cm.", "o": ["30 cm", "25 cm", "20 cm", "35 cm"], "a": 0, "e": "Perimeter of a triangle = the sum of its sides = 5 + 12 + 13 = 30 cm."},
+  {"t": "Formulas", "q": "What is the formula for the area of a rectangle?", "o": ["l × b", "2(l + b)", "4 × side", "½ × base × height"], "a": 0, "e": "Area = length × breadth. The second option is the perimeter of a rectangle."},
+  {"t": "🔴 Hard · Comparing Shapes", "q": "A square of side 8 cm and a rectangle have equal perimeters. If the rectangle is 10 cm long, what is its breadth?", "o": ["6 cm", "4 cm", "8 cm", "10 cm"], "a": 0, "e": "Square's perimeter = 4 × 8 = 32 cm. So 2(10 + b) = 32 → 10 + b = 16 → b = 6 cm."},
+  {"t": "🔴 Hard · Triangles", "q": "Find the area of a triangle whose base is 12 m and height is 7 m.", "o": ["42 m²", "84 m²", "21 m²", "19 m²"], "a": 0, "e": "Area = ½ × 12 × 7 = 42 m²."},
+  {"t": "Decimals in Geometry", "q": "What is the perimeter of a square of side 5.5 cm?", "o": ["22 cm", "22.5 cm", "20 cm", "24 cm"], "a": 0, "e": "4 × 5.5 = 22 cm."},
+  {"t": "🔴 Hard · Working Backwards", "q": "The area of a rectangle is 600 cm² and its breadth is 25 cm. Find its length.", "o": ["24 cm", "20 cm", "25 cm", "30 cm"], "a": 0, "e": "Length = area ÷ breadth = 600 ÷ 25 = 24 cm."}
+], 'Maths');
+
+quiz('c', [
+  {"t": "Conditionals", "q": "Which keyword begins a conditional statement in Python?", "o": ["if", "for", "while", "do"], "a": 0, "e": "if tests a condition. for and while are loops."},
+  {"t": "Tracing Code", "q": "What does this print?  x = 10 ; if x > 5: print(\"Yes\") else: print(\"No\")", "o": ["Yes", "No", "An error", "Nothing"], "a": 0, "e": "10 > 5 is True, so the if-block runs and prints Yes."},
+  {"t": "elif", "q": "What is the purpose of elif?", "o": ["To test another condition when the previous ones were False", "To start a loop", "To end the program", "To define a function"], "a": 0, "e": "elif ('else if') lets you check further conditions in the same chain. Only the first True branch runs."},
+  {"t": "Syntax", "q": "Which is the correct Python if statement?", "o": ["if x > 5: print(\"Hello\")", "if (x > 5) { print(\"Hello\") }", "if x > 5 then print(\"Hello\")", "if (x > 5) then print(\"Hello\")"], "a": 0, "e": "Python uses a colon and indentation — no braces and no 'then'."},
+  {"t": "🔴 Hard · Tracing Code", "q": "a = 7. What does this print?  if a % 2 == 0: print(\"even\") else: print(\"odd\")", "o": ["odd", "even", "An error", "Nothing"], "a": 0, "e": "7 % 2 gives a remainder of 1, not 0, so the condition is False and the else branch runs."},
+  {"t": "🔴 Hard · Operators", "q": "Which operator checks equality in Python?", "o": ["==", "=", "===", "!="], "a": 0, "e": "== compares two values. A single = assigns a value, and != means 'not equal to'."},
+  {"t": "🔴 Hard · Tracing Code", "q": "x = 15. What does this print?  if x > 10: print(\"A\") elif x > 5: print(\"B\") else: print(\"C\")", "o": ["A", "B", "C", "A and B"], "a": 0, "e": "x > 10 is True, so it prints A and skips the rest. Only ONE branch of an if/elif/else chain ever runs — even though x > 5 is also true."},
+  {"t": "Logical Operators", "q": "Which logical operator requires BOTH conditions to be true?", "o": ["and", "or", "not", "xor"], "a": 0, "e": "and needs both sides True. or needs only one, and not reverses a condition."},
+  {"t": "Tracing Code", "q": "age = 12. What does this print?  if age >= 18: print(\"Adult\") else: print(\"Minor\")", "o": ["Minor", "Adult", "An error", "Nothing"], "a": 0, "e": "12 >= 18 is False, so the else branch runs."},
+  {"t": "🔴 Hard · else", "q": "What is the purpose of the else statement?", "o": ["To run code when the if condition is False", "To run code when the if condition is True", "To begin a new conditional chain", "To end the program"], "a": 0, "e": "else is the fallback — it runs only when every condition above it was False, and it needs no condition of its own."},
+  {"t": "Operators", "q": "Which operator means 'not equal to' in Python?", "o": ["!=", "<>", "==", "="], "a": 0, "e": "!= is Python's not-equal operator. <> was removed from the language."},
+  {"t": "Tracing Code", "q": "x = 5. What does this print?  if x < 3: print(\"Low\") elif x < 7: print(\"Medium\") else: print(\"High\")", "o": ["Medium", "Low", "High", "An error"], "a": 0, "e": "x < 3 is False, so it moves on. x < 7 is True, so it prints Medium."},
+  {"t": "🔴 Hard · Logical Operators", "q": "What is the result of (5 > 3) and (4 < 2)?", "o": ["False", "True", "An error", "Nothing"], "a": 0, "e": "The first is True but the second is False, and 'and' needs BOTH to be true — so the whole expression is False."},
+  {"t": "Program Design", "q": "Which structure would you use to test whether a number is positive, negative or zero?", "o": ["if / elif / else", "if on its own", "A while loop", "A for loop"], "a": 0, "e": "Three possible outcomes need three branches, which is exactly what if / elif / else provides."},
+  {"t": "🔴 Hard · Tracing Code", "q": "x = 10. What does this print?  if x % 2 == 0: print(\"Even\") else: print(\"Odd\")", "o": ["Even", "Odd", "An error", "Nothing"], "a": 0, "e": "10 % 2 = 0, so the condition is True and it prints Even. The % operator is the standard way to test for evenness."}
+], 'CS / Python');
+
+refreshProgress(); });
 </script>
 </body>
 </html>
