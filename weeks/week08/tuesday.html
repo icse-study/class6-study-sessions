@@ -83,6 +83,9 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   <button class="tab active" id="tab-pnotes" onclick="switchTab('pnotes')">📖 Study</button>
   <button class="tab" id="tab-p" onclick="switchTab('p')">❓ Quiz</button>
   <button class="tab" id="tab-write" onclick="switchTab('write')">✍️ Practice</button>
+  <button class="tab" id="tab-mcnotes" onclick="switchTab('mcnotes')">&#128218; Maths &amp; Python Notes</button>
+  <button class="tab" id="tab-m" onclick="switchTab('m')">&#10135; Maths</button>
+  <button class="tab" id="tab-c" onclick="switchTab('c')">&#128187; Python</button>
 </div>
 <div class="prog-bar">
   <div class="pb-top">
@@ -212,8 +215,101 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
   <div class="qa"><div class="qn">8. A leaf is traced on graph paper with 1 cm squares. It covers 32 complete squares, 11 squares that are half or more than half, and 9 squares that are less than half. Find its approximate area, and explain why the answer is only approximate.</div><details><summary>▸ Show model answer</summary><div class="ans">Count complete squares + half-or-more squares, ignore the rest: 32 + 11 = <strong>43 cm²</strong>. It is approximate because the leaf's curved edge never lines up exactly with the squares — counting a part-square as a whole one (or as nothing) always leaves a small error. Using graph paper with smaller squares makes the answer more accurate.</div></details></div>
 </div>
 
+<div id="sec-mcnotes" class="sec">
+
+  <div class="dyk">
+    <div class="dyk-eye">&#128218; Tuesday &middot; Week 8 &middot; Maths &amp; Python</div>
+    <div class="dyk-title">Algebraic Expressions &middot; Loops</div>
+    <div class="dyk-body">Two short slots either side of Physics. In Maths, only <strong>like terms</strong> can be combined. In Python, count the iterations carefully &mdash; <code>range()</code> stops one short of its second number.</div>
+  </div>
+
+  <div class="icard">
+    <h3>&#10135; Terms, like terms and coefficients</h3>
+    <p>An <strong>algebraic expression</strong> combines variables, constants and operations, e.g. 3x + 2y &minus; 5. Its <strong>terms</strong> are the parts separated by + or &minus; signs: 3x, 2y and &minus;5. In the term 5x, the number <strong>5</strong> is the <strong>coefficient</strong>.</p>
+    <div class="ex"><strong>Like terms</strong> have exactly the same variable: 4x and &minus;2x are like; 4x and 3y are not. <strong>You can only add or subtract like terms.</strong> 3x + 4y cannot be simplified any further.</div>
+  </div>
+  <div class="icard">
+    <h3>&#10135; The minus-sign trap</h3>
+    <p>When you subtract a bracket, the minus sign changes the sign of <em>every</em> term inside it.</p>
+    <div class="ex">(2a + 3b) &minus; (a &minus; 2b) = 2a + 3b &minus; a <strong>+</strong> 2b = a + 5b. Notice &minus;(&minus;2b) became <strong>+2b</strong> &mdash; this is where most marks are lost.</div>
+  </div>
+  <div class="icard">
+    <h3>&#10135; Distributive property &amp; finding the value</h3>
+    <p>Multiply the outside number by <em>every</em> term inside: 4(2x &minus; 3y) = 8x &minus; 12y. To find the <strong>value</strong> of an expression, substitute the given numbers and simplify: 3x &minus; 2 when x = 5 gives 15 &minus; 2 = <strong>13</strong>.</p>
+  </div>
+  <div class="icard">
+    <h3>&#128187; while and for</h3>
+    <p>A <strong>while</strong> loop repeats as long as its condition stays True &mdash; and it checks the condition <em>before</em> each pass. A <strong>for</strong> loop steps through a sequence, so it suits a known number of repetitions.</p>
+    <div class="ex"><code>range(5)</code> &rarr; 0, 1, 2, 3, 4 (starts at 0, <strong>stops before</strong> 5). <code>range(3, 6)</code> &rarr; 3, 4, 5. <code>range(2, 10, 2)</code> &rarr; 2, 4, 6, 8. A negative step counts down: <code>range(10, 0, -2)</code> &rarr; 10, 8, 6, 4, 2.</div>
+  </div>
+  <div class="icard">
+    <h3>&#128187; Two things to watch</h3>
+    <p>An <strong>infinite loop</strong> happens when the condition can never become False &mdash; <code>while True:</code> with nothing to stop it. Inside a while loop you must always change the variable being tested, or it will never end.</p>
+    <div class="ex"><code>continue</code> skips the rest of the current pass and jumps to the next one; <code>break</code> leaves the loop altogether.</div>
+  </div>
+
+  <div style="margin-top:1.25rem;text-align:center;padding-bottom:1rem">
+    <button onclick="switchTab('m')" style="padding:14px 32px;border-radius:14px;border:none;background:linear-gradient(135deg,#059669,#0D9488);color:#fff;font-size:15px;font-weight:600;cursor:pointer;width:100%;max-width:320px">Start the Maths Quiz &rarr;</button>
+  </div>
+</div>
+
+<div id="sec-m" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">&#10068; Quiz &middot; 15 Questions &middot; Application</div>
+    <div class="dyk-title">Maths &mdash; Algebraic Expressions</div>
+    <div class="dyk-body">Like terms, brackets, the distributive property and finding values. You need <strong>9 / 15 (60%+)</strong> to mark it as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="m-qnum">1 / 15</span></div>
+    <div class="sc"><label>Score</label><span id="m-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="m-prog" style="width:0%"></div></div><div class="pp" id="m-pct">0%</div></div>
+  <div id="m-card" class="card">
+    <div class="tp" id="m-topic"></div>
+    <div class="qt" id="m-q"></div>
+    <div class="opts" id="m-opts"></div>
+    <div class="fb" id="m-fb"></div>
+    <button class="nxt" id="m-nxt">Next &rarr;</button>
+  </div>
+  <div id="m-done" style="display:none" class="card dc">
+    <div class="di" id="m-ficon">&#127881;</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="m-fscore"></div>
+    <div class="dm" id="m-fmsg"></div>
+    <button class="retry" id="m-retry">Try again &#8634;</button>
+  </div>
+</div>
+
+<div id="sec-c" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">&#10068; Quiz &middot; 15 Questions &middot; Coding &amp; Logic</div>
+    <div class="dyk-title">Python &mdash; Loops</div>
+    <div class="dyk-body">while and for, range(), and code you have to trace by hand. You need <strong>9 / 15 (60%+)</strong> to mark it as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="c-qnum">1 / 15</span></div>
+    <div class="sc"><label>Score</label><span id="c-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="c-prog" style="width:0%"></div></div><div class="pp" id="c-pct">0%</div></div>
+  <div id="c-card" class="card">
+    <div class="tp" id="c-topic"></div>
+    <div class="qt" id="c-q"></div>
+    <div class="opts" id="c-opts"></div>
+    <div class="fb" id="c-fb"></div>
+    <button class="nxt" id="c-nxt">Next &rarr;</button>
+  </div>
+  <div id="c-done" style="display:none" class="card dc">
+    <div class="di" id="c-ficon">&#127881;</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="c-fscore"></div>
+    <div class="dm" id="c-fmsg"></div>
+    <button class="retry" id="c-retry">Try again &#8634;</button>
+  </div>
+</div>
 <script>
-var SUBJECTS = [{"id":"p","label":"Physics","total":15}];
+var SUBJECTS = [{"id": "p", "label": "Physics", "total": 15}, {"id": "m", "label": "Maths", "total": 15}, {"id": "c", "label": "Python", "total": 15}];
 var LS_PFX   = 'icse_w08_tue';
 
 function saveScore(id, score, total, label) {
@@ -260,7 +356,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["pnotes","p","write"];
+  var all = ["pnotes", "p", "write", "mcnotes", "m", "c"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -456,7 +552,43 @@ quiz('p', [
 ], 'Physics');
 refreshProgress();
 makeSaveButton('save-wrap');
-loadRemoteProgress(function(ok){ if(ok) refreshProgress(); });
+loadRemoteProgress(function(ok){ if(ok) quiz('m', [
+  {"t": "Expressions", "q": "Which of these is an algebraic expression?", "o": ["2x + 3", "5 + 3 = 8", "10 − 4", "7 × 6"], "a": 0, "e": "An expression contains a variable and has no equals sign. The second is an equation; the others are plain arithmetic."},
+  {"t": "Adding", "q": "Add: (3x + 4y) and (2x − y)", "o": ["5x + 3y", "5x + 5y", "6xy", "5x + 4y"], "a": 0, "e": "Combine like terms separately: 3x + 2x = 5x, and 4y − y = 3y."},
+  {"t": "🔴 Hard · Subtracting", "q": "Subtract (5a − 3b) from (7a + 2b).", "o": ["2a + 5b", "2a − 5b", "12a − b", "−2a + 5b"], "a": 0, "e": "7a − 5a = 2a. For the b terms: 2b − (−3b) = 2b + 3b = 5b. The double minus becomes a plus."},
+  {"t": "Distributive Property", "q": "Multiply: 3(2x + 4)", "o": ["6x + 12", "6x + 4", "3x + 12", "2x + 12"], "a": 0, "e": "Multiply BOTH terms inside: 3 × 2x = 6x and 3 × 4 = 12. Forgetting the second term gives 6x + 4."},
+  {"t": "Simplifying", "q": "Simplify: 2x + 3y + 5x − 2y", "o": ["7x + y", "7x + 5y", "10xy", "7x − y"], "a": 0, "e": "Group like terms: 2x + 5x = 7x, and 3y − 2y = y. Unlike terms can never be merged, so 7x and y stay separate."},
+  {"t": "🔴 Hard · Substitution", "q": "Find the value of 3x − 2 when x = 5.", "o": ["13", "15", "7", "10"], "a": 0, "e": "Substitute first, then simplify: 3(5) − 2 = 15 − 2 = 13."},
+  {"t": "Like Terms", "q": "Identify the like terms among 4x, 3y, 2x and −5y.", "o": ["4x with 2x, and 3y with −5y", "4x with 3y", "2x with −5y", "All four are like terms"], "a": 0, "e": "Like terms carry the same variable. The x terms pair together and the y terms pair together."},
+  {"t": "🔴 Hard · Brackets", "q": "Simplify: (2a + 3b) − (a − 2b)", "o": ["a + 5b", "a + b", "3a + b", "a − b"], "a": 0, "e": "The minus flips every sign inside: 2a + 3b − a + 2b = a + 5b."},
+  {"t": "Distributive Property", "q": "Multiply: 4(2x − 3y)", "o": ["8x − 12y", "8x + 12y", "8x − 3y", "2x − 3y"], "a": 0, "e": "4 × 2x = 8x and 4 × (−3y) = −12y."},
+  {"t": "🔴 Hard · Substitution", "q": "If x = 2 and y = 3, find the value of 2x + 3y.", "o": ["13", "12", "5", "6"], "a": 0, "e": "2(2) + 3(3) = 4 + 9 = 13."},
+  {"t": "Adding", "q": "Add: (4p + 5q) and (2p − 6q)", "o": ["6p − q", "6p + q", "4p − q", "6p − 11q"], "a": 0, "e": "4p + 2p = 6p, and 5q − 6q = −q."},
+  {"t": "Coefficients", "q": "What is the coefficient of x in 5x − 3?", "o": ["5", "−3", "5x", "1"], "a": 0, "e": "The coefficient is the number multiplying the variable. Here −3 is a constant term, not a coefficient of x."},
+  {"t": "🔴 Hard · Brackets", "q": "Simplify: 2(x + 3) + 3(x − 2)", "o": ["5x", "5x + 6", "5x + 12", "5x − 12"], "a": 0, "e": "Expand both: (2x + 6) + (3x − 6) = 5x + 0 = 5x. The constants cancel exactly."},
+  {"t": "Subtracting", "q": "Subtract (3x − 2) from (5x + 4).", "o": ["2x + 6", "2x + 2", "8x + 2", "2x − 6"], "a": 0, "e": "5x − 3x = 2x, and 4 − (−2) = 4 + 2 = 6."},
+  {"t": "🔴 Hard · Substitution", "q": "Find the value of 2ab when a = 3 and b = 2.", "o": ["12", "6", "10", "8"], "a": 0, "e": "2ab means 2 × a × b = 2 × 3 × 2 = 12. The letters written together imply multiplication."}
+], 'Maths');
+
+quiz('c', [
+  {"t": "Loops", "q": "Which loop repeats for as long as a condition stays true?", "o": ["while", "for", "do-while", "repeat"], "a": 0, "e": "A while loop keeps going until its condition becomes False. Python has no do-while or repeat loop."},
+  {"t": "🔴 Hard · Tracing", "q": "How many times does this run?  i = 0 ; while i < 3: print(i) ; i = i + 1", "o": ["3", "1", "2", "4"], "a": 0, "e": "It runs for i = 0, 1 and 2 — three passes. When i reaches 3 the condition 3 < 3 is False and the loop stops."},
+  {"t": "range()", "q": "What does this print?  for i in range(1, 4): print(i)", "o": ["1 2 3", "1 2 3 4", "0 1 2 3", "1 2"], "a": 0, "e": "range(1, 4) starts at 1 and stops BEFORE 4, so it gives 1, 2 and 3."},
+  {"t": "range()", "q": "What sequence does range(5) produce?", "o": ["0, 1, 2, 3, 4", "1, 2, 3, 4, 5", "0, 1, 2, 3, 4, 5", "Just the number 5"], "a": 0, "e": "With one argument, range starts at 0 by default and stops before 5."},
+  {"t": "Tracing", "q": "What does this print?  x = 1 ; while x <= 3: print(x, end=' ') ; x += 1", "o": ["1 2 3", "1 2 3 4", "1 2", "3 2 1"], "a": 0, "e": "x takes the values 1, 2 and 3. At x = 4 the condition 4 <= 3 fails and the loop ends."},
+  {"t": "🔴 Hard · Infinite Loops", "q": "Which of these is an infinite loop?", "o": ["while True: print(\"Hi\")", "for i in range(5): print(i)", "i = 0 ; while i < 5: i += 1", "for x in range(3): pass"], "a": 0, "e": "The condition True can never become False and nothing breaks out, so it runs for ever. The third one is safe because i keeps increasing."},
+  {"t": "range()", "q": "What does this print?  for i in range(3, 6): print(i)", "o": ["3 4 5", "3 4 5 6", "4 5 6", "3 4"], "a": 0, "e": "Starts at 3, stops before 6."},
+  {"t": "🔴 Hard · range()", "q": "What does range(2, 10, 2) produce?", "o": ["2, 4, 6, 8", "2, 4, 6, 8, 10", "2, 3, 4, 5, 6, 7, 8, 9", "2, 4, 6, 8, 10, 12"], "a": 0, "e": "The third argument is the step. It counts 2, 4, 6, 8 — and stops before 10, so 10 is never included."},
+  {"t": "Choosing a Loop", "q": "To print the numbers 1 to 10 with a while loop, what must the loop body always include?", "o": ["A statement that increases the counter", "A print statement only", "A range() call", "A break statement"], "a": 0, "e": "Without something changing the tested variable, the condition never becomes False and the loop runs for ever."},
+  {"t": "🔴 Hard · continue", "q": "What does this print?  count = 0 ; while count < 3: count += 1 ; if count == 2: continue ; print(count)", "o": ["1 3", "1 2 3", "1", "2 3"], "a": 0, "e": "When count is 2, continue skips the print and jumps to the next pass. So only 1 and 3 are printed."},
+  {"t": "Choosing a Loop", "q": "Which loop is best when you already know how many repetitions you need?", "o": ["for", "while", "do-while", "repeat"], "a": 0, "e": "A for loop over a range is the natural choice for a known count. A while loop suits an unknown number of passes."},
+  {"t": "🔴 Hard · Counting Down", "q": "What does this print?  for i in range(2, -1, -1): print(i)", "o": ["2 1 0", "2 1 0 -1", "0 1 2", "2 1"], "a": 0, "e": "A step of −1 counts downwards from 2 and stops before −1, so it prints 2, 1 and 0."},
+  {"t": "🔴 Hard · while", "q": "When does a while loop check its condition?", "o": ["Before each pass through the body", "After each pass through the body", "Only once at the start", "Only when it finishes"], "a": 0, "e": "The test comes first, so if the condition is False at the outset the body never runs at all."},
+  {"t": "Tracing", "q": "How many times does this loop execute?  i = 5 ; while i > 0: i -= 1", "o": ["5", "4", "6", "It never ends"], "a": 0, "e": "i goes 5, 4, 3, 2, 1 — five passes. When i reaches 0 the condition 0 > 0 is False."},
+  {"t": "🔴 Hard · range()", "q": "What does this print?  for i in range(10, 0, -2): print(i, end=' ')", "o": ["10 8 6 4 2", "10 8 6 4 2 0", "10 9 8 7 6 5 4 3 2 1", "10 8 6 4"], "a": 0, "e": "Counting down in twos from 10, stopping before 0 — so 0 itself is never printed."}
+], 'CS / Python');
+
+refreshProgress(); });
 </script>
 </body>
 </html>
