@@ -80,16 +80,16 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 details{margin-top:6px}
 details summary{cursor:pointer;font-weight:600}
 </style>
-</style>
 </head>
 <body>
 <a class="back" href="index.html">&larr; Week 11</a>
 <header>
   <div class="logo">&#127963;&#65039;</div>
-  <div><h1>Saturday &middot; Week 11</h1><p>29 Aug 2026 &middot; 10:00 AM &middot; &#127963;&#65039; The Early Vedic Period &amp; Local Government Revision</p></div>
+  <div><h1>Saturday &middot; Week 11</h1><p>29 Aug 2026 &middot; 10:00 AM &middot; &#10135; Maths &middot; &#127963;&#65039; The Early Vedic Period &amp; Local Government Revision</p></div>
 </header>
 <div class="tabs">
   <button class="tab active" id="tab-study" onclick="switchTab('study')">&#128218; Study</button>
+  <button class="tab" id="tab-m" onclick="switchTab('m')">&#10135; Maths Quiz</button>
   <button class="tab" id="tab-h" onclick="switchTab('h')">&#127963;&#65039; History &amp; Civics</button>
 </div>
 <div class="prog-bar">
@@ -107,6 +107,19 @@ details summary{cursor:pointer;font-weight:600}
     <div class="dyk-eye">&#127963;&#65039; Saturday &middot; Week 11 &middot; 10:00 AM</div>
     <div class="dyk-title">The Early Vedic Period &middot; Local Self-Government Revision</div>
     <div class="dyk-body">The age of the Rigveda &mdash; and a side-by-side comparison of rural and urban local government.</div>
+  </div>
+
+  <div class="ql">➗ Maths — Problem Solving — Expressions &amp; Substitution</div>
+  <div class="icard">
+    <h3>Everything from this fortnight, in one place</h3>
+    <p>Today is a <strong>problem-solving</strong> session, not new theory. Expect a mix of simplifying, multiplying, dividing, substituting and framing.</p>
+    <div class="ex">Like terms → add the coefficients &nbsp;·&nbsp; Multiply → add exponents &nbsp;·&nbsp; Divide → subtract exponents &nbsp;·&nbsp; Substitute → then BODMAS</div>
+    <div class="hook">💡 A minus sign in front of a bracket flips every sign inside it. Check that step first whenever an answer comes out wrong.</div>
+  </div>
+  <div class="icard">
+    <h3>Show three lines, every time</h3>
+    <p>Write the rule, then the substitution, then the answer with its unit. ICSE papers award method marks even when the final number slips.</p>
+    <div class="ex">P = 2(l + b) → P = 2(11 + 5) → P = 32 cm</div>
   </div>
 
   <div class="ql">&#127963;&#65039; History &mdash; The Early Vedic Period</div>
@@ -167,6 +180,34 @@ details summary{cursor:pointer;font-weight:600}
   </div>
 </div>
 
+<div id="sec-m" class="sec">
+    <div class="dyk">
+    <div class="dyk-eye">➗ Maths · 15 Questions</div>
+    <div class="dyk-title">Weekly Problem Solving · Algebra</div>
+    <div class="dyk-body">10 core questions and 5 marked 🔴 Hard. You need <strong>9 / 15 (60%)</strong> to mark this as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="m-qnum">1 / 15</span></div>
+    <div class="sc"><label>Score</label><span id="m-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="m-prog" style="width:0%"></div></div><div class="pp" id="m-pct">0%</div></div>
+  <div id="m-card" class="card">
+    <div class="tp" id="m-topic"></div>
+    <div class="qt" id="m-q"></div>
+    <div class="opts" id="m-opts"></div>
+    <div class="fb" id="m-fb"></div>
+    <button class="nxt" id="m-nxt">Next &rarr;</button>
+  </div>
+  <div id="m-done" style="display:none" class="card dc">
+    <div class="di" id="m-ficon">&#127881;</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="m-fscore"></div>
+    <div class="dm" id="m-fmsg"></div>
+    <button class="retry" id="m-retry">Try again &#8634;</button>
+  </div>
+</div>
+
 <div id="sec-h" class="sec">
   <div class="dyk">
     <div class="dyk-eye">&#127963;&#65039; History &amp; Civics &middot; 15 Questions</div>
@@ -196,7 +237,7 @@ details summary{cursor:pointer;font-weight:600}
 </div>
 
 <script>
-var SUBJECTS = [{"id": "h", "label": "History & Civics", "total": 15}];
+var SUBJECTS = [{"id": "m", "label": "Maths", "total": 15}, {"id": "h", "label": "History & Civics", "total": 15}];
 var LS_PFX   = 'icse_w11_sat';
 
 function saveScore(id, score, total, label) {
@@ -243,7 +284,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["study", "h"];
+  var all = ["study", "m", "h"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -420,6 +461,24 @@ function makeSaveButton(containerId){
   row.appendChild(btn);row.appendChild(cfg);
   wrap.appendChild(row);
 }
+
+quiz('m', [
+  {"t": "Substitution", "q": "If x = 6 and y = 4, what is the value of 2x + 3y?", "o": ["24", "20", "36", "14"], "a": 0, "e": "2x = 12 and 3y = 12, so the total is 24."},
+  {"t": "Framing", "q": "A bus carries n passengers. Another bus carries 12 more. How many passengers are there in total?", "o": ["2n + 12", "n + 12", "2n", "n + 24"], "a": 0, "e": "The second bus carries n + 12, so together they carry n + (n + 12) = 2n + 12."},
+  {"t": "Like terms", "q": "Simplify: 7a + 3b − 2a + 5b", "o": ["5a + 8b", "5a + 2b", "9a + 8b", "13ab"], "a": 0, "e": "a terms: 7a − 2a = 5a. b terms: 3b + 5b = 8b. Unlike terms cannot be joined."},
+  {"t": "Multiplication", "q": "Multiply: 4x² × 3x³", "o": ["12x⁵", "12x⁶", "7x⁵", "12x"], "a": 0, "e": "Multiply the coefficients (4 × 3 = 12) and add the exponents (2 + 3 = 5)."},
+  {"t": "Division", "q": "Divide: 20a⁴ ÷ 5a²", "o": ["4a²", "4a⁶", "15a²", "4a"], "a": 0, "e": "20 ÷ 5 = 4 and a⁴ ÷ a² = a², so the answer is 4a²."},
+  {"t": "Perimeter", "q": "A rectangle is (2x + 1) cm long and (x − 3) cm wide. What is its perimeter?", "o": ["(6x − 4) cm", "(3x − 2) cm", "(6x + 4) cm", "(2x² − 5x) cm"], "a": 0, "e": "P = 2(l + b) = 2(2x + 1 + x − 3) = 2(3x − 2) = 6x − 4 cm."},
+  {"t": "Substitution", "q": "If a = −2, what is the value of 3a² + a?", "o": ["10", "14", "−10", "−14"], "a": 0, "e": "a² = 4, so 3a² = 12. Adding a gives 12 + (−2) = 10."},
+  {"t": "Brackets", "q": "Simplify: 5(x + 2) − 3x", "o": ["2x + 10", "2x + 2", "8x + 10", "2x − 10"], "a": 0, "e": "Expand first: 5x + 10 − 3x = 2x + 10."},
+  {"t": "Vocabulary", "q": "How many terms does the expression 4x² − 7x + 9 have, and what is it called?", "o": ["3 terms — a trinomial", "2 terms — a binomial", "4 terms — a polynomial", "1 term — a monomial"], "a": 0, "e": "Terms are separated by + and − signs: 4x², −7x and 9. Three terms make a trinomial."},
+  {"t": "Word problem", "q": "A pencil costs ₹x. A pen costs ₹4 more. What is the cost of 2 pencils and 3 pens?", "o": ["₹(5x + 12)", "₹(5x + 4)", "₹(5x + 7)", "₹(6x + 12)"], "a": 0, "e": "Pen = x + 4. Total = 2x + 3(x + 4) = 2x + 3x + 12 = 5x + 12."},
+  {"t": "🔴 Hard · Substitution", "q": "If p = 3 and q = −2, what is the value of p³ + q³?", "o": ["19", "35", "−19", "1"], "a": 0, "e": "p³ = 27 and q³ = (−2)³ = −8. So 27 + (−8) = 19. An odd power keeps the negative sign."},
+  {"t": "🔴 Hard · Simplify", "q": "Simplify: 3(2a − b) − 2(a − 2b)", "o": ["4a + b", "4a − 5b", "8a − 7b", "4a − 7b"], "a": 0, "e": "6a − 3b − 2a + 4b = 4a + b. The minus in front of the second bracket flips both signs inside it."},
+  {"t": "🔴 Hard · Division", "q": "Divide: (18x⁵y³ − 12x³y²) ÷ 6x²y²", "o": ["3x³y − 2x", "3x³y − 2xy", "3x³y² − 2x", "3x⁷y⁵ − 2x⁵y⁴"], "a": 0, "e": "Divide each term: 18x⁵y³ ÷ 6x²y² = 3x³y, and 12x³y² ÷ 6x²y² = 2x. So the answer is 3x³y − 2x."},
+  {"t": "🔴 Hard · Framing", "q": "A number is doubled and then 7 is subtracted; the result is then tripled. If the number is n, the final expression is:", "o": ["3(2n − 7)", "6n − 7", "2n − 21", "3(2n) − 7"], "a": 0, "e": "Doubled: 2n. Subtract 7: 2n − 7. Tripled: 3(2n − 7) = 6n − 21."},
+  {"t": "🔴 Hard · Area", "q": "A square has side (x + 3) cm. By how much does its perimeter exceed 4x cm?", "o": ["12 cm", "3 cm", "4x + 12 cm", "9 cm"], "a": 0, "e": "The perimeter is 4(x + 3) = 4x + 12. Subtracting 4x leaves 12 cm — the x terms cancel."}
+], "Maths");
 
 quiz('h', [
   {"t": "History · Aryans", "q": "The Aryans originally came from:", "o": ["Central Asia", "South India", "Tibet", "East Africa"], "a": 0, "e": "They migrated from Central Asia, near the Caspian Sea, around 1500 BCE."},

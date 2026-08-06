@@ -110,27 +110,36 @@ details summary{cursor:pointer;font-weight:600}
   </div>
 
 
-  <div class="ql">➗ Maths — Division &amp; Generalisation</div>
+  <div class="ql">➗ Maths — Adding &amp; Subtracting Polynomials</div>
+<div class="ql">➗ Adding</div>
   <div class="icard">
-    <h3>Dividing monomials</h3>
-    <p>Divide the coefficients, then <strong>subtract</strong> the exponents of each matching variable.</p>
-    <div class="ex">12x⁵ ÷ 4x³ = 3x² &nbsp;·&nbsp; (−20a³b²) ÷ (5ab) = −4a²b &nbsp;·&nbsp; 24x⁶y⁴ ÷ 8x³y² = 3x³y²</div>
-    <div class="hook">💡 Subtract exponents when dividing, add them when multiplying. If the exponent on top is smaller, the variable moves to the denominator: 35a³b⁵ ÷ 5a⁶b² = 7b³/a³.</div>
+    <h3>Like terms combine, unlike terms don't</h3>
+    <p>To add <strong>like terms</strong>, add the coefficients and keep the variable part unchanged:</p>
+    <div class="ex">3x + 5x = 8x &nbsp;·&nbsp; −7xy + 4xy = −3xy</div>
+    <p><strong>Unlike terms</strong> can only be written side by side — 2a + 3b stays 2a + 3b.</p>
+    <div class="hook">💡 7x + 8x = 15x, not 15x². Adding does not change the power — only multiplying does.</div>
+  </div>
+
+  <div class="ql">➗ Subtracting</div>
+  <div class="icard">
+    <h3>Subtract the coefficients</h3>
+    <div class="ex">8y − 3y = 5y &nbsp;·&nbsp; −5ab − 2ab = −7ab &nbsp;·&nbsp; 8y − (−3y) = 8y + 3y = 11y</div>
   </div>
   <div class="icard">
-    <h3>Dividing a polynomial by a monomial</h3>
-    <p>Split the polynomial and divide <strong>each</strong> term separately.</p>
-    <div class="ex">(12x⁵ − 9x³) ÷ 3x² = 4x³ − 3x<br>
-    (15x³y² − 10x²y³) ÷ 5x²y² = 3x − 2y<br>
-    (8x³y² − 16x²y³) ÷ (−4xy) = −2x²y + 4xy²</div>
-    <div class="hook">💡 Dividing by a negative flips the sign of <em>every</em> term in the answer.</div>
+    <h3>Opening brackets — the sign trap</h3>
+    <p>A minus sign in front of a bracket changes the sign of <strong>every</strong> term inside it:</p>
+    <div class="ex">(3x + 2y) − (x − 5y) = 3x + 2y − x + 5y = <strong>2x + 7y</strong><br>
+    8 − (4a − 5) = 8 − 4a + 5 = <strong>13 − 4a</strong></div>
+    <div class="hook">💡 The commonest mistake in the whole chapter is changing only the first term inside the bracket. Change them all.</div>
   </div>
   <div class="icard">
-    <h3>Generalisation — turning a pattern into a formula</h3>
-    <p>Sum of the first n <strong>even</strong> numbers = <strong>n(n + 1)</strong><br>
-    Sum of the first n <strong>odd</strong> numbers = <strong>n²</strong></p>
-    <div class="ex">2 + 4 + 6 + 8 + 10 + 12 = 6 × 7 = 42<br>1 + 3 + 5 + 7 + 9 + 11 + 13 + 15 = 8² = 64</div>
-    <div class="hook">💡 Count how many numbers there are — that is n. Then apply the formula rather than adding them up one by one.</div>
+    <h3>Reading the instruction</h3>
+    <p>"Subtract (5a + 3b) from (8a − 2b)" means <strong>(8a − 2b) − (5a + 3b)</strong> = 8a − 2b − 5a − 3b = 3a − 5b.</p>
+    <p>For longer sums, arrange like terms under each other in columns before you add.</p>
+  </div>
+  <div class="tip">
+    <div class="tip-eye">Before the quiz</div>
+    <div class="tip-body">Underline like terms in the same colour before combining — x terms once, y terms twice. Then add each group separately.</div>
   </div>
 
   <div class="ql">&#127963;&#65039; History &mdash; Knowing the Past</div>
@@ -211,7 +220,7 @@ details summary{cursor:pointer;font-weight:600}
 <div id="sec-m" class="sec">
   <div class="dyk">
     <div class="dyk-eye">➗ Maths · 15 Questions</div>
-    <div class="dyk-title">Division of Monomials & Polynomials · Generalisation</div>
+    <div class="dyk-title">Like Terms, Brackets & Signs</div>
     <div class="dyk-body">10 core questions and 5 marked 🔴 Hard. You need <strong>9 / 15 (60%)</strong> to mark this as Done.</div>
   </div>
   <div class="ql">Questions</div>
@@ -491,21 +500,21 @@ function makeSaveButton(containerId){
 }
 
 quiz('m', [
-  {"t": "Division", "q": "Divide: 15x⁴ ÷ 3x²", "o": ["5x²", "5x⁶", "45x²", "15x²"], "a": 0, "e": "15 ÷ 3 = 5, and x⁴ ÷ x² = x⁴⁻² = x²."},
-  {"t": "Division", "q": "Divide: (−20a³b²) ÷ (5ab)", "o": ["−4a²b", "−4a³b", "4a²b", "−4a²b²"], "a": 0, "e": "−20 ÷ 5 = −4; a³ ÷ a = a²; b² ÷ b = b."},
-  {"t": "Division", "q": "Divide: (6x² − 9x) ÷ 3x", "o": ["2x − 3", "2x + 3", "6x − 9", "2x² − 3x"], "a": 0, "e": "Divide each term: 6x² ÷ 3x = 2x and −9x ÷ 3x = −3."},
-  {"t": "Division", "q": "Divide: (15x³y² − 10x²y³) ÷ (5x²y²)", "o": ["3x − 2y", "3x + 2y", "5x − 5y", "15x − 10y"], "a": 0, "e": "15x³y² ÷ 5x²y² = 3x and −10x²y³ ÷ 5x²y² = −2y."},
-  {"t": "Generalisation", "q": "The sum of the first 6 even numbers is:", "o": ["42", "30", "36", "48"], "a": 0, "e": "Sum of first n even numbers = n(n + 1) = 6 × 7 = 42. Check: 2+4+6+8+10+12 = 42."},
-  {"t": "🔴 Hard · Division", "q": "Divide: (8x³y² − 16x²y³) ÷ (−4xy)", "o": ["−2x²y + 4xy²", "2x²y − 4xy²", "2x²y + 4xy²", "−2x²y − 4xy²"], "a": 0, "e": "Dividing by −4xy flips both signs: 8x³y² ÷ −4xy = −2x²y, and −16x²y³ ÷ −4xy = +4xy²."},
-  {"t": "Division", "q": "Divide: (x² + 3x) ÷ x", "o": ["x + 3", "x² + 3", "x + 3x", "3x + 3"], "a": 0, "e": "x² ÷ x = x and 3x ÷ x = 3."},
-  {"t": "🔴 Hard · Division", "q": "Simplify: (24x⁶y⁴) ÷ (8x³y²)", "o": ["3x³y²", "3x²y³", "3x⁹y⁶", "3x³y⁶"], "a": 0, "e": "24 ÷ 8 = 3; x⁶ ÷ x³ = x³; y⁴ ÷ y² = y². Subtract the exponents, don't divide them."},
-  {"t": "Generalisation", "q": "The sum of the first 8 odd numbers is:", "o": ["64", "56", "72", "80"], "a": 0, "e": "Sum of first n odd numbers = n² = 8² = 64."},
-  {"t": "🔴 Hard · Generalisation", "q": "The general rule for the sum of the first n even numbers is:", "o": ["n(n + 1)", "n²", "n(n − 1)", "2n"], "a": 0, "e": "n(n + 1). Note 2n is the nth even number itself, not the sum."},
-  {"t": "Division", "q": "Divide: (25xy² − 15x²y) ÷ (5xy)", "o": ["5y − 3x", "5y + 3x", "5x − 3y", "25y − 15x"], "a": 0, "e": "25xy² ÷ 5xy = 5y and −15x²y ÷ 5xy = −3x."},
-  {"t": "Generalisation", "q": "The sum of the first 5 odd numbers is:", "o": ["25", "20", "15", "10"], "a": 0, "e": "n² = 5² = 25. Check: 1+3+5+7+9 = 25."},
-  {"t": "🔴 Hard · Division", "q": "Divide: (36a³b² − 24a²b³) ÷ (6a²b²)", "o": ["6a − 4b", "6a + 4b", "36a − 24b", "6ab − 4ab"], "a": 0, "e": "36a³b² ÷ 6a²b² = 6a and −24a²b³ ÷ 6a²b² = −4b."},
-  {"t": "Division", "q": "Simplify: (18x⁴ − 9x³) ÷ (−3x²)", "o": ["−6x² + 3x", "6x² − 3x", "−6x² − 3x", "6x² + 3x"], "a": 0, "e": "Dividing by a negative flips both signs: −6x² and +3x."},
-  {"t": "🔴 Hard · Generalisation", "q": "The sum of the first n odd numbers is:", "o": ["n²", "n(n + 1)", "n(n − 1)", "2n"], "a": 0, "e": "n². The even-number sum is n(n + 1) — don't swap the two formulas."}
+  {"t": "Addition", "q": "Add: 7x + 8x", "o": ["15x", "15x²", "x", "56x"], "a": 0, "e": "Add the coefficients only: 7 + 8 = 15, and the variable part stays x."},
+  {"t": "Addition", "q": "Add: −5xy + 9xy", "o": ["4xy", "−4xy", "−14xy", "4x²y²"], "a": 0, "e": "−5 + 9 = 4, and the variable part xy is unchanged."},
+  {"t": "Simplifying", "q": "Simplify: 3a + 5b − 2a + 4b", "o": ["a + 9b", "5a + 9b", "a + b", "5a + b"], "a": 0, "e": "a terms: 3a − 2a = a. b terms: 5b + 4b = 9b. So the answer is a + 9b."},
+  {"t": "Subtraction", "q": "Subtract 5x from 12x.", "o": ["7x", "−7x", "17x", "60x"], "a": 0, "e": "'Subtract 5x from 12x' means 12x − 5x = 7x."},
+  {"t": "Subtraction", "q": "Subtract −3y from 8y.", "o": ["11y", "5y", "−11y", "24y"], "a": 0, "e": "8y − (−3y) = 8y + 3y = 11y. Subtracting a negative adds."},
+  {"t": "🔴 Hard · Brackets", "q": "Simplify: (4a + 3b) − (2a − b)", "o": ["2a + 4b", "2a + 2b", "6a + 2b", "2a − 4b"], "a": 0, "e": "Open the bracket: 4a + 3b − 2a + b. Then 4a − 2a = 2a and 3b + b = 4b."},
+  {"t": "Polynomials", "q": "Add: 3x² + 2x − 1 and x² − 3x + 5", "o": ["4x² − x + 4", "4x² − x − 6", "4x² + 5x + 4", "4x² − 5x + 4"], "a": 0, "e": "x²: 3 + 1 = 4. x: 2 − 3 = −1. Constants: −1 + 5 = 4."},
+  {"t": "🔴 Hard · Subtraction", "q": "Subtract (5a + 3b) from (8a − 2b).", "o": ["3a − 5b", "3a + 5b", "−3a − 5b", "13a + b"], "a": 0, "e": "(8a − 2b) − (5a + 3b) = 8a − 5a − 2b − 3b = 3a − 5b."},
+  {"t": "Addition", "q": "The sum of 2x and −5x is:", "o": ["−3x", "3x", "−7x", "10x"], "a": 0, "e": "2 + (−5) = −3, so the sum is −3x."},
+  {"t": "🔴 Hard · Simplifying", "q": "Simplify: 8p − 3q + 2p + 6q", "o": ["10p + 3q", "10p − 3q", "6p + 9q", "6p − 9q"], "a": 0, "e": "p terms: 8p + 2p = 10p. q terms: −3q + 6q = +3q."},
+  {"t": "Subtraction", "q": "Subtract 4xy from 9xy.", "o": ["5xy", "−5xy", "13xy", "36xy"], "a": 0, "e": "9xy − 4xy = 5xy — subtract the coefficients, keep xy."},
+  {"t": "Brackets", "q": "Simplify: 3x + 5y − (x − 2y)", "o": ["2x + 7y", "2x + 3y", "4x + 7y", "2x − 7y"], "a": 0, "e": "Opening the bracket gives 3x + 5y − x + 2y = 2x + 7y."},
+  {"t": "🔴 Hard · Addition", "q": "Add: 4ab, −3ab, 6ab and −2ab", "o": ["5ab", "15ab", "−5ab", "−15ab"], "a": 0, "e": "4 − 3 + 6 − 2 = 5, so the total is 5ab."},
+  {"t": "Multi-step", "q": "From the sum of (5x + 3y) and (2x − y), subtract (x + 4y).", "o": ["6x − 2y", "6x + 2y", "8x + 2y", "6x − 4y"], "a": 0, "e": "The sum is 7x + 2y. Then (7x + 2y) − (x + 4y) = 6x − 2y."},
+  {"t": "🔴 Hard · Brackets", "q": "Evaluate: 8 − (4a − 5)", "o": ["13 − 4a", "3 − 4a", "13 + 4a", "3 + 4a"], "a": 0, "e": "Both signs inside change: 8 − 4a + 5 = 13 − 4a."}
 ], "Maths");
 
 quiz('h', [

@@ -80,16 +80,16 @@ header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
 details{margin-top:6px}
 details summary{cursor:pointer;font-weight:600}
 </style>
-</style>
 </head>
 <body>
 <a class="back" href="index.html">&larr; Week 12</a>
 <header>
   <div class="logo">&#127963;&#65039;</div>
-  <div><h1>Saturday &middot; Week 12</h1><p>5 Sep 2026 &middot; 10:00 AM &middot; &#127963;&#65039; Revision &mdash; Sources, Indus Valley, Early Vedic &amp; Local Government</p></div>
+  <div><h1>Saturday &middot; Week 12</h1><p>5 Sep 2026 &middot; 10:00 AM &middot; &#10135; Maths &middot; &#127963;&#65039; Revision &mdash; Sources, Indus Valley, Early Vedic &amp; Local Government</p></div>
 </header>
 <div class="tabs">
   <button class="tab active" id="tab-study" onclick="switchTab('study')">&#128218; Study</button>
+  <button class="tab" id="tab-m" onclick="switchTab('m')">&#10135; Maths Quiz</button>
   <button class="tab" id="tab-h" onclick="switchTab('h')">&#127963;&#65039; History &amp; Civics</button>
 </div>
 <div class="prog-bar">
@@ -107,6 +107,19 @@ details summary{cursor:pointer;font-weight:600}
     <div class="dyk-eye">&#127963;&#65039; Saturday &middot; Week 12 &middot; 10:00 AM</div>
     <div class="dyk-title">Revision &mdash; all four chapters</div>
     <div class="dyk-body">Knowing the Past, the Indus Valley, the Early Vedic Period, and rural and urban local self-government. Read the recap, then take the mixed quiz.</div>
+  </div>
+
+  <div class="ql">➗ Maths — Weekly Problem Solving — Algebra &amp; Equations</div>
+  <div class="icard">
+    <h3>A mixed set — read each question twice</h3>
+    <p>Today pulls together everything from Weeks 9&ndash;12: like terms, multiplication and division of algebraic terms, substitution, framing expressions and solving equations.</p>
+    <div class="ex">Simplify → collect like terms &nbsp;·&nbsp; Solve → get the letter alone &nbsp;·&nbsp; Frame → name the unknown first</div>
+    <div class="hook">💡 When an equation has brackets, expand before transposing. When it has fractions, multiply throughout by the LCM first.</div>
+  </div>
+  <div class="icard">
+    <h3>Check every solution</h3>
+    <p>Substitute your answer back into the original equation. If LHS = RHS, the answer is right — no guesswork needed.</p>
+    <div class="ex">3(x − 4) = 18 gives x = 10. Check: 3(10 − 4) = 3 × 6 = 18 ✔</div>
   </div>
 
   <div class="ql">&#128218; Quick Recap</div>
@@ -151,6 +164,34 @@ details summary{cursor:pointer;font-weight:600}
   </div>
 </div>
 
+<div id="sec-m" class="sec">
+    <div class="dyk">
+    <div class="dyk-eye">➗ Maths · 15 Questions</div>
+    <div class="dyk-title">Revision · Expressions &amp; Equations</div>
+    <div class="dyk-body">10 core questions and 5 marked 🔴 Hard. You need <strong>9 / 15 (60%)</strong> to mark this as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="m-qnum">1 / 15</span></div>
+    <div class="sc"><label>Score</label><span id="m-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="m-prog" style="width:0%"></div></div><div class="pp" id="m-pct">0%</div></div>
+  <div id="m-card" class="card">
+    <div class="tp" id="m-topic"></div>
+    <div class="qt" id="m-q"></div>
+    <div class="opts" id="m-opts"></div>
+    <div class="fb" id="m-fb"></div>
+    <button class="nxt" id="m-nxt">Next &rarr;</button>
+  </div>
+  <div id="m-done" style="display:none" class="card dc">
+    <div class="di" id="m-ficon">&#127881;</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="m-fscore"></div>
+    <div class="dm" id="m-fmsg"></div>
+    <button class="retry" id="m-retry">Try again &#8634;</button>
+  </div>
+</div>
+
 <div id="sec-h" class="sec">
   <div class="dyk">
     <div class="dyk-eye">&#127963;&#65039; History &amp; Civics &middot; 15 Questions</div>
@@ -180,7 +221,7 @@ details summary{cursor:pointer;font-weight:600}
 </div>
 
 <script>
-var SUBJECTS = [{"id": "h", "label": "History & Civics", "total": 15}];
+var SUBJECTS = [{"id": "m", "label": "Maths", "total": 15}, {"id": "h", "label": "History & Civics", "total": 15}];
 var LS_PFX   = 'icse_w12_sat';
 
 function saveScore(id, score, total, label) {
@@ -227,7 +268,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["study", "h"];
+  var all = ["study", "m", "h"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -404,6 +445,24 @@ function makeSaveButton(containerId){
   row.appendChild(btn);row.appendChild(cfg);
   wrap.appendChild(row);
 }
+
+quiz('m', [
+  {"t": "Simplify", "q": "Simplify: 9x + 4y − 3x − y", "o": ["6x + 3y", "6x + 5y", "12x + 3y", "9xy"], "a": 0, "e": "x terms: 9x − 3x = 6x. y terms: 4y − y = 3y."},
+  {"t": "Substitution", "q": "If x = 3 and y = −2, what is the value of 4x + 5y?", "o": ["2", "22", "−2", "−22"], "a": 0, "e": "4x = 12 and 5y = −10, so the total is 12 − 10 = 2."},
+  {"t": "Solving", "q": "Solve: 7x − 12 = 30", "o": ["x = 6", "x = 42/7", "x = 18", "x = 5"], "a": 0, "e": "7x = 42, so x = 6."},
+  {"t": "Framing", "q": "A number is n. Write 'eight less than double the number'.", "o": ["2n − 8", "8 − 2n", "2(n − 8)", "n/2 − 8"], "a": 0, "e": "Double the number is 2n, and eight less means subtract 8: 2n − 8."},
+  {"t": "Multiplication", "q": "Multiply: 5a²b × 3ab³", "o": ["15a³b⁴", "15a²b³", "8a³b⁴", "15ab"], "a": 0, "e": "5 × 3 = 15; a² × a = a³; b × b³ = b⁴."},
+  {"t": "Brackets", "q": "Simplify: 4(2x − 3) − 3(x − 5)", "o": ["5x + 3", "5x − 27", "11x − 27", "5x − 3"], "a": 0, "e": "8x − 12 − 3x + 15 = 5x + 3. The minus before the second bracket flips both signs."},
+  {"t": "Equations", "q": "Solve: 3(x − 4) = 18", "o": ["x = 10", "x = 6", "x = 22", "x = 2"], "a": 0, "e": "Divide both sides by 3: x − 4 = 6, so x = 10."},
+  {"t": "Word problem", "q": "The sum of a number and 17 is 45. What is the number?", "o": ["28", "62", "17", "45"], "a": 0, "e": "x + 17 = 45, so x = 28."},
+  {"t": "Perimeter", "q": "A rectangle has length (3x) cm and breadth (x + 2) cm. What is its perimeter?", "o": ["(8x + 4) cm", "(4x + 2) cm", "(8x + 2) cm", "(3x² + 6x) cm"], "a": 0, "e": "P = 2(3x + x + 2) = 2(4x + 2) = 8x + 4 cm."},
+  {"t": "Division", "q": "Divide: 36p⁵q³ ÷ 9p²q", "o": ["4p³q²", "4p³q", "4p⁷q⁴", "27p³q²"], "a": 0, "e": "36 ÷ 9 = 4; p⁵ ÷ p² = p³; q³ ÷ q = q²."},
+  {"t": "🔴 Hard · Equations", "q": "Solve: 4x + 9 = 2x + 25", "o": ["x = 8", "x = 17", "x = 4", "x = 16"], "a": 0, "e": "4x − 2x = 25 − 9 → 2x = 16 → x = 8."},
+  {"t": "🔴 Hard · Substitution", "q": "If a = 4 and b = −3, what is the value of a² + 2ab + b²?", "o": ["1", "25", "49", "−1"], "a": 0, "e": "a² = 16, 2ab = 2(4)(−3) = −24, b² = 9. So 16 − 24 + 9 = 1. (It equals (a + b)² = 1².)"},
+  {"t": "🔴 Hard · Word problem", "q": "A pencil costs ₹4 less than a pen. Together they cost ₹26. What does the pen cost?", "o": ["₹15", "₹11", "₹13", "₹22"], "a": 0, "e": "Let the pen be x. Then x + (x − 4) = 26 → 2x = 30 → x = 15."},
+  {"t": "🔴 Hard · Fractions", "q": "Solve: (3x − 2)/4 = 4", "o": ["x = 6", "x = 4.5", "x = 18", "x = 2"], "a": 0, "e": "Multiply both sides by 4: 3x − 2 = 16 → 3x = 18 → x = 6."},
+  {"t": "🔴 Hard · Ages", "q": "Two years ago Sam was 12 years old. His sister is now 5 years younger than Sam. How old is his sister now?", "o": ["9 years", "7 years", "10 years", "14 years"], "a": 0, "e": "Sam is now 12 + 2 = 14. His sister is 14 − 5 = 9 years old."}
+], "Maths");
 
 quiz('h', [
   {"t": "History · Sources", "q": "Which of these is a monument, and therefore an archaeological source?", "o": ["The Sanchi Stupa", "A copper plate inscription", "The Rigveda", "A traveller's diary"], "a": 0, "e": "Monuments are standing archaeological remains. An inscription is archaeological too, but it is not a monument."},
