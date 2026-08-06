@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-08-06T15:36:43.062Z",
+  "lastSaved": "2026-08-06T15:41:44.307Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -268,6 +268,13 @@
       "totalQ": 15,
       "lastDate": "2026-08-05",
       "label": "Maths"
+    },
+    "icse_w02_fri_s": {
+      "attempts": 1,
+      "bestScore": 7,
+      "totalQ": 10,
+      "lastDate": "2026-08-06",
+      "label": "Science Diagrams"
     }
   }
 }
