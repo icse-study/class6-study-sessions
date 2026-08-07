@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-08-07T10:44:03.210Z",
+  "lastSaved": "2026-08-07T17:00:59.498Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -282,6 +282,20 @@
       "totalQ": 15,
       "lastDate": "2026-08-06",
       "label": "Biology"
+    },
+    "icse_w03_mon_k": {
+      "attempts": 2,
+      "bestScore": 7,
+      "totalQ": 15,
+      "lastDate": "2026-08-07",
+      "label": "Kannada Grammar"
+    },
+    "icse_w03_mon_m": {
+      "attempts": 2,
+      "bestScore": 0,
+      "totalQ": 10,
+      "lastDate": "2026-08-07",
+      "label": "Maths Quick Practice"
     }
   }
 }
