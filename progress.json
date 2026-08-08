@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-08-08T10:54:24.239Z",
+  "lastSaved": "2026-08-08T11:33:54.230Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -263,10 +263,10 @@
       "label": "Chemistry"
     },
     "icse_w02_thu_m": {
-      "attempts": 2,
-      "bestScore": 14,
+      "attempts": 3,
+      "bestScore": 15,
       "totalQ": 15,
-      "lastDate": "2026-08-05",
+      "lastDate": "2026-08-08",
       "label": "Maths"
     },
     "icse_w02_fri_s": {
@@ -324,6 +324,20 @@
       "totalQ": 15,
       "lastDate": "2026-08-08",
       "label": "French"
+    },
+    "icse_w02_sun_mx": {
+      "attempts": 1,
+      "bestScore": 30,
+      "totalQ": 30,
+      "lastDate": "2026-08-08",
+      "label": "Mixed Quiz"
+    },
+    "icse_w02_sun_gh": {
+      "attempts": 1,
+      "bestScore": 15,
+      "totalQ": 15,
+      "lastDate": "2026-08-08",
+      "label": "Geo+History"
     }
   }
 }
