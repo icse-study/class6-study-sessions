@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-08-07T17:00:59.498Z",
+  "lastSaved": "2026-08-08T10:27:07.872Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -296,6 +296,13 @@
       "totalQ": 10,
       "lastDate": "2026-08-07",
       "label": "Maths Quick Practice"
+    },
+    "icse_w02_sun_k": {
+      "attempts": 1,
+      "bestScore": 11,
+      "totalQ": 15,
+      "lastDate": "2026-08-08",
+      "label": "Kannada Revision"
     }
   }
 }
