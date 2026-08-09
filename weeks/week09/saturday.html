@@ -215,13 +215,31 @@ details summary{cursor:pointer;font-weight:600}
       <div class="ans">Every adult villager is a member of the Gram Sabha, so ordinary people &mdash; not distant officials &mdash; elect the Gram Panchayat and decide which works matter most. The Gram Sabha meets regularly to examine the Panchayat's accounts and plans, and can even remove it by a no-confidence vote. Because seats are reserved for women and for Scheduled Castes and Tribes, groups that were once left out now help make the decisions. Problems such as a broken well or a closed school are solved by people who live with them daily.</div>
     </details>
   </div>
+
+  <div class="ql">📜 The Story of Algebra · Part 4 of 16 — Europe Invents the Symbols</div>
+  <div class="icard">
+    <h3>Centuries of writing maths in words</h3>
+    <p>Even after al-Khwarizmi, mathematicians still wrote equations as sentences. Renaissance Europe finally built the compact notation we use now. <strong>François Viète</strong> pushed symbolic algebra forward, and <strong>René Descartes</strong> settled the habit of using <strong>x, y, z</strong> for unknowns and <strong>a, b, c</strong> for known values.</p>
+    <div class="ex">There is no single reason why <strong>x</strong> won. Any letter works — x simply became the convention for <em>the mysterious thing we are trying to find</em>.</div>
+  </div>
+  <div class="icard">
+    <h3>The equals sign has an author</h3>
+    <p>The <strong>=</strong> sign was invented by the Welsh mathematician <strong>Robert Recorde</strong> in 1557. He was tired of writing <em>is equal to</em> over and over, and chose two parallel lines because, in his words, no two things can be more equal than two parallel lines.</p>
+    <div class="ex">Before 1557, every single equation ever written used words for <em>equals</em>.</div>
+    <div class="hook">💡 Bracket signs, +, − and = were all invented by somebody. The rules for opening brackets you are practising today are only possible because those symbols exist.</div>
+  </div>
+  <div class="icard">
+    <h3>Descartes joins algebra to geometry</h3>
+    <p>Descartes showed that an equation can be seen as a <strong>shape</strong>. y = 2x + 3 is not just a rule — it is a straight line. This became coordinate geometry, and later powered physics, engineering and computer graphics.</p>
+    <div class="ex">Linear equation → straight line &nbsp;·&nbsp; Quadratic equation → parabola (the curve of a thrown ball)</div>
+  </div>
 </div>
 
 <div id="sec-m" class="sec">
   <div class="dyk">
-    <div class="dyk-eye">➗ Maths · 15 Questions</div>
+    <div class="dyk-eye">➗ Maths · 20 Questions</div>
     <div class="dyk-title">Like Terms, Brackets & Signs</div>
-    <div class="dyk-body">10 core questions and 5 marked 🔴 Hard. You need <strong>9 / 15 (60%)</strong> to mark this as Done.</div>
+    <div class="dyk-body">20 questions — core practice, 🔴 Hard challenges and 📜 Story of Algebra. You need <strong>12 / 20 (60%)</strong> to mark this as Done.</div>
   </div>
   <div class="ql">Questions</div>
   <div class="sr">
@@ -274,7 +292,7 @@ details summary{cursor:pointer;font-weight:600}
 </div>
 
 <script>
-var SUBJECTS = [{"id": "m", "label": "Maths", "total": 15}, {"id": "h", "label": "History & Civics", "total": 15}];
+var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}, {"id": "h", "label": "History & Civics", "total": 15}];
 var LS_PFX   = 'icse_w09_sat';
 
 function saveScore(id, score, total, label) {
@@ -514,7 +532,12 @@ quiz('m', [
   {"t": "Brackets", "q": "Simplify: 3x + 5y − (x − 2y)", "o": ["2x + 7y", "2x + 3y", "4x + 7y", "2x − 7y"], "a": 0, "e": "Opening the bracket gives 3x + 5y − x + 2y = 2x + 7y."},
   {"t": "🔴 Hard · Addition", "q": "Add: 4ab, −3ab, 6ab and −2ab", "o": ["5ab", "15ab", "−5ab", "−15ab"], "a": 0, "e": "4 − 3 + 6 − 2 = 5, so the total is 5ab."},
   {"t": "Multi-step", "q": "From the sum of (5x + 3y) and (2x − y), subtract (x + 4y).", "o": ["6x − 2y", "6x + 2y", "8x + 2y", "6x − 4y"], "a": 0, "e": "The sum is 7x + 2y. Then (7x + 2y) − (x + 4y) = 6x − 2y."},
-  {"t": "🔴 Hard · Brackets", "q": "Evaluate: 8 − (4a − 5)", "o": ["13 − 4a", "3 − 4a", "13 + 4a", "3 + 4a"], "a": 0, "e": "Both signs inside change: 8 − 4a + 5 = 13 − 4a."}
+  {"t": "🔴 Hard · Brackets", "q": "Evaluate: 8 − (4a − 5)", "o": ["13 − 4a", "3 − 4a", "13 + 4a", "3 + 4a"], "a": 0, "e": "Both signs inside change: 8 − 4a + 5 = 13 − 4a."},
+  {"t": "📜 Story of Algebra", "q": "The equals sign = was introduced by:", "o": ["Robert Recorde", "René Descartes", "Al-Khwarizmi", "Diophantus"], "a": 0, "e": "Robert Recorde invented = in 1557 because he was tired of writing the words is equal to."},
+  {"t": "📜 Story of Algebra", "q": "Why did Robert Recorde choose two parallel lines for the equals sign?", "o": ["Because no two things can be more equal than two parallel lines", "Because they were quick to carve in stone", "Because they looked like a balance beam", "Because Descartes suggested it"], "a": 0, "e": "That was his own stated reason — two parallel lines are perfectly matched, so they picture equality."},
+  {"t": "📜 Story of Algebra", "q": "Who popularised using x, y, z for unknowns and a, b, c for known values?", "o": ["René Descartes", "Brahmagupta", "Al-Khwarizmi", "Bhaskara II"], "a": 0, "e": "Descartes settled this convention in the 17th century, and it is still exactly how we write algebra today."},
+  {"t": "Brackets", "q": "Simplify: 7m − [3m − (2m − 5)]", "o": ["6m − 5", "2m − 5", "6m + 5", "8m − 5"], "a": 0, "e": "Innermost first: 3m − (2m − 5) = m + 5. Then 7m − (m + 5) = 6m − 5."},
+  {"t": "🔴 Hard · Subtraction", "q": "Subtract (3x² − 2x + 7) from (5x² + x − 4).", "o": ["2x² + 3x − 11", "2x² − x + 3", "2x² + 3x + 3", "8x² − x + 3"], "a": 0, "e": "Change every sign of the second bracket: 5x² + x − 4 − 3x² + 2x − 7 = 2x² + 3x − 11."}
 ], "Maths");
 
 quiz('h', [

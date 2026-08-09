@@ -140,13 +140,31 @@ details summary{cursor:pointer;font-weight:600}</style>
     <div class="qn">📌 Only Maths is published for this session</div>
     <div class="qe">The other subjects on today's timetable are not in this week's material yet &mdash; do the Maths quiz, then carry on with them offline.</div>
   </div>
+
+  <div class="ql">📜 The Story of Algebra · Part 15 of 16 — Algebra Describes the Universe</div>
+  <div class="icard">
+    <h3>Two of the most famous sentences ever written</h3>
+    <p>Physics is written in algebra. Newton's <strong>F = ma</strong> and Einstein's <strong>E = mc²</strong> are just equations — relationships between quantities, exactly like the word problems you solved today.</p>
+    <div class="ex">F = ma tells you: force is mass times acceleration, for every object in the universe.</div>
+    <div class="hook">💡 Give any two of F, m and a, and you can find the third — by solving a linear equation, precisely the skill in this session.</div>
+  </div>
+  <div class="icard">
+    <h3>A word problem is a model</h3>
+    <p>When you turn <em>Anita is 5 times as old as her son</em> into 5x, you are doing what physicists do: building a <strong>model</strong>. The letters stand for real quantities, and the equation captures how they are tied together.</p>
+    <div class="ex">Read → name the unknown → write the relationship → solve → check against the story.</div>
+  </div>
+  <div class="icard">
+    <h3>From counting grain to landing rockets</h3>
+    <p>The Egyptians used unknowns to divide bread and beer. Today the same idea puts spacecraft into orbit. The equations grew; the method — name what you do not know, then pin it down — never changed.</p>
+    <div class="hook">💡 Always check your answer inside the original sentence, not just in the equation. An age of −7 solves the maths and fails the story.</div>
+  </div>
 </div>
 
 <div id="sec-m" class="sec">
     <div class="dyk">
-    <div class="dyk-eye">➗ Maths · 15 Questions</div>
+    <div class="dyk-eye">➗ Maths · 20 Questions</div>
     <div class="dyk-title">Word Problems on Linear Equations</div>
-    <div class="dyk-body">10 core questions and 5 marked 🔴 Hard. You need <strong>9 / 15 (60%)</strong> to mark this as Done.</div>
+    <div class="dyk-body">20 questions — core practice, 🔴 Hard challenges and 📜 Story of Algebra. You need <strong>12 / 20 (60%)</strong> to mark this as Done.</div>
   </div>
   <div class="ql">Questions</div>
   <div class="sr">
@@ -171,7 +189,7 @@ details summary{cursor:pointer;font-weight:600}</style>
 </div>
 
 <script>
-var SUBJECTS = [{"id": "m", "label": "Maths", "total": 15}];
+var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}];
 var LS_PFX   = 'icse_w12_thu';
 
 function saveScore(id, score, total, label) {
@@ -411,7 +429,12 @@ quiz('m', [
   {"t": "🔴 Hard · Perimeter", "q": "The length of a rectangle is 4 cm more than its breadth. If the perimeter is 40 cm, what is the length?", "o": ["12 cm", "8 cm", "16 cm", "10 cm"], "a": 0, "e": "Let the breadth be x. Then 2(x + x + 4) = 40 → 4x + 8 = 40 → x = 8. The length is 8 + 4 = 12 cm."},
   {"t": "🔴 Hard · Money", "q": "Rahul had ₹200. He bought 4 notebooks at the same price and was left with ₹60. What did one notebook cost?", "o": ["₹35", "₹50", "₹15", "₹65"], "a": 0, "e": "200 − 4x = 60 → 4x = 140 → x = 35."},
   {"t": "🔴 Hard · Numbers", "q": "The sum of three consecutive whole numbers is 72. What is the largest of them?", "o": ["25", "23", "24", "26"], "a": 0, "e": "x + (x + 1) + (x + 2) = 72 → 3x + 3 = 72 → x = 23. The numbers are 23, 24 and 25."},
-  {"t": "🔴 Hard · Mixture", "q": "In a class of 45 students there are 7 more girls than boys. How many girls are there?", "o": ["26", "19", "23", "32"], "a": 0, "e": "Let the boys be x. Then x + (x + 7) = 45 → 2x = 38 → x = 19 boys, so there are 45 − 19 = 26 girls."}
+  {"t": "🔴 Hard · Mixture", "q": "In a class of 45 students there are 7 more girls than boys. How many girls are there?", "o": ["26", "19", "23", "32"], "a": 0, "e": "Let the boys be x. Then x + (x + 7) = 45 → 2x = 38 → x = 19 boys, so there are 45 − 19 = 26 girls."},
+  {"t": "📜 Story of Algebra", "q": "Newton's F = ma and Einstein's E = mc² are examples of:", "o": ["Algebraic equations describing the physical world", "Geometric constructions", "Number patterns with no meaning", "Rules for counting"], "a": 0, "e": "Both are relationships between physical quantities written in algebra — exactly the same kind of equation you solve in word problems."},
+  {"t": "📜 Story of Algebra", "q": "In the formula F = ma, if F and a are known, finding m is an example of:", "o": ["Solving an equation for an unknown", "Framing an expression", "Adding like terms", "Counting in multiples"], "a": 0, "e": "You rearrange to m = F/a — the same transposition you use on x + 8 = 15, applied to physics."},
+  {"t": "Numbers", "q": "The sum of two numbers is 40 and their difference is 8. What is the larger number?", "o": ["24", "16", "32", "20"], "a": 0, "e": "Let the larger be x, so the smaller is 40 − x. Then x − (40 − x) = 8 gives 2x = 48 and x = 24."},
+  {"t": "🔴 Hard · Numbers", "q": "A number is multiplied by 5 and then 12 is subtracted. The result is 3 times the number. Find the number.", "o": ["6", "3", "12", "4"], "a": 0, "e": "5x − 12 = 3x, so 2x = 12 and x = 6. Check: 30 − 12 = 18 and 3 × 6 = 18."},
+  {"t": "🔴 Hard · Age", "q": "In 6 years Riya will be twice as old as she was 4 years ago. How old is she now?", "o": ["14 years", "10 years", "16 years", "12 years"], "a": 0, "e": "Let her age be r. Then r + 6 = 2(r − 4), so r + 6 = 2r − 8 and r = 14. Check: 20 is twice 10."}
 ], "Maths");
 
 refreshProgress();

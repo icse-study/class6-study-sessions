@@ -158,13 +158,31 @@ details summary{cursor:pointer;font-weight:600}</style>
     <div class="qn">📌 Only Maths is published for this session</div>
     <div class="qe">The other subjects on today's timetable are not in this week's material yet — do the Maths quiz, then carry on with them offline.</div>
   </div>
+
+  <div class="ql">📜 The Story of Algebra · Part 3 of 16 — The Word 'Algebra' Is Born</div>
+  <div class="icard">
+    <h3>🇮🇷 Al-Khwarizmi, about 820 CE</h3>
+    <p>The Persian mathematician <strong>Muhammad ibn Musa al-Khwarizmi</strong> wrote a book that changed mathematics. In its title was the Arabic word <strong>al-jabr</strong>, meaning <em>restoring</em> or <em>recombining parts</em> — what you do when you move a term to the other side to tidy up an equation.</p>
+    <div class="ex"><strong>al-jabr → algebra</strong></div>
+    <div class="hook">💡 The same man gave us a second word. <strong>al-Khwarizmi → algorithm</strong>. One mathematician named both algebra and the algorithms that run every computer you own.</div>
+  </div>
+  <div class="icard">
+    <h3>🇬🇷 Greece and Diophantus</h3>
+    <p>Earlier, the Greeks had linked algebra with <strong>geometry</strong> — drawing shapes to represent relationships between quantities. In the 3rd century CE <strong>Diophantus</strong> wrote <em>Arithmetica</em>, a whole book of problems about unknowns, and is often called the <strong>father of algebra</strong>.</p>
+    <div class="ex">Al-Khwarizmi is also often given that title — both claims are fair, for different reasons.</div>
+  </div>
+  <div class="icard">
+    <h3>Why this matters for today's lesson</h3>
+    <p>The vocabulary you are learning — <strong>variable, constant, term, coefficient, degree</strong> — is the finished product of that long journey. Each word exists so a whole sentence of description can be replaced by one short symbol.</p>
+    <div class="ex">“three times the square of an unknown number” &nbsp;→&nbsp; <strong>3x²</strong></div>
+  </div>
 </div>
 
 <div id="sec-m" class="sec">
   <div class="dyk">
-    <div class="dyk-eye">➗ Maths · 15 Questions</div>
+    <div class="dyk-eye">➗ Maths · 20 Questions</div>
     <div class="dyk-title">Constants, Variables, Terms & Degree</div>
-    <div class="dyk-body">10 core questions and 5 marked 🔴 Hard. You need <strong>9 / 15 (60%)</strong> to mark this as Done.</div>
+    <div class="dyk-body">20 questions — core practice, 🔴 Hard challenges and 📜 Story of Algebra. You need <strong>12 / 20 (60%)</strong> to mark this as Done.</div>
   </div>
   <div class="ql">Questions</div>
   <div class="sr">
@@ -189,7 +207,7 @@ details summary{cursor:pointer;font-weight:600}</style>
 </div>
 
 <script>
-var SUBJECTS = [{"id": "m", "label": "Maths", "total": 15}];
+var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}];
 var LS_PFX   = 'icse_w09_thu';
 
 function saveScore(id, score, total, label) {
@@ -429,7 +447,12 @@ quiz('m', [
   {"t": "Like terms", "q": "The terms −2ab and 5ba are:", "o": ["Like terms", "Unlike terms", "Constants", "Not terms at all"], "a": 0, "e": "ab and ba are the same product, so both terms have the same variable part — they are like terms."},
   {"t": "🔴 Hard · Degree", "q": "The sum of the exponents in the term 3xy²z³ is:", "o": ["6", "3", "4", "5"], "a": 0, "e": "x has power 1, y has 2 and z has 3 → 1 + 2 + 3 = 6."},
   {"t": "Naming", "q": "An algebraic expression with four unlike terms is called a:", "o": ["Multinomial", "Monomial", "Binomial", "Trinomial"], "a": 0, "e": "One term is a monomial, two a binomial, three a trinomial; four or more is a multinomial."},
-  {"t": "🔴 Hard · Degree", "q": "In the expression 5a³ − 3a² + 7a − 9, the degree is:", "o": ["3", "1", "2", "4"], "a": 0, "e": "The highest power of a is 3, in the term 5a³. The number of terms (4) is not the degree."}
+  {"t": "🔴 Hard · Degree", "q": "In the expression 5a³ − 3a² + 7a − 9, the degree is:", "o": ["3", "1", "2", "4"], "a": 0, "e": "The highest power of a is 3, in the term 5a³. The number of terms (4) is not the degree."},
+  {"t": "📜 Story of Algebra", "q": "The word algebra comes from the Arabic word:", "o": ["al-jabr", "al-kitab", "al-ghazali", "al-hasan"], "a": 0, "e": "al-jabr means restoring or recombining parts. It appeared in the title of al-Khwarizmi's book and became the word algebra."},
+  {"t": "📜 Story of Algebra", "q": "The word algorithm is derived from the name of which mathematician?", "o": ["Al-Khwarizmi", "Diophantus", "Brahmagupta", "Euclid"], "a": 0, "e": "Al-Khwarizmi's name became algorithm, while the al-jabr in his book title became algebra — two words from one person."},
+  {"t": "📜 Story of Algebra", "q": "Who wrote the book Arithmetica and is often called the father of algebra?", "o": ["Diophantus", "Descartes", "Brahmagupta", "Robert Recorde"], "a": 0, "e": "Diophantus of Alexandria (3rd century CE) wrote Arithmetica, a book of problems about unknowns. Al-Khwarizmi is often given the same title."},
+  {"t": "Coefficients", "q": "The numerical coefficient of the term −x²y is:", "o": ["−1", "1", "−2", "0"], "a": 0, "e": "When no number is written, the coefficient is 1. The minus sign makes it −1, so −x²y means −1 × x²y."},
+  {"t": "🔴 Hard · Like terms", "q": "Which of these pairs are UNLIKE terms?", "o": ["3ab² and 3a²b", "5xy and −2xy", "7p and 4p", "−m and 9m"], "a": 0, "e": "Like terms need the same letters with the same powers. In 3ab² the b is squared, in 3a²b the a is squared — so they are unlike."}
 ], "Maths");
 
 refreshProgress();

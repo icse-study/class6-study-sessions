@@ -212,13 +212,31 @@ details summary{cursor:pointer;font-weight:600}
       <div class="ans">A Municipality, or Municipal Committee, governs a smaller city of roughly 20,000 to one lakh people and is headed by a Chairperson. A Municipal Corporation governs a metropolitan city of more than ten lakh people, such as Mumbai or Chennai, and is headed by a Mayor as political head with a Commissioner appointed by the state as its real executive. A Corporation has far larger funds, more departments and wider powers, though both are elected bodies performing the same kinds of obligatory duties &mdash; water, sanitation, roads, health and primary education.</div>
     </details>
   </div>
+
+  <div class="ql">📜 The Story of Algebra · Part 8 of 16 — Patterns Are Not Accidents</div>
+  <div class="icard">
+    <h3>One answer, or every answer</h3>
+    <p>Arithmetic gives you a fact: 3 + 4 = 7. Algebra gives you a <strong>law</strong>: a + b = b + a, true for every pair of numbers that will ever exist. That law has a name — the <strong>commutative property</strong> of addition.</p>
+    <div class="ex">Commutative: a + b = b + a &nbsp;·&nbsp; Associative: (a + b) + c = a + (b + c) &nbsp;·&nbsp; Distributive: a(b + c) = ab + ac</div>
+  </div>
+  <div class="icard">
+    <h3>Seeing n² with your eyes</h3>
+    <p>Lay down 1 dot. Add 3 dots around it — you have a 2 × 2 square. Add 5 more — a 3 × 3 square. Every odd number you add completes the next square. That is <em>why</em> 1 + 3 + 5 + … + (2n − 1) = n².</p>
+    <div class="ex">1 = 1² &nbsp;·&nbsp; 1+3 = 2² &nbsp;·&nbsp; 1+3+5 = 3² &nbsp;·&nbsp; 1+3+5+7 = 4²</div>
+    <div class="hook">💡 A formula you can picture is a formula you cannot forget. Draw this once in your rough book.</div>
+  </div>
+  <div class="icard">
+    <h3>Why mathematicians chase patterns</h3>
+    <p>These rules are not coincidences — they are signs of deep structure. Finding a pattern, then proving it holds for <em>every</em> number, is the whole job of mathematics. Algebra is simply the language that makes that possible.</p>
+    <div class="ex">Even numbers: 2n &nbsp;·&nbsp; Odd numbers: 2n − 1 &nbsp;·&nbsp; First n naturals: n(n + 1)/2</div>
+  </div>
 </div>
 
 <div id="sec-m" class="sec">
   <div class="dyk">
-    <div class="dyk-eye">➗ Maths · 15 Questions</div>
+    <div class="dyk-eye">➗ Maths · 20 Questions</div>
     <div class="dyk-title">Even & Odd Numbers, Sum Formulas</div>
-    <div class="dyk-body">10 core questions and 5 marked 🔴 Hard. You need <strong>9 / 15 (60%)</strong> to mark this as Done.</div>
+    <div class="dyk-body">20 questions — core practice, 🔴 Hard challenges and 📜 Story of Algebra. You need <strong>12 / 20 (60%)</strong> to mark this as Done.</div>
   </div>
   <div class="ql">Questions</div>
   <div class="sr">
@@ -271,7 +289,7 @@ details summary{cursor:pointer;font-weight:600}
 </div>
 
 <script>
-var SUBJECTS = [{"id": "m", "label": "Maths", "total": 15}, {"id": "h", "label": "History & Civics", "total": 15}];
+var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}, {"id": "h", "label": "History & Civics", "total": 15}];
 var LS_PFX   = 'icse_w10_sat';
 
 function saveScore(id, score, total, label) {
@@ -511,7 +529,12 @@ quiz('m', [
   {"t": "Patterns", "q": "The general form of any odd number is:", "o": ["2n − 1", "2n", "n²", "n(n + 1)"], "a": 0, "e": "An odd number is one less than an even number, so 2n − 1. (2n + 1 works too, for a different starting n.)"},
   {"t": "🔴 Hard · Formulas", "q": "The sum of the first n natural numbers is:", "o": ["n(n + 1)/2", "n²", "n(n + 1)", "2n"], "a": 0, "e": "n(n + 1)/2 — exactly half the even-number sum, because 1+2+…+n is half of 2+4+…+2n."},
   {"t": "Patterns", "q": "The 9th even number is:", "o": ["18", "16", "20", "22"], "a": 0, "e": "2n with n = 9 → 18."},
-  {"t": "🔴 Hard · Patterns", "q": "The 12th odd number is:", "o": ["23", "21", "25", "27"], "a": 0, "e": "2n − 1 with n = 12 → 24 − 1 = 23."}
+  {"t": "🔴 Hard · Patterns", "q": "The 12th odd number is:", "o": ["23", "21", "25", "27"], "a": 0, "e": "2n − 1 with n = 12 → 24 − 1 = 23."},
+  {"t": "📜 Story of Algebra", "q": "Arithmetic says 3 + 4 = 7. Algebra can state a + b = b + a for all numbers. This law is called:", "o": ["The commutative property of addition", "The distributive property", "The associative property", "The identity property"], "a": 0, "e": "Commutative means the order of the two numbers can be swapped without changing the sum — and algebra lets us say it for every number at once."},
+  {"t": "📜 Story of Algebra", "q": "The pattern 1 + 3 + 5 + … + (2n − 1) = n² can be pictured by:", "o": ["Building larger and larger squares of dots", "Drawing triangles inside circles", "Folding a number line in half", "Counting on your fingers"], "a": 0, "e": "Each odd number added completes the next perfect square of dots, so the running total is always n²."},
+  {"t": "Sums", "q": "The sum of the first 15 odd numbers is:", "o": ["225", "196", "240", "255"], "a": 0, "e": "The sum of the first n odd numbers is n², so here it is 15² = 225."},
+  {"t": "🔴 Hard · Sums", "q": "The sum of the first 12 even numbers is:", "o": ["156", "144", "132", "168"], "a": 0, "e": "The sum of the first n even numbers is n(n + 1), so 12 × 13 = 156."},
+  {"t": "🔴 Hard · Sums", "q": "Find the sum: 2 + 4 + 6 + … + 30", "o": ["240", "225", "256", "210"], "a": 0, "e": "The last term 30 is the 15th even number, so n = 15 and the sum is 15 × 16 = 240."}
 ], "Maths");
 
 quiz('h', [

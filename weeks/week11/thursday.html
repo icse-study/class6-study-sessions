@@ -143,13 +143,31 @@ details summary{cursor:pointer;font-weight:600}</style>
     <div class="qn">📌 Only Maths is published for this session</div>
     <div class="qe">The other subjects on today's timetable are not in this week's material yet &mdash; do the Maths quiz, then carry on with them offline.</div>
   </div>
+
+  <div class="ql">📜 The Story of Algebra · Part 11 of 16 — Algebra as Translation</div>
+  <div class="icard">
+    <h3>The hardest step was writing it down</h3>
+    <p>For nearly 4000 years the hard part of algebra was not solving — it was <strong>stating</strong>. A Babylonian scribe describing a square and its side needed a paragraph. You can now write it in five characters.</p>
+    <div class="ex">“a number, added to its square, gives six” &nbsp;→&nbsp; <strong>x² + x = 6</strong></div>
+    <div class="hook">💡 Framing an expression from a sentence is exactly the skill that took civilisations millennia to develop. Take it slowly.</div>
+  </div>
+  <div class="icard">
+    <h3>Translate word by word</h3>
+    <p>English phrases map onto operations in a fixed way. <em>More than</em> and <em>increased by</em> mean add; <em>less than</em> reverses the order; <em>of</em> usually means multiply; <em>per</em> means divide.</p>
+    <div class="ex">7 less than y → <strong>y − 7</strong> (not 7 − y) &nbsp;·&nbsp; 5 times the sum of x and 3 → <strong>5(x + 3)</strong></div>
+  </div>
+  <div class="icard">
+    <h3>Descartes: an equation is also a picture</h3>
+    <p>Once a sentence becomes an equation, Descartes' insight kicks in: that equation also describes a <strong>shape</strong>. y = 2x + 3 is a straight line; a quadratic is a curve. Words → symbols → geometry → physics.</p>
+    <div class="ex">That chain is why algebra ended up running engineering, animation and every computer game you have played.</div>
+  </div>
 </div>
 
 <div id="sec-m" class="sec">
     <div class="dyk">
-    <div class="dyk-eye">➗ Maths · 15 Questions</div>
+    <div class="dyk-eye">➗ Maths · 20 Questions</div>
     <div class="dyk-title">Framing Expressions &amp; Word Phrases</div>
-    <div class="dyk-body">10 core questions and 5 marked 🔴 Hard. You need <strong>9 / 15 (60%)</strong> to mark this as Done.</div>
+    <div class="dyk-body">20 questions — core practice, 🔴 Hard challenges and 📜 Story of Algebra. You need <strong>12 / 20 (60%)</strong> to mark this as Done.</div>
   </div>
   <div class="ql">Questions</div>
   <div class="sr">
@@ -174,7 +192,7 @@ details summary{cursor:pointer;font-weight:600}</style>
 </div>
 
 <script>
-var SUBJECTS = [{"id": "m", "label": "Maths", "total": 15}];
+var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}];
 var LS_PFX   = 'icse_w11_thu';
 
 function saveScore(id, score, total, label) {
@@ -414,7 +432,12 @@ quiz('m', [
   {"t": "🔴 Hard · Brackets", "q": "Half of the sum of a and b, decreased by 4, is written as:", "o": ["(a + b)/2 − 4", "a + b/2 − 4", "(a + b − 4)/2", "(a + b)/(2 − 4)"], "a": 0, "e": "First halve the whole sum: (a + b)/2. Then subtract 4 from that result."},
   {"t": "🔴 Hard · Word problem", "q": "A father is 4 times as old as his son. If the son is x years old, what will their total age be in 5 years?", "o": ["5x + 10", "5x + 5", "4x + 10", "5x"], "a": 0, "e": "Now: son x, father 4x. In 5 years: (x + 5) + (4x + 5) = 5x + 10. Both people age by 5."},
   {"t": "🔴 Hard · Consecutive", "q": "The sum of three consecutive whole numbers, the smallest being n, is:", "o": ["3n + 3", "3n", "n + 3", "3n + 6"], "a": 0, "e": "The numbers are n, n + 1 and n + 2. Their sum is 3n + 3."},
-  {"t": "🔴 Hard · Money", "q": "Priya had ₹500. She bought 3 pens at ₹p each and 2 books at ₹b each. How much money is left?", "o": ["₹(500 − 3p − 2b)", "₹(500 − 3p + 2b)", "₹(500 − 5pb)", "₹(3p + 2b − 500)"], "a": 0, "e": "She spent 3p + 2b, so what is left is 500 − (3p + 2b) = 500 − 3p − 2b. The minus applies to both terms."}
+  {"t": "🔴 Hard · Money", "q": "Priya had ₹500. She bought 3 pens at ₹p each and 2 books at ₹b each. How much money is left?", "o": ["₹(500 − 3p − 2b)", "₹(500 − 3p + 2b)", "₹(500 − 5pb)", "₹(3p + 2b − 500)"], "a": 0, "e": "She spent 3p + 2b, so what is left is 500 − (3p + 2b) = 500 − 3p − 2b. The minus applies to both terms."},
+  {"t": "📜 Story of Algebra", "q": "Before symbolic algebra existed, a problem such as x² + x = 6 would have been written:", "o": ["In ordinary words and sentences", "Using Roman numerals only", "As a drawing of animals", "It could not be written at all"], "a": 0, "e": "Babylonian, Egyptian and early Islamic algebra was written as prose — which is why framing expressions from words is the oldest skill in the subject."},
+  {"t": "📜 Story of Algebra", "q": "Descartes showed that an equation such as y = 2x + 3 also describes:", "o": ["A straight line", "A circle", "A triangle", "A cube"], "a": 0, "e": "Linear equations graph as straight lines. This link between algebra and geometry is the basis of coordinate geometry."},
+  {"t": "Framing", "q": "A taxi charges ₹50 plus ₹12 for every kilometre. Write the fare for k kilometres.", "o": ["₹(50 + 12k)", "₹(50k + 12)", "₹62k", "₹(50 − 12k)"], "a": 0, "e": "The ₹50 is fixed and the ₹12 repeats once per kilometre, so the variable part is 12k and the fare is 50 + 12k."},
+  {"t": "🔴 Hard · Consecutive", "q": "The sum of three consecutive even numbers, the smallest being 2n, is:", "o": ["6n + 6", "6n", "6n + 3", "2n + 6"], "a": 0, "e": "The three numbers are 2n, 2n + 2 and 2n + 4. Adding them gives 6n + 6."},
+  {"t": "🔴 Hard · Place value", "q": "A two-digit number has tens digit t and units digit u. The number itself is:", "o": ["10t + u", "t + u", "tu", "10u + t"], "a": 0, "e": "The tens digit is worth ten times its face value, so the number is 10t + u. For example 47 = 10(4) + 7."}
 ], "Maths");
 
 refreshProgress();

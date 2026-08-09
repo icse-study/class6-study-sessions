@@ -178,13 +178,31 @@ details summary{cursor:pointer;font-weight:600}
       <div class="ans">In the Early Vedic period the four varnas described what people <em>did</em>, not what they were born as. A man's son could take up a different occupation, families of different varnas could marry, and people ate together freely; the hymns themselves mention a family with a priest, a physician and a grinder of corn. In the Later Vedic period the divisions hardened. Birth, rather than work, decided a person's varna; marriage and dining between varnas were forbidden; the Brahmins and Kshatriyas gained privileges while the Shudras were pushed to the bottom. What began as a division of labour became the rigid caste system.</div>
     </details>
   </div>
+
+  <div class="ql">📜 The Story of Algebra · Part 12 of 16 — Algebra Describes the Real World</div>
+  <div class="icard">
+    <h3>Every pattern has a shape</h3>
+    <p>Once you can write a relationship as an expression, you can predict with it. Different situations produce different <em>families</em> of equation — and each family has its own shape on a graph.</p>
+    <div class="ex">Distance at steady speed → <strong>linear</strong> (straight line)<br>Path of a thrown ball → <strong>quadratic</strong> (parabola)<br>Money growing at interest → <strong>exponential</strong> (a rising curve)</div>
+  </div>
+  <div class="icard">
+    <h3>Why word problems are the real thing</h3>
+    <p>The problems you solved today — perimeters, costs, ages — are miniature versions of what engineers and economists do. Read the situation, name the unknown, write the relationship, solve, then check the answer makes sense.</p>
+    <div class="ex">Name it → frame it → solve it → check it. Skipping the last step is how marks are lost.</div>
+    <div class="hook">💡 Egyptian scribes did exactly this with wages and grain 3600 years ago. The wording changed; the method did not.</div>
+  </div>
+  <div class="icard">
+    <h3>The same tool, everywhere</h3>
+    <p>Population growth, medicine doses, cricket run rates, fuel consumption, loan repayments, game physics — all of them are algebra wearing different clothes.</p>
+    <div class="ex">One skill, endless uses. That is why this chapter keeps coming back.</div>
+  </div>
 </div>
 
 <div id="sec-m" class="sec">
     <div class="dyk">
-    <div class="dyk-eye">➗ Maths · 15 Questions</div>
+    <div class="dyk-eye">➗ Maths · 20 Questions</div>
     <div class="dyk-title">Weekly Problem Solving · Algebra</div>
-    <div class="dyk-body">10 core questions and 5 marked 🔴 Hard. You need <strong>9 / 15 (60%)</strong> to mark this as Done.</div>
+    <div class="dyk-body">20 questions — core practice, 🔴 Hard challenges and 📜 Story of Algebra. You need <strong>12 / 20 (60%)</strong> to mark this as Done.</div>
   </div>
   <div class="ql">Questions</div>
   <div class="sr">
@@ -237,7 +255,7 @@ details summary{cursor:pointer;font-weight:600}
 </div>
 
 <script>
-var SUBJECTS = [{"id": "m", "label": "Maths", "total": 15}, {"id": "h", "label": "History & Civics", "total": 15}];
+var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}, {"id": "h", "label": "History & Civics", "total": 15}];
 var LS_PFX   = 'icse_w11_sat';
 
 function saveScore(id, score, total, label) {
@@ -477,7 +495,12 @@ quiz('m', [
   {"t": "🔴 Hard · Simplify", "q": "Simplify: 3(2a − b) − 2(a − 2b)", "o": ["4a + b", "4a − 5b", "8a − 7b", "4a − 7b"], "a": 0, "e": "6a − 3b − 2a + 4b = 4a + b. The minus in front of the second bracket flips both signs inside it."},
   {"t": "🔴 Hard · Division", "q": "Divide: (18x⁵y³ − 12x³y²) ÷ 6x²y²", "o": ["3x³y − 2x", "3x³y − 2xy", "3x³y² − 2x", "3x⁷y⁵ − 2x⁵y⁴"], "a": 0, "e": "Divide each term: 18x⁵y³ ÷ 6x²y² = 3x³y, and 12x³y² ÷ 6x²y² = 2x. So the answer is 3x³y − 2x."},
   {"t": "🔴 Hard · Framing", "q": "A number is doubled and then 7 is subtracted; the result is then tripled. If the number is n, the final expression is:", "o": ["3(2n − 7)", "6n − 7", "2n − 21", "3(2n) − 7"], "a": 0, "e": "Doubled: 2n. Subtract 7: 2n − 7. Tripled: 3(2n − 7) = 6n − 21."},
-  {"t": "🔴 Hard · Area", "q": "A square has side (x + 3) cm. By how much does its perimeter exceed 4x cm?", "o": ["12 cm", "3 cm", "4x + 12 cm", "9 cm"], "a": 0, "e": "The perimeter is 4(x + 3) = 4x + 12. Subtracting 4x leaves 12 cm — the x terms cancel."}
+  {"t": "🔴 Hard · Area", "q": "A square has side (x + 3) cm. By how much does its perimeter exceed 4x cm?", "o": ["12 cm", "3 cm", "4x + 12 cm", "9 cm"], "a": 0, "e": "The perimeter is 4(x + 3) = 4x + 12. Subtracting 4x leaves 12 cm — the x terms cancel."},
+  {"t": "📜 Story of Algebra", "q": "A car travelling at a steady speed covers distance = speed × time. On a graph this relationship is:", "o": ["Linear — a straight line", "Quadratic — a parabola", "Exponential — a rising curve", "Circular"], "a": 0, "e": "Steady speed means equal distance in equal time, which plots as a straight line. Linear equations always graph as straight lines."},
+  {"t": "📜 Story of Algebra", "q": "The curved path of a ball thrown into the air is modelled by which kind of equation?", "o": ["A quadratic equation", "A linear equation", "A simple addition", "An exponential equation"], "a": 0, "e": "Under gravity the height depends on the square of the time, so the path is a parabola — the graph of a quadratic."},
+  {"t": "Brackets", "q": "Simplify: 2(3x − 4) + 3(2 − x)", "o": ["3x − 2", "3x + 2", "9x − 2", "3x − 14"], "a": 0, "e": "6x − 8 + 6 − 3x = 3x − 2. Collect the x terms and the numbers separately."},
+  {"t": "🔴 Hard · Equations", "q": "If 5x − 3 = 2x + 12, then the value of x² is:", "o": ["25", "5", "15", "9"], "a": 0, "e": "3x = 15 so x = 5, and then x² = 25. Always finish the question that was actually asked."},
+  {"t": "🔴 Hard · Perimeter", "q": "A triangle has sides (2x + 1) cm, (3x − 2) cm and (x + 6) cm. Its perimeter is:", "o": ["(6x + 5) cm", "(6x − 5) cm", "(5x + 5) cm", "(6x + 9) cm"], "a": 0, "e": "Add the like terms: 2x + 3x + x = 6x, and 1 − 2 + 6 = 5. So the perimeter is (6x + 5) cm."}
 ], "Maths");
 
 quiz('h', [

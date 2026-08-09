@@ -137,13 +137,32 @@ details summary{cursor:pointer;font-weight:600}</style>
     <div class="qn">📌 Only Maths is published for this session</div>
     <div class="qe">The other subjects on today's timetable are not in this week's material yet — do the Maths quiz, then carry on with them offline.</div>
   </div>
+
+  <div class="ql">📜 The Story of Algebra · Part 7 of 16 — FOIL — A Nickname for an Old Rule</div>
+  <div class="icard">
+    <h3>Where the word FOIL comes from</h3>
+    <p><strong>FOIL</strong> is not an ancient theorem — it is a modern memory aid for multiplying two binomials: <strong>F</strong>irst, <strong>O</strong>uter, <strong>I</strong>nner, <strong>L</strong>ast. The rule underneath it is far older: every term of one bracket must meet every term of the other.</p>
+    <div class="ex">(x + 3)(x + 5) → x·x + x·5 + 3·x + 3·5 = x² + 8x + 15</div>
+    <div class="hook">💡 FOIL only works for <em>two</em> brackets of <em>two</em> terms. The real rule — multiply each by each — never runs out.</div>
+  </div>
+  <div class="icard">
+    <h3>How this looked before symbols</h3>
+    <p>Al-Khwarizmi and his predecessors did these same multiplications, but entirely in sentences, and often by drawing rectangles and cutting them into pieces. The Greek habit of turning algebra into geometry made products <em>visible</em> as areas.</p>
+    <div class="ex">A rectangle (x + 3) by (x + 5) splits into four pieces: x², 5x, 3x and 15 — which is exactly FOIL, drawn.</div>
+    <div class="hook">💡 If you ever forget the middle term of (a + b)², draw the square. The two rectangles of area ab are impossible to miss.</div>
+  </div>
+  <div class="icard">
+    <h3>And division is the same rule reversed</h3>
+    <p>Dividing a polynomial by a monomial means dividing <strong>every</strong> term — coefficients divided, exponents subtracted.</p>
+    <div class="ex">(15x⁴ − 20x³) ÷ (−5x²) = −3x² + 4x &nbsp; (watch the sign on the second term)</div>
+  </div>
 </div>
 
 <div id="sec-m" class="sec">
   <div class="dyk">
-    <div class="dyk-eye">➗ Maths · 15 Questions</div>
+    <div class="dyk-eye">➗ Maths · 20 Questions</div>
     <div class="dyk-title">FOIL, Distributive Property & Division</div>
-    <div class="dyk-body">10 core questions and 5 marked 🔴 Hard. You need <strong>9 / 15 (60%)</strong> to mark this as Done.</div>
+    <div class="dyk-body">20 questions — core practice, 🔴 Hard challenges and 📜 Story of Algebra. You need <strong>12 / 20 (60%)</strong> to mark this as Done.</div>
   </div>
   <div class="ql">Questions</div>
   <div class="sr">
@@ -168,7 +187,7 @@ details summary{cursor:pointer;font-weight:600}</style>
 </div>
 
 <script>
-var SUBJECTS = [{"id": "m", "label": "Maths", "total": 15}];
+var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}];
 var LS_PFX   = 'icse_w10_thu';
 
 function saveScore(id, score, total, label) {
@@ -408,7 +427,12 @@ quiz('m', [
   {"t": "Binomials", "q": "(x + 2)(x + 8) = ?", "o": ["x² + 10x + 16", "x² + 16x + 10", "x² + 8x + 16", "x² + 10x + 8"], "a": 0, "e": "x² + 8x + 2x + 16 = x² + 10x + 16."},
   {"t": "🔴 Hard · Division", "q": "Divide: (−24a³b²) ÷ (6ab)", "o": ["−4a²b", "4a²b", "−4a³b", "−4a²b²"], "a": 0, "e": "−24 ÷ 6 = −4; a³ ÷ a = a²; b² ÷ b = b."},
   {"t": "Binomials", "q": "(2x + y)(x − 3y) = ?", "o": ["2x² − 5xy − 3y²", "2x² + 5xy − 3y²", "2x² − 6xy − 3y²", "2x² − 5xy + 3y²"], "a": 0, "e": "2x² − 6xy + xy − 3y² = 2x² − 5xy − 3y²."},
-  {"t": "🔴 Hard · Division", "q": "Simplify: (6x² − 3x) ÷ (−3x)", "o": ["−2x + 1", "2x − 1", "−2x − 1", "2x + 1"], "a": 0, "e": "6x² ÷ −3x = −2x and −3x ÷ −3x = +1."}
+  {"t": "🔴 Hard · Division", "q": "Simplify: (6x² − 3x) ÷ (−3x)", "o": ["−2x + 1", "2x − 1", "−2x − 1", "2x + 1"], "a": 0, "e": "6x² ÷ −3x = −2x and −3x ÷ −3x = +1."},
+  {"t": "📜 Story of Algebra", "q": "In the memory aid FOIL, used to multiply two binomials, the letters stand for:", "o": ["First, Outer, Inner, Last", "Factor, Open, Invert, Link", "First, Only, Inner, Left", "Full, Outer, Inverse, List"], "a": 0, "e": "First, Outer, Inner, Last — the four products you get when every term of one bracket meets every term of the other."},
+  {"t": "📜 Story of Algebra", "q": "Before symbolic notation was invented, mathematicians wrote their equations:", "o": ["Entirely in words and sentences", "Using only Roman numerals", "With Greek letters only", "As pictures of animals"], "a": 0, "e": "For most of history algebra was written out as prose. The compact symbols we use arrived only in Renaissance Europe."},
+  {"t": "Binomials", "q": "Multiply: (3x + 2)(2x − 5)", "o": ["6x² − 11x − 10", "6x² + 11x − 10", "6x² − 15x − 10", "6x² − 11x + 10"], "a": 0, "e": "FOIL: 6x² (First), −15x (Outer), +4x (Inner), −10 (Last). The middle terms give −15x + 4x = −11x."},
+  {"t": "🔴 Hard · Identities", "q": "(x − 5)² = ?", "o": ["x² − 10x + 25", "x² + 25", "x² − 25", "x² − 5x + 25"], "a": 0, "e": "(x − 5)(x − 5) = x² − 5x − 5x + 25 = x² − 10x + 25. The last term is positive because a negative times a negative is positive."},
+  {"t": "🔴 Hard · Division", "q": "Divide: (x² + 7x + 12) ÷ (x + 3)", "o": ["x + 4", "x + 12", "x + 7", "x − 4"], "a": 0, "e": "Since (x + 3)(x + 4) = x² + 7x + 12, dividing by (x + 3) leaves x + 4. Division is multiplication read backwards."}
 ], "Maths");
 
 refreshProgress();

@@ -145,13 +145,32 @@ details summary{cursor:pointer;font-weight:600}</style>
     <div class="qn">📌 Only Maths is published for this session</div>
     <div class="qe">The other subjects on today's timetable are not in this week's material yet — do the Maths quiz, then carry on with them offline.</div>
   </div>
+
+  <div class="ql">📜 The Story of Algebra · Part 5 of 16 — Lilavati and the Power of Symbols</div>
+  <div class="icard">
+    <h3>🇮🇳 Bhaskara II, 12th century</h3>
+    <p><strong>Bhaskara II</strong> wrote <strong>Lilavati</strong>, one of the most charming maths books ever written. Instead of dry exercises it poses problems as little stories about bees, peacocks, necklaces and travellers — and then solves them with algebra.</p>
+    <div class="ex">Legend says he wrote it for his daughter, though historians debate the details.</div>
+    <div class="hook">💡 He also worked out how to handle negative numbers and quadratic equations — 500 years before Europe caught up.</div>
+  </div>
+  <div class="icard">
+    <h3>Why symbols beat sentences</h3>
+    <p>Multiplication is where symbolic notation really pays off. Written in words, multiplying two unknowns is a paragraph. Written in symbols, it is one line you can check at a glance.</p>
+    <div class="ex">“the unknown increased by five, multiplied by the unknown decreased by two”<br>&nbsp;&nbsp;→ <strong>(x + 5)(x − 2)</strong></div>
+    <div class="hook">💡 Symbols do not make the maths easier — they make it <em>visible</em>. You can spot a mistake in 15x³ instantly; you cannot spot it in a sentence.</div>
+  </div>
+  <div class="icard">
+    <h3>The rule behind today's work</h3>
+    <p>Multiplying monomials: multiply the <strong>coefficients</strong>, add the <strong>exponents</strong> of like variables. That single rule is a generalisation — it holds for every number you could ever substitute.</p>
+    <div class="ex">(3x²)(4x³) = (3 × 4) x²⁺³ = <strong>12x⁵</strong></div>
+  </div>
 </div>
 
 <div id="sec-m" class="sec">
   <div class="dyk">
-    <div class="dyk-eye">➗ Maths · 15 Questions</div>
+    <div class="dyk-eye">➗ Maths · 20 Questions</div>
     <div class="dyk-title">Monomials, Distributive Property & Binomials</div>
-    <div class="dyk-body">10 core questions and 5 marked 🔴 Hard. You need <strong>9 / 15 (60%)</strong> to mark this as Done.</div>
+    <div class="dyk-body">20 questions — core practice, 🔴 Hard challenges and 📜 Story of Algebra. You need <strong>12 / 20 (60%)</strong> to mark this as Done.</div>
   </div>
   <div class="ql">Questions</div>
   <div class="sr">
@@ -176,7 +195,7 @@ details summary{cursor:pointer;font-weight:600}</style>
 </div>
 
 <script>
-var SUBJECTS = [{"id": "m", "label": "Maths", "total": 15}];
+var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}];
 var LS_PFX   = 'icse_w10_mon';
 
 function saveScore(id, score, total, label) {
@@ -416,7 +435,12 @@ quiz('m', [
   {"t": "Distributive", "q": "Simplify: 3x²(2x³ − 5x²)", "o": ["6x⁵ − 15x⁴", "6x⁵ + 15x⁴", "6x⁶ − 15x⁴", "6x⁵ − 5x²"], "a": 0, "e": "3x² × 2x³ = 6x⁵ and 3x² × (−5x²) = −15x⁴."},
   {"t": "🔴 Hard · Binomials", "q": "Multiply: (x + 2y)(x − 3y)", "o": ["x² − xy − 6y²", "x² + xy − 6y²", "x² − 6xy − 6y²", "x² − xy + 6y²"], "a": 0, "e": "x² − 3xy + 2xy − 6y² = x² − xy − 6y²."},
   {"t": "Monomials", "q": "(−3abc)(2a²b) = ?", "o": ["−6a³b²c", "−6a²b²c", "−6a³b²", "6a³b²c"], "a": 0, "e": "−3 × 2 = −6; a × a² = a³; b × b = b²; c stays as it is."},
-  {"t": "🔴 Hard · Identities", "q": "Multiply: (2x + 3y)²", "o": ["4x² + 12xy + 9y²", "4x² + 9y²", "4x² − 12xy + 9y²", "4x² + 6xy + 9y²"], "a": 0, "e": "(a + b)² = a² + 2ab + b², so 4x² + 2(2x)(3y) + 9y² = 4x² + 12xy + 9y²."}
+  {"t": "🔴 Hard · Identities", "q": "Multiply: (2x + 3y)²", "o": ["4x² + 12xy + 9y²", "4x² + 9y²", "4x² − 12xy + 9y²", "4x² + 6xy + 9y²"], "a": 0, "e": "(a + b)² = a² + 2ab + b², so 4x² + 2(2x)(3y) + 9y² = 4x² + 12xy + 9y²."},
+  {"t": "📜 Story of Algebra", "q": "Bhaskara II wrote a famous 12th-century book that teaches mathematics through stories and problems. It is called:", "o": ["Lilavati", "Arithmetica", "Al-jabr", "Elements"], "a": 0, "e": "Lilavati poses problems as stories about bees, peacocks and travellers, then solves them with algebra."},
+  {"t": "📜 Story of Algebra", "q": "Writing 3x² instead of the phrase three times the square of an unknown number shows the power of:", "o": ["Symbolic notation", "Geometry", "Mental arithmetic", "The number line"], "a": 0, "e": "Symbols compress a whole sentence into a few characters, which makes long multiplications possible to write and to check."},
+  {"t": "Identities", "q": "Multiply: (a + 7)²", "o": ["a² + 14a + 49", "a² + 49", "a² + 7a + 49", "a² − 14a + 49"], "a": 0, "e": "(a + 7)² = (a + 7)(a + 7) = a² + 7a + 7a + 49 = a² + 14a + 49. Never forget the middle term."},
+  {"t": "🔴 Hard · Polynomials", "q": "Multiply: (x + 2)(x² − 3x + 4)", "o": ["x³ − x² − 2x + 8", "x³ + x² − 2x + 8", "x³ − x² + 2x + 8", "x³ − 5x² − 2x + 8"], "a": 0, "e": "x(x² − 3x + 4) = x³ − 3x² + 4x and 2(x² − 3x + 4) = 2x² − 6x + 8. Adding gives x³ − x² − 2x + 8."},
+  {"t": "🔴 Hard · Area", "q": "A rectangle is (2x + 3) cm long and (x + 5) cm wide. Its area is:", "o": ["(2x² + 13x + 15) cm²", "(2x² + 15x + 13) cm²", "(3x + 8) cm²", "(2x² + 8x + 15) cm²"], "a": 0, "e": "Area = length × breadth = 2x² + 10x + 3x + 15 = 2x² + 13x + 15 square centimetres."}
 ], "Maths");
 
 refreshProgress();

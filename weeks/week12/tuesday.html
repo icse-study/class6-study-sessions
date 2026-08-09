@@ -142,13 +142,32 @@ details summary{cursor:pointer;font-weight:600}</style>
     <div class="qn">📌 Only Maths is published for this session</div>
     <div class="qe">The other subjects on today's timetable are not in this week's material yet &mdash; do the Maths quiz, then carry on with them offline.</div>
   </div>
+
+  <div class="ql">📜 The Story of Algebra · Part 14 of 16 — Galois, Abel, and an Equation Nobody Can Solve</div>
+  <div class="icard">
+    <h3>The formula that does not exist</h3>
+    <p>You know how to solve equations of degree 1. Degree 2, 3 and 4 all have formulas too. Then the trail stops. The <strong>Abel–Ruffini theorem</strong> proves that equations of <strong>degree 5</strong> have <em>no</em> general formula using ordinary roots — and never will.</p>
+    <div class="ex">This is not a gap in our knowledge. It is a proved impossibility.</div>
+    <div class="hook">💡 Mathematics can prove that something <em>cannot</em> be done — one of its strangest and most powerful abilities.</div>
+  </div>
+  <div class="icard">
+    <h3>Évariste Galois — twenty years old</h3>
+    <p>Galois worked out <em>why</em> some equations can be solved by formula and others cannot, inventing what is now called <strong>Galois theory</strong>. He wrote much of it down in a rush the night before dying in a duel, aged 20.</p>
+    <div class="ex">Niels Henrik Abel reached the degree-5 result independently, and died at 26. Emmy Noether later reshaped the whole subject.</div>
+    <div class="hook">💡 Galois theory now underpins error-correcting codes and cryptography — written by a twenty-year-old in one night.</div>
+  </div>
+  <div class="icard">
+    <h3>Transposition, in that light</h3>
+    <p>Every time you move a term across the equals sign and flip its sign, you are using the <em>restoring</em> that al-jabr was named for — and the balance rules Galois eventually explained at the deepest level.</p>
+    <div class="ex">3x + 7 = x + 19 → 3x − x = 19 − 7 → 2x = 12 → x = 6</div>
+  </div>
 </div>
 
 <div id="sec-m" class="sec">
     <div class="dyk">
-    <div class="dyk-eye">➗ Maths · 15 Questions</div>
+    <div class="dyk-eye">➗ Maths · 20 Questions</div>
     <div class="dyk-title">Transposition &amp; Solving Practice</div>
-    <div class="dyk-body">10 core questions and 5 marked 🔴 Hard. You need <strong>9 / 15 (60%)</strong> to mark this as Done.</div>
+    <div class="dyk-body">20 questions — core practice, 🔴 Hard challenges and 📜 Story of Algebra. You need <strong>12 / 20 (60%)</strong> to mark this as Done.</div>
   </div>
   <div class="ql">Questions</div>
   <div class="sr">
@@ -173,7 +192,7 @@ details summary{cursor:pointer;font-weight:600}</style>
 </div>
 
 <script>
-var SUBJECTS = [{"id": "m", "label": "Maths", "total": 15}];
+var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}];
 var LS_PFX   = 'icse_w12_tue';
 
 function saveScore(id, score, total, label) {
@@ -413,7 +432,12 @@ quiz('m', [
   {"t": "🔴 Hard · Fractions", "q": "Solve: x/3 + x/4 = 7", "o": ["x = 12", "x = 7", "x = 84", "x = 4"], "a": 0, "e": "Multiply throughout by 12: 4x + 3x = 84, so 7x = 84 and x = 12."},
   {"t": "🔴 Hard · Negatives", "q": "Solve: 5 − 2x = 11", "o": ["x = −3", "x = 3", "x = 8", "x = −8"], "a": 0, "e": "−2x = 11 − 5 = 6, so x = 6 ÷ (−2) = −3."},
   {"t": "🔴 Hard · Both sides", "q": "Solve: 2(3x + 1) − 5 = 4x + 7", "o": ["x = 5", "x = 2", "x = 6", "x = 1"], "a": 0, "e": "6x + 2 − 5 = 4x + 7 → 6x − 3 = 4x + 7 → 2x = 10 → x = 5."},
-  {"t": "🔴 Hard · Fractions", "q": "Solve: (x + 4)/5 = (x − 2)/3", "o": ["x = 11", "x = 7", "x = 1", "x = 5"], "a": 0, "e": "Cross-multiply: 3(x + 4) = 5(x − 2) → 3x + 12 = 5x − 10 → 22 = 2x → x = 11."}
+  {"t": "🔴 Hard · Fractions", "q": "Solve: (x + 4)/5 = (x − 2)/3", "o": ["x = 11", "x = 7", "x = 1", "x = 5"], "a": 0, "e": "Cross-multiply: 3(x + 4) = 5(x − 2) → 3x + 12 = 5x − 10 → 22 = 2x → x = 11."},
+  {"t": "📜 Story of Algebra", "q": "The Abel–Ruffini theorem proves that:", "o": ["Degree 5 equations have no general formula using roots", "All equations can be solved with a formula", "x must always be the unknown", "Algebra was invented in Greece"], "a": 0, "e": "It is a proof of impossibility — no general formula using ordinary roots can exist for degree 5, no matter how clever anyone is."},
+  {"t": "📜 Story of Algebra", "q": "Évariste Galois, who died in a duel at the age of 20, laid the foundations of:", "o": ["Galois theory", "Coordinate geometry", "The decimal system", "Trigonometry"], "a": 0, "e": "Galois theory explains which equations can be solved by formula and which cannot. It now underpins cryptography and error-correcting codes."},
+  {"t": "Both sides", "q": "Solve: 3x + 7 = x + 19", "o": ["x = 6", "x = 13", "x = 3", "x = 26"], "a": 0, "e": "Transpose: 3x − x = 19 − 7, so 2x = 12 and x = 6. Check: 18 + 7 = 25 and 6 + 19 = 25."},
+  {"t": "🔴 Hard · Fractions", "q": "Solve: (5x + 2)/3 = (x + 6)/2", "o": ["x = 2", "x = 4", "x = 7", "x = 1"], "a": 0, "e": "Cross-multiply: 2(5x + 2) = 3(x + 6), so 10x + 4 = 3x + 18. Then 7x = 14 and x = 2."},
+  {"t": "🔴 Hard · Transposition", "q": "When a term is transposed from one side of an equation to the other, its:", "o": ["Sign changes to the opposite", "Sign stays the same", "Coefficient is doubled", "Value becomes zero"], "a": 0, "e": "Transposing is shorthand for doing the opposite operation to both sides, so a + becomes − and a − becomes +."}
 ], "Maths");
 
 refreshProgress();

@@ -152,13 +152,32 @@ details summary{cursor:pointer;font-weight:600}</style>
     <div class="qn">📌 Only Maths is published for this session</div>
     <div class="qe">The other subjects on today's timetable are not in this week's material yet — do the Maths quiz, then carry on with them offline.</div>
   </div>
+
+  <div class="ql">📜 The Story of Algebra · Part 1 of 16 — Before Algebra Had Symbols</div>
+  <div class="icard">
+    <h3>How did people solve problems before algebra?</h3>
+    <p>For thousands of years there was no <strong>x</strong>. Problems were written out as ordinary sentences, and solved with step-by-step recipes in words — like a cooking method rather than a formula.</p>
+    <div class="ex">Instead of <strong>x² + x = 6</strong>, a scribe wrote: <em>find a number which, added to its square, gives six</em>.</div>
+    <div class="hook">💡 The idea came first, the symbols came thousands of years later. Algebra is older than the <strong>+</strong> sign.</div>
+  </div>
+  <div class="icard">
+    <h3>🏺 Babylon, about 2000 BCE</h3>
+    <p>The earliest algebraic thinking we know of comes from <strong>Babylon</strong> (modern-day Iraq). Clay tablets show scribes solving problems with unknown quantities using systematic rules — real methods, not guesswork.</p>
+    <div class="ex">Key idea: an unknown number is not a mystery. It is something you can <strong>find</strong>, using a rule that always works.</div>
+  </div>
+  <div class="icard">
+    <h3>🇪🇬 Egypt, about 1650 BCE</h3>
+    <p>The <strong>Rhind Mathematical Papyrus</strong> is packed with practical problems: dividing food, measuring land, calculating wages, taxation and building. Their methods for finding an unknown quantity are very close to what we now call <strong>linear equations</strong>.</p>
+    <div class="ex">Egyptian maths was practical — built for fields, granaries and pyramids, not for showing off.</div>
+    <div class="hook">💡 Negative numbers had no place here yet. A number line running <em>below</em> zero was still centuries away — that is exactly what you are learning today.</div>
+  </div>
 </div>
 
 <div id="sec-m" class="sec">
   <div class="dyk">
-    <div class="dyk-eye">➗ Maths · 15 Questions</div>
+    <div class="dyk-eye">➗ Maths · 20 Questions</div>
     <div class="dyk-title">Integers, Opposites & the Number Line</div>
-    <div class="dyk-body">10 core questions and 5 marked 🔴 Hard. You need <strong>9 / 15 (60%)</strong> to mark this as Done.</div>
+    <div class="dyk-body">20 questions — core practice, 🔴 Hard challenges and 📜 Story of Algebra. You need <strong>12 / 20 (60%)</strong> to mark this as Done.</div>
   </div>
   <div class="ql">Questions</div>
   <div class="sr">
@@ -183,7 +202,7 @@ details summary{cursor:pointer;font-weight:600}</style>
 </div>
 
 <script>
-var SUBJECTS = [{"id": "m", "label": "Maths", "total": 15}];
+var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}];
 var LS_PFX   = 'icse_w09_mon';
 
 function saveScore(id, score, total, label) {
@@ -423,7 +442,12 @@ quiz('m', [
   {"t": "Predecessor", "q": "The predecessor of −3 is:", "o": ["−4", "−2", "0", "3"], "a": 0, "e": "The predecessor is one less — one step to the left — so −3 − 1 = −4."},
   {"t": "🔴 Hard · True or false", "q": "Which of these statements is FALSE?", "o": ["−10 is greater than −5", "Every positive integer is greater than 0", "Zero is greater than every negative integer", "5 is less than 10"], "a": 0, "e": "−10 sits further left than −5, so −10 is actually smaller. The other three statements are all true."},
   {"t": "Real life", "q": "The temperature of a place is −5 °C. If it falls by 7 °C, the new temperature is:", "o": ["−12 °C", "2 °C", "−2 °C", "12 °C"], "a": 0, "e": "Falling means moving left on the number line: −5 − 7 = −12 °C."},
-  {"t": "🔴 Hard · Number line", "q": "The integer which is 4 less than −1 is:", "o": ["−5", "3", "−3", "5"], "a": 0, "e": "'4 less' means move 4 steps left from −1: −1 − 4 = −5."}
+  {"t": "🔴 Hard · Number line", "q": "The integer which is 4 less than −1 is:", "o": ["−5", "3", "−3", "5"], "a": 0, "e": "'4 less' means move 4 steps left from −1: −1 − 4 = −5."},
+  {"t": "📜 Story of Algebra", "q": "Which civilisation, around 2000 BCE, first developed systematic methods for solving problems with unknown numbers?", "o": ["Babylon", "Egypt", "Greece", "India"], "a": 0, "e": "Babylonian clay tablets show scribes solving equation-like problems with set rules, long before symbols existed."},
+  {"t": "📜 Story of Algebra", "q": "The Rhind Mathematical Papyrus, full of practical problems with unknown quantities, comes from:", "o": ["Egypt", "Babylon", "Greece", "India"], "a": 0, "e": "The Rhind Papyrus (about 1650 BCE) is Egyptian. Its problems deal with wages, land and dividing food."},
+  {"t": "Number line", "q": "The distance of −9 from 0 on the number line is:", "o": ["9 units", "−9 units", "0 units", "18 units"], "a": 0, "e": "Distance is never negative. −9 sits nine steps to the left of zero, so its distance from 0 is 9 units."},
+  {"t": "🔴 Hard · Number line", "q": "Which integer lies exactly halfway between −6 and 4 on the number line?", "o": ["−1", "0", "1", "−2"], "a": 0, "e": "From −6 to 4 is 10 steps. Half of that is 5 steps, and −6 + 5 = −1."},
+  {"t": "🔴 Hard · Ordering", "q": "Arrange in descending order: −4, 7, −11, 0, 2", "o": ["7, 2, 0, −4, −11", "−11, −4, 0, 2, 7", "7, 2, 0, −11, −4", "−4, −11, 0, 2, 7"], "a": 0, "e": "Descending means largest first — read the number line from right to left: 7, 2, 0, −4, −11."}
 ], "Maths");
 
 refreshProgress();

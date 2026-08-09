@@ -146,13 +146,31 @@ details summary{cursor:pointer;font-weight:600}</style>
     <div class="qn">📌 Only Maths is published for this session</div>
     <div class="qe">The other subjects on today's timetable are not in this week's material yet — do the Maths quiz, then carry on with them offline.</div>
   </div>
+
+  <div class="ql">📜 The Story of Algebra · Part 2 of 16 — India Invents the Numbers You Are Adding Today</div>
+  <div class="icard">
+    <h3>🇮🇳 Brahmagupta, 628 CE</h3>
+    <p>The Indian mathematician <strong>Brahmagupta</strong> was the first to write down systematic rules for <strong>zero</strong>, for <strong>negative numbers</strong>, and for equations — the exact things you are adding and subtracting today.</p>
+    <div class="ex">He wrote rules such as: a debt subtracted from zero is a fortune; a fortune subtracted from zero is a debt.</div>
+    <div class="hook">💡 Read that again with modern symbols: 0 − (−5) = +5 and 0 − (+5) = −5. You are using his rule every time you flip a sign.</div>
+  </div>
+  <div class="icard">
+    <h3>Fortune and debt — the first number line</h3>
+    <p>Brahmagupta thought of positives as <strong>fortune</strong> (money you have) and negatives as <strong>debt</strong> (money you owe). Adding a debt to a fortune cancels part of it; adding debt to debt makes a bigger debt.</p>
+    <div class="ex">Fortune ₹10 + debt ₹4 → 10 + (−4) = 6 &nbsp;·&nbsp; debt ₹5 + debt ₹8 → (−5) + (−8) = −13</div>
+  </div>
+  <div class="icard">
+    <h3>Zero was the controversial part</h3>
+    <p>Treating <strong>zero as a number</strong> — not just an empty space — was revolutionary. Many traditions refused to accept it. Without zero there is no number line, no place value, and no modern computing.</p>
+    <div class="hook">💡 Negative numbers were rejected for centuries too — people said <em>negative apples</em> made no sense. They only won once debts, temperatures and directions needed them.</div>
+  </div>
 </div>
 
 <div id="sec-m" class="sec">
   <div class="dyk">
-    <div class="dyk-eye">➗ Maths · 15 Questions</div>
+    <div class="dyk-eye">➗ Maths · 20 Questions</div>
     <div class="dyk-title">Adding & Subtracting on the Number Line</div>
-    <div class="dyk-body">10 core questions and 5 marked 🔴 Hard. You need <strong>9 / 15 (60%)</strong> to mark this as Done.</div>
+    <div class="dyk-body">20 questions — core practice, 🔴 Hard challenges and 📜 Story of Algebra. You need <strong>12 / 20 (60%)</strong> to mark this as Done.</div>
   </div>
   <div class="ql">Questions</div>
   <div class="sr">
@@ -177,7 +195,7 @@ details summary{cursor:pointer;font-weight:600}</style>
 </div>
 
 <script>
-var SUBJECTS = [{"id": "m", "label": "Maths", "total": 15}];
+var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}];
 var LS_PFX   = 'icse_w09_tue';
 
 function saveScore(id, score, total, label) {
@@ -417,7 +435,12 @@ quiz('m', [
   {"t": "Addition", "q": "0 + (−15) = ?", "o": ["−15", "15", "0", "1"], "a": 0, "e": "Adding zero changes nothing, so the answer is −15."},
   {"t": "🔴 Hard · Subtraction", "q": "Subtract −4 from −9.", "o": ["−5", "5", "−13", "13"], "a": 0, "e": "'Subtract −4 from −9' means −9 − (−4) = −9 + 4 = −5."},
   {"t": "Number line", "q": "On a number line, to add −6 you move:", "o": ["6 units to the left", "6 units to the right", "6 units upward", "6 units downward"], "a": 0, "e": "Adding a negative number always means stepping to the left."},
-  {"t": "🔴 Hard · Mixed", "q": "Evaluate: (−20) + 15 − (−5)", "o": ["0", "−10", "10", "−30"], "a": 0, "e": "Work left to right: −20 + 15 = −5; then −5 − (−5) = −5 + 5 = 0."}
+  {"t": "🔴 Hard · Mixed", "q": "Evaluate: (−20) + 15 − (−5)", "o": ["0", "−10", "10", "−30"], "a": 0, "e": "Work left to right: −20 + 15 = −5; then −5 − (−5) = −5 + 5 = 0."},
+  {"t": "📜 Story of Algebra", "q": "Which Indian mathematician, around 628 CE, gave the first systematic rules for zero and negative numbers?", "o": ["Brahmagupta", "Aryabhata", "Bhaskara II", "Ramanujan"], "a": 0, "e": "Brahmagupta set out rules for zero, negatives and equations — the foundation of the integer arithmetic you are doing today."},
+  {"t": "📜 Story of Algebra", "q": "Brahmagupta described positive and negative quantities using which pair of words?", "o": ["Fortune and debt", "North and south", "Hot and cold", "Day and night"], "a": 0, "e": "Fortune meant money you have (positive) and debt meant money you owe (negative) — an early, very practical number line."},
+  {"t": "Real life", "q": "A submarine at −80 m rises 35 m. Its new depth is:", "o": ["−45 m", "−115 m", "45 m", "115 m"], "a": 0, "e": "Rising means moving right on the number line: −80 + 35 = −45 m."},
+  {"t": "🔴 Hard · Mixed", "q": "Evaluate: (−15) − (−15) + (−4)", "o": ["−4", "−34", "4", "−26"], "a": 0, "e": "(−15) − (−15) = 0 first, since subtracting a negative adds it back. Then 0 + (−4) = −4."},
+  {"t": "🔴 Hard · Subtraction", "q": "By how much is −6 greater than −14?", "o": ["8", "−8", "20", "−20"], "a": 0, "e": "Take the difference: (−6) − (−14) = −6 + 14 = 8. So −6 sits 8 steps to the right of −14."}
 ], "Maths");
 
 refreshProgress();

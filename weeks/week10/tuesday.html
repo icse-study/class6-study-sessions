@@ -133,13 +133,32 @@ details summary{cursor:pointer;font-weight:600}</style>
     <div class="qn">📌 Only Maths is published for this session</div>
     <div class="qe">The other subjects on today's timetable are not in this week's material yet &mdash; do the Maths quiz, then carry on with them offline.</div>
   </div>
+
+  <div class="ql">📜 The Story of Algebra · Part 6 of 16 — The Division Sign and the Habit of Generalising</div>
+  <div class="icard">
+    <h3>÷ has a birthday</h3>
+    <p>The division sign <strong>÷</strong> was introduced by the Swiss mathematician <strong>Johann Rahn</strong> in <strong>1659</strong>. It is called an <em>obelus</em>. Like every other symbol in your book, somebody had to invent it — it did not come with the numbers.</p>
+    <div class="ex">÷ (1659, Rahn) &nbsp;·&nbsp; = (1557, Recorde) &nbsp;·&nbsp; x for the unknown (1637, Descartes)</div>
+  </div>
+  <div class="icard">
+    <h3>Dividing is multiplying, undone</h3>
+    <p>The division rule mirrors the multiplication rule exactly: divide the <strong>coefficients</strong>, and <strong>subtract</strong> the exponents of like variables. To divide a polynomial by a monomial, divide every single term.</p>
+    <div class="ex">(12x⁵) ÷ (4x³) = 3x² &nbsp;·&nbsp; (12x⁵ − 9x³) ÷ (3x²) = 4x³ − 3x</div>
+    <div class="hook">💡 Every term. Missing one term is the single most common mistake in this whole chapter.</div>
+  </div>
+  <div class="icard">
+    <h3>From one answer to every answer</h3>
+    <p>Arithmetic answers one question: 3 + 4 = 7. Algebra answers all of them at once: a + b = b + a, for <em>any</em> numbers. That jump — from a fact to a rule — is what makes algebra powerful.</p>
+    <div class="ex">Sum of the first n even numbers = <strong>n(n + 1)</strong><br>Sum of the first n odd numbers = <strong>n²</strong></div>
+    <div class="hook">💡 The odd-number rule can be <em>seen</em>: 1 dot, then 3 more around it, then 5 more — each step builds the next perfect square.</div>
+  </div>
 </div>
 
 <div id="sec-m" class="sec">
   <div class="dyk">
-    <div class="dyk-eye">➗ Maths · 15 Questions</div>
+    <div class="dyk-eye">➗ Maths · 20 Questions</div>
     <div class="dyk-title">Division of Monomials & Polynomials · Generalisation</div>
-    <div class="dyk-body">10 core questions and 5 marked 🔴 Hard. You need <strong>9 / 15 (60%)</strong> to mark this as Done.</div>
+    <div class="dyk-body">20 questions — core practice, 🔴 Hard challenges and 📜 Story of Algebra. You need <strong>12 / 20 (60%)</strong> to mark this as Done.</div>
   </div>
   <div class="ql">Questions</div>
   <div class="sr">
@@ -164,7 +183,7 @@ details summary{cursor:pointer;font-weight:600}</style>
 </div>
 
 <script>
-var SUBJECTS = [{"id": "m", "label": "Maths", "total": 15}];
+var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}];
 var LS_PFX   = 'icse_w10_tue';
 
 function saveScore(id, score, total, label) {
@@ -404,7 +423,12 @@ quiz('m', [
   {"t": "Generalisation", "q": "The sum of the first 5 odd numbers is:", "o": ["25", "20", "15", "10"], "a": 0, "e": "n² = 5² = 25. Check: 1+3+5+7+9 = 25."},
   {"t": "🔴 Hard · Division", "q": "Divide: (36a³b² − 24a²b³) ÷ (6a²b²)", "o": ["6a − 4b", "6a + 4b", "36a − 24b", "6ab − 4ab"], "a": 0, "e": "36a³b² ÷ 6a²b² = 6a and −24a²b³ ÷ 6a²b² = −4b."},
   {"t": "Division", "q": "Simplify: (18x⁴ − 9x³) ÷ (−3x²)", "o": ["−6x² + 3x", "6x² − 3x", "−6x² − 3x", "6x² + 3x"], "a": 0, "e": "Dividing by a negative flips both signs: −6x² and +3x."},
-  {"t": "🔴 Hard · Generalisation", "q": "The sum of the first n odd numbers is:", "o": ["n²", "n(n + 1)", "n(n − 1)", "2n"], "a": 0, "e": "n². The even-number sum is n(n + 1) — don't swap the two formulas."}
+  {"t": "🔴 Hard · Generalisation", "q": "The sum of the first n odd numbers is:", "o": ["n²", "n(n + 1)", "n(n − 1)", "2n"], "a": 0, "e": "n². The even-number sum is n(n + 1) — don't swap the two formulas."},
+  {"t": "📜 Story of Algebra", "q": "The division sign ÷ was introduced in 1659 by the Swiss mathematician:", "o": ["Johann Rahn", "Robert Recorde", "René Descartes", "François Viète"], "a": 0, "e": "Johann Rahn introduced ÷, known as the obelus, in 1659 — a full century after Recorde's equals sign."},
+  {"t": "📜 Story of Algebra", "q": "The rule that the sum of the first n odd numbers equals n² can be pictured by arranging dots into:", "o": ["Squares", "Triangles", "Circles", "Straight lines"], "a": 0, "e": "1, then 3 more, then 5 more — each ring of odd dots completes the next perfect square, so the running total is always n²."},
+  {"t": "Division", "q": "Divide: (x³ − x²) ÷ x²", "o": ["x − 1", "x² − 1", "x − x²", "1 − x"], "a": 0, "e": "Divide each term: x³ ÷ x² = x and −x² ÷ x² = −1, giving x − 1."},
+  {"t": "🔴 Hard · Division", "q": "Divide: (49p⁴q³ − 35p³q² + 14p²q) ÷ (7p²q)", "o": ["7p²q² − 5pq + 2", "7p²q² − 5pq", "7p²q² − 5pq + 2pq", "7p⁶q⁴ − 5p⁵q³ + 2"], "a": 0, "e": "Term by term: 49÷7 = 7 with p⁴⁻²q³⁻¹ = p²q²; 35÷7 = 5 with pq; 14÷7 = 2 with p⁰q⁰ = 1."},
+  {"t": "🔴 Hard · Generalisation", "q": "Using the rule n(n + 1), the sum of the first 20 even numbers is:", "o": ["420", "400", "380", "441"], "a": 0, "e": "n = 20, so the sum is 20 × 21 = 420. Adding 2 + 4 + … + 40 by hand gives the same answer."}
 ], "Maths");
 
 refreshProgress();

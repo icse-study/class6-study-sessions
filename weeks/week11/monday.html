@@ -142,13 +142,31 @@ details summary{cursor:pointer;font-weight:600}</style>
     <div class="qn">📌 Only Maths is published for this session</div>
     <div class="qe">The other subjects on today's timetable are not in this week's material yet — do the Maths quiz, then carry on with them offline.</div>
   </div>
+
+  <div class="ql">📜 The Story of Algebra · Part 9 of 16 — From Facts to Rules</div>
+  <div class="icard">
+    <h3>What revision is really for</h3>
+    <p>Everything you have revised this week — like terms, brackets, products, quotients — exists to do one job: state a rule once, then use it on <strong>any</strong> number. Arithmetic solves a problem; algebra solves a whole family of problems in one line.</p>
+    <div class="ex">Arithmetic: 7 × 12 = 84. Algebra: a(b + c) = ab + ac, so 7 × 12 = 7(10 + 2) = 70 + 14.</div>
+  </div>
+  <div class="icard">
+    <h3>Descartes' filing system</h3>
+    <p>Descartes gave letters a job description that we still follow. Letters near the <strong>start</strong> of the alphabet (a, b, c) stand for <strong>known</strong> values; letters near the <strong>end</strong> (x, y, z) stand for the <strong>unknowns</strong> you are hunting for.</p>
+    <div class="ex">ax + b = 0 — you can read it instantly: a and b are given, x is what you must find.</div>
+    <div class="hook">💡 This is why formulas look the way they do. It is a convention, not a law — but a wonderfully useful one.</div>
+  </div>
+  <div class="icard">
+    <h3>The chain so far</h3>
+    <p>Babylon found unknowns · Egypt used them practically · Greece drew them · India gave them zero and negatives · al-Khwarizmi named the subject · Europe gave it symbols · Descartes gave it shape.</p>
+    <div class="ex">Every one of those steps is sitting inside the expressions you simplified this week.</div>
+  </div>
 </div>
 
 <div id="sec-m" class="sec">
   <div class="dyk">
-    <div class="dyk-eye">➗ Maths · 15 Questions</div>
+    <div class="dyk-eye">➗ Maths · 20 Questions</div>
     <div class="dyk-title">Mixed Revision — Chapter 12 (+ Integers)</div>
-    <div class="dyk-body">10 core questions and 5 marked 🔴 Hard. You need <strong>9 / 15 (60%)</strong> to mark this as Done.</div>
+    <div class="dyk-body">20 questions — core practice, 🔴 Hard challenges and 📜 Story of Algebra. You need <strong>12 / 20 (60%)</strong> to mark this as Done.</div>
   </div>
   <div class="ql">Questions</div>
   <div class="sr">
@@ -173,7 +191,7 @@ details summary{cursor:pointer;font-weight:600}</style>
 </div>
 
 <script>
-var SUBJECTS = [{"id": "m", "label": "Maths", "total": 15}];
+var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}];
 var LS_PFX   = 'icse_w11_mon';
 
 function saveScore(id, score, total, label) {
@@ -413,7 +431,12 @@ quiz('m', [
   {"t": "Monomials", "q": "(a²b)(−3ab²) = ?", "o": ["−3a³b³", "3a³b³", "−3a²b²", "−3a³b²"], "a": 0, "e": "1 × −3 = −3; a² × a = a³; b × b² = b³."},
   {"t": "🔴 Hard · Division", "q": "Divide: (12x²y − 18xy²) ÷ (6xy)", "o": ["2x − 3y", "2x + 3y", "12x − 18y", "2 − 3y"], "a": 0, "e": "12x²y ÷ 6xy = 2x and −18xy² ÷ 6xy = −3y."},
   {"t": "Generalisation", "q": "The sum of the first 7 even numbers is:", "o": ["56", "42", "49", "63"], "a": 0, "e": "n(n + 1) with n = 7 → 7 × 8 = 56."},
-  {"t": "🔴 Hard · Polynomials", "q": "Which of the following is NOT a polynomial?", "o": ["5x + 1/x", "3x² + 2x − 1", "8", "2xy − 3y²"], "a": 0, "e": "1/x puts the variable in the denominator, which a polynomial never does."}
+  {"t": "🔴 Hard · Polynomials", "q": "Which of the following is NOT a polynomial?", "o": ["5x + 1/x", "3x² + 2x − 1", "8", "2xy − 3y²"], "a": 0, "e": "1/x puts the variable in the denominator, which a polynomial never does."},
+  {"t": "📜 Story of Algebra", "q": "The main difference between arithmetic and algebra is that algebra:", "o": ["States general rules that work for any number", "Uses only whole numbers", "Never uses the equals sign", "Was invented in Europe"], "a": 0, "e": "Arithmetic gives one answer to one sum. Algebra states a rule — like a + b = b + a — that holds for every number at once."},
+  {"t": "📜 Story of Algebra", "q": "In Descartes' convention, letters near the start of the alphabet (a, b, c) usually stand for:", "o": ["Known values", "Unknown values", "Powers", "Negative numbers"], "a": 0, "e": "a, b, c are the knowns and x, y, z are the unknowns — which is why a formula like ax + b = 0 reads so clearly."},
+  {"t": "Brackets", "q": "Simplify: 6(x − 2) − 4(x − 3)", "o": ["2x", "2x − 24", "2x + 24", "10x − 24"], "a": 0, "e": "6x − 12 − 4x + 12 = 2x. The two constants cancel exactly — watch the sign when opening the second bracket."},
+  {"t": "🔴 Hard · Substitution", "q": "If x = −2, the value of x³ − 2x is:", "o": ["−4", "−12", "4", "12"], "a": 0, "e": "x³ = (−2)³ = −8 and 2x = −4, so −8 − (−4) = −8 + 4 = −4."},
+  {"t": "🔴 Hard · Division", "q": "Divide: (27a⁵b³) ÷ (−9a²b³)", "o": ["−3a³", "3a³", "−3a³b", "−3a⁷b⁶"], "a": 0, "e": "27 ÷ (−9) = −3, a⁵ ÷ a² = a³, and b³ ÷ b³ = 1. So the answer is −3a³."}
 ], "Maths");
 
 refreshProgress();
