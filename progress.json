@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-08-05T16:36:03.166Z",
+  "lastSaved": "2026-08-09T01:38:53.244Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -263,10 +263,87 @@
       "label": "Chemistry"
     },
     "icse_w02_thu_m": {
-      "attempts": 2,
-      "bestScore": 14,
+      "attempts": 3,
+      "bestScore": 15,
       "totalQ": 15,
-      "lastDate": "2026-08-05",
+      "lastDate": "2026-08-08",
+      "label": "Maths"
+    },
+    "icse_w02_fri_s": {
+      "attempts": 1,
+      "bestScore": 7,
+      "totalQ": 10,
+      "lastDate": "2026-08-06",
+      "label": "Science Diagrams"
+    },
+    "icse_w02_fri_b": {
+      "attempts": 1,
+      "bestScore": 15,
+      "totalQ": 15,
+      "lastDate": "2026-08-06",
+      "label": "Biology"
+    },
+    "icse_w03_mon_k": {
+      "attempts": 2,
+      "bestScore": 7,
+      "totalQ": 15,
+      "lastDate": "2026-08-07",
+      "label": "Kannada Grammar"
+    },
+    "icse_w03_mon_m": {
+      "attempts": 2,
+      "bestScore": 0,
+      "totalQ": 10,
+      "lastDate": "2026-08-07",
+      "label": "Maths Quick Practice"
+    },
+    "icse_w02_sun_k": {
+      "attempts": 1,
+      "bestScore": 11,
+      "totalQ": 15,
+      "lastDate": "2026-08-08",
+      "label": "Kannada Revision"
+    },
+    "icse_w08_mon_k": {
+      "attempts": 3,
+      "bestScore": 15,
+      "totalQ": 15,
+      "lastDate": "2026-08-08",
+      "label": "Kannada"
+    },
+    "icse_w02_sat_h": {
+      "attempts": 1,
+      "bestScore": 15,
+      "totalQ": 15,
+      "lastDate": "2026-08-08",
+      "label": "History & Civics"
+    },
+    "icse_w02_sun_f": {
+      "attempts": 1,
+      "bestScore": 15,
+      "totalQ": 15,
+      "lastDate": "2026-08-08",
+      "label": "French"
+    },
+    "icse_w02_sun_mx": {
+      "attempts": 1,
+      "bestScore": 30,
+      "totalQ": 30,
+      "lastDate": "2026-08-08",
+      "label": "Mixed Quiz"
+    },
+    "icse_w02_sun_gh": {
+      "attempts": 1,
+      "bestScore": 15,
+      "totalQ": 15,
+      "lastDate": "2026-08-08",
+      "label": "Geo+History"
+    },
+    "icse_w02_sat_m": {
+      "attempts": 1,
+      "bestScore": 15,
+      "totalQ": 15,
+      "lastDate": "2026-08-08",
       "label": "Maths"
     }
   }
