@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-08-09T01:38:53.244Z",
+  "lastSaved": "2026-08-09T14:42:10.452Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -228,17 +228,17 @@
       "label": "Kannada Grammar"
     },
     "icse_w02_sat_pq": {
-      "attempts": 1,
+      "attempts": 3,
       "bestScore": 10,
       "totalQ": 10,
-      "lastDate": "2026-06-29",
+      "lastDate": "2026-07-31",
       "label": "Physics"
     },
     "icse_w02_sat_ch": {
-      "attempts": 2,
+      "attempts": 3,
       "bestScore": 13,
       "totalQ": 15,
-      "lastDate": "2026-06-29",
+      "lastDate": "2026-07-29",
       "label": "Chemistry"
     },
     "icse_w03_mon_e": {
@@ -291,14 +291,14 @@
       "label": "Kannada Grammar"
     },
     "icse_w03_mon_m": {
-      "attempts": 2,
-      "bestScore": 0,
+      "attempts": 4,
+      "bestScore": 10,
       "totalQ": 10,
-      "lastDate": "2026-08-07",
+      "lastDate": "2026-08-09",
       "label": "Maths Quick Practice"
     },
     "icse_w02_sun_k": {
-      "attempts": 1,
+      "attempts": 3,
       "bestScore": 11,
       "totalQ": 15,
       "lastDate": "2026-08-08",
@@ -340,7 +340,7 @@
       "label": "Geo+History"
     },
     "icse_w02_sat_m": {
-      "attempts": 1,
+      "attempts": 5,
       "bestScore": 15,
       "totalQ": 15,
       "lastDate": "2026-08-08",
