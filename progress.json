@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-08-13T12:35:32.059Z",
+  "lastSaved": "2026-08-13T12:39:43.363Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -380,6 +380,20 @@
       "totalQ": 15,
       "lastDate": "2026-08-12",
       "label": "Mixed Quiz"
+    },
+    "icse_w03_thu_m": {
+      "attempts": 2,
+      "bestScore": 6,
+      "totalQ": 15,
+      "lastDate": "2026-08-13",
+      "label": "Maths Formula Recall"
+    },
+    "icse_w03_thu_ch": {
+      "attempts": 2,
+      "bestScore": 14,
+      "totalQ": 15,
+      "lastDate": "2026-08-13",
+      "label": "Chemistry"
     }
   }
 }
