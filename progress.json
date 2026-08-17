@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-08-17T12:56:21.336Z",
+  "lastSaved": "2026-08-17T13:03:13.342Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -382,10 +382,10 @@
       "label": "Mixed Quiz"
     },
     "icse_w03_thu_m": {
-      "attempts": 2,
-      "bestScore": 6,
+      "attempts": 3,
+      "bestScore": 13,
       "totalQ": 15,
-      "lastDate": "2026-08-13",
+      "lastDate": "2026-08-17",
       "label": "Maths Formula Recall"
     },
     "icse_w03_thu_ch": {
