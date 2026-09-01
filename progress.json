@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-08-30T12:39:14.154Z",
+  "lastSaved": "2026-09-01T13:18:48.409Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -492,6 +492,13 @@
       "totalQ": 15,
       "lastDate": "2026-08-30",
       "label": "English"
+    },
+    "icse_w04_tue_m": {
+      "attempts": 2,
+      "bestScore": 12,
+      "totalQ": 15,
+      "lastDate": "2026-09-01",
+      "label": "Maths Quick Practice"
     }
   }
 }
