@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-09-01T13:22:30.415Z",
+  "lastSaved": "2026-09-01T13:32:54.243Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -506,6 +506,13 @@
       "totalQ": 15,
       "lastDate": "2026-09-01",
       "label": "Physics"
+    },
+    "icse_w04_tue_c": {
+      "attempts": 2,
+      "bestScore": 14,
+      "totalQ": 15,
+      "lastDate": "2026-09-01",
+      "label": "CS/Python"
     }
   }
 }
