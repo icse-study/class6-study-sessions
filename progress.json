@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-09-03T06:01:28.353Z",
+  "lastSaved": "2026-09-03T14:48:57.873Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -513,6 +513,13 @@
       "totalQ": 15,
       "lastDate": "2026-09-01",
       "label": "CS/Python"
+    },
+    "icse_w04_thu_m": {
+      "attempts": 2,
+      "bestScore": 11,
+      "totalQ": 15,
+      "lastDate": "2026-09-03",
+      "label": "Maths Formula Recall"
     }
   }
 }
