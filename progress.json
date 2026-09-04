@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-09-03T15:09:36.424Z",
+  "lastSaved": "2026-09-04T14:52:10.561Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -534,6 +534,13 @@
       "totalQ": 15,
       "lastDate": "2026-09-03",
       "label": "French"
+    },
+    "icse_w04_fri_s": {
+      "attempts": 2,
+      "bestScore": 12,
+      "totalQ": 15,
+      "lastDate": "2026-09-04",
+      "label": "Science Diagrams"
     }
   }
 }
