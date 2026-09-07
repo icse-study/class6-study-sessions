@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-09-07T02:04:39.900Z",
+  "lastSaved": "2026-09-07T15:12:41.068Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -625,6 +625,13 @@
       "totalQ": 15,
       "lastDate": "2026-09-06",
       "label": "Mixed Quiz"
+    },
+    "icse_w05_mon_m": {
+      "attempts": 1,
+      "bestScore": 14,
+      "totalQ": 15,
+      "lastDate": "2026-09-07",
+      "label": "Maths"
     }
   }
 }
