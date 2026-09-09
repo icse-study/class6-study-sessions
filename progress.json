@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-09-08T15:14:55.659Z",
+  "lastSaved": "2026-09-09T13:59:35.890Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -674,6 +674,13 @@
       "totalQ": 15,
       "lastDate": "2026-09-08",
       "label": "Maths"
+    },
+    "icse_w05_wed_g": {
+      "attempts": 1,
+      "bestScore": 15,
+      "totalQ": 15,
+      "lastDate": "2026-09-09",
+      "label": "Geography"
     }
   }
 }
