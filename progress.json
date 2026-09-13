@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-09-13T11:43:49.619Z",
+  "lastSaved": "2026-09-13T12:14:01.211Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -772,6 +772,13 @@
       "totalQ": 15,
       "lastDate": "2026-09-13",
       "label": "Chemistry"
+    },
+    "icse_w05_sun_mx": {
+      "attempts": 1,
+      "bestScore": 29,
+      "totalQ": 30,
+      "lastDate": "2026-09-13",
+      "label": "Mixed Quiz"
     }
   }
 }
