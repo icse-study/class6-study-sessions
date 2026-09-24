@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
-<title>Week 12 · Tuesday · Simple Linear Equations: Transposition · Physics: Revision: Measurement 1 · Class 6 ICSE</title>
+<title>Week 12 · Tuesday · Simple Linear Equations: Transposition · Physics: Revision: Measurement 1 · CS: Python Functions · Class 6 ICSE</title>
 <style>*{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0F4FF;min-height:100vh;color:#1a1a2e}
 header{background:linear-gradient(135deg,#4F46E5,#7C3AED);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:12px}
@@ -84,13 +84,15 @@ details summary{cursor:pointer;font-weight:600}</style>
 <a class="back" href="index.html">← Week 12</a>
 <header>
   <div class="logo">➗</div>
-  <div><h1>Tuesday · Week 12</h1><p>1 Sep 2026 · 6:00 PM · ➗ Simple Linear Equations — Transposition &middot; ⚡ Physics Revision: Measurement 1</p></div>
+  <div><h1>Tuesday · Week 12</h1><p>1 Sep 2026 · 6:00 PM · ➗ Simple Linear Equations — Transposition &middot; ⚡ Physics Revision: Measurement 1 &middot; 💻 Python Functions</p></div>
 </header>
 <div class="tabs">
   <button class="tab active" id="tab-study" onclick="switchTab('study')">📚 Study</button>
   <button class="tab" id="tab-m" onclick="switchTab('m')">➗ Maths Quiz</button>
   <button class="tab" id="tab-pnotes" onclick="switchTab('pnotes')">⚡ Physics Study</button>
   <button class="tab" id="tab-p" onclick="switchTab('p')">⚡ Physics Quiz</button>
+  <button class="tab" id="tab-cnotes" onclick="switchTab('cnotes')">💻 CS Study</button>
+  <button class="tab" id="tab-c" onclick="switchTab('c')">💻 CS Quiz</button>
 </div>
 <div class="prog-bar">
   <div class="pb-top">
@@ -225,8 +227,88 @@ details summary{cursor:pointer;font-weight:600}</style>
   </div>
 </div>
 
+<div id="sec-cnotes" class="sec">
+<div class="dyk"><div class="dyk-eye">💻 Tuesday · Week 12 · Python</div><div class="dyk-title">Functions — write once, use many times</div><div class="dyk-body">You already use functions: print(), input(), len(). Now build your own with def, pass them information, and get answers back with return.</div></div><div class="icard"><h3>🗺️ Today's route</h3><p>1️⃣ Why functions? · 2️⃣ Built-in functions · 3️⃣ def · 4️⃣ Parameters · 5️⃣ return · 6️⃣ Mini-programs · 🎲 Fun Corner</p><div class="hook">💡 Type every code example into IDLE yourself — reading code is good, running it is better!</div></div><div class="ql">1️⃣ Why functions?</div><div class="icard"><h3>A recipe with a name</h3><p>A <strong>function</strong> is a named block of code that does one job. Write it once, then <strong>call</strong> it whenever you need it.</p><div class="hook">💡 Less typing, fewer mistakes, and your program is easier to read.</div></div><div class="ql">2️⃣ Built-in functions you already know</div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Function</th><th>Job</th></tr></thead><tbody><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">print()</code></td><td>show output</td></tr><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">input()</code></td><td>read what the user types</td></tr><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">len()</code></td><td>count items or characters</td></tr><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">int(), float(), str()</code></td><td>convert between types</td></tr><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">type()</code></td><td>tell the data type</td></tr><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">max(), min(), sum()</code></td><td>biggest, smallest, total</td></tr><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">round(x)</code></td><td>round a number</td></tr><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">abs(x)</code></td><td>remove a minus sign</td></tr></tbody></table></div><div class="ql">3️⃣ Making your own — def</div><div class="icard"><h3>Define, then call</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">def greet():
+    print(&quot;Hello!&quot;)
+    print(&quot;Welcome to Python&quot;)
+
+greet()
+greet()</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+Hello!
+Welcome to Python
+Hello!
+Welcome to Python</pre><div class="hook">💡 def line ends with a colon, and the body is indented — just like if and for. Nothing happens until you CALL greet().</div></div><div class="ql">4️⃣ Parameters — giving the function information</div><div class="icard"><h3>Values go in the brackets</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">def greet(name):
+    print(&quot;Hello,&quot;, name)
+
+greet(&quot;Anu&quot;)
+greet(&quot;Ravi&quot;)</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+Hello, Anu
+Hello, Ravi</pre></div><div class="icard"><h3>More than one parameter</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">def add(a, b):
+    print(a + b)
+
+add(3, 4)</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+7</pre></div><div class="ql">5️⃣ return — sending an answer back</div><div class="icard"><h3>print shows, return gives back</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">def square(n):
+    return n * n
+
+result = square(5)
+print(result)
+print(square(3) + 1)</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+25
+10</pre><div class="hook">💡 After return, the function stops. A value that is returned can be stored, printed or used in a sum.</div></div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>print inside a function</th><th>return from a function</th></tr></thead><tbody><tr><td>only shows on screen</td><td>gives the value back to use</td></tr><tr><td>the result can't be used later</td><td>can be stored: x = square(4)</td></tr></tbody></table></div><div class="ql">6️⃣ Mini-programs</div><div class="icard"><h3>Is it even?</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">def is_even(n):
+    if n % 2 == 0:
+        return True
+    else:
+        return False
+
+print(is_even(10))
+print(is_even(7))</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+True
+False</pre></div><div class="icard"><h3>Area of a rectangle</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">def area(l, b):
+    return l * b
+
+print(&quot;Area =&quot;, area(5, 3))</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+Area = 15</pre></div><div class="icard"><h3>Grade calculator</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">def grade(marks):
+    if marks &gt;= 90:
+        return &quot;A&quot;
+    elif marks &gt;= 75:
+        return &quot;B&quot;
+    else:
+        return &quot;C&quot;
+
+print(grade(95), grade(80), grade(60))</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+A B C</pre></div><div class="ql">🎲 Fun Corner — Predict the output</div><div class="qa"><div class="qn">1. def f(): print("Hi")   — and the function is never called.</div><div class="qe">Is it run?</div><details><summary>👀 Show answer</summary><div class="ans"><strong>Nothing</strong> is printed.</div></details></div><div class="qa"><div class="qn">2. def double(x): return x * 2 ; print(double(6))</div><div class="qe">6 × 2</div><details><summary>👀 Show answer</summary><div class="ans"><strong>12</strong></div></details></div><div class="qa"><div class="qn">3. def add(a, b): return a + b ; print(add("Ice", "cream"))</div><div class="qe">Strings join.</div><details><summary>👀 Show answer</summary><div class="ans"><strong>Icecream</strong></div></details></div><div class="qa"><div class="qn">4. print(round(4.7))</div><div class="qe">Nearest whole number.</div><details><summary>👀 Show answer</summary><div class="ans"><strong>5</strong></div></details></div><div class="qa"><div class="qn">5. print(abs(-9))</div><div class="qe">Drop the minus.</div><details><summary>👀 Show answer</summary><div class="ans"><strong>9</strong></div></details></div><div class="qa"><div class="qn">6. def f(n): return n + 1 ; print(f(f(1)))</div><div class="qe">Inside first.</div><details><summary>👀 Show answer</summary><div class="ans"><strong>3</strong></div></details></div><div class="tip"><div class="tip-eye">🎯 Fun Trivia</div><div class="tip-body">• <code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">def</code> is short for <strong>define</strong>.<br>• Python comes with hundreds of ready-made functions in its <strong>standard library</strong> — try <code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">import random</code> then <code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">random.randint(1, 6)</code> to roll a dice!<br>• Big apps like YouTube use Python, and they are built from thousands of small functions working together.</div></div>
+</div>
+
+<div id="sec-c" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">💻 CS / Python · 20 Questions</div>
+    <div class="dyk-title">Python — Functions</div>
+    <div class="dyk-body">def, parameters and return. You need <strong>12 / 20 (60%)</strong> to mark this as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="c-qnum">1 / 20</span></div>
+    <div class="sc"><label>Score</label><span id="c-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="c-prog" style="width:0%"></div></div><div class="pp" id="c-pct">0%</div></div>
+  <div id="c-card" class="card">
+    <div class="tp" id="c-topic"></div>
+    <div class="qt" id="c-q"></div>
+    <div class="opts" id="c-opts"></div>
+    <div class="fb" id="c-fb"></div>
+    <button class="nxt" id="c-nxt">Next →</button>
+  </div>
+  <div id="c-done" style="display:none" class="card dc">
+    <div class="di" id="c-ficon">🎉</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="c-fscore"></div>
+    <div class="dm" id="c-fmsg"></div>
+    <button class="retry" id="c-retry">Try again ↺</button>
+  </div>
+</div>
+
 <script>
-var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}, {"id": "p", "label": "Physics", "total": 20}];
+var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}, {"id": "p", "label": "Physics", "total": 20}, {"id": "c", "label": "CS/Python", "total": 20}];
 var LS_PFX   = 'icse_w12_tue';
 
 function saveScore(id, score, total, label) {
@@ -273,7 +355,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["study", "m", "pnotes", "p"];
+  var all = ["study", "m", "pnotes", "p", "cnotes", "c"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -496,6 +578,29 @@ quiz('p', [
   {"t": "Motion", "q": "A spinning top shows…", "o": ["rotational motion", "rectilinear motion", "random motion", "no motion"], "a": 0, "e": "It spins about its own axis."},
   {"t": "🔴 Hard · Motion", "q": "Which is the best example of periodic motion?", "o": ["the swing of a pendulum", "a falling stone", "a car on a straight road", "a thrown ball"], "a": 0, "e": "A pendulum repeats its motion in equal intervals of time."}
 ], "Physics");
+
+quiz('c', [
+  {"t": "Functions", "q": "Which keyword creates a function?", "o": ["def", "func", "function", "make"], "a": 0, "e": "def = define."},
+  {"t": "Functions", "q": "A function is…", "o": ["a named block of code that does a job", "a type of variable", "a loop", "an error"], "a": 0, "e": "Write once, use many times."},
+  {"t": "Syntax", "q": "The def line must end with…", "o": ["a colon :", "a semicolon ;", "a full stop", "brackets only"], "a": 0, "e": "Then the body is indented."},
+  {"t": "Calling", "q": "def hello(): print(\"Hi\"). How do you run it?", "o": ["hello()", "def hello", "run hello", "hello:"], "a": 0, "e": "Call it by its name with brackets."},
+  {"t": "🔴 Hard · Calling", "q": "A function is defined but never called. What happens?", "o": ["Its code does not run", "It runs once", "It runs forever", "An error always appears"], "a": 0, "e": "Defining only teaches Python the recipe."},
+  {"t": "Built-in", "q": "Which is a built-in function?", "o": ["len()", "greet()", "square()", "hello()"], "a": 0, "e": "len() comes with Python."},
+  {"t": "Built-in", "q": "What does round(3.6) give?", "o": ["4", "3", "3.6", "36"], "a": 0, "e": "Rounded to the nearest whole number."},
+  {"t": "Built-in", "q": "What does abs(-12) give?", "o": ["12", "-12", "0", "1"], "a": 0, "e": "Absolute value drops the minus."},
+  {"t": "Parameters", "q": "In def greet(name):, what is name?", "o": ["a parameter", "a loop", "a list", "a keyword"], "a": 0, "e": "It receives the value passed in."},
+  {"t": "Parameters", "q": "def add(a, b): print(a + b). What does add(2, 5) print?", "o": ["7", "25", "a + b", "2 5"], "a": 0, "e": "2 + 5 = 7."},
+  {"t": "return", "q": "def sq(n): return n * n. What is sq(4)?", "o": ["16", "8", "4", "44"], "a": 0, "e": "4 × 4."},
+  {"t": "🔴 Hard · return", "q": "def f(x): return x + 10. What does print(f(5) * 2) show?", "o": ["30", "20", "15", "25"], "a": 0, "e": "f(5) = 15, then × 2 = 30."},
+  {"t": "return", "q": "What does return do?", "o": ["Sends a value back from the function", "Prints on screen", "Repeats the function", "Deletes the function"], "a": 0, "e": "The value can then be stored or used."},
+  {"t": "🔴 Hard · return", "q": "What happens to lines after return inside a function?", "o": ["They are not run", "They run twice", "They run first", "They cause an error"], "a": 0, "e": "return ends the function."},
+  {"t": "Mixed", "q": "def area(l, b): return l * b. What is area(6, 3)?", "o": ["18", "9", "63", "3"], "a": 0, "e": "6 × 3."},
+  {"t": "🔴 Hard · Mixed", "q": "def is_even(n): return n % 2 == 0. What is is_even(7)?", "o": ["False", "True", "1", "7"], "a": 0, "e": "7 % 2 is 1, not 0."},
+  {"t": "Mixed", "q": "def join(a, b): return a + b. What is join(\"Hi\", \"!\")?", "o": ["Hi!", "Hi !", "Hi+!", "an error"], "a": 0, "e": "Strings are joined."},
+  {"t": "🔴 Hard · Mixed", "q": "def f(n): return n * 2. What is f(f(3))?", "o": ["12", "6", "9", "36"], "a": 0, "e": "f(3) = 6, f(6) = 12."},
+  {"t": "Grade", "q": "def g(m): if m >= 50: return \"Pass\" else: return \"Fail\". What is g(49)?", "o": ["Fail", "Pass", "49", "None"], "a": 0, "e": "49 is not ≥ 50."},
+  {"t": "Why", "q": "Why do programmers use functions?", "o": ["To reuse code and keep programs tidy", "To make programs slower", "To avoid using variables", "Because print() needs them"], "a": 0, "e": "Less repetition, fewer mistakes."}
+], "CS/Python");
 
 refreshProgress();
 makeSaveButton('save-wrap');

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
-<title>Week 11 · Tuesday · Algebra: Substitution · Physics: Revision: Matter · Class 6 ICSE</title>
+<title>Week 11 · Tuesday · Algebra: Substitution · Physics: Revision: Matter · CS: Python Lists · Class 6 ICSE</title>
 <style>*{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0F4FF;min-height:100vh;color:#1a1a2e}
 header{background:linear-gradient(135deg,#4F46E5,#7C3AED);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:12px}
@@ -84,13 +84,15 @@ details summary{cursor:pointer;font-weight:600}</style>
 <a class="back" href="index.html">← Week 11</a>
 <header>
   <div class="logo">➗</div>
-  <div><h1>Tuesday · Week 11</h1><p>25 Aug 2026 · 6:00 PM · ➗ Algebra — Substitution &middot; ⚡ Physics Revision: Matter</p></div>
+  <div><h1>Tuesday · Week 11</h1><p>25 Aug 2026 · 6:00 PM · ➗ Algebra — Substitution &middot; ⚡ Physics Revision: Matter &middot; 💻 Python Lists</p></div>
 </header>
 <div class="tabs">
   <button class="tab active" id="tab-study" onclick="switchTab('study')">📚 Study</button>
   <button class="tab" id="tab-m" onclick="switchTab('m')">➗ Maths Quiz</button>
   <button class="tab" id="tab-pnotes" onclick="switchTab('pnotes')">⚡ Physics Study</button>
   <button class="tab" id="tab-p" onclick="switchTab('p')">⚡ Physics Quiz</button>
+  <button class="tab" id="tab-cnotes" onclick="switchTab('cnotes')">💻 CS Study</button>
+  <button class="tab" id="tab-c" onclick="switchTab('c')">💻 CS Quiz</button>
 </div>
 <div class="prog-bar">
   <div class="pb-top">
@@ -226,8 +228,76 @@ details summary{cursor:pointer;font-weight:600}</style>
   </div>
 </div>
 
+<div id="sec-cnotes" class="sec">
+<div class="dyk"><div class="dyk-eye">💻 Tuesday · Week 11 · Python</div><div class="dyk-title">Lists — many values in one box</div><div class="dyk-body">A variable holds one value. A list holds a whole collection: marks, names, scores. Learn to make lists, read from them, change them and loop over them.</div></div><div class="icard"><h3>🗺️ Today's route</h3><p>1️⃣ Making a list · 2️⃣ Indexing &amp; slicing · 3️⃣ Changing a list · 4️⃣ Useful functions · 5️⃣ Looping · 6️⃣ Mini-programs · 🎲 Fun Corner</p><div class="hook">💡 Type every code example into IDLE yourself — reading code is good, running it is better!</div></div><div class="ql">1️⃣ Making a list</div><div class="icard"><h3>Square brackets, commas between items</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">marks = [78, 92, 85, 60]
+fruits = [&quot;apple&quot;, &quot;mango&quot;, &quot;kiwi&quot;]
+mixed = [12, &quot;Ravi&quot;, 4.5, True]
+empty = []
+print(fruits)</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+[&#x27;apple&#x27;, &#x27;mango&#x27;, &#x27;kiwi&#x27;]</pre><div class="hook">💡 A list can hold any mix of types — even other lists!</div></div><div class="ql">2️⃣ Indexing and slicing — just like strings</div><div class="icard"><h3>Index starts at 0</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">fruits = [&quot;apple&quot;, &quot;mango&quot;, &quot;kiwi&quot;, &quot;banana&quot;]
+print(fruits[0])
+print(fruits[-1])
+print(fruits[1:3])</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+apple
+banana
+[&#x27;mango&#x27;, &#x27;kiwi&#x27;]</pre></div><div class="ql">3️⃣ Changing a list</div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Code</th><th>Does</th></tr></thead><tbody><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">fruits[0] = &quot;grape&quot;</code></td><td>replaces item 0</td></tr><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">fruits.append(&quot;pear&quot;)</code></td><td>adds to the END</td></tr><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">fruits.insert(1, &quot;fig&quot;)</code></td><td>adds at index 1</td></tr><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">fruits.remove(&quot;kiwi&quot;)</code></td><td>removes the first 'kiwi'</td></tr><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">fruits.pop()</code></td><td>removes and gives back the LAST item</td></tr><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">fruits.sort()</code></td><td>arranges in order (A→Z or small→big)</td></tr><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">fruits.reverse()</code></td><td>reverses the order</td></tr></tbody></table></div><div class="icard"><h3>Watch it change</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">nums = [3, 1, 2]
+nums.append(5)
+nums.sort()
+print(nums)</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+[1, 2, 3, 5]</pre><div class="hook">💡 Unlike strings, lists CAN be changed in place. We say lists are <strong>mutable</strong>.</div></div><div class="ql">4️⃣ Useful functions</div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Function</th><th>Gives</th><th>For [4, 9, 1, 6]</th></tr></thead><tbody><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">len(x)</code></td><td>number of items</td><td>4</td></tr><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">sum(x)</code></td><td>total</td><td>20</td></tr><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">max(x)</code></td><td>biggest</td><td>9</td></tr><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">min(x)</code></td><td>smallest</td><td>1</td></tr><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">sum(x) / len(x)</code></td><td>average</td><td>5.0</td></tr><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">9 in x</code></td><td>is it there?</td><td>True</td></tr></tbody></table></div><div class="ql">5️⃣ Looping over a list</div><div class="icard"><h3>for item in list</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">names = [&quot;Anu&quot;, &quot;Ben&quot;, &quot;Chitra&quot;]
+for n in names:
+    print(&quot;Hello&quot;, n)</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+Hello Anu
+Hello Ben
+Hello Chitra</pre></div><div class="icard"><h3>Building a list with a loop</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">squares = []
+for i in range(1, 6):
+    squares.append(i * i)
+print(squares)</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+[1, 4, 9, 16, 25]</pre></div><div class="ql">6️⃣ Mini-programs</div><div class="icard"><h3>Report card</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">marks = [78, 92, 85, 60, 95]
+print(&quot;Total:&quot;, sum(marks))
+print(&quot;Highest:&quot;, max(marks))
+print(&quot;Average:&quot;, sum(marks) / len(marks))</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+Total: 410
+Highest: 95
+Average: 82.0</pre></div><div class="icard"><h3>Count the passes</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">marks = [78, 32, 85, 25, 60]
+passed = 0
+for m in marks:
+    if m &gt;= 35:
+        passed = passed + 1
+print(passed, &quot;students passed&quot;)</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+3 students passed</pre></div><div class="ql">🎲 Fun Corner — Predict the output</div><div class="qa"><div class="qn">1. x = [10, 20, 30] ; print(x[1])</div><div class="qe">Start counting at 0.</div><details><summary>👀 Show answer</summary><div class="ans"><strong>20</strong></div></details></div><div class="qa"><div class="qn">2. x = [5, 3] ; x.append(8) ; print(len(x))</div><div class="qe">One more item.</div><details><summary>👀 Show answer</summary><div class="ans"><strong>3</strong></div></details></div><div class="qa"><div class="qn">3. print(max([4, 17, 9]))</div><div class="qe">The biggest.</div><details><summary>👀 Show answer</summary><div class="ans"><strong>17</strong></div></details></div><div class="qa"><div class="qn">4. x = ["b", "a", "c"] ; x.sort() ; print(x[0])</div><div class="qe">Sort first.</div><details><summary>👀 Show answer</summary><div class="ans"><strong>a</strong></div></details></div><div class="qa"><div class="qn">5. print(sum([1, 2, 3, 4]))</div><div class="qe">Add them.</div><details><summary>👀 Show answer</summary><div class="ans"><strong>10</strong></div></details></div><div class="qa"><div class="qn">6. x = [1, 2, 3] ; x.pop() ; print(x)</div><div class="qe">The last one leaves.</div><details><summary>👀 Show answer</summary><div class="ans"><strong>[1, 2]</strong></div></details></div><div class="tip"><div class="tip-eye">🎯 Fun Trivia</div><div class="tip-body">• Your phone's contact list, a music playlist and a class register are all lists inside computers.<br>• Python lists can hold millions of items — try <code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">len(list(range(1000000)))</code>.<br>• In many other languages lists are called <strong>arrays</strong>.</div></div>
+</div>
+
+<div id="sec-c" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">💻 CS / Python · 20 Questions</div>
+    <div class="dyk-title">Python — Lists</div>
+    <div class="dyk-body">Making, changing and looping over lists. You need <strong>12 / 20 (60%)</strong> to mark this as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="c-qnum">1 / 20</span></div>
+    <div class="sc"><label>Score</label><span id="c-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="c-prog" style="width:0%"></div></div><div class="pp" id="c-pct">0%</div></div>
+  <div id="c-card" class="card">
+    <div class="tp" id="c-topic"></div>
+    <div class="qt" id="c-q"></div>
+    <div class="opts" id="c-opts"></div>
+    <div class="fb" id="c-fb"></div>
+    <button class="nxt" id="c-nxt">Next →</button>
+  </div>
+  <div id="c-done" style="display:none" class="card dc">
+    <div class="di" id="c-ficon">🎉</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="c-fscore"></div>
+    <div class="dm" id="c-fmsg"></div>
+    <button class="retry" id="c-retry">Try again ↺</button>
+  </div>
+</div>
+
 <script>
-var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}, {"id": "p", "label": "Physics", "total": 20}];
+var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}, {"id": "p", "label": "Physics", "total": 20}, {"id": "c", "label": "CS/Python", "total": 20}];
 var LS_PFX   = 'icse_w11_tue';
 
 function saveScore(id, score, total, label) {
@@ -274,7 +344,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["study", "m", "pnotes", "p"];
+  var all = ["study", "m", "pnotes", "p", "cnotes", "c"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -497,6 +567,29 @@ quiz('p', [
   {"t": "🔴 Hard · Expansion", "q": "Arrange by how much they expand on heating, most first.", "o": ["gas > liquid > solid", "solid > liquid > gas", "liquid > gas > solid", "all expand equally"], "a": 0, "e": "Gases expand the most, solids the least."},
   {"t": "States", "q": "Plasma, the fourth state of matter, is found…", "o": ["at very high temperatures", "in ice", "in the deep sea", "in rubber"], "a": 0, "e": "Plasma forms at very high temperatures, as in the Sun."}
 ], "Physics");
+
+quiz('c', [
+  {"t": "Lists", "q": "Which brackets make a list?", "o": ["[ ]", "( )", "{ }", "< >"], "a": 0, "e": "Square brackets."},
+  {"t": "Lists", "q": "What is x = [5, 10, 15]?", "o": ["a list of 3 items", "a string", "a number", "an error"], "a": 0, "e": "Three items separated by commas."},
+  {"t": "Indexing", "q": "x = [\"red\", \"blue\", \"green\"]. What is x[0]?", "o": ["red", "blue", "green", "an error"], "a": 0, "e": "Index 0 is the first item."},
+  {"t": "Indexing", "q": "x = [\"red\", \"blue\", \"green\"]. What is x[-1]?", "o": ["green", "red", "blue", "an error"], "a": 0, "e": "−1 is the last item."},
+  {"t": "Slicing", "q": "x = [1, 2, 3, 4, 5]. What is x[1:3]?", "o": ["[2, 3]", "[1, 2, 3]", "[2, 3, 4]", "[1, 2]"], "a": 0, "e": "Index 1 and 2; stop not included."},
+  {"t": "Changing", "q": "Which adds an item to the END of a list?", "o": ["append()", "insert()", "remove()", "pop()"], "a": 0, "e": "append adds at the end."},
+  {"t": "Changing", "q": "x = [1, 2] ; x.append(3). What is x now?", "o": ["[1, 2, 3]", "[3, 1, 2]", "[1, 2]", "[1, 2, 3, 3]"], "a": 0, "e": "3 is added at the end."},
+  {"t": "🔴 Hard · Changing", "q": "x = [4, 2, 9] ; x.sort(). What is x?", "o": ["[2, 4, 9]", "[9, 4, 2]", "[4, 2, 9]", "[2, 9, 4]"], "a": 0, "e": "sort() arranges small to big."},
+  {"t": "Changing", "q": "x = [7, 8, 9] ; x[1] = 0. What is x?", "o": ["[7, 0, 9]", "[0, 8, 9]", "[7, 8, 0]", "[7, 8, 9]"], "a": 0, "e": "Item at index 1 is replaced."},
+  {"t": "🔴 Hard · Changing", "q": "x = [1, 2, 3] ; x.pop(). What is x?", "o": ["[1, 2]", "[2, 3]", "[1, 3]", "[1, 2, 3]"], "a": 0, "e": "pop() removes the last item."},
+  {"t": "Changing", "q": "x = [\"a\", \"b\", \"c\"] ; x.remove(\"b\"). What is x?", "o": ["[\"a\", \"c\"]", "[\"b\", \"c\"]", "[\"a\", \"b\"]", "[\"c\"]"], "a": 0, "e": "remove deletes that item."},
+  {"t": "Functions", "q": "What is len([3, 6, 9, 12])?", "o": ["4", "12", "30", "3"], "a": 0, "e": "Four items."},
+  {"t": "Functions", "q": "What is sum([3, 6, 9])?", "o": ["18", "3", "9", "369"], "a": 0, "e": "3 + 6 + 9 = 18."},
+  {"t": "Functions", "q": "What is max([12, 45, 7])?", "o": ["45", "12", "7", "64"], "a": 0, "e": "The biggest item."},
+  {"t": "🔴 Hard · Functions", "q": "The average of the list m is…", "o": ["sum(m) / len(m)", "len(m) / sum(m)", "max(m) − min(m)", "sum(m) * len(m)"], "a": 0, "e": "Total divided by the count."},
+  {"t": "in", "q": "What does 5 in [1, 3, 5] give?", "o": ["True", "False", "5", "2"], "a": 0, "e": "5 is inside the list."},
+  {"t": "Loops", "q": "How many lines does this print?  for f in [\"a\", \"b\", \"c\", \"d\"]: print(f)", "o": ["4", "3", "1", "5"], "a": 0, "e": "One line for each item."},
+  {"t": "🔴 Hard · Loops", "q": "s = [] ; for i in range(3): s.append(i * 2). What is s?", "o": ["[0, 2, 4]", "[2, 4, 6]", "[0, 1, 2]", "[1, 2, 3]"], "a": 0, "e": "i = 0, 1, 2 → 0, 2, 4."},
+  {"t": "🔴 Hard · Mutable", "q": "Which can be changed after it is made?", "o": ["a list", "a string", "the number 5", "none"], "a": 0, "e": "Lists are mutable; strings are not."},
+  {"t": "🔴 Hard · Program", "q": "marks = [80, 30, 50]. How many are 35 or above?", "o": ["2", "1", "3", "0"], "a": 0, "e": "80 and 50."}
+], "CS/Python");
 
 refreshProgress();
 makeSaveButton('save-wrap');

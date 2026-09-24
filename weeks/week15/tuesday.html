@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
-<title>Week 15 · Tuesday · Revision 2 — Integers, Rationals & Properties · Physics: Grande Revision · Class 6 ICSE</title>
+<title>Week 15 · Tuesday · Revision 2 — Integers, Rationals & Properties · Physics: Grande Revision · CS: Grand Revision · Class 6 ICSE</title>
 <style>*{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0F4FF;min-height:100vh;color:#1a1a2e}
 header{background:linear-gradient(135deg,#4F46E5,#7C3AED);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:12px}
@@ -84,13 +84,15 @@ details summary{cursor:pointer;font-weight:600}</style>
 <a class="back" href="index.html">&larr; Week 15</a>
 <header>
   <div class="logo">➗</div>
-  <div><h1>Tuesday &middot; Week 15</h1><p>22 Sep 2026 &middot; 6:00 PM &middot; ➗ Revision: Integers, Rational Numbers &amp; Properties &middot; ⚡ Physics Grande Revision</p></div>
+  <div><h1>Tuesday &middot; Week 15</h1><p>22 Sep 2026 &middot; 6:00 PM &middot; ➗ Revision: Integers, Rational Numbers &amp; Properties &middot; ⚡ Physics Grande Revision &middot; 💻 Grand Revision</p></div>
 </header>
 <div class="tabs">
   <button class="tab active" id="tab-study" onclick="switchTab('study')">📚 Study</button>
   <button class="tab" id="tab-m" onclick="switchTab('m')">➗ Maths Quiz</button>
   <button class="tab" id="tab-pnotes" onclick="switchTab('pnotes')">⚡ Physics Study</button>
   <button class="tab" id="tab-p" onclick="switchTab('p')">⚡ Physics Quiz</button>
+  <button class="tab" id="tab-cnotes" onclick="switchTab('cnotes')">💻 CS Study</button>
+  <button class="tab" id="tab-c" onclick="switchTab('c')">💻 CS Quiz</button>
 </div>
 <div class="prog-bar">
   <div class="pb-top">
@@ -215,8 +217,72 @@ details summary{cursor:pointer;font-weight:600}</style>
   </div>
 </div>
 
+<div id="sec-cnotes" class="sec">
+<div class="dyk"><div class="dyk-eye">💻 Tuesday · Week 15 · Grand Revision</div><div class="dyk-title">Python &amp; Computers — weeks 1 to 14</div><div class="dyk-body">One cheat-sheet for everything: computer basics, the Internet and safety, and all the Python from print() to functions. Then a coding challenge and a mixed 20-question quiz.</div></div><div class="icard"><h3>🗺️ Today's route</h3><p>1️⃣ Computer basics · 2️⃣ Internet &amp; safety · 3️⃣ Python basics · 4️⃣ Decisions &amp; loops · 5️⃣ Strings &amp; lists · 6️⃣ Functions &amp; bugs · 🎲 Code challenge</p><div class="hook">💡 Type every code example into IDLE yourself — reading code is good, running it is better!</div></div><div class="ql">1️⃣ Computer basics</div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Topic</th><th>Remember</th></tr></thead><tbody><tr><td>IPO</td><td>Input → Process (CPU) → Output, plus Storage</td></tr><tr><td>CPU</td><td>ALU (calculates) + CU (controls)</td></tr><tr><td>Memory</td><td>RAM = temporary, lost when off · ROM = permanent start-up</td></tr><tr><td>Units</td><td>8 bits = 1 byte · 1024 bytes = 1 KB → MB → GB → TB</td></tr><tr><td>Software</td><td>system (Windows, Android) vs application (browser, games, IDLE)</td></tr><tr><td>History</td><td>Babbage = father of the computer · Ada Lovelace = first programmer · Guido van Rossum = Python</td></tr></tbody></table></div><div class="ql">2️⃣ Internet and safety</div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Topic</th><th>Remember</th></tr></thead><tbody><tr><td>Networks</td><td>LAN (school) · MAN (city) · WAN (world — the Internet)</td></tr><tr><td>WWW</td><td>websites on the Internet — Tim Berners-Lee</td></tr><tr><td>Tools</td><td>browser (Chrome) vs search engine (Google) · URL = web address · https = secure</td></tr><tr><td>Safety</td><td>strong secret passwords · no personal details · beware phishing · tell an adult</td></tr></tbody></table></div><div class="ql">3️⃣ Python basics</div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Idea</th><th>Example</th></tr></thead><tbody><tr><td>output / input</td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">print(&quot;Hi&quot;)</code> · <code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">name = input()</code></td></tr><tr><td>data types</td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">int 5</code> · <code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">float 2.5</code> · <code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">str &quot;5&quot;</code> · <code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">bool True</code></td></tr><tr><td>convert</td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">int(&quot;10&quot;)</code> → 10 · <code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">str(5)</code> → "5"</td></tr><tr><td>operators</td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">7 // 2 = 3</code> · <code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">7 % 2 = 1</code> · <code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">2 ** 3 = 8</code> · <code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">7 / 2 = 3.5</code></td></tr><tr><td>comments</td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px"># ignored by Python</code></td></tr><tr><td>files</td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">.py</code> — run in IDLE</td></tr></tbody></table></div><div class="ql">4️⃣ Decisions and loops</div><div class="icard"><h3>if / elif / else</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">if marks &gt;= 90:
+    print(&quot;A&quot;)
+elif marks &gt;= 75:
+    print(&quot;B&quot;)
+else:
+    print(&quot;C&quot;)</pre></div><div class="icard"><h3>for and while</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">for i in range(1, 4):      # 1 2 3
+    print(i)
+
+n = 3
+while n &gt; 0:               # 3 2 1
+    print(n)
+    n = n - 1</pre><div class="hook">💡 range(start, stop, step) — stop is never included. A while loop needs something that changes, or it runs forever.</div></div><div class="ql">5️⃣ Strings and lists</div><div class="tbl-wrap"><table class="tbl"><thead><tr><th></th><th>String</th><th>List</th></tr></thead><tbody><tr><td>looks like</td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">&quot;CAT&quot;</code></td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">[1, 2, 3]</code></td></tr><tr><td>index / slice</td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">&quot;CAT&quot;[0] → C</code></td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">[1,2,3][1:] → [2, 3]</code></td></tr><tr><td>length</td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">len(&quot;CAT&quot;) → 3</code></td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">len([1,2,3]) → 3</code></td></tr><tr><td>can change?</td><td>no</td><td>yes — append, remove, sort, pop</td></tr><tr><td>handy</td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">.upper() .count() .replace()</code></td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">sum() max() min()</code></td></tr></tbody></table></div><div class="ql">6️⃣ Functions, algorithms and bugs</div><div class="icard"><h3>Functions</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">def square(n):
+    return n * n
+
+print(square(4))</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+16</pre></div><div class="icard"><h3>Planning and fixing</h3><p>Flowchart: ⬭ start/stop · ▱ input/output · ▭ process · ◇ decision.<br>Errors: <strong>syntax</strong> (won't start) · <strong>runtime</strong> (crashes) · <strong>logic</strong> (wrong answer).</p></div><div class="ql">🎲 Code challenge — try these in IDLE</div><div class="qa"><div class="qn">⭐ 1. Print your name 5 times.</div><div class="qe">Use a loop or *.</div><details><summary>👀 Show answer</summary><div class="ans"><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">for i in range(5):
+    print(&quot;Anagha&quot;)</pre></div></details></div><div class="qa"><div class="qn">⭐⭐ 2. Print the 7 times table.</div><div class="qe">range(1, 11)</div><details><summary>👀 Show answer</summary><div class="ans"><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">for i in range(1, 11):
+    print(7, &quot;x&quot;, i, &quot;=&quot;, 7 * i)</pre></div></details></div><div class="qa"><div class="qn">⭐⭐ 3. Ask for a number and say if it is even or odd.</div><div class="qe">Use %.</div><details><summary>👀 Show answer</summary><div class="ans"><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">n = int(input(&quot;Number: &quot;))
+if n % 2 == 0:
+    print(&quot;Even&quot;)
+else:
+    print(&quot;Odd&quot;)</pre></div></details></div><div class="qa"><div class="qn">⭐⭐⭐ 4. Find the average of a list of marks.</div><div class="qe">sum ÷ len</div><details><summary>👀 Show answer</summary><div class="ans"><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">marks = [78, 92, 85]
+print(sum(marks) / len(marks))</pre></div></details></div><div class="qa"><div class="qn">⭐⭐⭐ 5. Write a function that reverses a word.</div><div class="qe">[::-1]</div><details><summary>👀 Show answer</summary><div class="ans"><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">def rev(w):
+    return w[::-1]
+
+print(rev(&quot;python&quot;))</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+nohtyp</pre></div></details></div><div class="qa"><div class="qn">⭐⭐⭐⭐ 6. Count how many words in a list start with 'a'.</div><div class="qe">Loop + if + indexing.</div><details><summary>👀 Show answer</summary><div class="ans"><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">words = [&quot;apple&quot;, &quot;bat&quot;, &quot;ant&quot;, &quot;cat&quot;]
+count = 0
+for w in words:
+    if w[0] == &quot;a&quot;:
+        count += 1
+print(count)</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+2</pre></div></details></div><div class="tip"><div class="tip-eye">🎯 Fun Trivia to finish the term</div><div class="tip-body">• NASA, ISRO, Instagram and Netflix all use Python.<br>• 'Hello, World!' is the traditional first program in almost every language — you wrote yours in week 1.<br>• The <strong>Zen of Python</strong> is hidden inside Python itself — type <code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">import this</code> in IDLE and read its 19 wise sayings.</div></div>
+</div>
+
+<div id="sec-c" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">💻 CS / Python · 20 Questions</div>
+    <div class="dyk-title">Grand Revision — Python &amp; Computers</div>
+    <div class="dyk-body">Everything from weeks 1 to 14. You need <strong>12 / 20 (60%)</strong> to mark this as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="c-qnum">1 / 20</span></div>
+    <div class="sc"><label>Score</label><span id="c-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="c-prog" style="width:0%"></div></div><div class="pp" id="c-pct">0%</div></div>
+  <div id="c-card" class="card">
+    <div class="tp" id="c-topic"></div>
+    <div class="qt" id="c-q"></div>
+    <div class="opts" id="c-opts"></div>
+    <div class="fb" id="c-fb"></div>
+    <button class="nxt" id="c-nxt">Next →</button>
+  </div>
+  <div id="c-done" style="display:none" class="card dc">
+    <div class="di" id="c-ficon">🎉</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="c-fscore"></div>
+    <div class="dm" id="c-fmsg"></div>
+    <button class="retry" id="c-retry">Try again ↺</button>
+  </div>
+</div>
+
 <script>
-var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}, {"id": "p", "label": "Physics", "total": 20}];
+var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}, {"id": "p", "label": "Physics", "total": 20}, {"id": "c", "label": "CS/Python", "total": 20}];
 var LS_PFX   = 'icse_w15_tue';
 
 function saveScore(id, score, total, label) {
@@ -263,7 +329,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["study", "m", "pnotes", "p"];
+  var all = ["study", "m", "pnotes", "p", "cnotes", "c"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -486,6 +552,29 @@ quiz('p', [
   {"t": "🔴 Hard · Friction", "q": "Powder on a carrom board, oil in a machine and ball bearings in a fan all…", "o": ["reduce friction", "increase friction", "increase weight", "produce heat"], "a": 0, "e": "All three reduce friction."},
   {"t": "Friction", "q": "Spikes on athletes' shoes…", "o": ["increase friction for a better grip", "reduce friction", "make shoes lighter", "reduce wear"], "a": 0, "e": "Rough spikes grip the track."}
 ], "Physics");
+
+quiz('c', [
+  {"t": "Computers", "q": "Which part of the CPU does calculations?", "o": ["ALU", "CU", "RAM", "monitor"], "a": 0, "e": "Arithmetic Logic Unit."},
+  {"t": "Computers", "q": "Which memory is lost when the power goes off?", "o": ["RAM", "ROM", "hard disk", "pen drive"], "a": 0, "e": "RAM is volatile."},
+  {"t": "Computers", "q": "1 byte = ___ bits", "o": ["8", "4", "16", "1024"], "a": 0, "e": "8 bits."},
+  {"t": "Computers", "q": "Which is application software?", "o": ["a web browser", "Windows", "Android", "the CPU"], "a": 0, "e": "It does a job for the user."},
+  {"t": "Internet", "q": "Chrome is a…", "o": ["web browser", "search engine", "virus", "network"], "a": 0, "e": "Google is the search engine."},
+  {"t": "Internet", "q": "Which is the safest password?", "o": ["Tiger#Moon!58", "123456", "myname", "password1"], "a": 0, "e": "Long and mixed."},
+  {"t": "Python basics", "q": "What is the output of print(17 % 5)?", "o": ["2", "3", "3.4", "12"], "a": 0, "e": "17 = 3 × 5 + 2."},
+  {"t": "Python basics", "q": "What is type(3.0)?", "o": ["float", "int", "str", "bool"], "a": 0, "e": "It has a decimal point."},
+  {"t": "🔴 Hard · Python basics", "q": "What does print(int(\"4\") + 4) show?", "o": ["8", "44", "an error", "4 4"], "a": 0, "e": "int turns \"4\" into 4."},
+  {"t": "Decisions", "q": "x = 8 ; if x > 10: print(\"A\") elif x > 5: print(\"B\") else: print(\"C\")", "o": ["B", "A", "C", "AB"], "a": 0, "e": "8 is not > 10, but is > 5."},
+  {"t": "Loops", "q": "What does range(2, 8, 2) produce?", "o": ["2, 4, 6", "2, 4, 6, 8", "2, 8", "0, 2, 4, 6"], "a": 0, "e": "Stop 8 is not included."},
+  {"t": "🔴 Hard · Loops", "q": "s = 0 ; for i in range(4): s = s + i ; print(s)", "o": ["6", "10", "4", "3"], "a": 0, "e": "0 + 1 + 2 + 3 = 6."},
+  {"t": "Strings", "q": "What is \"PENCIL\"[2:4]?", "o": ["NC", "ENC", "NCI", "EN"], "a": 0, "e": "Index 2 and 3."},
+  {"t": "Strings", "q": "What is len(\"ICSE 6\")?", "o": ["6", "5", "4", "7"], "a": 0, "e": "The space counts."},
+  {"t": "Lists", "q": "x = [3, 8, 1] ; x.append(4). What is len(x)?", "o": ["4", "3", "5", "16"], "a": 0, "e": "One more item."},
+  {"t": "🔴 Hard · Lists", "q": "What is max([5, 12, 9]) - min([5, 12, 9])?", "o": ["7", "12", "5", "17"], "a": 0, "e": "12 − 5 = 7."},
+  {"t": "Functions", "q": "def f(n): return n * 3. What is f(4)?", "o": ["12", "7", "43", "4"], "a": 0, "e": "4 × 3."},
+  {"t": "🔴 Hard · Functions", "q": "def f(a, b): return a - b. What is f(b=2, a=10)?", "o": ["8", "-8", "12", "an error"], "a": 0, "e": "Named arguments: a = 10, b = 2."},
+  {"t": "Flowcharts", "q": "The decision symbol in a flowchart is a…", "o": ["diamond", "rectangle", "oval", "parallelogram"], "a": 0, "e": "Yes/No question."},
+  {"t": "Errors", "q": "A program gives the wrong answer but doesn't crash. This is a…", "o": ["logic error", "syntax error", "runtime error", "hardware error"], "a": 0, "e": "The thinking is wrong."}
+], "CS/Python");
 
 refreshProgress();
 makeSaveButton('save-wrap');

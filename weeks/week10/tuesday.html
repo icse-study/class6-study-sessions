@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
-<title>Week 10 · Tuesday · Algebra: Division &amp; Generalisation · Physics: Friction · Class 6 ICSE</title>
+<title>Week 10 · Tuesday · Algebra: Division &amp; Generalisation · Physics: Friction · CS: Python Strings · Class 6 ICSE</title>
 <style>*{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0F4FF;min-height:100vh;color:#1a1a2e}
 header{background:linear-gradient(135deg,#4F46E5,#7C3AED);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:12px}
@@ -84,13 +84,15 @@ details summary{cursor:pointer;font-weight:600}</style>
 <a class="back" href="index.html">← Week 10</a>
 <header>
   <div class="logo">➗</div>
-  <div><h1>Tuesday · Week 10</h1><p>18 Aug 2026 · 6:00 PM · ➗ Algebra — Division &amp; Generalisation · ⚡ Physics — Friction</p></div>
+  <div><h1>Tuesday · Week 10</h1><p>18 Aug 2026 · 6:00 PM · ➗ Algebra — Division &amp; Generalisation · ⚡ Physics — Friction &middot; 💻 Python Strings</p></div>
 </header>
 <div class="tabs">
   <button class="tab active" id="tab-study" onclick="switchTab('study')">📚 Study</button>
   <button class="tab" id="tab-m" onclick="switchTab('m')">➗ Maths Quiz</button>
   <button class="tab" id="tab-pnotes" onclick="switchTab('pnotes')">⚡ Physics Study</button>
   <button class="tab" id="tab-p" onclick="switchTab('p')">⚡ Physics Quiz</button>
+  <button class="tab" id="tab-cnotes" onclick="switchTab('cnotes')">💻 CS Study</button>
+  <button class="tab" id="tab-c" onclick="switchTab('c')">💻 CS Quiz</button>
 </div>
 <div class="prog-bar">
   <div class="pb-top">
@@ -216,8 +218,77 @@ details summary{cursor:pointer;font-weight:600}</style>
   </div>
 </div>
 
+<div id="sec-cnotes" class="sec">
+<div class="dyk"><div class="dyk-eye">💻 Tuesday · Week 10 · Python</div><div class="dyk-title">Strings — playing with text</div><div class="dyk-body">You've printed strings since week 1. Now take them apart: count letters, pick out single characters, slice pieces, change case and search inside them.</div></div><div class="icard"><h3>🗺️ Today's route</h3><p>1️⃣ What a string is · 2️⃣ Joining &amp; repeating · 3️⃣ len() · 4️⃣ Indexing · 5️⃣ Slicing · 6️⃣ String methods · 7️⃣ in and loops · 🎲 Fun Corner</p><div class="hook">💡 Type every code example into IDLE yourself — reading code is good, running it is better!</div></div><div class="ql">1️⃣ A string is text in quotes</div><div class="icard"><h3>Single or double quotes — both work</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">name = &quot;Anagha&quot;
+city = &#x27;Bangalore&#x27;
+print(name, &quot;lives in&quot;, city)</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+Anagha lives in Bangalore</pre><div class="hook">💡 "5" is a string, 5 is an int. "5" + "3" gives "53", but 5 + 3 gives 8.</div></div><div class="ql">2️⃣ Joining and repeating</div><div class="icard"><h3>+ joins, * repeats</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">print(&quot;Py&quot; + &quot;thon&quot;)
+print(&quot;Ha&quot; * 3)
+print(&quot;-&quot; * 10)</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+Python
+HaHaHa
+----------</pre></div><div class="ql">3️⃣ len() — how many characters?</div><div class="icard"><h3>Spaces count too!</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">word = &quot;Hello World&quot;
+print(len(word))</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+11</pre></div><div class="ql">4️⃣ Indexing — one character at a time</div><div class="icard"><h3>Counting starts at 0</h3><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Character</th><th>P</th><th>Y</th><th>T</th><th>H</th><th>O</th><th>N</th></tr></thead><tbody><tr><td>Index</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr><tr><td>Negative index</td><td>−6</td><td>−5</td><td>−4</td><td>−3</td><td>−2</td><td>−1</td></tr></tbody></table></div><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">s = &quot;PYTHON&quot;
+print(s[0])
+print(s[3])
+print(s[-1])</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+P
+H
+N</pre><div class="hook">💡 s[-1] is always the LAST character. s[6] here would give an IndexError — there is no index 6.</div></div><div class="ql">5️⃣ Slicing — a piece of the string</div><div class="icard"><h3>s[start : stop] — stop is NOT included</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">s = &quot;PYTHON&quot;
+print(s[0:3])
+print(s[2:])
+print(s[:2])
+print(s[::-1])</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+PYT
+THON
+PY
+NOHTYP</pre><div class="hook">💡 Think of the stop number as 'up to, but not including'. [::-1] reverses a string.</div></div><div class="ql">6️⃣ String methods</div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Method</th><th>Does</th><th>Example → result</th></tr></thead><tbody><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">.upper()</code></td><td>ALL CAPITALS</td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">&quot;hi&quot;.upper()</code> → HI</td></tr><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">.lower()</code></td><td>all small</td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">&quot;HI&quot;.lower()</code> → hi</td></tr><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">.title()</code></td><td>Capital First Letters</td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">&quot;good day&quot;.title()</code> → Good Day</td></tr><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">.replace(a, b)</code></td><td>swap a for b</td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">&quot;cat&quot;.replace(&quot;c&quot;, &quot;b&quot;)</code> → bat</td></tr><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">.count(x)</code></td><td>how many times x appears</td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">&quot;banana&quot;.count(&quot;a&quot;)</code> → 3</td></tr><tr><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">.strip()</code></td><td>removes spaces at both ends</td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">&quot;  hi  &quot;.strip()</code> → hi</td></tr></tbody></table></div><div class="icard"><h3>Strings don't change</h3><p><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">name.upper()</code> gives a <em>new</em> string. To keep it, store it: <code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">name = name.upper()</code>.</p></div><div class="ql">7️⃣ Searching and looping</div><div class="icard"><h3>in — is it inside?</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">print(&quot;a&quot; in &quot;apple&quot;)
+print(&quot;z&quot; in &quot;apple&quot;)</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+True
+False</pre></div><div class="icard"><h3>A for loop visits each character</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">for ch in &quot;CAT&quot;:
+    print(ch)</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+C
+A
+T</pre></div><div class="icard"><h3>Count the vowels — a mini-program</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">word = &quot;education&quot;
+count = 0
+for ch in word:
+    if ch in &quot;aeiou&quot;:
+        count = count + 1
+print(&quot;Vowels:&quot;, count)</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+Vowels: 5</pre><div class="hook">💡 This uses a string, a loop, an if and the in operator — everything so far working together!</div></div><div class="ql">🎲 Fun Corner — Predict the output</div><div class="qa"><div class="qn">1. print("Ice" + "cream")</div><div class="qe">No space is added.</div><details><summary>👀 Show answer</summary><div class="ans"><strong>Icecream</strong></div></details></div><div class="qa"><div class="qn">2. print(len("  "))</div><div class="qe">Two spaces.</div><details><summary>👀 Show answer</summary><div class="ans"><strong>2</strong></div></details></div><div class="qa"><div class="qn">3. print("MANGO"[1:4])</div><div class="qe">Index 1, 2 and 3.</div><details><summary>👀 Show answer</summary><div class="ans"><strong>ANG</strong></div></details></div><div class="qa"><div class="qn">4. print("level"[::-1])</div><div class="qe">Reverse it.</div><details><summary>👀 Show answer</summary><div class="ans"><strong>level</strong> — a palindrome reads the same both ways!</div></details></div><div class="qa"><div class="qn">5. print("Hello".lower().count("l"))</div><div class="qe">Two steps.</div><details><summary>👀 Show answer</summary><div class="ans"><strong>2</strong></div></details></div><div class="qa"><div class="qn">6. print("5" * 2 + "0")</div><div class="qe">* first, then +</div><details><summary>👀 Show answer</summary><div class="ans"><strong>550</strong></div></details></div><div class="tip"><div class="tip-eye">🎯 Fun Trivia</div><div class="tip-body">• Python is named after the comedy show <strong>Monty Python's Flying Circus</strong>, not the snake!<br>• The word 'string' comes from a <em>string of beads</em> — characters threaded one after another.<br>• Every character has a number called its <strong>Unicode</strong> code. <code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">ord(&quot;A&quot;)</code> gives 65.</div></div>
+</div>
+
+<div id="sec-c" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">💻 CS / Python · 20 Questions</div>
+    <div class="dyk-title">Python — Strings</div>
+    <div class="dyk-body">len, indexing, slicing, string methods and loops. You need <strong>12 / 20 (60%)</strong> to mark this as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="c-qnum">1 / 20</span></div>
+    <div class="sc"><label>Score</label><span id="c-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="c-prog" style="width:0%"></div></div><div class="pp" id="c-pct">0%</div></div>
+  <div id="c-card" class="card">
+    <div class="tp" id="c-topic"></div>
+    <div class="qt" id="c-q"></div>
+    <div class="opts" id="c-opts"></div>
+    <div class="fb" id="c-fb"></div>
+    <button class="nxt" id="c-nxt">Next →</button>
+  </div>
+  <div id="c-done" style="display:none" class="card dc">
+    <div class="di" id="c-ficon">🎉</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="c-fscore"></div>
+    <div class="dm" id="c-fmsg"></div>
+    <button class="retry" id="c-retry">Try again ↺</button>
+  </div>
+</div>
+
 <script>
-var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}, {"id": "p", "label": "Physics", "total": 20}];
+var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}, {"id": "p", "label": "Physics", "total": 20}, {"id": "c", "label": "CS/Python", "total": 20}];
 var LS_PFX   = 'icse_w10_tue';
 
 function saveScore(id, score, total, label) {
@@ -264,7 +335,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["study", "m", "pnotes", "p"];
+  var all = ["study", "m", "pnotes", "p", "cnotes", "c"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -487,6 +558,29 @@ quiz('p', [
   {"t": "Effects", "q": "After braking hard, the rims of a bicycle wheel feel hot. Why?", "o": ["Friction produces heat", "The sun heats them", "The brakes are electric", "Air pressure rises"], "a": 0, "e": "Friction between the brake and the rim produces heat."},
   {"t": "🔴 Hard · Case study", "q": "A toy car is pulled over glass, a wooden board and a carpet. On which is friction least?", "o": ["the glass slab", "the wooden board", "the carpet", "all the same"], "a": 0, "e": "Glass is the smoothest surface, so friction is least there. The carpet has the most."}
 ], "Physics");
+
+quiz('c', [
+  {"t": "Strings", "q": "Which of these is a string?", "o": ["\"42\"", "42", "4.2", "True"], "a": 0, "e": "Anything in quotes is a string."},
+  {"t": "Joining", "q": "What does print(\"Sun\" + \"day\") show?", "o": ["Sunday", "Sun day", "Sun+day", "an error"], "a": 0, "e": "+ joins strings with no space."},
+  {"t": "Repeating", "q": "What does print(\"ab\" * 3) show?", "o": ["ababab", "ab3", "aaabbb", "ab ab ab"], "a": 0, "e": "* repeats a string."},
+  {"t": "len()", "q": "What is len(\"Python\")?", "o": ["6", "5", "7", "0"], "a": 0, "e": "P-y-t-h-o-n: 6 characters."},
+  {"t": "🔴 Hard · len()", "q": "What is len(\"Hi there\")?", "o": ["8", "7", "2", "6"], "a": 0, "e": "The space counts: H i ␣ t h e r e = 8."},
+  {"t": "Indexing", "q": "The index of the FIRST character of a string is…", "o": ["0", "1", "−1", "len − 1"], "a": 0, "e": "Python counts from 0."},
+  {"t": "Indexing", "q": "s = \"APPLE\". What is s[1]?", "o": ["P", "A", "L", "E"], "a": 0, "e": "A=0, P=1."},
+  {"t": "Indexing", "q": "s = \"APPLE\". What is s[-1]?", "o": ["E", "A", "L", "an error"], "a": 0, "e": "−1 is the last character."},
+  {"t": "🔴 Hard · Indexing", "q": "s = \"CAT\". What happens with print(s[3])?", "o": ["IndexError", "T", "C", "nothing"], "a": 0, "e": "Indexes are 0, 1, 2 — there is no index 3."},
+  {"t": "Slicing", "q": "s = \"PYTHON\". What is s[0:2]?", "o": ["PY", "PYT", "YT", "P"], "a": 0, "e": "Index 0 and 1 — the stop (2) is not included."},
+  {"t": "Slicing", "q": "s = \"PYTHON\". What is s[2:]?", "o": ["THON", "YTHON", "PY", "TH"], "a": 0, "e": "From index 2 to the end."},
+  {"t": "🔴 Hard · Slicing", "q": "What does \"STAR\"[::-1] give?", "o": ["RATS", "STAR", "SRAT", "RAT"], "a": 0, "e": "[::-1] reverses the string."},
+  {"t": "Methods", "q": "What does \"hello\".upper() give?", "o": ["HELLO", "Hello", "hello", "hELLO"], "a": 0, "e": "upper() makes every letter capital."},
+  {"t": "Methods", "q": "What does \"banana\".count(\"a\") give?", "o": ["3", "2", "1", "6"], "a": 0, "e": "b-a-n-a-n-a has three a's."},
+  {"t": "Methods", "q": "What does \"cat\".replace(\"c\", \"h\") give?", "o": ["hat", "cat", "chat", "cah"], "a": 0, "e": "Every c becomes h."},
+  {"t": "🔴 Hard · Methods", "q": "What does \"good morning\".title() give?", "o": ["Good Morning", "GOOD MORNING", "Good morning", "good Morning"], "a": 0, "e": "title() capitalises the first letter of each word."},
+  {"t": "in", "q": "What does \"e\" in \"tree\" give?", "o": ["True", "False", "1", "e"], "a": 0, "e": "in checks whether it is inside."},
+  {"t": "Loops", "q": "How many times does this print?  for ch in \"HI!\": print(ch)", "o": ["3", "2", "1", "4"], "a": 0, "e": "One pass for each character: H, I, !"},
+  {"t": "🔴 Hard · Mixed", "q": "What does print(\"5\" + \"5\") show?", "o": ["55", "10", "5 5", "an error"], "a": 0, "e": "They are strings, so + joins them."},
+  {"t": "🔴 Hard · Mixed", "q": "word = \"moon\" ; What does print(word.count(\"o\") + len(word)) show?", "o": ["6", "4", "2", "moon6"], "a": 0, "e": "count gives 2, len gives 4: 2 + 4 = 6."}
+], "CS/Python");
 
 refreshProgress();
 makeSaveButton('save-wrap');

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
-<title>Week 9 · Tuesday · Integers: Addition & Subtraction · Physics: Force · Class 6 ICSE</title>
+<title>Week 9 · Tuesday · Integers: Addition & Subtraction · Physics: Force · CS: Computer Basics · Class 6 ICSE</title>
 <style>*{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0F4FF;min-height:100vh;color:#1a1a2e}
 header{background:linear-gradient(135deg,#4F46E5,#7C3AED);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:12px}
@@ -84,13 +84,15 @@ details summary{cursor:pointer;font-weight:600}</style>
 <a class="back" href="index.html">← Week 9</a>
 <header>
   <div class="logo">➗</div>
-  <div><h1>Tuesday · Week 9</h1><p>11 Aug 2026 · 6:00 PM · ➗ Integers — Addition & Subtraction · ⚡ Physics — Force</p></div>
+  <div><h1>Tuesday · Week 9</h1><p>11 Aug 2026 · 6:00 PM · ➗ Integers — Addition & Subtraction · ⚡ Physics — Force &middot; 💻 Computer Basics</p></div>
 </header>
 <div class="tabs">
   <button class="tab active" id="tab-study" onclick="switchTab('study')">📚 Study</button>
   <button class="tab" id="tab-m" onclick="switchTab('m')">➗ Maths Quiz</button>
   <button class="tab" id="tab-pnotes" onclick="switchTab('pnotes')">⚡ Physics Study</button>
   <button class="tab" id="tab-p" onclick="switchTab('p')">⚡ Physics Quiz</button>
+  <button class="tab" id="tab-cnotes" onclick="switchTab('cnotes')">💻 CS Study</button>
+  <button class="tab" id="tab-c" onclick="switchTab('c')">💻 CS Quiz</button>
 </div>
 <div class="prog-bar">
   <div class="pb-top">
@@ -228,8 +230,40 @@ details summary{cursor:pointer;font-weight:600}</style>
   </div>
 </div>
 
+<div id="sec-cnotes" class="sec">
+<div class="dyk"><div class="dyk-eye">💻 Tuesday · Week 9 · Computers 1</div><div class="dyk-title">Inside a computer — hardware, software &amp; memory</div><div class="dyk-body">A break from coding to understand the machine that runs your Python programs: its parts, how data flows through it, the two kinds of software, and how memory is measured.</div></div><div class="icard"><h3>🗺️ Today's route</h3><p>1️⃣ What a computer is · 2️⃣ Input → Process → Output · 3️⃣ The CPU · 4️⃣ Memory &amp; storage · 5️⃣ Measuring memory · 6️⃣ Software · 🎲 Fun Corner</p><div class="hook">💡 Type every code example into IDLE yourself — reading code is good, running it is better!</div></div><div class="ql">1️⃣ What is a computer?</div><div class="icard"><h3>An electronic machine</h3><p>A computer <strong>accepts data (input)</strong>, <strong>processes</strong> it following instructions, <strong>stores</strong> it, and <strong>gives results (output)</strong>.</p><div class="ex"><strong>Data</strong> = raw facts (marks: 78, 92, 85) · <strong>Information</strong> = processed data (average = 85)</div></div><div class="icard"><h3>Why computers are so useful</h3><p><strong>Speed</strong> — billions of steps a second · <strong>Accuracy</strong> — no careless mistakes · <strong>Storage</strong> — huge amounts of data · <strong>Diligence</strong> — never tired or bored · <strong>Versatility</strong> — games, maths, music, science</p><div class="hook">💡 GIGO — Garbage In, Garbage Out. A computer can't think; wrong input gives wrong output.</div></div><div class="ql">2️⃣ Input → Process → Output</div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Part</th><th>Job</th><th>Examples</th></tr></thead><tbody><tr><td>Input devices</td><td>send data IN</td><td>keyboard, mouse, microphone, scanner, webcam, touchscreen</td></tr><tr><td>Processing</td><td>works on the data</td><td>CPU (the 'brain')</td></tr><tr><td>Output devices</td><td>show results OUT</td><td>monitor, printer, speakers, headphones, projector</td></tr><tr><td>Storage</td><td>keeps data for later</td><td>hard disk, SSD, pen drive, memory card</td></tr></tbody></table></div><div class="icard"><h3>Both input and output?</h3><p>A <strong>touchscreen</strong> takes your touch (input) and shows the picture (output).</p></div><div class="ql">3️⃣ The CPU — Central Processing Unit</div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Part of the CPU</th><th>Job</th></tr></thead><tbody><tr><td>ALU — Arithmetic Logic Unit</td><td>does calculations (+ − × ÷) and comparisons (&gt;, &lt;, ==)</td></tr><tr><td>CU — Control Unit</td><td>directs everything — like a traffic policeman</td></tr><tr><td>Registers / memory</td><td>hold data the CPU is working on right now</td></tr></tbody></table></div><div class="icard"><h3>Python connection</h3><p>When your program runs <code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">print(7 // 2)</code>, the <strong>ALU</strong> does the division, and the answer goes to the <strong>monitor</strong> — an output device.</p></div><div class="ql">4️⃣ Memory and storage</div><div class="tbl-wrap"><table class="tbl"><thead><tr><th></th><th>RAM</th><th>ROM</th><th>Secondary storage</th></tr></thead><tbody><tr><td>Full name</td><td>Random Access Memory</td><td>Read Only Memory</td><td>hard disk, SSD, pen drive</td></tr><tr><td>Keeps data when power is off?</td><td>❌ no — volatile</td><td>✅ yes</td><td>✅ yes</td></tr><tr><td>Used for</td><td>programs running right now</td><td>start-up instructions</td><td>saving files for later</td></tr></tbody></table></div><div class="icard"><h3>Why save your .py file?</h3><p>Your code in IDLE sits in <strong>RAM</strong>. If the power goes before you press <strong>Save</strong>, it's lost. Saving writes it to the <strong>hard disk</strong>.</p></div><div class="ql">5️⃣ Measuring memory</div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Unit</th><th>Equals</th></tr></thead><tbody><tr><td>bit</td><td>a single 0 or 1</td></tr><tr><td>nibble</td><td>4 bits</td></tr><tr><td>byte</td><td>8 bits — about one character, like 'A'</td></tr><tr><td>kilobyte (KB)</td><td>1024 bytes</td></tr><tr><td>megabyte (MB)</td><td>1024 KB</td></tr><tr><td>gigabyte (GB)</td><td>1024 MB</td></tr><tr><td>terabyte (TB)</td><td>1024 GB</td></tr></tbody></table></div><div class="icard"><h3>Why 0s and 1s?</h3><p>Inside, a computer only has switches that are OFF (0) or ON (1). This is the <strong>binary</strong> system. Every letter, photo and song is stored as a long line of 0s and 1s.</p><div class="ex">The letter <strong>A</strong> is stored as 01000001 — one byte.</div></div><div class="ql">6️⃣ Hardware and software</div><div class="tbl-wrap"><table class="tbl"><thead><tr><th></th><th>Hardware</th><th>Software</th></tr></thead><tbody><tr><td>What</td><td>parts you can touch</td><td>programs — sets of instructions</td></tr><tr><td>Examples</td><td>keyboard, CPU, monitor</td><td>Windows, Python, a game, a browser</td></tr></tbody></table></div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>System software</th><th>Application software</th></tr></thead><tbody><tr><td>runs the computer itself</td><td>does a job for the user</td></tr><tr><td>operating system: Windows, macOS, Linux, Android</td><td>MS Word, a web browser, Paint, games, Python IDLE</td></tr></tbody></table></div><div class="ql">🎲 Fun Corner — Input or output?</div><div class="qa"><div class="qn">1. Microphone</div><div class="qe">It listens.</div><details><summary>👀 Show answer</summary><div class="ans"><strong>Input</strong>.</div></details></div><div class="qa"><div class="qn">2. Printer</div><div class="qe">It puts ink on paper.</div><details><summary>👀 Show answer</summary><div class="ans"><strong>Output</strong>.</div></details></div><div class="qa"><div class="qn">3. Webcam</div><div class="qe">It sees you.</div><details><summary>👀 Show answer</summary><div class="ans"><strong>Input</strong>.</div></details></div><div class="qa"><div class="qn">4. Speakers</div><div class="qe">You hear them.</div><details><summary>👀 Show answer</summary><div class="ans"><strong>Output</strong>.</div></details></div><div class="qa"><div class="qn">5. How many bits are in 2 bytes?</div><div class="qe">1 byte = 8 bits</div><details><summary>👀 Show answer</summary><div class="ans"><strong>16 bits</strong>.</div></details></div><div class="qa"><div class="qn">6. Is Android hardware or software?</div><div class="qe">Can you touch it?</div><details><summary>👀 Show answer</summary><div class="ans"><strong>Software</strong> — system software (an operating system).</div></details></div><div class="tip"><div class="tip-eye">🎯 Fun Trivia</div><div class="tip-body">• <strong>Charles Babbage</strong> is called the <em>Father of the Computer</em> — he designed a mechanical computer, the Analytical Engine, in the 1830s.<br>• <strong>Ada Lovelace</strong> wrote programs for it, making her the world's first computer programmer.<br>• The first 'computer bug' was a real moth, found stuck inside a computer in 1947!</div></div>
+</div>
+
+<div id="sec-c" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">💻 CS / Python · 20 Questions</div>
+    <div class="dyk-title">Computers — Hardware, Software &amp; Memory</div>
+    <div class="dyk-body">Parts of a computer, the CPU, memory units and software. You need <strong>12 / 20 (60%)</strong> to mark this as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="c-qnum">1 / 20</span></div>
+    <div class="sc"><label>Score</label><span id="c-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="c-prog" style="width:0%"></div></div><div class="pp" id="c-pct">0%</div></div>
+  <div id="c-card" class="card">
+    <div class="tp" id="c-topic"></div>
+    <div class="qt" id="c-q"></div>
+    <div class="opts" id="c-opts"></div>
+    <div class="fb" id="c-fb"></div>
+    <button class="nxt" id="c-nxt">Next →</button>
+  </div>
+  <div id="c-done" style="display:none" class="card dc">
+    <div class="di" id="c-ficon">🎉</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="c-fscore"></div>
+    <div class="dm" id="c-fmsg"></div>
+    <button class="retry" id="c-retry">Try again ↺</button>
+  </div>
+</div>
+
 <script>
-var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}, {"id": "p", "label": "Physics", "total": 20}];
+var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}, {"id": "p", "label": "Physics", "total": 20}, {"id": "c", "label": "CS/Python", "total": 20}];
 var LS_PFX   = 'icse_w09_tue';
 
 function saveScore(id, score, total, label) {
@@ -276,7 +310,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["study", "m", "pnotes", "p"];
+  var all = ["study", "m", "pnotes", "p", "cnotes", "c"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -499,6 +533,29 @@ quiz('p', [
   {"t": "Effects", "q": "Why does a bicycle stop when brakes are applied?", "o": ["The brakes apply a force opposite to the motion", "The brakes increase its mass", "Gravity stops working", "The tyres become lighter"], "a": 0, "e": "Brakes provide a force opposite to the direction of motion."},
   {"t": "Spring balance", "q": "A spring's increase in length is directly proportional to the weight hung on it. Which device uses this?", "o": ["spring balance", "thermometer", "ruler", "magnet"], "a": 0, "e": "A spring balance measures weight using this principle."}
 ], "Physics");
+
+quiz('c', [
+  {"t": "Basics", "q": "A computer takes data, processes it and gives…", "o": ["output", "input", "hardware", "electricity"], "a": 0, "e": "Input → Process → Output."},
+  {"t": "Basics", "q": "Processed, meaningful data is called…", "o": ["information", "hardware", "a bug", "a byte"], "a": 0, "e": "Raw facts = data; processed data = information."},
+  {"t": "🔴 Hard · Basics", "q": "What does GIGO mean?", "o": ["Garbage In, Garbage Out", "Go In, Go Out", "Giga Input Giga Output", "Get In, Get On"], "a": 0, "e": "Wrong input gives wrong output."},
+  {"t": "Devices", "q": "Which is an INPUT device?", "o": ["keyboard", "monitor", "printer", "speaker"], "a": 0, "e": "A keyboard sends data into the computer."},
+  {"t": "Devices", "q": "Which is an OUTPUT device?", "o": ["printer", "mouse", "scanner", "microphone"], "a": 0, "e": "A printer shows results on paper."},
+  {"t": "Devices", "q": "Which device is both input AND output?", "o": ["touchscreen", "mouse", "speaker", "scanner"], "a": 0, "e": "It takes touches and shows pictures."},
+  {"t": "CPU", "q": "CPU stands for…", "o": ["Central Processing Unit", "Computer Personal Unit", "Central Program Utility", "Control Print Unit"], "a": 0, "e": "The 'brain' of the computer."},
+  {"t": "CPU", "q": "Which part of the CPU does calculations and comparisons?", "o": ["ALU", "CU", "RAM", "ROM"], "a": 0, "e": "Arithmetic Logic Unit."},
+  {"t": "CPU", "q": "Which part of the CPU directs all the other parts?", "o": ["Control Unit", "ALU", "monitor", "hard disk"], "a": 0, "e": "Like a traffic policeman."},
+  {"t": "Memory", "q": "RAM stands for…", "o": ["Random Access Memory", "Read And Memorise", "Rapid Action Memory", "Read Access Machine"], "a": 0, "e": "RAM holds programs that are running."},
+  {"t": "🔴 Hard · Memory", "q": "What happens to data in RAM when the power goes off?", "o": ["It is lost", "It is saved forever", "It moves to the printer", "It doubles"], "a": 0, "e": "RAM is volatile."},
+  {"t": "Memory", "q": "Which memory keeps its data even without power and holds start-up instructions?", "o": ["ROM", "RAM", "the ALU", "the monitor"], "a": 0, "e": "Read Only Memory."},
+  {"t": "Storage", "q": "Which is a secondary storage device?", "o": ["pen drive", "keyboard", "ALU", "speaker"], "a": 0, "e": "It saves files for later."},
+  {"t": "Units", "q": "1 byte = ___ bits", "o": ["8", "4", "10", "1024"], "a": 0, "e": "A nibble is 4 bits; a byte is 8."},
+  {"t": "Units", "q": "1 KB = ___ bytes", "o": ["1024", "1000", "8", "100"], "a": 0, "e": "In computers, 1 KB = 1024 bytes."},
+  {"t": "🔴 Hard · Units", "q": "Arrange from smallest to largest.", "o": ["bit, byte, KB, MB, GB", "byte, bit, KB, GB, MB", "KB, MB, bit, byte, GB", "GB, MB, KB, byte, bit"], "a": 0, "e": "bit < byte < KB < MB < GB < TB."},
+  {"t": "Binary", "q": "A computer stores everything using…", "o": ["0s and 1s", "letters only", "colours", "decimal numbers only"], "a": 0, "e": "The binary system — OFF and ON."},
+  {"t": "Software", "q": "Which of these is hardware?", "o": ["monitor", "Windows", "Python", "a game"], "a": 0, "e": "You can touch a monitor."},
+  {"t": "🔴 Hard · Software", "q": "Windows, macOS and Android are examples of…", "o": ["operating systems (system software)", "application software", "input devices", "storage devices"], "a": 0, "e": "They run the computer itself."},
+  {"t": "History", "q": "Who is called the Father of the Computer?", "o": ["Charles Babbage", "Guido van Rossum", "Isaac Newton", "Bill Gates"], "a": 0, "e": "He designed the Analytical Engine."}
+], "CS/Python");
 
 refreshProgress();
 makeSaveButton('save-wrap');

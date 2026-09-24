@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
-<title>Week 14 · Tuesday · Circles — Segment, Semi-circle, Interior & Exterior · Physics: Revision: Force & Friction · Class 6 ICSE</title>
+<title>Week 14 · Tuesday · Circles — Segment, Semi-circle, Interior & Exterior · Physics: Revision: Force & Friction · CS: Algorithms & Debugging · Class 6 ICSE</title>
 <style>*{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0F4FF;min-height:100vh;color:#1a1a2e}
 header{background:linear-gradient(135deg,#4F46E5,#7C3AED);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:12px}
@@ -84,13 +84,15 @@ details summary{cursor:pointer;font-weight:600}</style>
 <a class="back" href="index.html">&larr; Week 14</a>
 <header>
   <div class="logo">➗</div>
-  <div><h1>Tuesday &middot; Week 14</h1><p>15 Sep 2026 &middot; 6:00 PM &middot; ➗ Circles: Segments &amp; the Inside of a Circle &middot; ⚡ Physics Revision: Force &amp; Friction</p></div>
+  <div><h1>Tuesday &middot; Week 14</h1><p>15 Sep 2026 &middot; 6:00 PM &middot; ➗ Circles: Segments &amp; the Inside of a Circle &middot; ⚡ Physics Revision: Force &amp; Friction &middot; 💻 Algorithms &amp; Debugging</p></div>
 </header>
 <div class="tabs">
   <button class="tab active" id="tab-study" onclick="switchTab('study')">📚 Study</button>
   <button class="tab" id="tab-m" onclick="switchTab('m')">➗ Maths Quiz</button>
   <button class="tab" id="tab-pnotes" onclick="switchTab('pnotes')">⚡ Physics Study</button>
   <button class="tab" id="tab-p" onclick="switchTab('p')">⚡ Physics Quiz</button>
+  <button class="tab" id="tab-cnotes" onclick="switchTab('cnotes')">💻 CS Study</button>
+  <button class="tab" id="tab-c" onclick="switchTab('c')">💻 CS Quiz</button>
 </div>
 <div class="prog-bar">
   <div class="pb-top">
@@ -211,8 +213,53 @@ details summary{cursor:pointer;font-weight:600}</style>
   </div>
 </div>
 
+<div id="sec-cnotes" class="sec">
+<div class="dyk"><div class="dyk-eye">💻 Tuesday · Week 14 · Thinking like a programmer</div><div class="dyk-title">Algorithms, flowcharts &amp; debugging</div><div class="dyk-body">Before writing code, programmers plan it. Learn to write step-by-step algorithms, draw flowcharts, turn them into Python — and find and fix bugs.</div></div><div class="icard"><h3>🗺️ Today's route</h3><p>1️⃣ Algorithms · 2️⃣ Flowcharts · 3️⃣ Plan → Code · 4️⃣ Three kinds of errors · 5️⃣ Debugging tips · 6️⃣ Tracing code · 🎲 Fun Corner</p><div class="hook">💡 Type every code example into IDLE yourself — reading code is good, running it is better!</div></div><div class="ql">1️⃣ Algorithms</div><div class="icard"><h3>A step-by-step recipe to solve a problem</h3><p>A good algorithm has clear steps, a definite <strong>start</strong> and <strong>end</strong>, and always gives an answer.</p><div class="ex"><strong>Algorithm: find the bigger of two numbers</strong><br>1. Start<br>2. Read A and B<br>3. If A &gt; B, print A<br>4. Otherwise print B<br>5. Stop</div></div><div class="ql">2️⃣ Flowcharts — algorithms as pictures</div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Symbol</th><th>Name</th><th>Used for</th></tr></thead><tbody><tr><td>⬭ oval</td><td>Terminal</td><td>Start / Stop</td></tr><tr><td>▱ parallelogram</td><td>Input / Output</td><td>Read or Print</td></tr><tr><td>▭ rectangle</td><td>Process</td><td>a calculation, e.g. SUM = A + B</td></tr><tr><td>◇ diamond</td><td>Decision</td><td>a yes/no question, e.g. A &gt; B?</td></tr><tr><td>→ arrow</td><td>Flow line</td><td>shows the order of steps</td></tr></tbody></table></div><div class="icard"><h3>Flowchart: is a number even?</h3><p>⬭ Start → ▱ Read N → ◇ N % 2 == 0 ? → <strong>Yes:</strong> ▱ Print 'Even' / <strong>No:</strong> ▱ Print 'Odd' → ⬭ Stop</p><div class="hook">💡 A diamond always has two exits — Yes and No. That is exactly an if / else in Python!</div></div><div class="ql">3️⃣ From plan to Python</div><div class="icard"><h3>Bigger of two numbers</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">a = int(input(&quot;First number: &quot;))
+b = int(input(&quot;Second number: &quot;))
+if a &gt; b:
+    print(a, &quot;is bigger&quot;)
+else:
+    print(b, &quot;is bigger&quot;)</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+First number: 12
+Second number: 30
+30 is bigger</pre></div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Flowchart symbol</th><th>Python</th></tr></thead><tbody><tr><td>▱ Input</td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">input()</code></td></tr><tr><td>▭ Process</td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">total = a + b</code></td></tr><tr><td>◇ Decision</td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">if / else</code></td></tr><tr><td>arrow looping back</td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">for / while</code></td></tr><tr><td>▱ Output</td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">print()</code></td></tr></tbody></table></div><div class="ql">4️⃣ Three kinds of errors (bugs)</div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Error</th><th>What goes wrong</th><th>Example</th></tr></thead><tbody><tr><td>Syntax error</td><td>breaks Python's grammar — the program won't start</td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">print(&quot;Hi&quot;</code> (missing bracket), missing colon, bad indentation</td></tr><tr><td>Runtime error</td><td>starts, then crashes while running</td><td><code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">10 / 0</code> → ZeroDivisionError; <code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">int(&quot;abc&quot;)</code> → ValueError</td></tr><tr><td>Logic error</td><td>runs fine but gives the WRONG answer</td><td>writing <code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">a - b</code> when you meant <code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">a + b</code></td></tr></tbody></table></div><div class="icard"><h3>Spot the bug</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">for i in range(5)
+    print(i)</pre><div class="hook">💡 Missing colon after range(5) → SyntaxError.</div></div><div class="ql">5️⃣ Debugging tips</div><div class="icard"><h3>How to fix bugs like a pro</h3><p>1. <strong>Read the error message</strong> — it tells you the line number and the type.<br>2. Check brackets, quotes, colons and indentation.<br>3. Add <code style="background:#EEF2FF;color:#3730A3;padding:1px 5px;border-radius:5px;font-size:13px">print()</code> lines to see what your variables hold.<br>4. Test with simple values you can check by hand.<br>5. Change one thing at a time.</p></div><div class="ql">6️⃣ Tracing code — be the computer</div><div class="icard"><h3>Follow each step with a table</h3><pre style="background:#1E1B4B;color:#E0E7FF;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:8px;white-space:pre">total = 0
+for i in range(1, 4):
+    total = total + i
+print(total)</pre><pre style="background:#ECFDF5;color:#065F46;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.6;overflow-x:auto;margin-top:4px;white-space:pre">▶ Output
+6</pre><div class="tbl-wrap"><table class="tbl"><thead><tr><th>i</th><th>total</th></tr></thead><tbody><tr><td>start</td><td>0</td></tr><tr><td>1</td><td>1</td></tr><tr><td>2</td><td>3</td></tr><tr><td>3</td><td>6</td></tr></tbody></table></div></div><div class="ql">🎲 Fun Corner — Which error is it?</div><div class="qa"><div class="qn">1. print("Hello)</div><div class="qe">Count the quotes.</div><details><summary>👀 Show answer</summary><div class="ans"><strong>Syntax error</strong> — missing closing quote.</div></details></div><div class="qa"><div class="qn">2. x = 5 / 0</div><div class="qe">Divide by zero.</div><details><summary>👀 Show answer</summary><div class="ans"><strong>Runtime error</strong> — ZeroDivisionError.</div></details></div><div class="qa"><div class="qn">3. area = length + breadth   (for a rectangle)</div><div class="qe">It runs…</div><details><summary>👀 Show answer</summary><div class="ans"><strong>Logic error</strong> — should be length * breadth.</div></details></div><div class="qa"><div class="qn">4. if x > 5 print(x)</div><div class="qe">Something's missing.</div><details><summary>👀 Show answer</summary><div class="ans"><strong>Syntax error</strong> — no colon.</div></details></div><div class="qa"><div class="qn">5. age = int("twelve")</div><div class="qe">Can Python read words as numbers?</div><details><summary>👀 Show answer</summary><div class="ans"><strong>Runtime error</strong> — ValueError.</div></details></div><div class="qa"><div class="qn">6. Which flowchart symbol asks a yes/no question?</div><div class="qe">It has two exits.</div><details><summary>👀 Show answer</summary><div class="ans">The <strong>diamond</strong> (decision).</div></details></div><div class="tip"><div class="tip-eye">🎯 Fun Trivia</div><div class="tip-body">• The word <strong>algorithm</strong> comes from <strong>al-Khwarizmi</strong>, the Persian mathematician who also gave us the word algebra (remember week 9 Maths?).<br>• In 1947 <strong>Grace Hopper</strong>'s team found a real moth jammed in a computer and taped it in the logbook as the 'first actual case of bug being found'.<br>• Professional programmers spend a lot of their time debugging — even experts make mistakes!</div></div>
+</div>
+
+<div id="sec-c" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">💻 CS / Python · 20 Questions</div>
+    <div class="dyk-title">Algorithms, Flowcharts &amp; Debugging</div>
+    <div class="dyk-body">Planning programs and fixing bugs. You need <strong>12 / 20 (60%)</strong> to mark this as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="c-qnum">1 / 20</span></div>
+    <div class="sc"><label>Score</label><span id="c-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="c-prog" style="width:0%"></div></div><div class="pp" id="c-pct">0%</div></div>
+  <div id="c-card" class="card">
+    <div class="tp" id="c-topic"></div>
+    <div class="qt" id="c-q"></div>
+    <div class="opts" id="c-opts"></div>
+    <div class="fb" id="c-fb"></div>
+    <button class="nxt" id="c-nxt">Next →</button>
+  </div>
+  <div id="c-done" style="display:none" class="card dc">
+    <div class="di" id="c-ficon">🎉</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="c-fscore"></div>
+    <div class="dm" id="c-fmsg"></div>
+    <button class="retry" id="c-retry">Try again ↺</button>
+  </div>
+</div>
+
 <script>
-var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}, {"id": "p", "label": "Physics", "total": 20}];
+var SUBJECTS = [{"id": "m", "label": "Maths", "total": 20}, {"id": "p", "label": "Physics", "total": 20}, {"id": "c", "label": "CS/Python", "total": 20}];
 var LS_PFX   = 'icse_w14_tue';
 
 function saveScore(id, score, total, label) {
@@ -259,7 +306,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["study", "m", "pnotes", "p"];
+  var all = ["study", "m", "pnotes", "p", "cnotes", "c"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -482,6 +529,29 @@ quiz('p', [
   {"t": "🔴 Hard · Assertion-Reason", "q": "A: A wet road is slippery. R: Water reduces friction between tyres and road.", "o": ["Both true, R explains A", "Both true, R does not explain A", "A true, R false", "A false, R true"], "a": 0, "e": "Water acts like a lubricant, so the road gets slippery."},
   {"t": "Friction", "q": "Friction is called a 'necessary evil' because…", "o": ["we need it, but it also wastes energy and wears things out", "it is always harmful", "it is always helpful", "it only exists in machines"], "a": 0, "e": "It helps us walk and brake, but causes heat and wear."}
 ], "Physics");
+
+quiz('c', [
+  {"t": "Algorithms", "q": "An algorithm is…", "o": ["a step-by-step method to solve a problem", "a computer part", "a type of error", "a website"], "a": 0, "e": "Clear steps with a start and an end."},
+  {"t": "Flowcharts", "q": "Which flowchart symbol means Start or Stop?", "o": ["oval", "diamond", "rectangle", "parallelogram"], "a": 0, "e": "The terminal symbol."},
+  {"t": "Flowcharts", "q": "Which symbol is used for a decision?", "o": ["diamond", "oval", "rectangle", "arrow"], "a": 0, "e": "A yes/no question."},
+  {"t": "Flowcharts", "q": "Which symbol is used for input and output?", "o": ["parallelogram", "diamond", "oval", "circle"], "a": 0, "e": "Read or Print."},
+  {"t": "Flowcharts", "q": "Which symbol shows a calculation like SUM = A + B?", "o": ["rectangle", "diamond", "oval", "parallelogram"], "a": 0, "e": "The process box."},
+  {"t": "🔴 Hard · Flowcharts", "q": "A decision diamond in a flowchart becomes what in Python?", "o": ["if / else", "print()", "input()", "def"], "a": 0, "e": "Two exits: Yes and No."},
+  {"t": "🔴 Hard · Flowcharts", "q": "An arrow that goes BACK to an earlier step shows…", "o": ["a loop", "an error", "the end", "an input"], "a": 0, "e": "Repeating steps = a loop."},
+  {"t": "Errors", "q": "print(\"Hi\" — which error is this?", "o": ["syntax error", "logic error", "runtime error", "no error"], "a": 0, "e": "Missing bracket breaks the grammar."},
+  {"t": "Errors", "q": "print(10 / 0) gives which error?", "o": ["ZeroDivisionError (runtime)", "syntax error", "logic error", "no error"], "a": 0, "e": "Division by zero crashes while running."},
+  {"t": "🔴 Hard · Errors", "q": "A program runs without crashing but prints the wrong total. This is a…", "o": ["logic error", "syntax error", "runtime error", "virus"], "a": 0, "e": "The code works, but the thinking is wrong."},
+  {"t": "Errors", "q": "Forgetting the colon after if x > 5 causes a…", "o": ["syntax error", "logic error", "runtime error", "phishing error"], "a": 0, "e": "Python can't start the program."},
+  {"t": "🔴 Hard · Errors", "q": "int(\"hello\") causes a…", "o": ["ValueError", "ZeroDivisionError", "SyntaxError", "logic error"], "a": 0, "e": "Python can't turn 'hello' into a number."},
+  {"t": "Debugging", "q": "What is the FIRST thing to do when you see an error?", "o": ["Read the error message", "Delete the program", "Restart the computer", "Ignore it"], "a": 0, "e": "It tells you the line and the type."},
+  {"t": "Debugging", "q": "Why add extra print() lines while debugging?", "o": ["To see what the variables hold", "To make it faster", "To add errors", "To save the file"], "a": 0, "e": "They show what's happening inside."},
+  {"t": "Tracing", "q": "total = 0 ; for i in range(1, 4): total = total + i ; print(total)", "o": ["6", "3", "10", "0"], "a": 0, "e": "1 + 2 + 3 = 6."},
+  {"t": "🔴 Hard · Tracing", "q": "x = 2 ; for i in range(3): x = x * 2 ; print(x)", "o": ["16", "8", "6", "12"], "a": 0, "e": "2 → 4 → 8 → 16."},
+  {"t": "Tracing", "q": "n = 10 ; while n > 7: n = n - 1 ; print(n)", "o": ["7", "8", "10", "6"], "a": 0, "e": "10 → 9 → 8 → 7, then stops."},
+  {"t": "🔴 Hard · Logic", "q": "To find the area of a rectangle, which line has a logic error?", "o": ["area = l + b", "area = l * b", "area = b * l", "area = (l * b)"], "a": 0, "e": "Area is l × b, not l + b."},
+  {"t": "History", "q": "The word 'algorithm' comes from the name of…", "o": ["al-Khwarizmi", "Charles Babbage", "Ada Lovelace", "Newton"], "a": 0, "e": "A Persian mathematician."},
+  {"t": "History", "q": "Who is famous for the 'first computer bug' — a real moth?", "o": ["Grace Hopper", "Tim Berners-Lee", "Ray Tomlinson", "Guido van Rossum"], "a": 0, "e": "In 1947."}
+], "CS/Python");
 
 refreshProgress();
 makeSaveButton('save-wrap');
