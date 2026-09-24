@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
-<title>Week 12 · Sunday · Mixed Quiz · General Knowledge · Class 6 ICSE</title>
+<title>Week 12 · Sunday · Mixed Quiz · General Knowledge · French: Une journée à Paris · Les verbes en -ger · Class 6 ICSE</title>
 <style>*{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0F4FF;min-height:100vh;color:#1a1a2e}
 header{background:linear-gradient(135deg,#4F46E5,#7C3AED);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:12px}
@@ -85,11 +85,13 @@ details summary{cursor:pointer;font-weight:600}
 <a class="back" href="index.html">&larr; Week 12</a>
 <header>
   <div class="logo">&#129504;</div>
-  <div><h1>Sunday &middot; Week 12</h1><p>6 Sep 2026 &middot; 10:00 AM &ndash; 4:00 PM &middot; &#129504; Mixed Quiz &mdash; General Knowledge</p></div>
+  <div><h1>Sunday &middot; Week 12</h1><p>6 Sep 2026 &middot; 10:00 AM &ndash; 4:00 PM &middot; &#129504; Mixed Quiz &mdash; General Knowledge · 🇫🇷 Une journée à Paris · Les verbes en -ger</p></div>
 </header>
 <div class="tabs">
   <button class="tab active" id="tab-study" onclick="switchTab('study')">&#128240; This Week's News</button>
   <button class="tab" id="tab-mx" onclick="switchTab('mx')">&#129504; GK Quiz</button>
+  <button class="tab" id="tab-fnotes" onclick="switchTab('fnotes')">🇫🇷 French Study</button>
+  <button class="tab" id="tab-f" onclick="switchTab('f')">🇫🇷 French Quiz</button>
 </div>
 <div class="prog-bar">
   <div class="pb-top">
@@ -177,8 +179,40 @@ details summary{cursor:pointer;font-weight:600}
   </div>
 </div>
 
+<div id="sec-fnotes" class="sec">
+<div class="dyk"><div class="dyk-eye">🇫🇷 Sunday · Week 12 · Révision</div><div class="dyk-title">Paris et la France — révision</div><div class="dyk-body">Textbook pages 36 and 57, workbook page 25. Story details, facts about France, and -ger verbs with different subjects.</div></div><div class="ql">🔍 Trouvez dans le texte (p.36)</div><div class="icard"><h3>From « Une journée à Paris »</h3><p>Deux nationalités → italienne, indien, émirati, saoudienne, français<br>Deux adjectifs → célèbre, délicieuse, populaires, merveilleuse<br>Le contraire de « nouvel » → <strong>ancien</strong> (le plus ancien pont)<br>Un autre mot pour « enfin » → <strong>finalement</strong></p></div><div class="ql">🇫🇷 Cochez la bonne réponse (workbook p.25)</div><div class="icard"><h3>French geography and culture</h3><p>La Garonne est un <strong>fleuve</strong> français.<br>Le Pont-Neuf est le plus ancien <strong>pont</strong> à Paris.<br>Les Champs-Élysées : c'est une belle <strong>avenue</strong>.<br>On trouve <strong>l'Arc de Triomphe</strong> aux Champs-Élysées.<br><strong>Le Massif Central</strong> est une montagne en France.<br><strong>Le gruyère</strong> est un fromage.<br>On appelle <strong>la France</strong> l'Hexagone.<br>La France est connue pour <strong>ses parfums et sa cuisine</strong> — tous les deux.</p><div class="hook">💡 La Manche is the sea (English Channel), not a mountain. Le bordeaux is a wine.</div></div><div class="ql">🔧 -ger verbs with every subject (p.57)</div><div class="icard"><h3>Conjuguez</h3><p>Tu <strong>ranges</strong> la chambre.<br>Ils <strong>changent</strong> le train à Lyon.<br>Vous <strong>nagez</strong> bien.<br>Nous <strong>mangeons</strong> du riz au poulet.<br>Le professeur <strong>corrige</strong> le devoir.<br>Avni et ses parents <strong>voyagent</strong> en France.<br>Le directeur <strong>exige</strong> aux élèves d'être à l'heure.</p><div class="hook">💡 « Avni et ses parents » = ils → voyagent.</div></div><div class="tip"><div class="tip-eye">🎯 Fun Trivia</div><div class="tip-body">Paris is called <strong>la Ville Lumière</strong> for two reasons often given: it was a centre of the 18th-century <em>Enlightenment</em> (les Lumières), and it was one of the first cities to light its streets with gas lamps.</div></div>
+</div>
+
+<div id="sec-f" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">🇫🇷 French · 15 Questions · Révision</div>
+    <div class="dyk-title">French — Paris et la France : révision</div>
+    <div class="dyk-body">Story details, French geography and -ger verbs in sentences. You need <strong>9 / 15 (60%)</strong> to mark this as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="f-qnum">1 / 15</span></div>
+    <div class="sc"><label>Score</label><span id="f-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="f-prog" style="width:0%"></div></div><div class="pp" id="f-pct">0%</div></div>
+  <div id="f-card" class="card">
+    <div class="tp" id="f-topic"></div>
+    <div class="qt" id="f-q"></div>
+    <div class="opts" id="f-opts"></div>
+    <div class="fb" id="f-fb"></div>
+    <button class="nxt" id="f-nxt">Next →</button>
+  </div>
+  <div id="f-done" style="display:none" class="card dc">
+    <div class="di" id="f-ficon">🎉</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="f-fscore"></div>
+    <div class="dm" id="f-fmsg"></div>
+    <button class="retry" id="f-retry">Try again ↺</button>
+  </div>
+</div>
+
 <script>
-var SUBJECTS = [{"id": "mx", "label": "Mixed Quiz", "total": 20}];
+var SUBJECTS = [{"id": "mx", "label": "Mixed Quiz", "total": 20}, {"id": "f", "label": "French", "total": 15}];
 var LS_PFX   = 'icse_w12_sun';
 
 function saveScore(id, score, total, label) {
@@ -225,7 +259,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["study", "mx"];
+  var all = ["study", "mx", "fnotes", "f"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -425,6 +459,24 @@ quiz('mx', [
   {"t": "🔴 Hard · 🔬 Science", "q": "About how high above Earth is a geosynchronous orbit?", "o": ["About 36,000 km", "About 400 km", "About 3,84,000 km", "About 1,000 km"], "a": 0, "e": "About 400 km is the space station; about 3,84,000 km is the Moon."},
   {"t": "🔴 Hard · 🏅 Sports", "q": "Rumesh Pathirage won the Diamond League Final with which distance?", "o": ["89.04 m", "92.07 m", "85.69 m", "98.48 m"], "a": 0, "e": "89.04 m won in Brussels; 92.07 m was his Zurich throw; 98.48 m is the world record."}
 ], 'Mixed Quiz');
+
+quiz('f', [
+  {"t": "Vrai ou Faux", "q": "Sophie est française.", "o": ["Vrai", "Faux"], "a": 1, "e": "Faux — Sophie est italienne. Manuel and Caroline are the French ones."},
+  {"t": "🔴 Hard · Vrai ou Faux", "q": "Fatima aime le musée du Louvre.", "o": ["Vrai", "Faux"], "a": 1, "e": "Faux — Fatima likes Notre-Dame's architecture. Sophie prefers the Louvre."},
+  {"t": "Story", "q": "What nationality is Ahmed?", "o": ["émirati", "saoudien", "indien", "italien"], "a": 0, "e": "Ahmed est émirati (from the United Arab Emirates). Fatima is saoudienne."},
+  {"t": "Story", "q": "Where do the friends go back to at the end of the day?", "o": ["Boulogne-Billancourt", "Lyon", "Versailles", "Marseille"], "a": 0, "e": "Finalement, ils rentrent à Boulogne-Billancourt."},
+  {"t": "Vocabulary", "q": "What does « malgré » mean?", "o": ["in spite of", "during", "finally", "bridge"], "a": 0, "e": "Malgré = in spite of. Malgré les nationalités différentes…"},
+  {"t": "Trouvez", "q": "Which word in the text means the same as « enfin »?", "o": ["finalement", "ensemble", "beaucoup", "malgré"], "a": 0, "e": "Enfin and finalement both mean 'finally'."},
+  {"t": "Trouvez", "q": "What is the opposite of « nouvel »?", "o": ["ancien", "vieux", "petit", "grand"], "a": 0, "e": "Le plus ancien pont — ancien is the opposite of nouvel/nouveau."},
+  {"t": "Culture", "q": "La Garonne est un (fleuve / fromage / parfumeur) français.", "o": ["fleuve", "fromage", "parfumeur", "monument"], "a": 0, "e": "The Garonne is a big river flowing to the Atlantic."},
+  {"t": "🔴 Hard · Culture", "q": "Which one is a mountain range in France?", "o": ["Le Massif Central", "La Manche", "Le bordeaux", "La Seine"], "a": 0, "e": "La Manche is the sea, le bordeaux is a wine, la Seine is a river."},
+  {"t": "Culture", "q": "Les Champs-Élysées : c'est une belle ______ en France.", "o": ["avenue", "montagne", "rivière", "cathédrale"], "a": 0, "e": "Les Champs-Élysées is a famous avenue."},
+  {"t": "Culture", "q": "La France est connue pour…", "o": ["ses parfums et sa cuisine", "ses parfums seulement", "sa cuisine seulement", "ses montagnes seulement"], "a": 0, "e": "Tous les deux — both its perfumes and its food."},
+  {"t": "-ger verbs", "q": "Ils ______ le train à Lyon. (changer)", "o": ["changent", "changeons", "change", "changez"], "a": 0, "e": "Ils → -ent: ils changent."},
+  {"t": "-ger verbs", "q": "Le directeur ______ aux élèves d'être à l'heure. (exiger)", "o": ["exige", "exigeons", "exiges", "exigent"], "a": 0, "e": "Il/elle → -e: le directeur exige."},
+  {"t": "🔴 Hard · -ger verbs", "q": "Nous ______ les livres sur la table. (ranger)", "o": ["rangeons", "rangons", "rangez", "rangent"], "a": 0, "e": "Nous rangeons — don't forget the e."},
+  {"t": "Symboles", "q": "What is « le sceau » used for?", "o": ["Signing official documents such as laws", "Representing France at sports events", "Decorating every town hall", "Marking the French border"], "a": 0, "e": "Le sceau — a piece of wax and lead used to sign documents like laws."}
+], "French");
 
 refreshProgress();
 makeSaveButton('save-wrap');

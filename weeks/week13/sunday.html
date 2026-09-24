@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
-<title>Week 13 · Sunday · Mixed Quiz · General Knowledge · Class 6 ICSE</title>
+<title>Week 13 · Sunday · Mixed Quiz · General Knowledge · French: La famille professionnelle · Class 6 ICSE</title>
 <style>*{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0F4FF;min-height:100vh;color:#1a1a2e}
 header{background:linear-gradient(135deg,#4F46E5,#7C3AED);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:12px}
@@ -85,11 +85,13 @@ details summary{cursor:pointer;font-weight:600}
 <a class="back" href="index.html">&larr; Week 13</a>
 <header>
   <div class="logo">&#129504;</div>
-  <div><h1>Sunday &middot; Week 13</h1><p>13 Sep 2026 &middot; 10:00 AM &ndash; 4:00 PM &middot; &#129504; Mixed Quiz &mdash; General Knowledge</p></div>
+  <div><h1>Sunday &middot; Week 13</h1><p>13 Sep 2026 &middot; 10:00 AM &ndash; 4:00 PM &middot; &#129504; Mixed Quiz &mdash; General Knowledge · 🇫🇷 La famille professionnelle</p></div>
 </header>
 <div class="tabs">
   <button class="tab active" id="tab-study" onclick="switchTab('study')">&#128240; This Week's News</button>
   <button class="tab" id="tab-mx" onclick="switchTab('mx')">&#129504; GK Quiz</button>
+  <button class="tab" id="tab-fnotes" onclick="switchTab('fnotes')">🇫🇷 French Study</button>
+  <button class="tab" id="tab-f" onclick="switchTab('f')">🇫🇷 French Quiz</button>
 </div>
 <div class="prog-bar">
   <div class="pb-top">
@@ -177,8 +179,40 @@ details summary{cursor:pointer;font-weight:600}
   </div>
 </div>
 
+<div id="sec-fnotes" class="sec">
+<div class="dyk"><div class="dyk-eye">🇫🇷 Sunday · Week 13 · Révision</div><div class="dyk-title">Les professions — révision</div><div class="dyk-body">Workbook pages 28–33 and textbook pages 49–57. The story's true/false points, masculine ↔ feminine in full sentences, and job words from clues.</div></div><div class="ql">📖 Dites vrai ou faux (p.49)</div><div class="icard"><h3>The four story statements</h3><p>La famille de Manuel ne travaille pas beaucoup. → <strong>Faux</strong> (très travailleuse)<br>Manuel est très fasciné par les parents. → <strong>Vrai</strong><br>La sœur de Manuel rêve d'être journaliste. → <strong>Vrai</strong><br>La tante de Manuel est secrétaire. → <strong>Faux</strong> (elle est avocate)</p><div class="hook">💡 La forme féminine de « père » et « oncle » → <strong>mère</strong> et <strong>tante</strong>.</div></div><div class="ql">🔁 Change the whole sentence</div><div class="icard"><h3>Workbook p.30–31</h3><p>L'acteur indien est beau. → <strong>L'actrice indienne est belle.</strong><br>Le musicien est amusant. → <strong>La musicienne est amusante.</strong><br>La boulangère est canadienne. → <strong>Le boulanger est canadien.</strong><br>La pilote est mauvaise. → <strong>Le pilote est mauvais.</strong></p><div class="hook">💡 When the person changes, the adjective changes too.</div></div><div class="icard"><h3>Groups of people (p.57)</h3><p>Céline et Hugo sont <strong>chanteurs</strong> — a girl + a boy → masculine plural.<br>Isabelle et Claudine sont <strong>étudiantes</strong> — two girls → feminine plural.<br>Harish et Saarang sont <strong>médecins</strong>.</p></div><div class="icard"><h3>Fiche d'identité</h3><p><strong>Nom :</strong> LAVIGNE · <strong>Prénom :</strong> Patrick · <strong>Âge :</strong> 45 ans<br><strong>Profession :</strong> Directeur régional · <strong>Adresse :</strong> 10, rue d'Église, Rouen</p><div class="ex">Nom = surname · Prénom = first name. Il s'appelle Patrick Lavigne. Il a 45 ans. Il est directeur régional.</div></div><div class="tip"><div class="tip-eye">🎯 Fun Trivia</div><div class="tip-body">Since a 1998 law, a French shop may only call itself a <strong>boulangerie</strong> if the bread is kneaded, shaped and baked on the spot. Bread brought in from a factory does not count!</div></div>
+</div>
+
+<div id="sec-f" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">🇫🇷 French · 15 Questions · Révision</div>
+    <div class="dyk-title">French — Les professions : révision</div>
+    <div class="dyk-body">Workbook fill-ins, masculine ↔ feminine, and the story again. You need <strong>9 / 15 (60%)</strong> to mark this as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="f-qnum">1 / 15</span></div>
+    <div class="sc"><label>Score</label><span id="f-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="f-prog" style="width:0%"></div></div><div class="pp" id="f-pct">0%</div></div>
+  <div id="f-card" class="card">
+    <div class="tp" id="f-topic"></div>
+    <div class="qt" id="f-q"></div>
+    <div class="opts" id="f-opts"></div>
+    <div class="fb" id="f-fb"></div>
+    <button class="nxt" id="f-nxt">Next →</button>
+  </div>
+  <div id="f-done" style="display:none" class="card dc">
+    <div class="di" id="f-ficon">🎉</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="f-fscore"></div>
+    <div class="dm" id="f-fmsg"></div>
+    <button class="retry" id="f-retry">Try again ↺</button>
+  </div>
+</div>
+
 <script>
-var SUBJECTS = [{"id": "mx", "label": "Mixed Quiz", "total": 20}];
+var SUBJECTS = [{"id": "mx", "label": "Mixed Quiz", "total": 20}, {"id": "f", "label": "French", "total": 15}];
 var LS_PFX   = 'icse_w13_sun';
 
 function saveScore(id, score, total, label) {
@@ -225,7 +259,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["study", "mx"];
+  var all = ["study", "mx", "fnotes", "f"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -425,6 +459,24 @@ quiz('mx', [
   {"t": "🔴 Hard · 🏅 Sports", "q": "Kenneth Bednarek won the men's 200 m in Budapest in a world-leading time of —", "o": ["19.52 s", "10.62 s", "21.47 s", "9.58 s"], "a": 0, "e": "19.52 s; 10.62 and 21.47 were Jefferson-Wooden's times, and 9.58 s is Usain Bolt's 100 m world record."},
   {"t": "🔴 Hard · 🎨 Arts & Culture", "q": "The river Gomti, after which Lucknow's book festival is named, is a tributary of —", "o": ["The Ganga", "The Godavari", "The Brahmaputra", "The Narmada"], "a": 0, "e": "The Gomti flows through Lucknow and joins the Ganga near Varanasi."}
 ], 'Mixed Quiz');
+
+quiz('f', [
+  {"t": "Workbook", "q": "Un ______ coupe les cheveux.", "o": ["coiffeur", "cuisinier", "couturier", "mécanicien"], "a": 0, "e": "Il coupe et coiffe les cheveux — le coiffeur."},
+  {"t": "🔴 Hard · Workbook", "q": "Un ______ écrit des romans et des histoires.", "o": ["écrivain", "journaliste", "libraire", "secrétaire"], "a": 0, "e": "Novels and stories → l'écrivain. A journaliste writes articles."},
+  {"t": "Vrai ou Faux", "q": "La tante de Manuel est secrétaire.", "o": ["Vrai", "Faux"], "a": 1, "e": "Faux — « Non, elle n'est pas secrétaire, elle est avocate. »"},
+  {"t": "Vrai ou Faux", "q": "La famille de Manuel ne travaille pas beaucoup.", "o": ["Vrai", "Faux"], "a": 1, "e": "Faux — la famille est très travailleuse et professionnelle."},
+  {"t": "Story", "q": "What is Manuel's father's job?", "o": ["ingénieur civil", "architecte", "médecin", "scientifique"], "a": 0, "e": "Jérôme Dupont est ingénieur civil — he builds bridges, roads and buildings."},
+  {"t": "Story", "q": "What does Manuel dream of becoming?", "o": ["architecte", "journaliste", "médecin", "avocat"], "a": 0, "e": "Manuel rêve d'être architecte — his sister wants journalism, his brother medicine."},
+  {"t": "Trouvez", "q": "The feminine forms of « père » and « oncle » are…", "o": ["mère et tante", "mère et nièce", "sœur et tante", "fille et cousine"], "a": 0, "e": "Père → mère, oncle → tante."},
+  {"t": "Unscramble", "q": "e d m n é i c — which profession is it?", "o": ["médecin", "mécanicien", "musicien", "dentiste"], "a": 0, "e": "edmnéic → médecin. Il travaille à l'hôpital."},
+  {"t": "Unscramble", "q": "t m b o p c l a e — which profession is it?", "o": ["comptable", "photographe", "boulanger", "pilote"], "a": 0, "e": "tmbopclae → comptable. Works in a banque."},
+  {"t": "Masculin", "q": "La boulangère est canadienne. → (masculine)", "o": ["Le boulanger est canadien.", "Le boulanger est canadienne.", "Le boulangier est canadien.", "La boulanger est canadien."], "a": 0, "e": "Both the job and the nationality change: boulanger, canadien."},
+  {"t": "🔴 Hard · Féminin", "q": "L'acteur indien est beau. → (feminine)", "o": ["L'actrice indienne est belle.", "L'actrice indien est beau.", "L'acteuse indienne est belle.", "L'actrice indienne est beau."], "a": 0, "e": "Actrice, indienne, belle — all three words change."},
+  {"t": "Choisissez", "q": "Céline et Hugo sont (chanteuses / chanteuse / chanteurs).", "o": ["chanteurs", "chanteuses", "chanteuse", "chanteur"], "a": 0, "e": "A girl and a boy → masculine plural: chanteurs."},
+  {"t": "Choisissez", "q": "Isabelle et Claudine sont (étudiants / étudiantes / étudiante).", "o": ["étudiantes", "étudiants", "étudiante", "étudiant"], "a": 0, "e": "Two girls → feminine plural: étudiantes."},
+  {"t": "🔴 Hard · Grammar", "q": "Which sentence is correct French?", "o": ["Il est médecin.", "Il est un médecin.", "Il est une médecin.", "Il médecin est."], "a": 0, "e": "After il/elle est, French leaves out un/une before a job."},
+  {"t": "Que font-ils ?", "q": "Que fait un pilote ?", "o": ["Il conduit un avion.", "Il répare les voitures.", "Il coupe les cheveux.", "Il enseigne les élèves."], "a": 0, "e": "Le pilote conduit un avion."}
+], "French");
 
 refreshProgress();
 makeSaveButton('save-wrap');

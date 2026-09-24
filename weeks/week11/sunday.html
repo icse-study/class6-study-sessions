@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
-<title>Week 11 · Sunday · Mixed Quiz · General Knowledge · Class 6 ICSE</title>
+<title>Week 11 · Sunday · Mixed Quiz · General Knowledge · French: Pays, nationalités et adjectifs · Class 6 ICSE</title>
 <style>*{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0F4FF;min-height:100vh;color:#1a1a2e}
 header{background:linear-gradient(135deg,#4F46E5,#7C3AED);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:12px}
@@ -85,11 +85,13 @@ details summary{cursor:pointer;font-weight:600}
 <a class="back" href="index.html">&larr; Week 11</a>
 <header>
   <div class="logo">&#129504;</div>
-  <div><h1>Sunday &middot; Week 11</h1><p>30 Aug 2026 &middot; 10:00 AM &ndash; 4:00 PM &middot; &#129504; Mixed Quiz &mdash; General Knowledge</p></div>
+  <div><h1>Sunday &middot; Week 11</h1><p>30 Aug 2026 &middot; 10:00 AM &ndash; 4:00 PM &middot; &#129504; Mixed Quiz &mdash; General Knowledge · 🇫🇷 Pays, nationalités et adjectifs</p></div>
 </header>
 <div class="tabs">
   <button class="tab active" id="tab-study" onclick="switchTab('study')">&#128240; This Week's News</button>
   <button class="tab" id="tab-mx" onclick="switchTab('mx')">&#129504; GK Quiz</button>
+  <button class="tab" id="tab-fnotes" onclick="switchTab('fnotes')">🇫🇷 French Study</button>
+  <button class="tab" id="tab-f" onclick="switchTab('f')">🇫🇷 French Quiz</button>
 </div>
 <div class="prog-bar">
   <div class="pb-top">
@@ -181,8 +183,40 @@ details summary{cursor:pointer;font-weight:600}
   </div>
 </div>
 
+<div id="sec-fnotes" class="sec">
+<div class="dyk"><div class="dyk-eye">🇫🇷 Sunday · Week 11 · Révision</div><div class="dyk-title">Nationalités et adjectifs — révision</div><div class="dyk-body">Workbook pages 21–27 and textbook pages 43–48. The same rules as Thursday, now inside full sentences.</div></div><div class="ql">✍️ Complete the sentence — two steps</div><div class="icard"><h3>Country first, then nationality</h3><p>Step 1: <strong>en / au / aux</strong> + country. Step 2: nationality agreeing with the subject.</p><div class="ex">Marie et Valérie habitent <strong>au</strong> Portugal ; elles sont <strong>portugaises</strong>.<br>Nous habitons <strong>aux</strong> États-Unis ; nous sommes <strong>américains</strong>.<br>Patrice et Jean habitent <strong>au</strong> Danemark ; ils sont <strong>danois</strong>.</div><div class="hook">💡 Danois already ends in s, so the masculine plural doesn't change: ils sont danois.</div></div><div class="ql">🔁 Mettez au féminin / au pluriel</div><div class="icard"><h3>Worked examples from the workbook</h3><p>Voici un petit garçon canadien. → Voici une petite fille canadienne.<br>Le père de Marc est gentil. → La mère de Marc est gentille.<br>L'étudiant belge est gros. → L'étudiante belge est grosse.<br>Il a un ami russe. → Ils ont des amis russes.<br>L'enfant de M. Hanks est beau et amusant. → Les enfants de M. Hanks sont beaux et amusants.</p></div><div class="icard"><h3>bel, nouvel, vieil — again</h3><p>Voici une <strong>nouvelle</strong> étudiante (feminine → nouvelle).<br>C'est un <strong>nouvel</strong> étudiant (masculine + vowel → nouvel).<br>C'est un <strong>bel</strong> homme (masculine + silent h → bel).</p></div><div class="icard"><h3>Which word agrees?</h3><p>L'homme est <strong>gros</strong> (not grande, not jolis).<br>Il a les cheveux <strong>courts</strong> — cheveux is masculine plural.<br>Les femmes sont <strong>heureuses</strong> — feminine plural.</p></div><div class="tip"><div class="tip-eye">🎯 Fun Trivia</div><div class="tip-body">The textbook poem <strong>« Un monde uni »</strong> gives each nation a colour: le violet royal des Français, les Italiens verts… — a reminder that nationalities, like adjectives, change to match the people they describe.</div></div>
+</div>
+
+<div id="sec-f" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">🇫🇷 French · 15 Questions · Révision</div>
+    <div class="dyk-title">French — Nationalités et adjectifs : révision</div>
+    <div class="dyk-body">Workbook fill-ins, bel / nouvel / vieil, and odd-one-out. You need <strong>9 / 15 (60%)</strong> to mark this as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="f-qnum">1 / 15</span></div>
+    <div class="sc"><label>Score</label><span id="f-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="f-prog" style="width:0%"></div></div><div class="pp" id="f-pct">0%</div></div>
+  <div id="f-card" class="card">
+    <div class="tp" id="f-topic"></div>
+    <div class="qt" id="f-q"></div>
+    <div class="opts" id="f-opts"></div>
+    <div class="fb" id="f-fb"></div>
+    <button class="nxt" id="f-nxt">Next →</button>
+  </div>
+  <div id="f-done" style="display:none" class="card dc">
+    <div class="di" id="f-ficon">🎉</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="f-fscore"></div>
+    <div class="dm" id="f-fmsg"></div>
+    <button class="retry" id="f-retry">Try again ↺</button>
+  </div>
+</div>
+
 <script>
-var SUBJECTS = [{"id": "mx", "label": "Mixed Quiz", "total": 20}];
+var SUBJECTS = [{"id": "mx", "label": "Mixed Quiz", "total": 20}, {"id": "f", "label": "French", "total": 15}];
 var LS_PFX   = 'icse_w11_sun';
 
 function saveScore(id, score, total, label) {
@@ -229,7 +263,7 @@ function refreshProgress() {
 }
 
 function switchTab(t) {
-  var all = ["study", "mx"];
+  var all = ["study", "mx", "fnotes", "f"];
   all.forEach(function(x) {
     document.getElementById('tab-'+x).classList.toggle('active', x===t);
     document.getElementById('sec-'+x).classList.toggle('active', x===t);
@@ -429,6 +463,24 @@ quiz('mx', [
   {"t": "🔴 Hard · 🎨 Arts & Culture", "q": "Onam celebrates the yearly homecoming of which legendary king?", "o": ["Mahabali", "Ashoka", "Krishnadevaraya", "Harsha"], "a": 0, "e": "Legend says the kind king Mahabali visits his people every Onam."},
   {"t": "🔴 Hard · 🏅 Sports", "q": "Who was named Player of the Series in India's 2026 Test tour of Sri Lanka?", "o": ["Devdutt Padikkal", "Shubman Gill", "Manav Suthar", "Jasprit Bumrah"], "a": 0, "e": "Padikkal (328 runs, including 167 at Galle) was Player of the Series."}
 ], 'Mixed Quiz');
+
+quiz('f', [
+  {"t": "Nationalités", "q": "Marie et Valérie habitent au Portugal ; elles sont ______.", "o": ["portugaises", "portugais", "portugaisses", "portugiennes"], "a": 0, "e": "Two girls → feminine plural: portugais + e + s."},
+  {"t": "Nationalités", "q": "Nous habitons aux États-Unis ; nous sommes ______.", "o": ["américains", "américain", "américaines", "amérique"], "a": 0, "e": "Nous (a mixed or boys' group) → masculine plural: américains."},
+  {"t": "🔴 Hard · Nationalités", "q": "Patrice et Jean habitent au Danemark ; ils sont ______.", "o": ["danois", "danoises", "danoiss", "daniens"], "a": 0, "e": "Danois already ends in s, so its masculine plural doesn't change."},
+  {"t": "Nationalités", "q": "Ali habite au Mexique ; il est ______.", "o": ["mexicain", "mexicaine", "mexique", "mexicien"], "a": 0, "e": "Le Mexique → mexicain."},
+  {"t": "Nationalités", "q": "Stefi habite en Allemagne ; elle est ______.", "o": ["allemande", "allemand", "allemagne", "allemanienne"], "a": 0, "e": "Allemagne is the country; the nationality for a girl is allemande."},
+  {"t": "Choisissez", "q": "Voici une (nouveau / nouvel / nouvelle) étudiante.", "o": ["nouvelle", "nouveau", "nouvel", "nouveaux"], "a": 0, "e": "Étudiante is feminine → nouvelle."},
+  {"t": "🔴 Hard · Choisissez", "q": "C'est un ______ homme. (beau)", "o": ["bel", "beau", "belle", "beaux"], "a": 0, "e": "Homme is masculine and starts with a silent h, so beau → bel."},
+  {"t": "Choisissez", "q": "L'homme est (gros / grande / jolis).", "o": ["gros", "grande", "jolis", "grosse"], "a": 0, "e": "L'homme = masculine singular → gros."},
+  {"t": "🔴 Hard · Choisissez", "q": "Il a les cheveux (petits / courts / longues).", "o": ["courts", "longues", "court", "longue"], "a": 0, "e": "Cheveux is masculine plural. Longues is feminine, so courts is the only one that fits."},
+  {"t": "Choisissez", "q": "Les femmes sont (heureux / triste / heureuses).", "o": ["heureuses", "heureux", "triste", "heureuse"], "a": 0, "e": "Feminine plural → heureuses."},
+  {"t": "Mettez au féminin", "q": "Le père de Marc est gentil. → La mère de Marc est ______.", "o": ["gentille", "gentile", "gentil", "gentilles"], "a": 0, "e": "Gentil doubles the l: gentille."},
+  {"t": "Mettez au pluriel", "q": "Il a un ami russe. → ?", "o": ["Ils ont des amis russes.", "Ils ont des amis russe.", "Il a des amis russes.", "Ils a des amis russes."], "a": 0, "e": "Il → ils, a → ont, un → des, ami → amis, russe → russes."},
+  {"t": "Mettez au pluriel", "q": "Le garçon est beau. → Les garçons sont ______.", "o": ["beaux", "beaus", "belles", "beau"], "a": 0, "e": "-eau → -eaux: beaux."},
+  {"t": "🔴 Hard · Chassez l'intrus", "q": "Odd one out: danois · anglais · canadiens · suédois", "o": ["canadiens", "danois", "anglais", "suédois"], "a": 0, "e": "Canadiens is the only one showing a plural -s. Danois, anglais and suédois end in s already, so they look the same in singular and plural."},
+  {"t": "🔴 Hard · Chassez l'intrus", "q": "Odd one out: gros · gentil · bas · épais", "o": ["gentil", "gros", "bas", "épais"], "a": 0, "e": "Gros, bas and épais end in s, so they don't change in the plural. Gentil → gentils."}
+], "French");
 
 refreshProgress();
 makeSaveButton('save-wrap');
