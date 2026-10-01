@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-10-01T07:28:18.353Z",
+  "lastSaved": "2026-10-01T07:29:18.682Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -793,6 +793,13 @@
       "totalQ": 15,
       "lastDate": "2026-09-13",
       "label": "French"
+    },
+    "icse_w06_mon_k": {
+      "attempts": 1,
+      "bestScore": 13,
+      "totalQ": 15,
+      "lastDate": "2026-10-01",
+      "label": "Kannada Literature"
     }
   }
 }
