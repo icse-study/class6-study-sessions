@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-10-10T12:37:33.347Z",
+  "lastSaved": "2026-10-10T12:48:46.224Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -912,6 +912,13 @@
       "totalQ": 15,
       "lastDate": "2026-10-08",
       "label": "Chemistry"
+    },
+    "icse_w06_sun_k": {
+      "attempts": 1,
+      "bestScore": 13,
+      "totalQ": 15,
+      "lastDate": "2026-10-10",
+      "label": "Kannada"
     }
   }
 }
