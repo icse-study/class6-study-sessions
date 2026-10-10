@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-10-10T12:55:54.162Z",
+  "lastSaved": "2026-10-10T12:57:23.958Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -933,6 +933,13 @@
       "totalQ": 15,
       "lastDate": "2026-10-10",
       "label": "Geo+History"
+    },
+    "icse_w06_sun_rv": {
+      "attempts": 1,
+      "bestScore": 5,
+      "totalQ": 5,
+      "lastDate": "2026-10-10",
+      "label": "Week 5 Recall"
     }
   }
 }
