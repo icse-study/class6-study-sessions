@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-10-11T13:10:15.892Z",
+  "lastSaved": "2026-10-12T13:01:22.871Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -989,6 +989,13 @@
       "totalQ": 15,
       "lastDate": "2026-10-11",
       "label": "CS / Python"
+    },
+    "icse_w07_wed_g": {
+      "attempts": 1,
+      "bestScore": 13,
+      "totalQ": 15,
+      "lastDate": "2026-10-12",
+      "label": "Geography"
     }
   }
 }
