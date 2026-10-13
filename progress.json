@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-10-13T07:04:32.758Z",
+  "lastSaved": "2026-10-13T07:08:42.698Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -1045,6 +1045,13 @@
       "totalQ": 15,
       "lastDate": "2026-10-13",
       "label": "Science Diagram Recall"
+    },
+    "icse_w07_fri_k": {
+      "attempts": 1,
+      "bestScore": 14,
+      "totalQ": 15,
+      "lastDate": "2026-10-13",
+      "label": "Kannada Grammar"
     }
   }
 }
