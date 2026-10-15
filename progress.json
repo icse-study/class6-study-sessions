@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-10-15T06:02:15.487Z",
+  "lastSaved": "2026-10-15T06:09:40.991Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -1115,6 +1115,13 @@
       "totalQ": 15,
       "lastDate": "2026-10-15",
       "label": "History & Civics"
+    },
+    "icse_w07_sat_pq": {
+      "attempts": 1,
+      "bestScore": 13,
+      "totalQ": 15,
+      "lastDate": "2026-10-15",
+      "label": "Physics"
     }
   }
 }
