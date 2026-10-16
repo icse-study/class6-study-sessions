@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-10-16T15:27:17.421Z",
+  "lastSaved": "2026-10-16T15:31:28.093Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -1150,6 +1150,13 @@
       "totalQ": 20,
       "lastDate": "2026-10-16",
       "label": "Chemistry"
+    },
+    "icse_w11_sat_pq": {
+      "attempts": 2,
+      "bestScore": 19,
+      "totalQ": 20,
+      "lastDate": "2026-10-16",
+      "label": "Science Quiz"
     }
   }
 }
