@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-10-21T12:35:21.027Z",
+  "lastSaved": "2026-10-21T12:48:49.191Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -1192,6 +1192,13 @@
       "totalQ": 5,
       "lastDate": "2026-10-21",
       "label": "Week 6 Recall"
+    },
+    "icse_w07_sun_mx": {
+      "attempts": 1,
+      "bestScore": 28,
+      "totalQ": 30,
+      "lastDate": "2026-10-21",
+      "label": "Mixed Quiz"
     }
   }
 }
