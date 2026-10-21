@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-10-21T12:48:49.191Z",
+  "lastSaved": "2026-10-21T12:55:55.802Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -1199,6 +1199,13 @@
       "totalQ": 30,
       "lastDate": "2026-10-21",
       "label": "Mixed Quiz"
+    },
+    "icse_w08_wed_g": {
+      "attempts": 2,
+      "bestScore": 12,
+      "totalQ": 15,
+      "lastDate": "2026-10-21",
+      "label": "Geography"
     }
   }
 }
