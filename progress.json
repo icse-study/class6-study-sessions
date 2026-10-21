@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-10-21T12:12:57.987Z",
+  "lastSaved": "2026-10-21T12:17:17.051Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -1164,6 +1164,13 @@
       "totalQ": 20,
       "lastDate": "2026-10-16",
       "label": "Biology"
+    },
+    "icse_w07_sun_k": {
+      "attempts": 1,
+      "bestScore": 15,
+      "totalQ": 15,
+      "lastDate": "2026-10-21",
+      "label": "Kannada"
     }
   }
 }
