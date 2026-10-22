@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-10-22T12:57:06.293Z",
+  "lastSaved": "2026-10-22T13:08:32.587Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -1227,6 +1227,13 @@
       "totalQ": 15,
       "lastDate": "2026-10-22",
       "label": "French"
+    },
+    "icse_w08_thu_m": {
+      "attempts": 2,
+      "bestScore": 13,
+      "totalQ": 15,
+      "lastDate": "2026-10-22",
+      "label": "Ratio & Proportion"
     }
   }
 }
