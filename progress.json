@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-10-22T12:45:54.738Z",
+  "lastSaved": "2026-10-22T12:57:06.293Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -1220,6 +1220,13 @@
       "totalQ": 15,
       "lastDate": "2026-10-22",
       "label": "Chemistry"
+    },
+    "icse_w08_thu_f": {
+      "attempts": 3,
+      "bestScore": 14,
+      "totalQ": 15,
+      "lastDate": "2026-10-22",
+      "label": "French"
     }
   }
 }
