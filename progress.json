@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-10-22T13:08:32.587Z",
+  "lastSaved": "2026-10-23T15:03:13.139Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -1234,6 +1234,13 @@
       "totalQ": 15,
       "lastDate": "2026-10-22",
       "label": "Ratio & Proportion"
+    },
+    "icse_w08_fri_s": {
+      "attempts": 2,
+      "bestScore": 11,
+      "totalQ": 15,
+      "lastDate": "2026-10-23",
+      "label": "Diagram Recall"
     }
   }
 }
