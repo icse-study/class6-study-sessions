@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-10-25T12:48:39.960Z",
+  "lastSaved": "2026-10-25T12:50:21.252Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -1255,6 +1255,13 @@
       "totalQ": 15,
       "lastDate": "2026-10-24",
       "label": "Biology"
+    },
+    "icse_w08_sat_h": {
+      "attempts": 2,
+      "bestScore": 13,
+      "totalQ": 15,
+      "lastDate": "2026-10-25",
+      "label": "History & Civics"
     }
   }
 }
