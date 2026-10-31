@@ -1,1 +1,437 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"><title>Week 27 · Tuesday · Class 6</title><style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0F4FF;min-height:100vh}header{background:linear-gradient(135deg,#4F46E5,#7C3AED);padding:1.25rem 1.5rem}header h1{color:#fff;font-size:17px;font-weight:600}header p{color:rgba(255,255,255,0.75);font-size:13px;margin-top:2px}.back{display:inline-flex;align-items:center;gap:6px;color:#6B7280;font-size:13px;text-decoration:none;padding:0.75rem 1rem}.card{background:#fff;border-radius:18px;margin:0 1rem;padding:2rem 1.25rem;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.07)}.icon{font-size:48px;margin-bottom:12px}.title{font-size:20px;font-weight:700;color:#111827;margin-bottom:8px}.sub{font-size:14px;color:#6B7280;line-height:1.6}.pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:1.25rem}.pill{font-size:12px;padding:5px 12px;border-radius:99px;background:#EEF2FF;color:#4F46E5;font-weight:500}.wb{display:inline-block;background:#F3F4F6;color:#6B7280;font-size:12px;font-weight:600;padding:4px 12px;border-radius:99px;margin-bottom:1rem}</style></head><body><a class="back" href="index.html">← Week 27</a><header><h1>Tuesday · Week 27</h1><p>14 Dec – 20 Dec 2026 · 6:00 – 7:50 PM</p></header><div style="padding:1rem 0 0"><div class="card"><div class="icon">🔒</div><div class="wb">Week 27 of 41</div><div class="title">Session not yet available</div><div class="sub">This session will be published at the start of week 27.<br>Check back on Monday, 14 December 2026.</div><div class="pills"><span class="pill">➗ Maths Quick Practice</span><span class="pill">⚡ Physics</span><span class="pill">💻 Computer Science / Python</span></div></div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>Week 27 · Tuesday · CS/Python: Turtle — Shapes, Colours & Loops · Class 6 ICSE</title>
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0F4FF;min-height:100vh;color:#1a1a2e}
+header{background:linear-gradient(135deg,#4F46E5,#7C3AED);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:12px}
+.logo{font-size:26px}
+header h1{color:#fff;font-size:17px;font-weight:600}
+header p{color:rgba(255,255,255,0.75);font-size:12px;margin-top:2px}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6B7280;font-size:13px;text-decoration:none;padding:0.75rem 1rem}
+.tabs{display:flex;background:#fff;border-bottom:1px solid #E5E7EB;position:sticky;top:0;z-index:10;box-shadow:0 1px 4px rgba(0,0,0,0.06);overflow-x:auto}
+.tab{flex-shrink:0;padding:13px 18px;border:none;background:transparent;font-size:13px;font-weight:500;color:#9CA3AF;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
+.tab.active{color:#4F46E5;border-bottom-color:#4F46E5}
+.sec{display:none;padding:1rem 1rem 3rem;max-width:680px;margin:0 auto}
+.sec.active{display:block}
+.dyk{background:linear-gradient(135deg,#EEF2FF,#F5F3FF);border:1px solid #C7D2FE;border-radius:18px;padding:1.25rem;margin-bottom:1rem}
+.dyk-eye{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:#4F46E5;margin-bottom:6px}
+.dyk-title{font-size:16px;font-weight:700;color:#3730A3;margin-bottom:8px}
+.dyk-body{font-size:14px;color:#374151;line-height:1.7}
+.icard{background:#fff;border-radius:18px;padding:1.25rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:1rem}
+.icard h3{font-size:15px;font-weight:700;color:#111827;margin-bottom:8px}
+.icard p{font-size:14px;color:#374151;line-height:1.7}
+.icard .ex{font-size:13px;color:#6B7280;margin-top:6px;padding:6px 10px;background:#F9FAFB;border-radius:8px;border-left:3px solid #C7D2FE}
+.icard .hook{font-size:13px;color:#3730A3;margin-top:6px;padding:6px 10px;background:#EEF2FF;border-radius:8px;border-left:3px solid #818CF8;font-style:italic}
+.ql{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9CA3AF;margin:1.25rem 0 0.6rem}
+.qa{background:#fff;border-radius:18px;padding:1.1rem 1.25rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:1rem;border-left:4px solid #7C3AED}
+.qa .qn{font-size:14px;font-weight:700;color:#111827;line-height:1.6;margin-bottom:4px}
+.qa .qe{font-size:13px;color:#6B7280;line-height:1.6;margin-bottom:8px}
+.qa details{margin-top:6px}
+.qa summary{font-size:12px;font-weight:700;color:#4F46E5;cursor:pointer;list-style:none}
+.qa summary::-webkit-details-marker{display:none}
+.qa .ans{font-size:13px;color:#374151;line-height:1.7;margin-top:8px;padding:8px 11px;background:#F5F3FF;border-radius:8px}
+.tip{background:#FFFBEB;border:1px solid #FCD34D;border-radius:14px;padding:1rem 1.25rem;margin-top:0.5rem;margin-bottom:1rem}
+.tip-eye{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:#92400E;margin-bottom:6px}
+.tip-body{font-size:13px;color:#78350F;line-height:1.8}
+.sr{display:flex;gap:10px;margin-bottom:1rem}
+.sc{flex:1;background:#fff;border-radius:12px;padding:10px 14px;box-shadow:0 1px 3px rgba(0,0,0,0.07)}
+.sc label{display:block;font-size:11px;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:2px}
+.sc span{font-size:20px;font-weight:700;color:#4F46E5}
+.pr{display:flex;align-items:center;gap:10px;margin-bottom:1rem}
+.pt{flex:1;height:7px;background:#E5E7EB;border-radius:99px;overflow:hidden}
+.pf{height:100%;background:linear-gradient(90deg,#4F46E5,#7C3AED);border-radius:99px;transition:width 0.4s}
+.pp{font-size:12px;color:#9CA3AF;white-space:nowrap}
+.card{background:#fff;border-radius:18px;padding:1.25rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:1rem}
+.tp{display:inline-block;background:#EEF2FF;color:#4F46E5;font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;margin-bottom:8px}
+.qt{font-size:15px;font-weight:500;line-height:1.55;color:#111827;margin-bottom:1.1rem}
+.opts{display:flex;flex-direction:column;gap:9px}
+.opt{width:100%;padding:12px 15px;border-radius:12px;border:2px solid #E5E7EB;background:#FAFAFA;font-size:14px;text-align:left;cursor:pointer;color:#1F2937;transition:all 0.15s;-webkit-tap-highlight-color:transparent;line-height:1.5}
+.opt:active{transform:scale(0.98)}
+.opt.correct{background:#ECFDF5;border-color:#10B981;color:#065F46}
+.opt.wrong{background:#FEF2F2;border-color:#EF4444;color:#7F1D1D}
+.fb{margin-top:12px;padding:11px 14px;border-radius:12px;font-size:14px;line-height:1.5;display:none}
+.fb.show{display:block}
+.fb.ok{background:#ECFDF5;color:#065F46}
+.fb.err{background:#FEF2F2;color:#7F1D1D}
+.nxt{display:none;width:100%;margin-top:12px;padding:14px;border-radius:14px;border:none;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-size:15px;font-weight:600;cursor:pointer}
+.nxt.show{display:block}
+.dc{text-align:center;padding:2rem 1.25rem}
+.di{font-size:52px;margin-bottom:10px}
+.dt{font-size:20px;font-weight:700;color:#111827;margin-bottom:6px}
+.ds{font-size:34px;font-weight:800;color:#4F46E5;margin:14px 0}
+.dm{font-size:14px;color:#6B7280;line-height:1.6}
+.retry{display:inline-block;margin-top:14px;padding:13px 26px;border-radius:14px;border:2px solid #4F46E5;background:transparent;color:#4F46E5;font-size:14px;font-weight:600;cursor:pointer}
+.prog-bar{margin:0.75rem 1rem 0;padding:0.75rem 1rem;background:#fff;border-radius:14px;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.pb-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.pb-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9CA3AF}
+.sb{font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;background:#F3F4F6;color:#9CA3AF}
+.sp{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.save-btn{width:100%;padding:12px;border-radius:12px;border:1.5px solid #4F46E5;background:transparent;color:#4F46E5;font-size:14px;font-weight:600;cursor:pointer;margin-top:4px}
+.tbl-wrap{overflow-x:auto;border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:1rem}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;background:#fff}
+.tbl th{background:#EEF2FF;color:#3730A3;font-weight:700;padding:9px 12px;text-align:left;border-bottom:2px solid #C7D2FE;white-space:nowrap}
+.tbl td{padding:9px 12px;border-bottom:1px solid #F3F4F6;color:#374151;vertical-align:top}
+.tbl tr:last-child td{border-bottom:none}
+.tbl td:first-child{font-weight:600;color:#111827;white-space:nowrap}
+
+details{margin-top:6px}
+details summary{cursor:pointer;font-weight:600}</style>
+<style>pre.code{background:#0F172A;color:#E2E8F0;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.5;overflow-x:auto;margin:8px 0;white-space:pre}#c-q{white-space:pre-wrap}</style>
+</head>
+<body>
+<a class="back" href="index.html">← Week 27</a>
+<header>
+  <div class="logo">💻</div>
+  <div><h1>Tuesday · Week 27</h1><p>15 Dec 2026 · 6:00 PM · 💻 CS / Python — Turtle — Shapes, Colours &amp; Loops</p></div>
+</header>
+<div class="tabs">
+  <button class="tab active" id="tab-cnotes" onclick="switchTab('cnotes')">💻 CS Study</button>
+  <button class="tab" id="tab-c" onclick="switchTab('c')">💻 CS Quiz</button>
+</div>
+<div class="prog-bar">
+  <div class="pb-top">
+    <span class="pb-label">Session progress</span>
+    <span class="sb" id="status-badge">Not started</span>
+  </div>
+  <div class="sp" id="subject-pills"></div>
+  <div id="save-wrap"></div>
+</div>
+
+<div id="sec-cnotes" class="sec active">
+  <div class="dyk">
+    <div class="dyk-eye">💻 CS / Python &middot; Week 27 &middot; Python (fun!)</div>
+    <div class="dyk-title">Turtle — Shapes, Colours &amp; Loops</div>
+    <div class="dyk-body">Add <strong>colour</strong>, <strong>fill</strong> and <strong>circles</strong>, and use <strong>for loops</strong> to draw stars, polygons and spirals.</div>
+  </div>
+  <div class="ql">🎨 Colour and fill</div>
+  <div class="icard"><pre class="code">t.color("red")              # pen colour
+t.color("red", "yellow")    # pen red, fill yellow
+t.pensize(5)                # thicker lines
+turtle.bgcolor("black")     # background
+
+t.begin_fill()
+for i in range(4):
+    t.forward(80)
+    t.right(90)
+t.end_fill()                # fills the square</pre><p>The fill appears only when <code>end_fill()</code> runs.</p></div>
+  <div class="ql">⭕ Circles</div>
+  <div class="icard"><pre class="code">t.circle(50)        # full circle, radius 50
+t.circle(50, 180)   # half circle
+t.dot(20)           # a filled dot
+t.hideturtle()      # hide the arrow</pre><p>The centre of the circle is <strong>50 steps to the turtle’s left</strong>.</p></div>
+  <div class="ql">⭐ Stars and polygons</div>
+  <div class="icard"><pre class="code"># 5-pointed star: turn 144 each time
+for i in range(5):
+    t.forward(150)
+    t.right(144)
+
+def polygon(n, size):
+    for i in range(n):
+        t.forward(size)
+        t.right(360 / n)
+
+polygon(8, 40)      # octagon</pre></div>
+  <div class="ql">🌈 Rainbow spiral challenge</div>
+  <div class="icard"><pre class="code">colors = ["red", "orange", "yellow", "green", "blue", "purple"]
+for i in range(60):
+    t.color(colors[i % 6])
+    t.forward(i * 5)
+    t.right(90)</pre><p>The lines get longer each time, so it spirals outwards. <code>i % 6</code> cycles through the 6 colours.</p></div>
+  <div class="dyk"><div class="dyk-eye">&#10024; Fun facts</div><div class="dyk-body">• A 5-pointed star turns 144° five times = 720°, so the turtle spins round twice while drawing it.<br>• A polygon with many sides, like 100, looks almost exactly like a circle.<br>• Turtle understands hundreds of colour names, such as "gold", "skyblue" and "hotpink".</div></div>
+  <div class="ql">🧠 Trivia — try first, then tap to check</div>
+  <div class="qa"><div class="qn">1. What turn angle draws a 5-pointed star?</div><details><summary>👀 Show answer</summary><div class="ans">144°.</div></details></div>
+  <div class="qa"><div class="qn">2. Which two commands wrap code you want filled?</div><details><summary>👀 Show answer</summary><div class="ans">begin_fill() and end_fill().</div></details></div>
+  <div class="qa"><div class="qn">3. What does circle(50, 180) draw?</div><details><summary>👀 Show answer</summary><div class="ans">A semicircle.</div></details></div>
+  <div class="tip"><div class="tip-eye">&#127919; Must-remember</div><div class="tip-body">• color(pen, fill) · begin_fill … end_fill<br>• circle(r) · circle(r, angle) · dot(size)<br>• polygon turn = 360 / n · star turn = 144<br>• colors[i % len(colors)] cycles colours</div></div>
+</div>
+
+<div id="sec-c" class="sec">
+  <div class="dyk">
+    <div class="dyk-eye">💻 CS / Python &middot; Week 27 &middot; 25 Questions</div>
+    <div class="dyk-title">Turtle — Shapes, Colours &amp; Loops</div>
+    <div class="dyk-body">🟡 10 medium &middot; 🔴 15 hard. Work out code answers on paper first. You need <strong>15 / 25 (60%)</strong> to mark this as Done.</div>
+  </div>
+  <div class="ql">Questions</div>
+  <div class="sr">
+    <div class="sc"><label>Question</label><span id="c-qnum">1 / 25</span></div>
+    <div class="sc"><label>Score</label><span id="c-score">0</span></div>
+  </div>
+  <div class="pr"><div class="pt"><div class="pf" id="c-prog" style="width:0%"></div></div><div class="pp" id="c-pct">0%</div></div>
+  <div id="c-card" class="card">
+    <div class="tp" id="c-topic"></div>
+    <div class="qt" id="c-q"></div>
+    <div class="opts" id="c-opts"></div>
+    <div class="fb" id="c-fb"></div>
+    <button class="nxt" id="c-nxt">Next &rarr;</button>
+  </div>
+  <div id="c-done" style="display:none" class="card dc">
+    <div class="di" id="c-ficon">&#127881;</div>
+    <div class="dt">Done!</div>
+    <div class="ds" id="c-fscore"></div>
+    <div class="dm" id="c-fmsg"></div>
+    <button class="retry" id="c-retry">Try again &#8634;</button>
+  </div>
+</div>
+
+<script>
+var SUBJECTS = [{"id": "c", "label": "CS/Python", "total": 25}];
+var LS_PFX   = 'icse_w27_tue';
+
+function saveScore(id, score, total, label) {
+  var key = LS_PFX+'_'+id, ex = {};
+  try{ ex = JSON.parse(localStorage.getItem(key)||'{}'); }catch(e){}
+  try{ localStorage.setItem(key, JSON.stringify({
+    attempts: satt(ex.attempts)+1,
+    bestScore: Math.max(ex.bestScore||0, score),
+    totalQ: total,
+    lastDate: new Date().toISOString().slice(0,10),
+    label: label
+  })); }catch(e){}
+}
+function getScore(id) {
+  try{ return JSON.parse(localStorage.getItem(LS_PFX+'_'+id)||'null'); }catch(e){ return null; }
+}
+
+function refreshProgress() {
+  var badge = document.getElementById('status-badge');
+  var pills = document.getElementById('subject-pills');
+  if(!badge||!pills) return;
+  pills.innerHTML = '';
+  var done=0, attempted=0;
+  SUBJECTS.forEach(function(s) {
+    var d = getScore(s.id);
+    var pill = document.createElement('span');
+    pill.style.cssText = 'font-size:12px;padding:4px 10px;border-radius:99px;font-weight:500;display:inline-block';
+    if(!d) {
+      pill.textContent = s.label+': \u2014';
+      pill.style.background='#F3F4F6'; pill.style.color='#9CA3AF';
+    } else {
+      attempted++;
+      var pct=Math.round((d.bestScore/d.totalQ)*100), ok=pct>=60;
+      if(ok) done++;
+      pill.textContent = s.label+': '+d.bestScore+'/'+d.totalQ+' ('+pct+'%)'+(ok?' \u2713':'');
+      pill.style.background = ok?'#ECFDF5':'#FEF2F2';
+      pill.style.color      = ok?'#065F46':'#991B1B';
+    }
+    pills.appendChild(pill);
+  });
+  if(!attempted)                 { badge.textContent='Not started';     badge.style.background='#F3F4F6'; badge.style.color='#9CA3AF'; }
+  else if(done===SUBJECTS.length){ badge.textContent='\u2705 Done';        badge.style.background='#ECFDF5'; badge.style.color='#065F46'; }
+  else                           { badge.textContent='\ud83d\udfe1 In progress'; badge.style.background='#FFFBEB'; badge.style.color='#92400E'; }
+}
+
+function switchTab(t) {
+  var all = ["cnotes", "c"];
+  all.forEach(function(x) {
+    document.getElementById('tab-'+x).classList.toggle('active', x===t);
+    document.getElementById('sec-'+x).classList.toggle('active', x===t);
+  });
+  window.scrollTo(0,0);
+}
+
+function quiz(id, qs, label) {
+  qs.forEach(function(q){ if(!q.o||q._sh) return; var c=q.o[q.a]; for(var a=q.o.length-1;a>0;a--){var b=Math.floor(Math.random()*(a+1)),t=q.o[a];q.o[a]=q.o[b];q.o[b]=t;} q.a=q.o.indexOf(c); q._sh=1; });
+  var i=0, sc=0, answered=false;
+  function el(x){ return document.getElementById(id+'-'+x); }
+  function render() {
+    if(i>=qs.length){ finish(); return; }
+    var q=qs[i]; answered=false;
+    el('topic').textContent = q.t||'';
+    el('q').textContent     = q.q;
+    el('qnum').textContent  = (i+1)+' / '+qs.length;
+    el('score').textContent = sc;
+    el('prog').style.width  = Math.round((i/qs.length)*100)+'%';
+    el('pct').textContent   = Math.round((i/qs.length)*100)+'%';
+    var fb=el('fb'); fb.className='fb'; fb.textContent='';
+    el('nxt').className='nxt';
+    var og=el('opts'); og.innerHTML='';
+    q.o.forEach(function(opt,j){
+      var b=document.createElement('button');
+      b.className='opt'; b.textContent=opt;
+      b.onclick=function(){ pick(j); };
+      og.appendChild(b);
+    });
+  }
+  function pick(j) {
+    if(answered) return; answered=true;
+    var q=qs[i], fb=el('fb');
+    document.querySelectorAll('#'+id+'-opts .opt').forEach(function(b,k){
+      if(k===q.a) b.classList.add('correct');
+      else if(k===j&&j!==q.a) b.classList.add('wrong');
+    });
+    if(j===q.a){ sc++; fb.textContent='✅ '+q.e; fb.className='fb ok show'; }
+    else        {       fb.textContent='❌ '+q.e; fb.className='fb err show'; }
+    el('nxt').className='nxt show';
+  }
+  function finish() {
+    saveScore(id, sc, qs.length, label);
+    refreshProgress();
+    document.getElementById(id+'-card').style.display='none';
+    document.getElementById(id+'-done').style.display='block';
+    el('prog').style.width='100%'; el('pct').textContent='100%';
+    el('fscore').textContent=sc+' / '+qs.length;
+    var pct=Math.round((sc/qs.length)*100);
+    var r=sc===qs.length ? ['🌟','Perfect score!']
+        : pct>=60        ? ['🎉','Well done! 60%+ achieved ✓']
+        :                  ['💪','Need 60%+ to mark as Done — try again!'];
+    el('ficon').textContent=r[0]; el('fmsg').textContent=r[1];
+  }
+  el('nxt').onclick   = function(){ i++; render(); };
+  el('retry').onclick = function(){
+    i=0; sc=0; answered=false;
+    document.getElementById(id+'-card').style.display='block';
+    document.getElementById(id+'-done').style.display='none';
+    render();
+  };
+  render();
+}
+
+var GH_REPO = 'icse-study/class6-study-sessions';
+var GH_FILE = 'progress.json';
+var GH_API  = 'https://api.github.com/repos/'+GH_REPO+'/contents/'+GH_FILE;
+
+function getToken(){ return localStorage.getItem('icse_gh_token')||''; }
+
+function getAllLocalScores(){
+  var s={};
+  try{
+    for(var i=0;i<localStorage.length;i++){
+      var k=localStorage.key(i);
+      if(k&&k.indexOf('icse_w')===0){ try{s[k]=JSON.parse(localStorage.getItem(k));}catch(e){} }
+    }
+  }catch(e){}
+  return s;
+}
+
+function satt(n){ n=parseInt(n,10); if(isNaN(n)||n<0||n>50) return 1; return n; }
+
+function mergeScores(local, remote){
+  var merged=JSON.parse(JSON.stringify(remote||{}));
+  Object.keys(local).forEach(function(k){
+    var l=local[k],r=merged[k];
+    if(!r){merged[k]=l;return;}
+    merged[k]={attempts:Math.max(satt(l.attempts),satt(r.attempts)),bestScore:Math.max(l.bestScore||0,r.bestScore||0),totalQ:l.totalQ||r.totalQ,lastDate:l.lastDate>r.lastDate?l.lastDate:r.lastDate,label:l.label||r.label};
+  });
+  return merged;
+}
+
+function applyRemoteToLocal(scores){
+  Object.keys(scores).forEach(function(k){
+    if(k.indexOf('icse_w')===0){
+      var ex=null;
+      try{ex=JSON.parse(localStorage.getItem(k));}catch(e){}
+      var rem=scores[k];
+      try{
+        if(!ex){ localStorage.setItem(k,JSON.stringify(rem)); }
+        else{ localStorage.setItem(k,JSON.stringify({attempts:Math.max(satt(ex.attempts),satt(rem.attempts)),bestScore:Math.max(ex.bestScore||0,rem.bestScore||0),totalQ:ex.totalQ||rem.totalQ,lastDate:ex.lastDate>rem.lastDate?ex.lastDate:rem.lastDate,label:ex.label||rem.label})); }
+      }catch(e){}
+    }
+  });
+}
+
+function syncProgress(onDone){
+  var token=getToken();
+  if(!token){if(onDone)onDone(false,'No token set — tap ⚙️ to add your sync token');return;}
+  var xhr=new XMLHttpRequest();
+  xhr.open('GET',GH_API,true);
+  xhr.setRequestHeader('Authorization','token '+token);
+  xhr.setRequestHeader('Accept','application/vnd.github+json');
+  xhr.onload=function(){
+    if(xhr.status!==200){if(onDone)onDone(false,'Could not reach GitHub ('+xhr.status+')');return;}
+    var resp=JSON.parse(xhr.responseText),sha=resp.sha,remote={};
+    try{remote=JSON.parse(atob(resp.content.replace(/\n/g,''))).scores||{};}catch(e){}
+    var local=getAllLocalScores(),merged=mergeScores(local,remote);
+    applyRemoteToLocal(merged);
+    var payload=JSON.stringify({version:1,lastSaved:new Date().toISOString(),device:navigator.userAgent.indexOf('iPad')>-1?'iPad':'Desktop',scores:merged},null,2);
+    var put=new XMLHttpRequest();
+    put.open('PUT',GH_API,true);
+    put.setRequestHeader('Authorization','token '+token);
+    put.setRequestHeader('Content-Type','application/json');
+    put.setRequestHeader('Accept','application/vnd.github+json');
+    put.onload=function(){
+      if(put.status===200||put.status===201){if(onDone)onDone(true,'Saved to cloud ✓');}
+      else{if(onDone)onDone(false,'Save failed ('+put.status+')');}
+    };
+    put.onerror=function(){if(onDone)onDone(false,'Network error');};
+    put.send(JSON.stringify({message:'Progress sync '+new Date().toISOString().slice(0,10),content:btoa(unescape(encodeURIComponent(payload))),sha:sha}));
+  };
+  xhr.onerror=function(){if(onDone)onDone(false,'Network error');};
+  xhr.send();
+}
+
+function loadRemoteProgress(onDone){
+  var token=getToken();
+  if(!token){if(onDone)onDone(false);return;}
+  var xhr=new XMLHttpRequest();
+  xhr.open('GET',GH_API,true);
+  xhr.setRequestHeader('Authorization','token '+token);
+  xhr.setRequestHeader('Accept','application/vnd.github+json');
+  xhr.onload=function(){
+    if(xhr.status!==200){if(onDone)onDone(false);return;}
+    try{var resp=JSON.parse(xhr.responseText),data=JSON.parse(atob(resp.content.replace(/\n/g,'')));applyRemoteToLocal(data.scores||{});if(onDone)onDone(true);}
+    catch(e){if(onDone)onDone(false);}
+  };
+  xhr.onerror=function(){if(onDone)onDone(false);};
+  xhr.send();
+}
+
+function makeSaveButton(containerId){
+  var wrap=document.getElementById(containerId);
+  if(!wrap)return;
+  var row=document.createElement('div');
+  row.style.cssText='display:flex;gap:8px;margin-top:6px';
+  var btn=document.createElement('button');
+  btn.className='save-btn';btn.style.flex='1';btn.textContent='☁️ Save progress';
+  btn.onclick=function(){
+    if(!getToken()){window.location.href='../../settings.html';return;}
+    btn.textContent='⏳ Saving…';btn.disabled=true;
+    syncProgress(function(ok,msg){
+      btn.textContent=ok?'✅ '+msg:'❌ '+msg;btn.disabled=false;
+      setTimeout(function(){btn.textContent='☁️ Save progress';},3000);
+      if(ok&&typeof refreshProgress==='function')refreshProgress();
+    });
+  };
+  var cfg=document.createElement('button');
+  cfg.className='save-btn';cfg.style.cssText='flex:0;padding:12px 14px;font-size:16px';
+  cfg.title='Sync settings';cfg.textContent='⚙️';
+  cfg.onclick=function(){window.location.href='../../settings.html';};
+  row.appendChild(btn);row.appendChild(cfg);
+  wrap.appendChild(row);
+}
+
+quiz('c', [
+  {"t": "🟡 Colour", "q": "Which line makes the pen draw in red?", "o": ["t.color(\"red\")", "t.red()", "t.paint(red)", "color = red"], "a": 0, "e": "Colour names go in quotes."},
+  {"t": "🟡 Fill", "q": "Which pair of commands fills a shape with colour?", "o": ["begin_fill() and end_fill()", "fill_on() and fill_off()", "start() and stop()", "paint() and done()"], "a": 0, "e": "Draw the shape between them."},
+  {"t": "🟡 Circles", "q": "What does t.circle(50) draw?", "o": ["A circle with radius 50", "A circle with diameter 50", "50 circles", "A square of side 50"], "a": 0, "e": "Radius = distance from the centre."},
+  {"t": "🟡 Loops", "q": "Why use a for loop to draw a square?", "o": ["It repeats “forward and turn” without writing it 4 times", "Turtle cannot draw without loops", "It makes the square round", "It changes the colour"], "a": 0, "e": "Less code, fewer mistakes."},
+  {"t": "🟡 Star", "q": "What turn angle draws a 5-pointed star?", "o": ["144°", "72°", "90°", "36°"], "a": 0, "e": "The pen crosses over itself."},
+  {"t": "🟡 Polygons", "q": "What is the turn angle for a regular polygon with n sides?", "o": ["360 / n", "180 / n", "n × 90", "360 × n"], "a": 0, "e": "Total turning is 360°."},
+  {"t": "🟡 Pen", "q": "What does t.pensize(5) do?", "o": ["Makes the lines thicker", "Moves 5 steps", "Draws 5 shapes", "Makes the turtle smaller"], "a": 0, "e": "Bigger number = thicker line."},
+  {"t": "🟡 Background", "q": "Which line makes the background black?", "o": ["turtle.bgcolor(\"black\")", "t.color(\"black\")", "t.fill(\"black\")", "t.background = black"], "a": 0, "e": "bgcolor = background colour."},
+  {"t": "🟡 Colour", "q": "What does t.color(\"red\", \"yellow\") set?", "o": ["Red pen and yellow fill", "Yellow pen and red fill", "A red-yellow gradient", "An error"], "a": 0, "e": "Pen colour first, fill colour second."},
+  {"t": "🟡 Patterns", "q": "What does this draw?\n\nfor i in range(36):\n    t.circle(50)\n    t.right(10)", "o": ["A flower made of 36 overlapping circles", "One circle", "A spiral line", "A square"], "a": 0, "e": "36 × 10° = 360°, all the way round."},
+  {"t": "🔴 Octagon", "q": "What turn angle draws a regular octagon?", "o": ["45°", "60°", "90°", "135°"], "a": 0, "e": "360 ÷ 8."},
+  {"t": "🔴 Spiral", "q": "What does this draw?\n\nfor i in range(50):\n    t.forward(i * 5)\n    t.right(90)", "o": ["A square spiral getting bigger", "A square", "A circle", "50 separate dots"], "a": 0, "e": "Each side is longer than the last."},
+  {"t": "🔴 Modulo", "q": "With colors holding 6 colours, which index does colors[i % 6] use when i = 7?", "o": ["1", "7", "0", "6"], "a": 0, "e": "7 % 6 = 1."},
+  {"t": "🔴 Circles", "q": "What does t.circle(50, 180) draw?", "o": ["A semicircle", "A full circle", "180 circles", "A circle of radius 180"], "a": 0, "e": "The second number is how many degrees to draw."},
+  {"t": "🔴 Fill", "q": "You draw a square but forget begin_fill(). What happens when end_fill() runs?", "o": ["The square is not filled", "The square is filled anyway", "The screen goes black", "The square disappears"], "a": 0, "e": "Filling needs both commands."},
+  {"t": "🔴 Hexagon", "q": "Which loop draws a regular hexagon?", "o": ["for i in range(6): t.forward(50) and t.right(60)", "for i in range(6): t.forward(50) and t.right(90)", "for i in range(60): t.forward(6)", "for i in range(4): t.forward(50) and t.right(60)"], "a": 0, "e": "6 sides, 60° turns."},
+  {"t": "🔴 Functions", "q": "What does polygon(3, 100) draw, using the polygon function in the notes?", "o": ["A triangle with sides of 100", "A 100-sided shape", "Three squares", "A circle"], "a": 0, "e": "n = 3, size = 100."},
+  {"t": "🔴 Star", "q": "How many degrees does the turtle turn in total while drawing a 5-pointed star?", "o": ["720°", "360°", "144°", "540°"], "a": 0, "e": "5 × 144 = 720 — two full turns."},
+  {"t": "🔴 Turtle", "q": "What does t.hideturtle() do?", "o": ["Hides the arrow so only the drawing shows", "Deletes the drawing", "Stops the program", "Moves the turtle off-screen"], "a": 0, "e": "Useful for neat final pictures."},
+  {"t": "🔴 Loops", "q": "What does this draw?\n\nfor i in range(4):\n    t.circle(30)\n    t.forward(60)", "o": ["Four circles in a row", "One big circle", "A square", "Four circles on top of each other"], "a": 0, "e": "Each circle is drawn, then the turtle moves on."},
+  {"t": "🔴 Dots", "q": "What does t.dot(20) do?", "o": ["Draws a filled dot 20 wide", "Moves 20 steps", "Draws 20 dots", "Draws a circle outline of radius 20"], "a": 0, "e": "A quick way to draw a filled circle."},
+  {"t": "🔴 Circles", "q": "When the turtle draws t.circle(50), where is the circle’s centre?", "o": ["50 steps to the turtle’s left", "At the turtle’s position", "50 steps in front", "At (0, 0) always"], "a": 0, "e": "The turtle walks around it anticlockwise."},
+  {"t": "🔴 Polygons", "q": "As a regular polygon gets more and more sides, it looks more like…", "o": ["A circle", "A star", "A straight line", "A square"], "a": 0, "e": "Try polygon(100, 5)."},
+  {"t": "🔴 Colours", "q": "Why does the rainbow spiral use colors[i % 6] instead of colors[i]?", "o": ["So the index cycles 0–5 and never goes past the end of the list", "To make the spiral bigger", "Because colours must be numbers", "To slow the turtle down"], "a": 0, "e": "colors[6] would give an IndexError."},
+  {"t": "🔴 Fill", "q": "In t.color(\"blue\", \"green\"), which colour fills the shape?", "o": ["Green", "Blue", "Both mixed", "Neither"], "a": 0, "e": "The second colour is the fill."}
+], 'CS/Python');
+refreshProgress();
+makeSaveButton('save-wrap');
+loadRemoteProgress(function(ok){ if(ok) refreshProgress(); });
+</script>
+</body>
+</html>
