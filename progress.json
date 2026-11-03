@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-11-02T14:09:09.651Z",
+  "lastSaved": "2026-11-03T11:47:53.899Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -1395,6 +1395,13 @@
       "totalQ": 20,
       "lastDate": "2026-11-02",
       "label": "Kannada"
+    },
+    "icse_w09_sat_h": {
+      "attempts": 3,
+      "bestScore": 13,
+      "totalQ": 15,
+      "lastDate": "2026-11-03",
+      "label": "History & Civics"
     }
   }
 }
