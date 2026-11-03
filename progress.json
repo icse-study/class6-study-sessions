@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-11-03T11:47:53.899Z",
+  "lastSaved": "2026-11-03T11:55:28.764Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -1402,6 +1402,13 @@
       "totalQ": 15,
       "lastDate": "2026-11-03",
       "label": "History & Civics"
+    },
+    "icse_w09_sat_ch": {
+      "attempts": 2,
+      "bestScore": 17,
+      "totalQ": 20,
+      "lastDate": "2026-11-03",
+      "label": "Chemistry"
     }
   }
 }
