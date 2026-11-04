@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-11-04T12:13:40.374Z",
+  "lastSaved": "2026-11-04T13:13:48.702Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -1458,6 +1458,13 @@
       "totalQ": 20,
       "lastDate": "2026-11-04",
       "label": "English"
+    },
+    "icse_w10_mon_m": {
+      "attempts": 2,
+      "bestScore": 13,
+      "totalQ": 20,
+      "lastDate": "2026-11-04",
+      "label": "Maths"
     }
   }
 }
