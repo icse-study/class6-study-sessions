@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastSaved": "2026-11-09T10:12:34.127Z",
+  "lastSaved": "2026-11-10T14:16:53.404Z",
   "device": "Desktop",
   "scores": {
     "icse_w01_mon_m": {
@@ -1514,6 +1514,13 @@
       "totalQ": 20,
       "lastDate": "2026-11-09",
       "label": "French"
+    },
+    "icse_w10_fri_b": {
+      "attempts": 2,
+      "bestScore": 15,
+      "totalQ": 20,
+      "lastDate": "2026-11-10",
+      "label": "Biology"
     }
   }
 }
